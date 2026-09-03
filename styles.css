@@ -15,3 +15,77 @@
 @media (max-width:1280px){.container,.hero-container,.navbar-inner{width:min(1160px,calc(100% - 48px))}.navbar-inner{gap:20px}.logo{width:190px;flex-basis:190px}.logo-img{width:160px}.nav-links{gap:22px}.nav-actions{gap:10px}.hero-container{grid-template-columns:minmax(420px,.88fr) minmax(560px,1.12fr);gap:24px}.hero-title{font-size:40px}.dash-card{height:430px}.dash-body{height:312px}.dash-card:before,.dash-card:after{display:none}.dash-header,.dash-body,.dash-stats-row{margin-left:0}.dash-body{grid-template-columns:1fr .8fr}.chat-area{display:none}.trust-row{width:min(1120px,calc(100% - 64px))}}
 @media (max-width:900px){.navbar-inner{height:auto;min-height:70px;flex-wrap:wrap;padding:12px 0}.logo{flex-basis:auto;width:auto}.nav-links{order:3;width:100%;gap:18px;flex-wrap:wrap}.nav-actions{margin-left:auto}.hero{height:auto;min-height:0;padding:42px 0 48px}.hero-container{grid-template-columns:1fr}.dash-card{height:auto}.dash-body{height:auto;grid-template-columns:1fr}.dash-right-col{grid-template-rows:auto auto}.chat-area{display:flex}.trust-strip{height:auto;padding:20px 0}.trust-row{margin:0 auto;flex-wrap:wrap}.trust-sep{display:none}.features-grid,.stats-grid,.how-steps,.testi-grid,.plans-grid,.ind-container,.price-container,.footer-top{grid-template-columns:1fr 1fr}.ind-right,.footer-cols{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.container,.hero-container,.navbar-inner{width:min(100% - 28px,100%)}.nav-links,.nav-login,.nav-book-demo{display:none}.logo-img{width:145px}.nav-get-started{height:40px;min-width:auto}.hero-title{font-size:36px}.hero-cta,.hero-meta{gap:12px}.btn-green,.btn-outline-white{width:100%}.dash-stats-row,.features-grid,.stats-grid,.how-steps,.testi-grid,.plans-grid,.ind-container,.price-container,.footer-top,.ind-right,.footer-cols{grid-template-columns:1fr}.trust-row{width:min(100% - 28px,100%)}}
+
+/* Logo-only correction: use the PNG as-is without stretching or styling */
+.logo {
+  width: auto;
+  min-width: 0;
+  flex: 0 0 230px;
+  overflow: visible;
+}
+
+.logo-img,
+.footer-logo .logo-img {
+  width: 190px !important;
+  height: auto !important;
+  max-height: 70px;
+  object-fit: contain;
+  object-position: left center;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  image-rendering: auto;
+}
+
+.logo-text {
+  display: none !important;
+}
+
+@media (max-height: 780px) and (min-width: 901px) {
+  .logo-img,
+  .footer-logo .logo-img {
+    width: 180px !important;
+    height: auto !important;
+    max-height: 66px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .logo {
+    flex-basis: 200px;
+  }
+
+  .logo-img,
+  .footer-logo .logo-img {
+    width: 172px !important;
+    height: auto !important;
+  }
+}
+
+/* Logo visibility only: keep the PNG, render it clearly on the dark navbar */
+.navbar .logo-img {
+  width: 220px !important;
+  height: auto !important;
+  max-height: 72px;
+  object-fit: contain;
+  object-position: left center;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  filter: brightness(0) invert(1) contrast(1.08) !important;
+}
+
+.navbar .logo-text {
+  display: none !important;
+}
+
+@media (max-width: 1280px) {
+  .navbar .logo-img {
+    width: 190px !important;
+  }
+}
