@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KevzaAI - Notification Preferences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="notification-preferences.css" />
+  </head>
+  <body>
+    <main class="admin-app">
+      <aside class="admin-sidebar">
+        <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+        <nav class="admin-nav" aria-label="Admin navigation">
+          <a href="admin-profile.html"><span>⌂</span>Dashboard</a>
+          <a href="#"><span>☷</span>Customers <b>›</b></a>
+          <a href="#"><span>◇</span>Plans &amp; Subscriptions <b>›</b></a>
+          <a href="#"><span>▣</span>Billing &amp; Wallet <b>›</b></a>
+          <a href="#"><span>◉</span>Channels <b>›</b></a>
+          <a href="#"><span>▤</span>Templates</a>
+          <a href="#"><span>✈</span>Campaigns</a>
+          <a href="#"><span>☏</span>Chatbots &amp; AI <b>›</b></a>
+          <a href="#"><span>⌘</span>Automations <b>›</b></a>
+          <a href="#"><span>⚙</span>CRM &amp; Integrations <b>›</b></a>
+          <a href="#"><span>▥</span>Analytics &amp; Reports <b>›</b></a>
+          <a href="#"><span>♡</span>Customer Success <b>›</b></a>
+          <a href="#"><span>◎</span>Support <b>›</b></a>
+          <a href="login-history.html"><span>◈</span>Login History</a>
+          <a href="active-sessions.html"><span>▣</span>Active Sessions</a>
+          <a href="change-password.html"><span>⬟</span>Change Password</a>
+          <a class="is-active" href="notification-preferences.html"><span>◉</span>Notification Preferences</a>
+          <a href="#"><span>◈</span>Security &amp; Compliance <b>›</b></a>
+          <a href="#"><span>▦</span>System Operations <b>›</b></a>
+          <a href="#"><span>⚙</span>Settings <b>›</b></a>
+        </nav>
+        <div class="sidebar-user">
+          <div class="mini-avatar">AA</div>
+          <div><strong>Aman Ansari</strong><span>Super Admin</span></div>
+          <b>⌄</b>
+        </div>
+      </aside>
+
+      <section class="admin-main">
+        <header class="admin-topbar">
+          <button class="icon-button" aria-label="Open menu">☰</button>
+          <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Profile</span><b>/</b><strong>Notification Preferences</strong></div>
+          <label class="admin-search"><span>⌕</span><input type="search" placeholder="Search anything..." /><kbd>⌘K</kbd></label>
+          <button class="top-icon has-badge" aria-label="Notifications">♧<i>8</i></button>
+          <button class="top-icon has-badge" aria-label="Messages">▣<i>3</i></button>
+          <button class="top-icon" aria-label="Help">?</button>
+          <div class="top-user"><div class="mini-avatar photo">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>⌄</b></div>
+        </header>
+
+        <div class="notification-page">
+          <div class="notification-title-row">
+            <div><h1>Notification Preferences</h1><p>Choose how and when KevzaAI should notify you about account and workspace activity.</p></div>
+            <button class="save-preferences-button" type="button"><span>▣</span>Save Preferences</button>
+          </div>
+
+          <nav class="account-tabs" aria-label="Profile sections">
+            <a href="admin-profile.html">My Profile</a>
+            <a href="login-history.html">Login History</a>
+            <a href="active-sessions.html">Active Sessions</a>
+            <a href="change-password.html">Change Password</a>
+            <a class="is-active" href="notification-preferences.html">Notification Preferences</a>
+          </nav>
+
+          <section class="notification-layout">
+            <aside class="notification-overview-card">
+              <div class="notification-hero-icon">♧</div>
+              <h2>Notification Center</h2>
+              <p>Manage admin alerts across email, push, SMS, and in-app channels.</p>
+              <div class="notification-summary-list">
+                <div><span>Email Alerts</span><strong>Enabled</strong></div>
+                <div><span>Security Alerts</span><strong>Always on</strong></div>
+                <div><span>Quiet Hours</span><strong>10 PM - 7 AM</strong></div>
+                <div><span>Weekly Digest</span><strong>Monday</strong></div>
+              </div>
+            </aside>
+
+            <section class="notification-settings-card">
+              <div class="notification-card-heading"><h2>Channels</h2><p>Select where you want to receive account notifications.</p></div>
+              <div class="preference-list">
+                <label class="preference-row"><span class="preference-icon email">✉</span><div><strong>Email Notifications</strong><p>Receive account, billing, and security updates by email.</p></div><input type="checkbox" checked /></label>
+                <label class="preference-row"><span class="preference-icon push">♧</span><div><strong>Push Notifications</strong><p>Show real-time browser notifications for high priority events.</p></div><input type="checkbox" checked /></label>
+                <label class="preference-row"><span class="preference-icon sms">▯</span><div><strong>SMS Alerts</strong><p>Send critical account alerts to your registered phone number.</p></div><input type="checkbox" /></label>
+                <label class="preference-row"><span class="preference-icon app">▣</span><div><strong>In-app Notifications</strong><p>Keep alerts visible inside the KevzaAI admin dashboard.</p></div><input type="checkbox" checked /></label>
+              </div>
+            </section>
+
+            <section class="notification-settings-card wide">
+              <div class="notification-card-heading"><h2>Notification Types</h2><p>Fine tune the activities that should trigger alerts.</p></div>
+              <div class="type-grid">
+                <label class="type-card"><input type="checkbox" checked /><span>⬟</span><strong>Security alerts</strong><p>New login, password changes, MFA activity, and blocked attempts.</p></label>
+                <label class="type-card"><input type="checkbox" checked /><span>▥</span><strong>Campaign updates</strong><p>Campaign approvals, delivery issues, and performance thresholds.</p></label>
+                <label class="type-card"><input type="checkbox" checked /><span>☷</span><strong>Customer activity</strong><p>New leads, customer replies, assignments, and escalation events.</p></label>
+                <label class="type-card"><input type="checkbox" /><span>▣</span><strong>Billing reminders</strong><p>Invoice status, wallet balance, plan renewal, and payment failures.</p></label>
+              </div>
+            </section>
+
+            <section class="notification-settings-card schedule-card">
+              <div class="notification-card-heading"><h2>Schedule</h2><p>Set digest frequency and quiet hours.</p></div>
+              <div class="schedule-grid">
+                <label><span>Digest Frequency</span><select><option>Weekly digest</option><option>Daily digest</option><option>Monthly digest</option></select></label>
+                <label><span>Digest Day</span><select><option>Monday</option><option>Friday</option><option>Sunday</option></select></label>
+                <label><span>Quiet Hours Start</span><input type="text" value="10:00 PM" /></label>
+                <label><span>Quiet Hours End</span><input type="text" value="07:00 AM" /></label>
+              </div>
+            </section>
+          </section>
+
+          <div class="notification-note"><span>i</span>Security-critical notifications stay enabled to protect your admin account.</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
