@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KevzaAI - Login History</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="login-history.css" />
+  </head>
+  <body>
+    <main class="admin-app">
+      <aside class="admin-sidebar">
+        <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+        <nav class="admin-nav" aria-label="Admin navigation">
+          <a href="admin-profile.html"><span>⌂</span>Dashboard</a>
+          <a href="#"><span>☷</span>Customers <b>›</b></a>
+          <a href="#"><span>◇</span>Plans &amp; Subscriptions <b>›</b></a>
+          <a href="#"><span>▣</span>Billing &amp; Wallet <b>›</b></a>
+          <a href="#"><span>◉</span>Channels <b>›</b></a>
+          <a href="#"><span>▤</span>Templates</a>
+          <a href="#"><span>✈</span>Campaigns</a>
+          <a href="#"><span>☏</span>Chatbots &amp; AI <b>›</b></a>
+          <a href="#"><span>⌘</span>Automations <b>›</b></a>
+          <a href="#"><span>⚙</span>CRM &amp; Integrations <b>›</b></a>
+          <a href="#"><span>▥</span>Analytics &amp; Reports <b>›</b></a>
+          <a href="#"><span>♡</span>Customer Success <b>›</b></a>
+          <a href="#"><span>◎</span>Support <b>›</b></a>
+          <a class="is-active" href="login-history.html"><span>◈</span>Login History</a>
+          <a href="active-sessions.html"><span>▣</span>Active Sessions</a>
+          <a href="change-password.html"><span>⬟</span>Change Password</a>
+          <a href="#"><span>◈</span>Security &amp; Compliance <b>›</b></a>
+          <a href="#"><span>▦</span>System Operations <b>›</b></a>
+          <a href="#"><span>⚙</span>Settings <b>›</b></a>
+        </nav>
+        <div class="sidebar-user">
+          <div class="mini-avatar">AA</div>
+          <div><strong>Aman Ansari</strong><span>Super Admin</span></div>
+          <b>⌄</b>
+        </div>
+      </aside>
+
+      <section class="admin-main">
+        <header class="admin-topbar">
+          <button class="icon-button" aria-label="Open menu">☰</button>
+          <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Profile</span><b>/</b><strong>Login History</strong></div>
+          <label class="admin-search"><span>⌕</span><input type="search" placeholder="Search anything..." /><kbd>⌘K</kbd></label>
+          <button class="top-icon has-badge" aria-label="Notifications">♧<i>8</i></button>
+          <button class="top-icon has-badge" aria-label="Messages">▣<i>3</i></button>
+          <button class="top-icon" aria-label="Help">?</button>
+          <div class="top-user"><div class="mini-avatar photo">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>⌄</b></div>
+        </header>
+
+        <div class="login-history-page">
+          <div class="history-title">
+            <h1>Login History</h1>
+            <p>Track your account login activity and account access history.</p>
+          </div>
+
+          <section class="history-summary" aria-label="Login summary">
+            <article class="history-stat"><span class="history-stat-icon calendar">▣</span><div><p>Total Logins</p><strong>128</strong><small>All time logins</small></div></article>
+            <article class="history-stat"><span class="history-stat-icon shield">⬟</span><div><p>Successful Logins</p><strong>124</strong><small>96.9% success rate</small></div></article>
+            <article class="history-stat"><span class="history-stat-icon failed">⬡</span><div><p>Failed Login Attempts</p><strong>4</strong><small>3.1% failure rate</small></div></article>
+            <article class="history-stat"><span class="history-stat-icon clock">◷</span><div><p>Last Login</p><strong>Just now</strong><small>02 Jun 2024, 10:42 AM IST</small></div></article>
+          </section>
+
+          <div class="history-alert"><span>i</span>Review your login history regularly. If you notice any suspicious activity, change your password immediately.</div>
+
+          <section class="history-filters" aria-label="Login history filters">
+            <button type="button"><span>▣</span>01 May 2024</button>
+            <button type="button">02 Jun 2024 <span>⌄</span></button>
+            <button type="button"><span>▱</span>All Devices <span>⌄</span></button>
+            <button type="button"><span>◇</span>All Status <span>⌄</span></button>
+            <button class="export-button" type="button"><span>⇩</span>Export</button>
+          </section>
+
+          <section class="history-table-card">
+            <div class="history-table-title">Login History (10)</div>
+            <div class="history-table-wrap">
+              <table class="history-table">
+                <thead>
+                  <tr><th></th><th>Date &amp; Time <span>↕</span></th><th>Device / Browser</th><th>Location</th><th>IP Address</th><th>Status</th><th>Details</th><th></th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><span class="row-state success">✓</span></td><td><strong>02 Jun 2024, 10:42 AM</strong><small>Just now</small></td><td><span class="device-mark desktop">▦</span><div><strong>Windows 11 · Chrome 124.0</strong><small>Desktop · KevzaAI Admin Panel</small></div></td><td><strong>Mumbai, Maharashtra, India</strong><small>(GMT+05:30) Asia/Kolkata</small></td><td>103.21.244.19</td><td><span class="status-pill success">Success</span></td><td><a href="#">View details</a></td><td><button aria-label="More options">⋮</button></td></tr>
+                  <tr><td><span class="row-state success">✓</span></td><td><strong>02 Jun 2024, 09:15 AM</strong><small>1 hour ago</small></td><td><span class="device-mark mobile">▯</span><div><strong>iPhone 15 · Safari 17.5</strong><small>Mobile · iOS</small></div></td><td><strong>Mumbai, Maharashtra, India</strong><small>(GMT+05:30) Asia/Kolkata</small></td><td>103.21.244.23</td><td><span class="status-pill success">Success</span></td><td><a href="#">View details</a></td><td><button aria-label="More options">⋮</button></td></tr>
+                  <tr><td><span class="row-state success">✓</span></td><td><strong>01 Jun 2024, 07:32 PM</strong><small>Yesterday</small></td><td><span class="device-mark laptop">▭</span><div><strong>MacBook Pro · Chrome 123.0</strong><small>Laptop · macOS 14.4</small></div></td><td><strong>Bengaluru, Karnataka, India</strong><small>(GMT+05:30) Asia/Kolkata</small></td><td>106.51.78.112</td><td><span class="status-pill success">Success</span></td><td><a href="#">View details</a></td><td><button aria-label="More options">⋮</button></td></tr>
+                  <tr><td><span class="row-state success">✓</span></td><td><strong>30 May 2024, 08:21 PM</strong><small>2 days ago</small></td><td><span class="device-mark mobile">▯</span><div><strong>OnePlus 11 · Chrome 122.0</strong><small>Mobile · Android 14</small></div></td><td><strong>Pune, Maharashtra, India</strong><small>(GMT+05:30) Asia/Kolkata</small></td><td>117.198.32.55</td><td><span class="status-pill success">Success</span></td><td><a href="#">View details</a></td><td><button aria-label="More options">⋮</button></td></tr>
+                  <tr><td><span class="row-state failed">×</span></td><td><strong>30 May 2024, 06:45 PM</strong><small>2 days ago</small></td><td><span class="device-mark unknown">-</span><div><strong>-</strong><small>Unknown Device</small></div></td><td><strong>Unknown Location</strong></td><td>117.198.32.55</td><td><span class="status-pill failed">Failed</span></td><td><a href="#">View details</a></td><td><button aria-label="More options">⋮</button></td></tr>
+                  <tr><td><span class="row-state success">✓</span></td><td><strong>29 May 2024, 11:03 AM</strong><small>4 days ago</small></td><td><span class="device-mark desktop">▦</span><div><strong>Windows 10 · Edge 121.0</strong><small>Desktop · KevzaAI Admin Panel</small></div></td><td><strong>New Delhi, Delhi, India</strong><small>(GMT+05:30) Asia/Kolkata</small></td><td>49.36.142.18</td><td><span class="status-pill success">Success</span></td><td><a href="#">View details</a></td><td><button aria-label="More options">⋮</button></td></tr>
+                  <tr><td><span class="row-state success">✓</span></td><td><strong>28 May 2024, 10:10 AM</strong><small>5 days ago</small></td><td><span class="device-mark mobile">▯</span><div><strong>iPhone 15 · Safari 17.4</strong><small>Mobile · iOS</small></div></td><td><strong>Mumbai, Maharashtra, India</strong><small>(GMT+05:30) Asia/Kolkata</small></td><td>103.21.244.23</td><td><span class="status-pill success">Success</span></td><td><a href="#">View details</a></td><td><button aria-label="More options">⋮</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="history-pagination"><button type="button" aria-label="Previous page">‹</button><button class="is-active" type="button">1</button><button type="button">2</button><button type="button">3</button><span>...</span><button type="button">10</button><button type="button" aria-label="Next page">›</button><button class="page-size" type="button">10 / page <span>⌄</span></button></div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
+
+

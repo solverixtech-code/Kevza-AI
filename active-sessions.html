@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KevzaAI - Active Sessions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="active-sessions.css" />
+  </head>
+  <body>
+    <main class="admin-app">
+      <aside class="admin-sidebar">
+        <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+        <nav class="admin-nav" aria-label="Admin navigation">
+          <a href="admin-profile.html"><span>⌂</span>Dashboard</a>
+          <a href="#"><span>☷</span>Customers <b>›</b></a>
+          <a href="#"><span>◇</span>Plans &amp; Subscriptions <b>›</b></a>
+          <a href="#"><span>▣</span>Billing &amp; Wallet <b>›</b></a>
+          <a href="#"><span>◉</span>Channels <b>›</b></a>
+          <a href="#"><span>▤</span>Templates</a>
+          <a href="#"><span>✈</span>Campaigns</a>
+          <a href="#"><span>☏</span>Chatbots &amp; AI <b>›</b></a>
+          <a href="#"><span>⌘</span>Automations <b>›</b></a>
+          <a href="#"><span>⚙</span>CRM &amp; Integrations <b>›</b></a>
+          <a href="#"><span>▥</span>Analytics &amp; Reports <b>›</b></a>
+          <a href="#"><span>♡</span>Customer Success <b>›</b></a>
+          <a href="#"><span>◎</span>Support <b>›</b></a>
+          <a href="login-history.html"><span>◈</span>Login History</a>
+          <a class="is-active" href="active-sessions.html"><span>▣</span>Active Sessions</a>
+          <a href="#"><span>◈</span>Security &amp; Compliance <b>›</b></a>
+          <a href="#"><span>▦</span>System Operations <b>›</b></a>
+          <a href="#"><span>⚙</span>Settings <b>›</b></a>
+        </nav>
+        <div class="sidebar-user">
+          <div class="mini-avatar">AA</div>
+          <div><strong>Aman Ansari</strong><span>Super Admin</span></div>
+          <b>⌄</b>
+        </div>
+      </aside>
+
+      <section class="admin-main">
+        <header class="admin-topbar">
+          <button class="icon-button" aria-label="Open menu">☰</button>
+          <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Profile</span><b>/</b><strong>Active Sessions</strong></div>
+          <label class="admin-search"><span>⌕</span><input type="search" placeholder="Search anything..." /><kbd>⌘K</kbd></label>
+          <button class="top-icon has-badge" aria-label="Notifications">♧<i>8</i></button>
+          <button class="top-icon has-badge" aria-label="Messages">▣<i>3</i></button>
+          <button class="top-icon" aria-label="Help">?</button>
+          <div class="top-user"><div class="mini-avatar photo">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>⌄</b></div>
+        </header>
+
+        <div class="active-sessions-page">
+          <div class="sessions-title-row">
+            <div><h1>Active Sessions</h1><p>Monitor devices currently signed in to your KevzaAI admin account.</p></div>
+            <button class="danger-outline" type="button"><span>↪</span>Sign out all other devices</button>
+          </div>
+
+          <section class="session-summary-grid" aria-label="Session summary">
+            <article class="session-summary-card"><span class="session-summary-icon current">▦</span><div><p>Current Session</p><strong>Windows 11</strong><small>Chrome 124.0 · Mumbai</small></div></article>
+            <article class="session-summary-card"><span class="session-summary-icon active">◉</span><div><p>Active Sessions</p><strong>2</strong><small>Across 2 devices</small></div></article>
+            <article class="session-summary-card"><span class="session-summary-icon trusted">⬟</span><div><p>Trusted Devices</p><strong>1</strong><small>This device is trusted</small></div></article>
+            <article class="session-summary-card"><span class="session-summary-icon recent">◷</span><div><p>Last Activity</p><strong>Just now</strong><small>02 Jun 2024, 10:42 AM IST</small></div></article>
+          </section>
+
+          <section class="sessions-toolbar" aria-label="Session filters">
+            <a class="session-tab is-active" href="active-sessions.html">Active Sessions</a>
+            <a class="session-tab" href="login-history.html">Login History</a>
+            <button type="button"><span>▱</span>All Devices <span>⌄</span></button>
+            <button type="button"><span>◇</span>All Status <span>⌄</span></button>
+          </section>
+
+          <section class="sessions-panel">
+            <div class="sessions-panel-heading"><h2>Current Device</h2><span class="status-pill success">Current</span></div>
+            <article class="session-detail-card is-current">
+              <span class="session-device-icon">▦</span>
+              <div class="session-device-copy"><h3>Windows 11 · Chrome 124.0</h3><p>KevzaAI Admin Panel · Desktop</p><dl><div><dt>Location</dt><dd>Mumbai, Maharashtra, India</dd></div><div><dt>IP Address</dt><dd>103.21.244.19</dd></div><div><dt>Signed In</dt><dd>02 Jun 2024, 10:42 AM IST</dd></div><div><dt>Trust Status</dt><dd>Trusted for 30 days</dd></div></dl></div>
+              <button class="session-action muted" type="button">This device</button>
+            </article>
+          </section>
+
+          <section class="sessions-panel">
+            <div class="sessions-panel-heading"><h2>Other Active Sessions</h2><a href="login-history.html">View login history</a></div>
+            <div class="session-list-stack">
+              <article class="session-detail-card">
+                <span class="session-device-icon mobile">▯</span>
+                <div class="session-device-copy"><h3>iPhone 15 · Safari 17.5</h3><p>Mobile · iOS</p><dl><div><dt>Location</dt><dd>Mumbai, Maharashtra, India</dd></div><div><dt>IP Address</dt><dd>103.21.244.23</dd></div><div><dt>Last Active</dt><dd>02 Jun 2024, 09:15 AM IST</dd></div><div><dt>Status</dt><dd>Active session</dd></div></dl></div>
+                <button class="session-action" type="button">Sign out</button>
+              </article>
+
+              <article class="session-detail-card">
+                <span class="session-device-icon laptop">▭</span>
+                <div class="session-device-copy"><h3>MacBook Pro · Chrome 123.0</h3><p>Laptop · macOS 14.4</p><dl><div><dt>Location</dt><dd>Bengaluru, Karnataka, India</dd></div><div><dt>IP Address</dt><dd>106.51.78.112</dd></div><div><dt>Last Active</dt><dd>01 Jun 2024, 07:32 PM IST</dd></div><div><dt>Status</dt><dd>Recently active</dd></div></dl></div>
+                <button class="session-action" type="button">Sign out</button>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
