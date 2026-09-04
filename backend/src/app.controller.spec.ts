@@ -15,8 +15,19 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return service metadata', () => {
+      expect(appController.getRoot()).toEqual({
+        service: 'kevza-api',
+        message: 'KevzaAI backend is running',
+      });
+    });
+
+    it('should return health status', () => {
+      expect(appController.getHealth()).toEqual({
+        status: 'ok',
+        service: 'kevza-api',
+        version: '1.0.0',
+      });
     });
   });
 });
