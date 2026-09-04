@@ -870,3 +870,41 @@ input {
   background: #ffffff;
   box-shadow: inset 0 0 0 1px var(--admin-line-strong);
 }
+
+.account-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 6px;
+  border: 1px solid #e5ebf4;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(20, 45, 87, 0.05);
+  overflow-x: auto;
+}
+
+.account-tabs a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 6px;
+  color: #536680;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.account-tabs a.is-active {
+  color: #ffffff;
+  background: #377dff;
+}
+
+@media (max-width: 720px) {
+  .account-tabs {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
