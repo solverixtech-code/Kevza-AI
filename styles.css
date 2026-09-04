@@ -1316,3 +1316,738 @@ ul {
   .feat-card, .stat-card { grid-template-columns: 48px minmax(0, 1fr); }
   .cta-inner, .cta-left, .footer-bottom-row { flex-direction: column; align-items: flex-start; }
 }
+
+/* Dashboard image replacement only */
+.hero-dashboard-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: none;
+}
+
+@media (max-height: 790px) and (min-width: 901px) {
+  .hero-dashboard-img {
+    max-height: 430px;
+  }
+}
+
+/* Lower sections compact reference pass only */
+.how-sec {
+  padding: 28px 0 28px !important;
+}
+
+.how-sec .container {
+  grid-template-columns: 330px minmax(0, 1fr) !important;
+  gap: 28px !important;
+}
+
+.how-eyebrow,
+.ind-eyebrow,
+.ind-eyebrow-sm {
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+}
+
+.how-title,
+.ind-left h2,
+.testi-h2,
+.price-h2 {
+  margin: 8px 0 6px !important;
+  font-size: 26px !important;
+  line-height: 1.08 !important;
+  font-weight: 800 !important;
+}
+
+.how-sub,
+.ind-sub,
+.price-sub {
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+}
+
+.how-steps {
+  gap: 18px !important;
+}
+
+.hstep {
+  min-height: 126px !important;
+  padding: 20px 14px 14px !important;
+  border-radius: 9px !important;
+}
+
+.hstep-num {
+  top: -14px !important;
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 13px !important;
+}
+
+.hstep-icon {
+  margin-bottom: 6px !important;
+}
+
+.hstep-icon svg {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.hstep h3 {
+  margin-bottom: 6px !important;
+  font-size: 13px !important;
+  line-height: 1.15 !important;
+}
+
+.hstep p {
+  font-size: 11px !important;
+  line-height: 1.28 !important;
+}
+
+.ind-sec {
+  padding: 26px 0 34px !important;
+}
+
+.ind-container {
+  grid-template-columns: 330px minmax(0, 1fr) !important;
+  gap: 42px !important;
+}
+
+.green-link {
+  margin-top: 6px !important;
+  font-size: 13px !important;
+}
+
+.ind-right {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+
+.ind-card {
+  min-height: 112px !important;
+  padding: 18px 22px !important;
+  border-radius: 9px !important;
+}
+
+.ind-ic {
+  width: 42px !important;
+  height: 42px !important;
+  margin-bottom: 8px !important;
+}
+
+.ind-ic svg {
+  width: 23px !important;
+  height: 23px !important;
+}
+
+.ind-card h4 {
+  margin-bottom: 3px !important;
+  font-size: 14px !important;
+  line-height: 1.15 !important;
+}
+
+.ind-card p {
+  font-size: 13px !important;
+  line-height: 1.25 !important;
+}
+
+.testi-sec,
+.price-sec {
+  padding: 34px 0 !important;
+}
+
+.testi-top {
+  align-items: end !important;
+  margin-bottom: 20px !important;
+}
+
+.testi-grid,
+.plans-grid {
+  gap: 18px !important;
+}
+
+.testi-card {
+  min-height: 178px !important;
+  padding: 22px 26px !important;
+  border-radius: 9px !important;
+}
+
+.tquote {
+  line-height: 1 !important;
+}
+
+.testi-card p {
+  font-size: 15px !important;
+  line-height: 1.42 !important;
+}
+
+.tauthor {
+  margin-top: 14px !important;
+  gap: 10px !important;
+}
+
+.tav {
+  width: 34px !important;
+  height: 34px !important;
+  font-size: 12px !important;
+}
+
+.tauthor strong,
+.tauthor span {
+  font-size: 13px !important;
+  line-height: 1.25 !important;
+}
+
+.price-container {
+  grid-template-columns: 300px minmax(0, 1fr) !important;
+  gap: 34px !important;
+}
+
+.plan {
+  padding: 22px !important;
+  border-radius: 9px !important;
+}
+
+.plan-popular {
+  transform: translateY(-8px) !important;
+}
+
+.popular-pill {
+  top: -12px !important;
+  padding: 5px 12px !important;
+  font-size: 11px !important;
+}
+
+.plan-name {
+  font-size: 16px !important;
+}
+
+.plan-desc {
+  font-size: 13px !important;
+}
+
+.plan-price {
+  margin: 12px 0 !important;
+  font-size: 28px !important;
+}
+
+.plan-price span {
+  font-size: 12px !important;
+}
+
+.plan-feats li {
+  margin: 7px 0 !important;
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+}
+
+.plan-btn {
+  height: 38px !important;
+  margin-top: 12px !important;
+  font-size: 13px !important;
+}
+
+.price-note {
+  margin-top: 12px !important;
+  font-size: 12px !important;
+}
+
+.cta-sec {
+  padding: 30px 0 !important;
+}
+
+.cta-logo-img {
+  width: 58px !important;
+}
+
+.cta-h2 {
+  margin: 0 0 6px !important;
+  font-size: 24px !important;
+  line-height: 1.1 !important;
+}
+
+.cta-p {
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+}
+
+.cta-inner {
+  gap: 20px !important;
+}
+
+.site-footer {
+  padding: 34px 0 18px !important;
+}
+
+.footer-top {
+  grid-template-columns: 300px minmax(0, 1fr) !important;
+  gap: 32px !important;
+}
+
+.footer-logo .logo-img {
+  width: 150px !important;
+}
+
+.footer-tagline {
+  max-width: 300px !important;
+  margin-top: 10px !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+.footer-socials {
+  margin-top: 12px !important;
+}
+
+.footer-cols {
+  gap: 18px !important;
+}
+
+.fcol h5 {
+  margin-bottom: 10px !important;
+  font-size: 11px !important;
+}
+
+.fcol a {
+  margin: 6px 0 !important;
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+}
+
+.footer-bottom {
+  margin-top: 22px !important;
+  padding-top: 14px !important;
+  font-size: 12px !important;
+}
+
+@media (max-width: 1280px) {
+  .how-sec .container,
+  .ind-container,
+  .price-container,
+  .footer-top {
+    grid-template-columns: 280px minmax(0, 1fr) !important;
+  }
+
+  .how-steps,
+  .ind-right,
+  .testi-grid,
+  .plans-grid {
+    gap: 14px !important;
+  }
+}
+
+/* Final compact lower-page match: only sections after stats */
+.how-sec {
+  padding: 22px 0 20px !important;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.how-sec .container {
+  display: grid !important;
+  grid-template-columns: 270px minmax(0, 1fr) !important;
+  gap: 34px !important;
+  align-items: center !important;
+}
+
+.how-eyebrow,
+.ind-eyebrow,
+.ind-eyebrow-sm {
+  margin: 0 0 8px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.03em !important;
+}
+
+.how-title,
+.ind-left h2,
+.testi-h2,
+.price-h2 {
+  margin: 0 0 8px !important;
+  font-size: 22px !important;
+  line-height: 1.08 !important;
+  font-weight: 800 !important;
+}
+
+.how-sub,
+.ind-sub,
+.price-sub {
+  margin: 0 !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+}
+
+.how-steps {
+  grid-column: 2 !important;
+  grid-row: 1 / span 3 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  margin: 0 !important;
+}
+
+.hstep {
+  min-height: 112px !important;
+  padding: 20px 14px 12px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07) !important;
+}
+
+.hstep-num {
+  top: -16px !important;
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 12px !important;
+}
+
+.hstep-icon {
+  margin-bottom: 5px !important;
+}
+
+.hstep-icon svg {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.hstep h3 {
+  margin-bottom: 5px !important;
+  font-size: 12px !important;
+  line-height: 1.15 !important;
+}
+
+.hstep p {
+  font-size: 10px !important;
+  line-height: 1.25 !important;
+}
+
+.ind-sec {
+  padding: 20px 0 !important;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.ind-container {
+  display: grid !important;
+  grid-template-columns: 270px minmax(0, 1fr) !important;
+  gap: 34px !important;
+  align-items: center !important;
+}
+
+.green-link {
+  margin-top: 10px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #10b981 !important;
+}
+
+.ind-right {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+.ind-card {
+  min-height: 86px !important;
+  padding: 8px 10px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-align: center !important;
+}
+
+.ind-ic {
+  width: 38px !important;
+  height: 38px !important;
+  margin: 0 auto 8px !important;
+  background: transparent !important;
+  color: #2b67d8 !important;
+}
+
+.ind-ic svg {
+  width: 27px !important;
+  height: 27px !important;
+}
+
+.ind-card h4 {
+  margin: 0 0 3px !important;
+  font-size: 11px !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+}
+
+.ind-card p {
+  margin: 0 !important;
+  color: #5f6f86 !important;
+  font-size: 10px !important;
+  line-height: 1.22 !important;
+}
+
+.testi-sec {
+  padding: 20px 0 !important;
+  border-bottom: 1px solid #eef2f7;
+  background: #ffffff !important;
+}
+
+.testi-sec .container {
+  display: grid !important;
+  grid-template-columns: 270px minmax(0, 1fr) 34px !important;
+  gap: 22px !important;
+  align-items: center !important;
+}
+
+.testi-top {
+  display: contents !important;
+}
+
+.testi-top > div:first-child {
+  grid-column: 1 !important;
+}
+
+.testi-arrows {
+  grid-column: 3 !important;
+  display: grid !important;
+  gap: 8px !important;
+  justify-self: end !important;
+}
+
+.tarrow {
+  width: 26px !important;
+  height: 26px !important;
+  font-size: 12px !important;
+}
+
+.testi-grid {
+  grid-column: 2 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  margin: 0 !important;
+}
+
+.testi-card {
+  min-height: 116px !important;
+  padding: 16px 18px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07) !important;
+}
+
+.tquote {
+  color: #10b981 !important;
+  font-size: 22px !important;
+  line-height: 0.8 !important;
+}
+
+.testi-card p {
+  margin: 0 !important;
+  color: #52627a !important;
+  font-size: 10.5px !important;
+  line-height: 1.35 !important;
+}
+
+.tauthor {
+  margin-top: 10px !important;
+  gap: 8px !important;
+}
+
+.tav {
+  width: 30px !important;
+  height: 30px !important;
+  font-size: 10px !important;
+}
+
+.tauthor strong,
+.tauthor span {
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+}
+
+.price-sec {
+  padding: 20px 0 16px !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.price-container {
+  display: grid !important;
+  grid-template-columns: 270px minmax(0, 1fr) !important;
+  gap: 34px !important;
+  align-items: start !important;
+}
+
+.plans-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  margin: 0 !important;
+}
+
+.plan {
+  min-height: 238px !important;
+  padding: 16px 18px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07) !important;
+}
+
+.plan-popular {
+  transform: none !important;
+}
+
+.popular-pill {
+  top: -12px !important;
+  padding: 4px 18px !important;
+  font-size: 10px !important;
+}
+
+.plan-name {
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+}
+
+.plan-desc {
+  margin-top: 4px !important;
+  font-size: 10.5px !important;
+}
+
+.plan-price {
+  margin: 10px 0 !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+}
+
+.plan-price span {
+  font-size: 10px !important;
+}
+
+.plan-feats li {
+  margin: 5px 0 !important;
+  font-size: 10px !important;
+  line-height: 1.18 !important;
+}
+
+.plan-btn {
+  width: 100% !important;
+  height: 30px !important;
+  margin-top: 8px !important;
+  font-size: 10px !important;
+  border-radius: 4px !important;
+}
+
+.price-note {
+  margin-top: 8px !important;
+  text-align: center !important;
+  font-size: 10px !important;
+}
+
+.cta-sec {
+  padding: 16px 0 !important;
+  background: #ffffff !important;
+}
+
+.cta-inner {
+  min-height: 72px !important;
+  padding: 14px 28px !important;
+  border-radius: 8px !important;
+  background: linear-gradient(90deg, var(--navy), var(--navy-2) 55%, var(--royal)) !important;
+}
+
+.cta-left {
+  gap: 16px !important;
+}
+
+.cta-logo-img {
+  width: 58px !important;
+}
+
+.cta-h2 {
+  margin: 0 0 4px !important;
+  color: #ffffff !important;
+  font-size: 18px !important;
+  line-height: 1.15 !important;
+}
+
+.cta-p {
+  font-size: 11px !important;
+  line-height: 1.25 !important;
+}
+
+.cta-btns {
+  display: flex !important;
+  gap: 14px !important;
+}
+
+.cta-btns .btn-green,
+.cta-btns .btn-outline-white {
+  width: 142px !important;
+  height: 34px !important;
+  font-size: 10px !important;
+}
+
+.site-footer {
+  padding: 16px 0 12px !important;
+}
+
+.footer-top {
+  display: grid !important;
+  grid-template-columns: 260px minmax(0, 1fr) !important;
+  gap: 38px !important;
+}
+
+.footer-logo .logo-img {
+  width: 132px !important;
+}
+
+.footer-tagline {
+  max-width: 240px !important;
+  margin-top: 8px !important;
+  font-size: 10px !important;
+  line-height: 1.35 !important;
+}
+
+.footer-socials {
+  gap: 8px !important;
+  margin-top: 10px !important;
+}
+
+.soc-btn {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.footer-cols {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+}
+
+.fcol h5 {
+  margin-bottom: 7px !important;
+  font-size: 10px !important;
+}
+
+.fcol a {
+  margin: 4px 0 !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+}
+
+.footer-bottom {
+  margin-top: 14px !important;
+  padding-top: 10px !important;
+}
+
+.footer-bottom-row {
+  font-size: 10px !important;
+}
+
+@media (max-width: 1280px) {
+  .how-sec .container,
+  .ind-container,
+  .price-container,
+  .footer-top {
+    grid-template-columns: 245px minmax(0, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  .testi-sec .container {
+    grid-template-columns: 245px minmax(0, 1fr) 34px !important;
+  }
+}
