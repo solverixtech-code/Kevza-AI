@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KevzaAI - Campaign Operations Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="campaign-operations-dashboard.css">
+  <script type="module" src="campaign-operations-dashboard.js"></script>
+</head>
+<body>
+  <main class="admin-app campaign-shell">
+    <aside class="admin-sidebar campaign-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="admin-profile.html"><span>&#8962;</span>Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9783;</span>Customers <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9671;</span>Plans &amp; Subscriptions <b>&rsaquo;</b></a>
+        <a href="subscription-dashboard.html"><span>&#9673;</span>Subscription Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9635;</span>Billing &amp; Wallet <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9673;</span>Channels <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9636;</span>Templates</a>
+        <a class="is-active" href="campaign-operations-dashboard.html"><span>&#9992;</span>Campaign Operations</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9743;</span>Chatbots &amp; AI <b>&rsaquo;</b></a>
+        <a href="ai-operations-dashboard.html"><span>&#9672;</span>AI Operations</a>
+        <a href="automation-operations-dashboard.html"><span>&#8984;</span>Automation Operations</a>
+        <a href="messaging-dashboard.html"><span>&#9673;</span>Messaging Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>CRM &amp; Integrations <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Platform Usage</a>
+        <a href="cost-margin-dashboard.html"><span>&#9649;</span>Cost &amp; Margin</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Analytics &amp; Reports <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9825;</span>Customer Success <b>&rsaquo;</b></a>
+        <a href="support-dashboard.html"><span>&#9678;</span>Support Dashboard <b>&rsaquo;</b></a>
+        <a href="live-operations-center.html"><span>&#9636;</span>Live Operations Center</a>
+        <a href="security.html"><span>&#9672;</span>My Security</a>
+        <a href="login-history.html"><span>&#9672;</span>Login History</a>
+        <a href="active-sessions.html"><span>&#9635;</span>Active Sessions</a>
+        <a href="change-password.html"><span>&#11039;</span>Change Password</a>
+        <a href="notification-preferences.html"><span>&#9673;</span>Notification Preferences</a>
+        <a href="infrastructure-health.html"><span>&#9638;</span>System Operations</a>
+        <a href="compliance-dashboard.html"><span>&#9638;</span>Compliance Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9638;</span>System Health</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>Settings <b>&rsaquo;</b></a>
+      </nav>
+      <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+    </aside>
+
+    <section class="campaign-main">
+      <header class="campaign-topbar">
+        <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>Campaign Operations</strong></div>
+        <label class="admin-search"><span>&#9906;</span><input type="search" placeholder="Search anything..." aria-label="Search campaigns"><kbd>&#8984;K</kbd></label>
+        <button class="top-icon has-badge" data-panel="alerts" aria-label="Notifications">&#9827;<i>12</i></button>
+        <button class="top-icon has-badge" data-panel="campaigns" aria-label="Messages">&#9635;<i>3</i></button>
+        <button class="top-icon" data-panel="help" aria-label="Help">?</button>
+        <div class="top-user"><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </header>
+
+      <div class="campaign-page">
+        <section class="title-row"><div><h1>Campaign Operations Dashboard</h1><p>Real-time overview of all campaigns, performance, delivery and ROI across all channels.</p></div><div class="actions"><button>May 27, 2024 - Jun 02, 2024 <span>&#9635;</span></button><select><option>Compare: May 20 - May 26</option><option>No comparison</option></select></div></section>
+        <section class="metric-grid"><article class="card metric blue"><span>&#9635;</span><h2>Total Campaigns</h2><strong>156</strong><em>&uarr; 10.4%</em><p>vs May 20 - May 26</p><svg data-spark="blue"></svg></article><article class="card metric green"><span>&#8984;</span><h2>Active Campaigns</h2><strong>42</strong><em>&uarr; 10.5%</em><p>vs May 20 - May 26</p><svg data-spark="green"></svg></article><article class="card metric purple"><span>&#9636;</span><h2>Messages Sent</h2><strong>29.41M</strong><em>&uarr; 21.3%</em><p>vs May 20 - May 26</p><svg data-spark="purple"></svg></article><article class="card metric teal"><span>&#9673;</span><h2>Delivery Rate</h2><strong>91.7%</strong><em>&uarr; 2.7%</em><p>vs May 20 - May 26</p><svg data-spark="orange"></svg></article><article class="card metric cyan"><span>&#9783;</span><h2>Engagement Rate</h2><strong>18.6%</strong><em>&uarr; 3.9%</em><p>vs May 20 - May 26</p><svg data-spark="cyan"></svg></article><article class="card metric pink"><span>&#9635;</span><h2>Conversions</h2><strong>8,742</strong><em>&uarr; 16.2%</em><p>vs May 20 - May 26</p><svg data-spark="pink"></svg></article><article class="card metric green"><span>&#8730;</span><h2>ROI</h2><strong>326%</strong><em>&uarr; 14.6%</em><p>vs May 20 - May 26</p><svg data-spark="green"></svg></article></section>
+        <section class="grid overview-grid"><article class="card panel trend-panel"><div class="panel-heading"><h2>Campaign Performance Trend</h2><div class="legend"><span><i class="blue-dot"></i>Messages Sent</span><span><i class="green-dot"></i>Delivered</span><span><i class="purple-dot"></i>Engaged</span><span><i class="orange-dot"></i>Conversions</span></div><div class="range"><button class="active">7D</button><button>30D</button><button>90D</button></div></div><div data-chart="performance"></div></article><article class="card panel donut-panel"><h2>Channel Wise Performance</h2><div class="donut channel-donut"><strong>Messages Sent<span>29.41M</span></strong></div><ul class="breakdown"><li><i class="green-dot"></i>WhatsApp <b>16.42M (55.8%)</b></li><li><i class="blue-dot"></i>Email <b>7.32M (24.9%)</b></li><li><i class="orange-dot"></i>SMS <b>3.21M (10.9%)</b></li><li><i class="purple-dot"></i>In-App <b>1.85M (6.3%)</b></li><li><i class="cyan-dot"></i>Push Notification <b>0.61M (2.1%)</b></li></ul></article><article class="card panel status-panel"><div class="panel-heading"><h2>Campaign Status Overview</h2><button>View All</button></div><div class="status-bars"><p><span>Draft</span><i style="--w:18%;--c:#b7c0d4"></i><b>28 (17.9%)</b></p><p><span>Scheduled</span><i style="--w:23%;--c:#2466ff"></i><b>36 (23.1%)</b></p><p><span>Running</span><i style="--w:27%;--c:#09a978"></i><b>42 (26.9%)</b></p><p><span>Completed</span><i style="--w:24%;--c:#8b3cff"></i><b>38 (24.4%)</b></p><p><span>Paused</span><i style="--w:5%;--c:#ff8a00"></i><b>8 (5.1%)</b></p><p><span>Cancelled</span><i style="--w:3%;--c:#ff3f62"></i><b>4 (2.6%)</b></p></div></article></section>
+        <section class="grid middle-grid"><article class="card panel table-panel"><div class="panel-heading"><h2>Top Performing Campaigns</h2><button>View All</button></div><table><thead><tr><th>Campaign</th><th>Channel</th><th>Messages Sent</th><th>Engagement Rate</th><th>Conversions</th><th>ROI</th></tr></thead><tbody><tr><td>Summer Offer Blast</td><td>WhatsApp</td><td>3.25M</td><td>24.6%</td><td>1,256</td><td class="positive">412%</td></tr><tr><td>New Product Launch</td><td>Email</td><td>2.14M</td><td>18.9%</td><td>987</td><td class="positive">356%</td></tr><tr><td>Abandoned Cart - May</td><td>SMS</td><td>1.89M</td><td>21.3%</td><td>856</td><td class="positive">328%</td></tr><tr><td>Re-engagement - Inactive Users</td><td>WhatsApp</td><td>1.75M</td><td>17.2%</td><td>742</td><td class="positive">301%</td></tr><tr><td>Festival Sale Promo</td><td>In-App</td><td>1.45M</td><td>16.8%</td><td>631</td><td class="positive">247%</td></tr></tbody></table></article><article class="card panel funnel-panel"><div class="panel-heading"><h2>Campaign Funnel Overview</h2><button>View Report</button></div><div class="funnel"><span style="--w:100%;--c:#2466ff">Messages Sent <b>29,414,382</b></span><span style="--w:82%;--c:#09a978">Delivered <b>26,942,112 (91.7%)</b></span><span style="--w:64%;--c:#8b3cff">Unique Opens <b>8,234,156 (31.0%)</b></span><span style="--w:44%;--c:#ff8a00">Clicks <b>3,521,687 (13.1%)</b></span><span style="--w:27%;--c:#ff3f62">Conversions <b>8,742 (0.13%)</b></span></div></article><article class="card panel engagement"><div class="panel-heading"><h2>Engagement Overview</h2><button>View Report</button></div><div class="mini-stats"><span>Open Rate<strong>31.0%</strong><em>&uarr; 3.2%</em></span><span>Click Rate<strong>13.1%</strong><em>&uarr; 1.8%</em></span><span>Reply Rate<strong>2.8%</strong><em>&uarr; 0.6%</em></span><span>Unsubscribe Rate<strong>0.35%</strong><em class="bad">&uarr; 0.12%</em></span></div></article><article class="card panel roi"><div class="panel-heading"><h2>Cost &amp; ROI Overview</h2><button>View Report</button></div><div class="kv"><p>Total Campaign Cost <strong>&#8377;6,82,450</strong><em>&uarr; 12.7%</em></p><p>Cost per Message <strong>&#8377;0.023</strong><em>&darr; 4.1%</em></p><p>Cost per Conversion <strong>&#8377;78.12</strong><em>&darr; 6.3%</em></p></div><strong class="roi-value">326%</strong><em class="up">&uarr; 14.6%</em><svg data-spark="green"></svg></article></section>
+        <section class="grid lower-grid"><article class="card panel table-panel"><div class="panel-heading"><h2>Recent Campaigns</h2><button>View All</button></div><table><thead><tr><th>Campaign</th><th>Channel</th><th>Status</th><th>Start Time</th><th>Sent</th><th>Delivery Rate</th></tr></thead><tbody><tr><td>Weekly Newsletter - May 4</td><td>Email</td><td><span class="pill running">Running</span></td><td>Jun 02, 10:00 AM</td><td>652K</td><td class="positive">94.1%</td></tr><tr><td>Flash Sale - Electronics</td><td>WhatsApp</td><td><span class="pill running">Running</span></td><td>Jun 02, 09:15 AM</td><td>1.24M</td><td class="positive">93.2%</td></tr><tr><td>Product Update - v2.1</td><td>In-App</td><td><span class="pill scheduled">Scheduled</span></td><td>Jun 03, 11:00 AM</td><td>--</td><td>--</td></tr><tr><td>Customer Survey - Q2</td><td>SMS</td><td><span class="pill running">Running</span></td><td>Jun 01, 04:30 PM</td><td>412K</td><td class="positive">95.3%</td></tr><tr><td>Win Back - Inactive Users</td><td>WhatsApp</td><td><span class="pill completed">Completed</span></td><td>May 31, 01:00 PM</td><td>1.0M</td><td class="positive">92.6%</td></tr></tbody></table></article><article class="card panel table-panel"><div class="panel-heading"><h2>A/B Test Summary</h2><button>View All</button></div><table><thead><tr><th>Test Name</th><th>Variant</th><th>Engagement Rate</th><th>Winner</th></tr></thead><tbody><tr><td>Email Subject Lines</td><td>B</td><td>22.4%</td><td><span class="pill ok">A</span></td></tr><tr><td>WhatsApp Message</td><td>A</td><td>19.8%</td><td><span class="pill ok">A</span></td></tr><tr><td>CTA Button Color</td><td>B</td><td>15.6%</td><td><span class="pill ok">B</span></td></tr><tr><td>Send Time Optimization</td><td>A</td><td>17.2%</td><td><span class="pill ok">A</span></td></tr><tr><td>Landing Page Version</td><td>B</td><td>23.1%</td><td><span class="pill ok">B</span></td></tr></tbody></table></article><article class="card panel alert-list"><div class="panel-heading"><h2>Campaign Alerts</h2><button>View All</button></div><ul><li><span>&#9888;</span>Delivery rate dropped below 90% in SMS channel<time>5 min ago</time></li><li><span>&#9888;</span>High unsubscribe rate in "Weekly Newsletter - May 4"<time>15 min ago</time></li><li><span>&#9432;</span>Campaign "Flash Sale - Electronics" performance is high<time>30 min ago</time></li><li><span>&#9673;</span>A/B test "Email Subject Lines" completed<time>1 hr ago</time></li><li><span>&#9888;</span>Budget limit (80%) reached for "Summer Offer Blast"<time>2 hrs ago</time></li></ul></article></section>
+        <section class="grid bottom-grid"><article class="card panel channel-health"><div class="panel-heading"><h2>Channel Health</h2><button>View All</button></div><div><span>WhatsApp<em>Healthy</em><b>94.2%</b></span><span>Email<em>Healthy</em><b>95.1%</b></span><span>SMS<em class="warn">Warning</em><b>88.3%</b></span><span>In-App<em>Healthy</em><b>96.4%</b></span><span>Push<em>Healthy</em><b>97.6%</b></span></div></article><article class="card panel audience"><div class="panel-heading"><h2>Top Audience Segments</h2><button>View All</button></div><table><thead><tr><th>Segment</th><th>Size</th><th>Engagement Rate</th><th>Conversions</th></tr></thead><tbody><tr><td>Active Customers</td><td>1.24M</td><td>24.6%</td><td>2,142</td></tr><tr><td>High Value Customers</td><td>542K</td><td>27.3%</td><td>1,356</td></tr><tr><td>Inactive &gt; 90 Days</td><td>2.18M</td><td>12.4%</td><td>644</td></tr></tbody></table></article></section>
+      </div>
+    </section>
+  </main>
+  <dialog id="campaign-dialog"><h2></h2><div class="dialog-body"></div><form method="dialog"><button>Close</button></form></dialog>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
+
+
+
+

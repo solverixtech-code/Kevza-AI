@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KevzaAI - Compliance Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="compliance-dashboard.css">
+  <script type="module" src="compliance-dashboard.js"></script>
+</head>
+<body>
+  <main class="admin-app compliance-shell">
+    <aside class="admin-sidebar compliance-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="admin-profile.html"><span>&#8962;</span>Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9783;</span>Customers <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9671;</span>Plans &amp; Subscriptions <b>&rsaquo;</b></a>
+        <a href="subscription-dashboard.html"><span>&#9673;</span>Subscription Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9635;</span>Billing &amp; Wallet <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9673;</span>Channels <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9636;</span>Templates</a>
+        <a href="campaign-operations-dashboard.html"><span>&#9992;</span>Campaign Operations</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9743;</span>Chatbots &amp; AI <b>&rsaquo;</b></a>
+        <a href="ai-operations-dashboard.html"><span>&#9672;</span>AI Operations</a>
+        <a href="automation-operations-dashboard.html"><span>&#8984;</span>Automation Operations</a>
+        <a href="messaging-dashboard.html"><span>&#9673;</span>Messaging Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>CRM &amp; Integrations <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Platform Usage</a>
+        <a href="cost-margin-dashboard.html"><span>&#9649;</span>Cost &amp; Margin</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Analytics &amp; Reports <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9825;</span>Customer Success <b>&rsaquo;</b></a>
+        <a href="support-dashboard.html"><span>&#9678;</span>Support Dashboard <b>&rsaquo;</b></a>
+        <a href="live-operations-center.html"><span>&#9636;</span>Live Operations Center</a>
+        <a href="security.html"><span>&#9672;</span>My Security</a>
+        <a href="login-history.html"><span>&#9672;</span>Login History</a>
+        <a href="active-sessions.html"><span>&#9635;</span>Active Sessions</a>
+        <a href="change-password.html"><span>&#11039;</span>Change Password</a>
+        <a href="notification-preferences.html"><span>&#9673;</span>Notification Preferences</a>
+        <a href="infrastructure-health.html"><span>&#9638;</span>System Operations</a>
+        <a class="is-active" href="compliance-dashboard.html"><span>&#9638;</span>Compliance Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9638;</span>System Health</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>Settings <b>&rsaquo;</b></a>
+      </nav>
+      <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+    </aside>
+
+    <section class="compliance-main">
+      <header class="compliance-topbar">
+        <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>Compliance</strong></div>
+        <label class="admin-search"><span>&#9906;</span><input type="search" placeholder="Search anything..." aria-label="Search compliance"><kbd>&#8984;K</kbd></label>
+        <button class="top-icon has-badge" data-panel="alerts" aria-label="Notifications">&#9827;<i>12</i></button>
+        <button class="top-icon has-badge" data-panel="requirements" aria-label="Messages">&#9635;<i>3</i></button>
+        <button class="top-icon" data-panel="help" aria-label="Help">?</button>
+        <div class="top-user"><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </header>
+
+      <div class="compliance-page">
+        <section class="title-row">
+          <div><h1>Compliance Dashboard</h1><p>Monitor compliance posture, regulatory adherence, and policy effectiveness across the platform.</p></div>
+          <div class="actions"><button id="date-range">May 27, 2024 - Jun 02, 2024 <span>&#9635;</span></button><select aria-label="Comparison period"><option>Compare: May 20 - May 26</option><option>No comparison</option></select></div>
+        </section>
+
+        <section class="metric-grid" aria-label="Compliance summary">
+          <article class="card metric green"><span>&#9825;</span><h2>Overall Compliance Score</h2><strong>92%</strong><em>&uarr; 5%</em><p>vs May 20 - May 26</p><svg data-spark="green"></svg></article>
+          <article class="card metric blue"><span>&#9635;</span><h2>Policies</h2><strong>128</strong><em>&uarr; 3</em><p>vs May 20 - May 26</p><svg data-spark="purple"></svg></article>
+          <article class="card metric indigo"><span>&#9636;</span><h2>Compliance Requirements</h2><strong>356</strong><em>&uarr; 12</em><p>vs May 20 - May 26</p><svg data-spark="blue"></svg></article>
+          <article class="card metric red"><span>&#9888;</span><h2>Non-Compliant Items</h2><strong>14</strong><em>&darr; 6</em><p>vs May 20 - May 26</p><svg data-spark="red"></svg></article>
+          <article class="card metric orange"><span>&#9888;</span><h2>Open Risks</h2><strong>23</strong><em>&darr; 4</em><p>vs May 20 - May 26</p><svg data-spark="orange"></svg></article>
+          <article class="card metric pink"><span>&#9635;</span><h2>Overdue Actions</h2><strong>8</strong><em>&darr; 3</em><p>vs May 20 - May 26</p><svg data-spark="pink"></svg></article>
+        </section>
+
+        <section class="grid overview-grid">
+          <article class="card panel trend-panel"><div class="panel-heading"><h2>Compliance Score Trend</h2><div class="range"><button class="active">7D</button><button>30D</button><button>90D</button></div></div><div data-chart="score"></div></article>
+          <article class="card panel donut-panel"><h2>Compliance Score by Category</h2><div class="donut category-donut"><strong>92%<span>Overall Score</span></strong></div><ul class="breakdown"><li><i class="green-dot"></i>Data Privacy <b>96%</b></li><li><i class="blue-dot"></i>Information Security <b>94%</b></li><li><i class="purple-dot"></i>Access Control <b>91%</b></li><li><i class="orange-dot"></i>System &amp; Operations <b>89%</b></li><li><i class="red-dot"></i>Vendor Management <b>88%</b></li><li><i class="slate-dot"></i>Legal &amp; Regulatory <b>84%</b></li></ul></article>
+          <article class="card panel donut-panel"><h2>Compliance Status Overview</h2><div class="donut status-donut"><strong>356<span>Total Requirements</span></strong></div><ul class="breakdown"><li><i class="green-dot"></i>Compliant <b>318 (89.5%)</b></li><li><i class="orange-dot"></i>Partially Compliant <b>25 (7.0%)</b></li><li><i class="red-dot"></i>Non-Compliant <b>14 (3.9%)</b></li><li><i class="slate-dot"></i>Not Applicable <b>9 (2.6%)</b></li></ul></article>
+        </section>
+
+        <section class="grid table-grid">
+          <article class="card panel table-panel"><h2>Regulatory Frameworks</h2><table><thead><tr><th>Framework</th><th>Compliance Score</th><th>Status</th><th>Last Assessment</th><th>Next Assessment</th></tr></thead><tbody><tr><td>GDPR</td><td class="positive">95%</td><td><span class="pill ok">Compliant</span></td><td>May 15, 2024</td><td>Aug 15, 2024</td></tr><tr><td>SOC 2 Type II</td><td class="positive">93%</td><td><span class="pill ok">Compliant</span></td><td>Apr 30, 2024</td><td>Oct 30, 2024</td></tr><tr><td>ISO 27001</td><td class="positive">90%</td><td><span class="pill ok">Compliant</span></td><td>May 01, 2024</td><td>Nov 01, 2024</td></tr><tr><td>HIPAA</td><td class="warn">68%</td><td><span class="pill partial">Partially Compliant</span></td><td>May 10, 2024</td><td>Aug 10, 2024</td></tr><tr><td>PCI DSS</td><td class="warn">85%</td><td><span class="pill partial">Partially Compliant</span></td><td>Apr 20, 2024</td><td>Oct 20, 2024</td></tr><tr><td>CCPA</td><td class="positive">92%</td><td><span class="pill ok">Compliant</span></td><td>May 05, 2024</td><td>Nov 05, 2024</td></tr></tbody></table><a href="javascript:void(0)">View all frameworks &#8594;</a></article>
+          <article class="card panel table-panel"><div class="panel-heading"><h2>Compliance Issues</h2><button data-open="issues">View all</button></div><table><thead><tr><th>Issue</th><th>Severity</th><th>Status</th><th>Due Date</th></tr></thead><tbody><tr><td>Data retention policy not updated</td><td><span class="pill high">High</span></td><td><span class="pill open">Open</span></td><td>Jun 05, 2024</td></tr><tr><td>Third-party vendor risk review overdue</td><td><span class="pill high">High</span></td><td><span class="pill open">Open</span></td><td>Jun 03, 2024</td></tr><tr><td>MFA not enforced for some users</td><td><span class="pill medium">Medium</span></td><td><span class="pill progress">In Progress</span></td><td>Jun 08, 2024</td></tr><tr><td>Missing encryption for files at rest</td><td><span class="pill medium">Medium</span></td><td><span class="pill open">Open</span></td><td>Jun 10, 2024</td></tr><tr><td>Privacy policy review pending</td><td><span class="pill low">Low</span></td><td><span class="pill progress">In Progress</span></td><td>Jun 12, 2024</td></tr></tbody></table><a href="javascript:void(0)">View all issues &#8594;</a></article>
+          <article class="card panel table-panel"><div class="panel-heading"><h2>Upcoming Compliance Tasks</h2><button data-open="tasks">View all</button></div><table><thead><tr><th>Task</th><th>Type</th><th>Due Date</th><th>Owner</th></tr></thead><tbody><tr><td>SOC 2 quarterly review</td><td>Assessment</td><td>Jun 05, 2024</td><td>Rohit Sharma</td></tr><tr><td>Vulnerability scan &amp; remediation</td><td>Security</td><td>Jun 06, 2024</td><td>Neha Verma</td></tr><tr><td>Access review - Q2</td><td>Review</td><td>Jun 07, 2024</td><td>Aman Ansari</td></tr><tr><td>Vendor security assessment</td><td>Assessment</td><td>Jun 09, 2024</td><td>Karan Mehta</td></tr><tr><td>Employee training completion</td><td>Training</td><td>Jun 15, 2024</td><td>Priya Singh</td></tr></tbody></table></article>
+        </section>
+
+        <section class="grid bottom-grid">
+          <article class="card panel gauge-card"><h2>Policy Acknowledgement</h2><div class="mini-gauge" style="--v:78"><strong>78%<span>Acknowledged</span></strong></div><div class="kv"><p>Total Users <b>1,264</b></p><p>Acknowledged <b>987 (78%)</b></p><p>Pending <b>277 (22%)</b></p></div><a href="javascript:void(0)">View details &#8594;</a></article>
+          <article class="card panel gauge-card"><h2>Training &amp; Awareness</h2><div class="mini-gauge" style="--v:86"><strong>86%<span>Completion Rate</span></strong></div><div class="kv"><p>Completed <b>1,084 (86%)</b></p><p>In Progress <b>112 (9%)</b></p><p>Not Started <b>68 (5%)</b></p></div><a href="javascript:void(0)">View training report &#8594;</a></article>
+          <article class="card panel audit-card"><div class="panel-heading"><h2>Recent Audit Activities</h2><button data-open="audit">View all</button></div><ul><li><i></i>Internal Audit - Security Controls <span>May 28, 2024</span><b>Completed</b></li><li><i></i>GDPR Compliance Review <span>May 25, 2024</span><b>Completed</b></li><li><i></i>Access Control Audit <span>May 22, 2024</span><b class="pending">In Progress</b></li><li><i></i>Vendor Compliance Audit <span>May 20, 2024</span><b>Completed</b></li><li><i></i>Policy Compliance Check <span>May 18, 2024</span><b>Completed</b></li></ul></article>
+          <article class="card panel breach-card"><div class="panel-heading"><h2>Incidents &amp; Breaches</h2><button data-open="breaches">View all</button></div><ul><li><span>&#9888;</span>Security Incidents (This Week)<b>1</b><em>&darr; 2</em></li><li><span>&#9888;</span>Data Breaches (This Month)<b>0</b><em>-</em></li><li><span>&#9888;</span>High Severity Incidents (This Month)<b>1</b><em>&darr; 1</em></li><li><span>&#9888;</span>Open Incident Tickets<b>3</b><em>&darr; 2</em></li></ul></article>
+        </section>
+
+        <section class="quick-actions" aria-label="Quick actions">
+          <h2>Quick Actions</h2>
+          <button><span>&#9635;</span><strong>Create Policy</strong><em>Add new compliance policy</em></button>
+          <button><span>&#9636;</span><strong>Schedule Assessment</strong><em>Plan compliance assessment</em></button>
+          <button><span>&#9637;</span><strong>Create Risk</strong><em>Log a new compliance risk</em></button>
+          <button><span>&#9635;</span><strong>Upload Evidence</strong><em>Upload compliance documents</em></button>
+          <button><span>&#9636;</span><strong>Generate Report</strong><em>Create compliance report</em></button>
+          <button><span>&#9637;</span><strong>View Audit Logs</strong><em>View compliance audit logs</em></button>
+        </section>
+      </div>
+    </section>
+  </main>
+  <dialog id="compliance-dialog"><h2></h2><div class="dialog-body"></div><form method="dialog"><button>Close</button></form></dialog>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
+
+
+
+
+
+

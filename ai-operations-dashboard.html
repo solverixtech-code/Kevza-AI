@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KevzaAI - AI Operations Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="ai-operations-dashboard.css">
+  <script type="module" src="ai-operations-dashboard.js"></script>
+</head>
+<body>
+  <main class="admin-app ai-shell">
+    <aside class="admin-sidebar ai-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="admin-profile.html"><span>&#8962;</span>Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9783;</span>Customers <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9671;</span>Plans &amp; Subscriptions <b>&rsaquo;</b></a>
+        <a href="subscription-dashboard.html"><span>&#9673;</span>Subscription Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9635;</span>Billing &amp; Wallet <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9673;</span>Channels <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9636;</span>Templates</a>
+        <a href="campaign-operations-dashboard.html"><span>&#9992;</span>Campaign Operations</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9743;</span>Chatbots &amp; AI <b>&rsaquo;</b></a>
+        <a class="is-active" href="ai-operations-dashboard.html"><span>&#9672;</span>AI Operations</a>
+        <a href="automation-operations-dashboard.html"><span>&#8984;</span>Automation Operations</a>
+        <a href="messaging-dashboard.html"><span>&#9673;</span>Messaging Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>CRM &amp; Integrations <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Platform Usage</a>
+        <a href="cost-margin-dashboard.html"><span>&#9649;</span>Cost &amp; Margin</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Analytics &amp; Reports <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9825;</span>Customer Success <b>&rsaquo;</b></a>
+        <a href="support-dashboard.html"><span>&#9678;</span>Support Dashboard <b>&rsaquo;</b></a>
+        <a href="live-operations-center.html"><span>&#9636;</span>Live Operations Center</a>
+        <a href="security.html"><span>&#9672;</span>My Security</a>
+        <a href="login-history.html"><span>&#9672;</span>Login History</a>
+        <a href="active-sessions.html"><span>&#9635;</span>Active Sessions</a>
+        <a href="change-password.html"><span>&#11039;</span>Change Password</a>
+        <a href="notification-preferences.html"><span>&#9673;</span>Notification Preferences</a>
+        <a href="infrastructure-health.html"><span>&#9638;</span>System Operations</a>
+        <a href="compliance-dashboard.html"><span>&#9638;</span>Compliance Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9638;</span>System Health</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>Settings <b>&rsaquo;</b></a>
+      </nav>
+      <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+    </aside>
+
+    <section class="ai-main">
+      <header class="ai-topbar">
+        <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>AI Operations</strong></div>
+        <label class="admin-search"><span>&#9906;</span><input type="search" placeholder="Search anything..." aria-label="Search AI operations"><kbd>&#8984;K</kbd></label>
+        <button class="top-icon has-badge" data-panel="alerts" aria-label="Notifications">&#9827;<i>12</i></button>
+        <button class="top-icon has-badge" data-panel="models" aria-label="Messages">&#9635;<i>3</i></button>
+        <button class="top-icon" data-panel="help" aria-label="Help">?</button>
+        <div class="top-user"><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </header>
+
+      <div class="ai-page">
+        <section class="title-row"><div><h1>AI Operations Dashboard</h1><p>Monitor AI usage, performance, costs, agents, and automation tasks across the platform.</p></div><div class="actions"><button>May 27, 2024 - Jun 02, 2024 <span>&#9635;</span></button><select><option>Compare: May 20 - May 26</option><option>No comparison</option></select></div></section>
+        <section class="metric-grid"><article class="card metric purple"><span>&#9635;</span><h2>Total AI Requests</h2><strong>12.48M</strong><em>&uarr; 18.6%</em><p>vs May 20 - May 26</p><svg data-spark="purple"></svg></article><article class="card metric blue"><span>&#9819;</span><h2>Total Tokens Used</h2><strong>3.62B</strong><em>&uarr; 22.4%</em><p>vs May 20 - May 26</p><svg data-spark="blue"></svg></article><article class="card metric orange"><span>&#9636;</span><h2>Total AI Cost</h2><strong>&#8377;6,82,450</strong><em>&uarr; 15.7%</em><p>vs May 20 - May 26</p><svg data-spark="orange"></svg></article><article class="card metric cyan"><span>&#8984;</span><h2>Active AI Agents</h2><strong>48</strong><em>&uarr; 9.1%</em><p>vs May 20 - May 26</p><svg data-spark="cyan"></svg></article><article class="card metric red"><span>&#9813;</span><h2>Automations Executed</h2><strong>2,354</strong><em>&uarr; 20.3%</em><p>vs May 20 - May 26</p><svg data-spark="red"></svg></article><article class="card metric green"><span>&#9673;</span><h2>Success Rate</h2><strong>96.7%</strong><em>&uarr; 2.6%</em><p>vs May 20 - May 26</p><svg data-spark="green"></svg></article></section>
+        <section class="grid overview-grid"><article class="card panel trend-panel"><div class="panel-heading"><h2>AI Requests Trend</h2><div class="legend"><span><i class="purple-dot"></i>Total Requests</span><span><i class="green-dot"></i>Successful</span><span><i class="red-dot"></i>Failed</span></div><div class="range"><button class="active">7D</button><button>30D</button><button>90D</button></div></div><div data-chart="requests"></div></article><article class="card panel donut-panel"><h2>AI Model Usage Distribution</h2><div class="donut model-donut"><strong>3.62B<span>Total Tokens</span></strong></div><ul class="breakdown"><li><i class="green-dot"></i>GPT-4o <b>1.62B (44.8%)</b></li><li><i class="blue-dot"></i>GPT-4 Turbo <b>0.92B (25.4%)</b></li><li><i class="orange-dot"></i>Claude 3.5 Sonnet <b>0.58B (16.0%)</b></li><li><i class="cyan-dot"></i>Gemini 1.5 Pro <b>0.28B (7.7%)</b></li><li><i class="purple-dot"></i>Llama 3 70B <b>0.13B (3.6%)</b></li><li><i class="slate-dot"></i>Others <b>0.09B (2.5%)</b></li></ul></article><article class="card panel donut-panel"><h2>AI Cost Breakdown</h2><div class="donut cost-donut"><strong>&#8377;6,82,450<span>Total Cost</span></strong></div><ul class="breakdown"><li><i class="teal-dot"></i>Model Inference <b>&#8377;4,21,880 (61.8%)</b></li><li><i class="blue-dot"></i>Embedding <b>&#8377;94,450 (13.4%)</b></li><li><i class="orange-dot"></i>Vector DB <b>&#8377;65,320 (9.6%)</b></li><li><i class="purple-dot"></i>Storage <b>&#8377;42,300 (6.2%)</b></li><li><i class="slate-dot"></i>Automation Exec <b>&#8377;38,200 (5.6%)</b></li><li><i class="pink-dot"></i>Others <b>&#8377;23,300 (3.4%)</b></li></ul></article></section>
+        <section class="grid middle-grid"><article class="card panel table-panel"><h2>Top AI Agents by Usage</h2><table><thead><tr><th>Agent</th><th>Requests</th><th>Tokens Used</th><th>Success Rate</th></tr></thead><tbody><tr><td>Content Writer Agent</td><td>2.48M</td><td>812.6M</td><td class="positive">98.1%</td></tr><tr><td>Customer Support Agent</td><td>1.92M</td><td>652.3M</td><td class="positive">96.3%</td></tr><tr><td>Lead Qualification Agent</td><td>1.35M</td><td>412.7M</td><td class="positive">95.6%</td></tr><tr><td>Data Analyst Agent</td><td>1.08M</td><td>341.2M</td><td class="positive">97.4%</td></tr><tr><td>Marketing Copy Agent</td><td>0.86M</td><td>255.8M</td><td class="positive">94.8%</td></tr></tbody></table><a href="javascript:void(0)">View all agents &#8594;</a></article><article class="card panel table-panel"><h2>Recent AI Automations</h2><table><thead><tr><th>Automation</th><th>Agent</th><th>Executions</th><th>Status</th><th>Last Run</th></tr></thead><tbody><tr><td>New Lead Welcome Flow</td><td>Support Agent</td><td>482</td><td><span class="pill ok">Success</span></td><td>2 min ago</td></tr><tr><td>Invoice Follow-up</td><td>Follow-up Agent</td><td>316</td><td><span class="pill ok">Success</span></td><td>5 min ago</td></tr><tr><td>Review Request Flow</td><td>Review Agent</td><td>278</td><td><span class="pill ok">Success</span></td><td>12 min ago</td></tr><tr><td>Abandoned Cart Nudge</td><td>Sales Agent</td><td>194</td><td><span class="pill ok">Success</span></td><td>18 min ago</td></tr><tr><td>Ticket Auto Assignment</td><td>Ticket Agent</td><td>156</td><td><span class="pill ok">Success</span></td><td>25 min ago</td></tr></tbody></table><a href="javascript:void(0)">View all automations &#8594;</a></article><article class="card panel performance"><div class="panel-heading"><h2>AI Performance Overview</h2><button data-open="performance">View full report &#8594;</button></div><div class="kv"><p>Average Response Time <strong>1.42s</strong><em>&darr; 18.2%</em></p><p>First Token Latency <strong>0.76s</strong><em>&darr; 15.6%</em></p><p>Tokens per Request (Avg.) <strong>290</strong><em>&darr; 6.4%</em></p><p>Error Rate <strong>0.82%</strong><em class="bad">&uarr; 0.3%</em></p><p>Timeout Rate <strong>0.21%</strong><em>&darr; 0.1%</em></p><p>Rate Limit Hit <strong>1.12%</strong><em>&darr; 0.2%</em></p></div></article></section>
+        <section class="grid lower-grid"><article class="card panel"><div class="panel-heading"><h2>Token Usage by Day</h2><div class="range"><button class="active">7D</button></div></div><div data-chart="tokens"></div></article><article class="card panel bars"><h2>AI Usage by Feature</h2><p><span>AI Chat / Assistants</span><i style="--w:42.6%"></i><b>42.6%</b></p><p><span>Content Generation</span><i style="--w:24.8%"></i><b>24.8%</b></p><p><span>Data Analysis</span><i style="--w:15.1%"></i><b>15.1%</b></p><p><span>Summarization</span><i style="--w:8.7%"></i><b>8.7%</b></p><p><span>Translation</span><i style="--w:4.7%"></i><b>4.7%</b></p><p><span>Others</span><i style="--w:4.1%"></i><b>4.1%</b></p></article><article class="card panel bars cyan-bars"><h2>Prompt Categories</h2><p><span>Marketing</span><i style="--w:28.9%"></i><b>28.9%</b></p><p><span>Support</span><i style="--w:23.4%"></i><b>23.4%</b></p><p><span>Sales</span><i style="--w:18.2%"></i><b>18.2%</b></p><p><span>Analytics</span><i style="--w:14.6%"></i><b>14.6%</b></p><p><span>Operations</span><i style="--w:9.1%"></i><b>9.1%</b></p><p><span>Others</span><i style="--w:5.8%"></i><b>5.8%</b></p></article><article class="card panel alert-list"><div class="panel-heading"><h2>AI Alerts</h2><button data-open="alerts">View all &#8594;</button></div><ul><li><span>&#9888;</span>High error rate detected for GPT-4o model<time>3 min ago</time></li><li><span>&#9888;</span>Rate limit threshold reached for Claude 3.5<time>12 min ago</time></li><li><span>&#9888;</span>Unusual token usage spike in Data Analyst Agent<time>18 min ago</time></li><li><span>&#9888;</span>Automation failure in Review Request Flow<time>32 min ago</time></li><li><span>&#9432;</span>Vector DB storage usage above 80%<time>45 min ago</time></li></ul></article></section>
+        <section class="grid footer-grid"><article class="card panel model-status"><div class="panel-heading"><h2>Model Status</h2><button data-open="models">View all models &#8594;</button></div><div><span>GPT-4o<em>Operational</em><small>Latency: 1.12s &nbsp; Uptime: 99.9%</small></span><span>GPT-4 Turbo<em>Operational</em><small>Latency: 1.28s &nbsp; Uptime: 99.8%</small></span><span>Claude 3.5 Sonnet<em>Operational</em><small>Latency: 1.35s &nbsp; Uptime: 99.7%</small></span><span>Gemini 1.5 Pro<em>Operational</em><small>Latency: 1.48s &nbsp; Uptime: 99.6%</small></span><span>Llama 3 70B<em>Operational</em><small>Latency: 1.65s &nbsp; Uptime: 99.5%</small></span></div></article><article class="card panel quota"><div class="panel-heading"><h2>AI Credits / Quota</h2><button data-open="quota">View billing &#8594;</button></div><div class="kv"><p>Monthly Quota <strong>10B tokens</strong></p><p>Used <strong>3.62B tokens (36.2%)</strong></p><p>Resets on <strong>Jul 01, 2024</strong></p></div><i></i></article></section>
+      </div>
+    </section>
+  </main>
+  <dialog id="ai-dialog"><h2></h2><div class="dialog-body"></div><form method="dialog"><button>Close</button></form></dialog>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
+
+
+
+
+

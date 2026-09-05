@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KevzaAI - Subscription Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="subscription-dashboard.css">
+  <script type="module" src="subscription-dashboard.js"></script>
+</head>
+<body>
+  <main class="admin-app subscription-shell">
+    <aside class="admin-sidebar subscription-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="admin-profile.html"><span>&#8962;</span>Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9783;</span>Customers <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9671;</span>Plans &amp; Subscriptions <b>&rsaquo;</b></a>
+        <a class="is-active" href="subscription-dashboard.html"><span>&#9673;</span>Subscription Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9635;</span>Billing &amp; Wallet <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9673;</span>Channels <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9636;</span>Templates</a>
+        <a href="campaign-operations-dashboard.html"><span>&#9992;</span>Campaign Operations</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9743;</span>Chatbots &amp; AI <b>&rsaquo;</b></a>
+        <a href="ai-operations-dashboard.html"><span>&#9672;</span>AI Operations</a>
+        <a href="automation-operations-dashboard.html"><span>&#8984;</span>Automation Operations</a>
+        <a href="messaging-dashboard.html"><span>&#9673;</span>Messaging Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>CRM &amp; Integrations <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Platform Usage</a>
+        <a href="cost-margin-dashboard.html"><span>&#9649;</span>Cost &amp; Margin</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Analytics &amp; Reports <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9825;</span>Customer Success <b>&rsaquo;</b></a>
+        <a href="support-dashboard.html"><span>&#9678;</span>Support Dashboard <b>&rsaquo;</b></a>
+        <a href="live-operations-center.html"><span>&#9636;</span>Live Operations Center</a>
+        <a href="security.html"><span>&#9672;</span>My Security</a>
+        <a href="login-history.html"><span>&#9672;</span>Login History</a>
+        <a href="active-sessions.html"><span>&#9635;</span>Active Sessions</a>
+        <a href="change-password.html"><span>&#11039;</span>Change Password</a>
+        <a href="notification-preferences.html"><span>&#9673;</span>Notification Preferences</a>
+        <a href="infrastructure-health.html"><span>&#9638;</span>System Operations</a>
+        <a href="compliance-dashboard.html"><span>&#9638;</span>Compliance Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9638;</span>System Health</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>Settings <b>&rsaquo;</b></a>
+      </nav>
+      <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+    </aside>
+    <section class="subscription-main">
+      <header class="subscription-topbar">
+        <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>Subscription Dashboard</strong></div>
+        <label class="admin-search"><span>&#9906;</span><input type="search" placeholder="Search anything..." aria-label="Search subscriptions"><kbd>&#8984;K</kbd></label>
+        <button class="top-icon has-badge" data-panel="alerts" aria-label="Notifications">&#9827;<i>12</i></button>
+        <button class="top-icon has-badge" data-panel="messages" aria-label="Messages">&#9635;<i>3</i></button>
+        <button class="top-icon" data-panel="help" aria-label="Help">?</button>
+        <div class="top-user"><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </header>
+      <div class="subscription-page">
+        <section class="title-row"><div><h1>Subscription Dashboard</h1><p>Real-time overview of subscriptions, revenue, and plan performance.</p></div><div class="actions"><button>May 27, 2024 - Jun 02, 2024 <span>&#9635;</span></button><select><option>Compare: May 20 - May 26</option><option>No comparison</option></select></div></section>
+        <section class="metric-grid">
+          <article class="card metric blue"><span>&#9635;</span><h2>MRR (Monthly Recurring)</h2><strong>&#8377;48,65,231</strong><em>&uarr; 21.7%</em><p>vs May 20 - May 26</p><svg data-spark="blue"></svg></article>
+          <article class="card metric green"><span>&#9787;</span><h2>ARR (Annual Recurring)</h2><strong>&#8377;5,83,82,772</strong><em>&uarr; 23.9%</em><p>vs May 20 - May 26</p><svg data-spark="green"></svg></article>
+          <article class="card metric purple"><span>&#9672;</span><h2>Active Subscriptions</h2><strong>8,356</strong><em>&uarr; 14.3%</em><p>vs May 20 - May 26</p><svg data-spark="purple"></svg></article>
+          <article class="card metric orange"><span>&#9636;</span><h2>New Subscriptions</h2><strong>1,245</strong><em>&uarr; 22.1%</em><p>vs May 20 - May 26</p><svg data-spark="orange"></svg></article>
+          <article class="card metric red"><span>&#10006;</span><h2>Cancelled Subscriptions</h2><strong>228</strong><em class="bad">&darr; 8.7%</em><p>vs May 20 - May 26</p><svg data-spark="red"></svg></article>
+          <article class="card metric cyan"><span>&#8962;</span><h2>Churn Rate</h2><strong>1.82%</strong><em class="bad">&darr; 0.45%</em><p>vs May 20 - May 26</p><svg data-spark="cyan"></svg></article>
+        </section>
+        <section class="grid overview-grid">
+          <article class="card panel trend-panel"><div class="panel-heading"><h2>MRR Trend</h2><div class="range"><button class="active">7D</button><button>30D</button><button>90D</button><button>1Y</button></div></div><div data-chart="mrr"></div></article>
+          <article class="card panel donut-panel"><h2>MRR Breakdown by Plan</h2><div class="donut mrr-donut"><strong>&#8377;48,65,231<span>MRR</span></strong></div><ul class="breakdown"><li><i class="green-dot"></i>Professional <b>&#8377;21,32,450 (43.8%)</b></li><li><i class="blue-dot"></i>Business <b>&#8377;15,24,300 (31.3%)</b></li><li><i class="purple-dot"></i>Starter <b>&#8377;7,34,120 (15.1%)</b></li><li><i class="orange-dot"></i>Enterprise <b>&#8377;3,45,780 (7.1%)</b></li><li><i class="cyan-dot"></i>Agency <b>&#8377;1,28,581 (2.7%)</b></li></ul></article>
+          <article class="card panel status-panel"><div class="panel-heading"><h2>Subscription Status</h2><button>View All</button></div><ul><li><span>&#8962;</span><b>Active</b><strong>8,356 (89.2%)</strong></li><li><span>&#9635;</span><b>Trial</b><strong>864 (9.2%)</strong></li><li><span>&#9636;</span><b>Past Due</b><strong>156 (1.7%)</strong></li><li><span>&#9888;</span><b>Cancelled</b><strong>228 (2.4%)</strong></li><li><span>&#9635;</span><b>Expired</b><strong>98 (1.0%)</strong></li></ul></article>
+        </section>
+        <section class="grid middle-grid">
+          <article class="card panel table-panel"><div class="panel-heading"><h2>Top Performing Plans</h2><button>View All</button></div><table><thead><tr><th>Plan</th><th>Active Subs</th><th>MRR</th><th>Growth</th></tr></thead><tbody><tr><td>Professional</td><td>4,125</td><td>&#8377;21,32,450</td><td class="positive">&uarr; 28.6%</td></tr><tr><td>Business</td><td>2,845</td><td>&#8377;15,24,300</td><td class="positive">&uarr; 19.4%</td></tr><tr><td>Starter</td><td>975</td><td>&#8377;7,34,120</td><td class="positive">&uarr; 12.7%</td></tr><tr><td>Enterprise</td><td>312</td><td>&#8377;3,45,780</td><td class="positive">&uarr; 22.1%</td></tr><tr><td>Agency</td><td>99</td><td>&#8377;1,28,581</td><td class="positive">&uarr; 18.3%</td></tr></tbody></table></article>
+          <article class="card panel list-panel"><div class="panel-heading"><h2>Recurring Revenue Overview</h2><button>View Report</button></div><dl><div><dt>Today</dt><dd>&#8377;1,62,540</dd></div><div><dt>This Week</dt><dd>&#8377;13,78,845 <em>&uarr; 18.6%</em></dd></div><div><dt>This Month</dt><dd>&#8377;48,65,231 <em>&uarr; 21.7%</em></dd></div><div><dt>Last Month</dt><dd>&#8377;39,95,120</dd></div><div><dt>This Year (YTD)</dt><dd>&#8377;2,45,12,670 <em>&uarr; 25.4%</em></dd></div><div><dt>Last Year (YTD)</dt><dd>&#8377;1,95,34,221</dd></div></dl></article>
+          <article class="card panel retention-panel"><div class="panel-heading"><h2>Revenue Retention</h2><button>View Report</button></div><dl><div><dt>Gross Revenue Retention</dt><dd>92.6% <em>&uarr; 1.8%</em></dd></div><div><dt>Net Revenue Retention</dt><dd>108.3% <em>&uarr; 3.4%</em></dd></div><div><dt>Logo Retention</dt><dd>93.2% <em>&uarr; 1.2%</em></dd></div><div><dt>Expansion Revenue</dt><dd>&#8377;6,72,340 <em>&uarr; 12.6%</em></dd></div><div><dt>Contraction Revenue</dt><dd>-&#8377;1,24,500 <em class="bad">&darr; 12.4%</em></dd></div><div class="highlight"><dt>Net MRR Growth</dt><dd>&#8377;8,70,111 <em>&uarr; 21.7%</em></dd></div></dl></article>
+        </section>
+        <section class="grid lower-grid">
+          <article class="card panel table-panel"><div class="panel-heading"><h2>Recent Subscriptions</h2><button>View All</button></div><table><thead><tr><th>Customer</th><th>Plan</th><th>Amount</th><th>Cycle</th><th>Subscribed On</th><th>Status</th></tr></thead><tbody><tr><td>TechNova Solutions</td><td>Professional</td><td>&#8377;4,999</td><td>Monthly</td><td>Jun 02, 2024</td><td><span class="pill green-pill">Active</span></td></tr><tr><td>Bright Digital Agency</td><td>Business</td><td>&#8377;2,999</td><td>Monthly</td><td>Jun 02, 2024</td><td><span class="pill green-pill">Active</span></td></tr><tr><td>GreenLeaf Marketing</td><td>Starter</td><td>&#8377;999</td><td>Monthly</td><td>Jun 01, 2024</td><td><span class="pill green-pill">Active</span></td></tr><tr><td>PixelCraft Studios</td><td>Business</td><td>&#8377;2,999</td><td>Monthly</td><td>Jun 01, 2024</td><td><span class="pill blue-pill">Trial</span></td></tr><tr><td>Acme Digital Pvt. Ltd.</td><td>Professional</td><td>&#8377;4,999</td><td>Monthly</td><td>May 31, 2024</td><td><span class="pill green-pill">Active</span></td></tr></tbody></table></article>
+          <article class="card panel table-panel"><div class="panel-heading"><h2>Recent Cancellations</h2><button>View All</button></div><table><thead><tr><th>Customer</th><th>Plan</th><th>Cancelled On</th><th>Reason</th></tr></thead><tbody><tr><td>Global IT Partners</td><td>Business</td><td>Jun 02, 2024</td><td>Too Expensive</td></tr><tr><td>Design Studio Pro</td><td>Starter</td><td>Jun 01, 2024</td><td>Not Using</td></tr><tr><td>Webify Technologies</td><td>Professional</td><td>May 31, 2024</td><td>Switched Platform</td></tr><tr><td>Alpha Innovations</td><td>Business</td><td>May 31, 2024</td><td>Missing Features</td></tr><tr><td>Creative Minds Co.</td><td>Starter</td><td>May 30, 2024</td><td>No Longer Needed</td></tr></tbody></table></article>
+          <article class="card panel table-panel"><div class="panel-heading"><h2>Upcoming Renewals</h2><button>View All</button></div><table><thead><tr><th>Customer</th><th>Plan</th><th>Renewal Date</th><th>Amount</th><th></th></tr></thead><tbody><tr><td>InnovateX Solutions</td><td>Professional</td><td>Jun 05, 2024</td><td>&#8377;4,999</td><td><span class="pill cyan-pill">3 days</span></td></tr><tr><td>NextGen Ventures</td><td>Business</td><td>Jun 07, 2024</td><td>&#8377;2,999</td><td><span class="pill cyan-pill">5 days</span></td></tr><tr><td>DataBridge Corp.</td><td>Starter</td><td>Jun 08, 2024</td><td>&#8377;999</td><td><span class="pill orange-pill">6 days</span></td></tr><tr><td>SoftTech Innovations</td><td>Professional</td><td>Jun 10, 2024</td><td>&#8377;4,999</td><td><span class="pill red-pill">8 days</span></td></tr><tr><td>Bright Digital Agency</td><td>Business</td><td>Jun 11, 2024</td><td>&#8377;2,999</td><td><span class="pill orange-pill">9 days</span></td></tr></tbody></table></article>
+        </section>
+      </div>
+    </section>
+  </main>
+  <dialog id="subscription-dialog"><h2></h2><div class="dialog-body"></div><form method="dialog"><button>Close</button></form></dialog>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
+

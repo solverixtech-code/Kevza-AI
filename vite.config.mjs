@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+﻿import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -19,10 +19,24 @@ export default defineConfig({
         infrastructureHealth: resolve(import.meta.dirname, 'infrastructure-health.html'),
         supportDashboard: resolve(import.meta.dirname, 'support-dashboard.html'),
         costMarginDashboard: resolve(import.meta.dirname, 'cost-margin-dashboard.html'),
+        liveOperationsCenter: resolve(import.meta.dirname, 'live-operations-center.html'),
+        complianceDashboard: resolve(import.meta.dirname, 'compliance-dashboard.html'),
+        aiOperationsDashboard: resolve(import.meta.dirname, 'ai-operations-dashboard.html'),
+        campaignOperationsDashboard: resolve(import.meta.dirname, 'campaign-operations-dashboard.html'),
+        automationOperationsDashboard: resolve(import.meta.dirname, 'automation-operations-dashboard.html'),
+        messagingDashboard: resolve(import.meta.dirname, 'messaging-dashboard.html'),
+        subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
       },
     },
   },
 });
+
+
+
+
+
+
+
 
 
 

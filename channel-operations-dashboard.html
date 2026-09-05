@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KevzaAI - Channel Operations Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="channel-operations-dashboard.css">
+  <script type="module" src="channel-operations-dashboard.js"></script>
+</head>
+<body>
+  <main class="admin-app channel-shell">
+    <aside class="admin-sidebar channel-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Admin navigation"></nav>
+      <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+    </aside>
+    <section class="channel-main">
+      <header class="channel-topbar">
+        <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>Channel Operations</strong></div>
+        <label class="admin-search"><span>&#9906;</span><input type="search" placeholder="Search anything..." aria-label="Search channel operations"><kbd>&#8984;K</kbd></label>
+        <button class="top-icon has-badge" data-panel="alerts" aria-label="Notifications">&#9827;<i>12</i></button>
+        <button class="top-icon has-badge" data-panel="messages" aria-label="Messages">&#9635;<i>3</i></button>
+        <button class="top-icon" data-panel="help" aria-label="Help">?</button>
+        <div class="top-user"><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </header>
+      <div class="channel-page">
+        <section class="title-row"><div><h1>Channel Operations Dashboard</h1><p>Real-time overview of channel performance, delivery health, traffic, and engagement across all communication channels.</p></div><div class="actions"><button>May 27, 2024 - Jun 02, 2024 <span>&#9635;</span></button><select><option>Compare: May 20 - May 26</option><option>No comparison</option></select></div></section>
+        <section class="metric-grid">
+          <article class="card metric blue"><span>&#9638;</span><h2>Total Channels</h2><strong>8</strong><em>&uarr; 2</em><p>vs May 20 - May 26</p><svg data-spark="blue"></svg></article>
+          <article class="card metric green"><span>&#9673;</span><h2>Active Channels</h2><strong>7</strong><em>&uarr; 12.4%</em><p>Healthy and routing</p><svg data-spark="green"></svg></article>
+          <article class="card metric purple"><span>&#9993;</span><h2>Messages Routed</h2><strong>29.41M</strong><em>&uarr; 20.1%</em><p>Across all channels</p><svg data-spark="purple"></svg></article>
+          <article class="card metric orange"><span>&#10003;</span><h2>Delivery Rate</h2><strong>91.7%</strong><em>&uarr; 2.7%</em><p>Average delivery</p><svg data-spark="orange"></svg></article>
+          <article class="card metric cyan"><span>&#8377;</span><h2>Channel Revenue</h2><strong>&#8377;18.56L</strong><em>&uarr; 16.8%</em><p>Attributed revenue</p><svg data-spark="cyan"></svg></article>
+          <article class="card metric red"><span>&#9888;</span><h2>Route Failures</h2><strong>2.66M</strong><em class="bad">&darr; 8.7%</em><p>Failures reduced</p><svg data-spark="red"></svg></article>
+        </section>
+        <section class="grid overview-grid">
+          <article class="card panel trend-panel"><div class="panel-heading"><h2>Channel Traffic Trend</h2><div class="legend"><span><i class="green-dot"></i>WhatsApp</span><span><i class="blue-dot"></i>Email</span><span><i class="orange-dot"></i>SMS</span><span><i class="purple-dot"></i>In-App</span></div><div class="range"><button class="active">7D</button><button>30D</button><button>90D</button></div></div><div data-chart="traffic"></div></article>
+          <article class="card panel donut-panel"><h2>Channel Mix</h2><div class="donut mix-donut"><strong>29.41M<span>Total Traffic</span></strong></div><ul class="breakdown"><li><i class="green-dot"></i>WhatsApp <b>18.64M (63.3%)</b></li><li><i class="blue-dot"></i>Email <b>7.32M (24.9%)</b></li><li><i class="orange-dot"></i>SMS <b>2.91M (9.9%)</b></li><li><i class="purple-dot"></i>In-App <b>563.2K (1.9%)</b></li></ul></article>
+          <article class="card panel status-panel"><div class="panel-heading"><h2>Channel Status Overview</h2><button>View All</button></div><ul><li><span class="ok-dot"></span><b>Operational</b><strong>7 channels</strong></li><li><span class="warn-dot"></span><b>Warning</b><strong>1 channel</strong></li><li><span class="bad-dot"></span><b>Paused</b><strong>0 channels</strong></li><li><span class="ok-dot"></span><b>SLA Met</b><strong>94.2%</strong></li><li><span class="ok-dot"></span><b>Avg Latency</b><strong>128 ms</strong></li></ul></article>
+        </section>
+        <section class="grid middle-grid">
+          <article class="card panel table-panel"><div class="panel-heading"><h2>Top Channels by Volume</h2><button>View All</button></div><table><thead><tr><th>Channel</th><th>Messages</th><th>Active Users</th><th>Delivery</th><th>Status</th></tr></thead><tbody><tr><td>WhatsApp</td><td>18.64M</td><td>856K</td><td class="positive">94.0%</td><td><span class="pill green-pill">Healthy</span></td></tr><tr><td>Email</td><td>7.32M</td><td>214K</td><td class="positive">87.6%</td><td><span class="pill green-pill">Healthy</span></td></tr><tr><td>SMS</td><td>2.91M</td><td>98K</td><td class="warn">82.8%</td><td><span class="pill orange-pill">Watch</span></td></tr><tr><td>In-App</td><td>563.2K</td><td>63K</td><td class="positive">91.4%</td><td><span class="pill green-pill">Healthy</span></td></tr><tr><td>Voice</td><td>118K</td><td>17K</td><td class="positive">96.2%</td><td><span class="pill green-pill">Healthy</span></td></tr></tbody></table></article>
+          <article class="card panel performance-panel"><div class="panel-heading"><h2>Delivery Performance</h2><button>View Report</button></div><div class="bars"><p><span>WhatsApp</span><i style="--w:94%;--c:#09a978"></i><b>94.0%</b></p><p><span>Email</span><i style="--w:87.6%;--c:#2466ff"></i><b>87.6%</b></p><p><span>SMS</span><i style="--w:82.8%;--c:#ff8a00"></i><b>82.8%</b></p><p><span>In-App</span><i style="--w:91.4%;--c:#8b3cff"></i><b>91.4%</b></p><p><span>Voice</span><i style="--w:96.2%;--c:#13b8d2"></i><b>96.2%</b></p></div></article>
+          <article class="card panel alert-list"><div class="panel-heading"><h2>Channel Alerts</h2><button>View All</button></div><ul><li><span>&#9888;</span>SMS delivery rate dropped below 85%<time>5 min ago</time></li><li><span>&#9432;</span>Email bounce rate elevated<time>18 min ago</time></li><li><span>&#9673;</span>WhatsApp throughput normalized<time>41 min ago</time></li><li><span>&#9673;</span>In-App delivery recovered<time>1 hour ago</time></li><li><span>&#9888;</span>Voice route retries above baseline<time>2 hours ago</time></li></ul></article>
+        </section>
+        <section class="grid lower-grid">
+          <article class="card panel table-panel"><div class="panel-heading"><h2>Channel Integrations</h2><button>View All</button></div><table><thead><tr><th>Provider</th><th>Channel</th><th>Uptime</th><th>Latency</th><th>Status</th></tr></thead><tbody><tr><td>Meta Cloud API</td><td>WhatsApp</td><td>99.98%</td><td>92 ms</td><td><span class="pill green-pill">Connected</span></td></tr><tr><td>SendGrid</td><td>Email</td><td>99.95%</td><td>118 ms</td><td><span class="pill green-pill">Connected</span></td></tr><tr><td>Twilio</td><td>SMS</td><td>99.42%</td><td>164 ms</td><td><span class="pill orange-pill">Degraded</span></td></tr><tr><td>Firebase</td><td>In-App</td><td>99.99%</td><td>48 ms</td><td><span class="pill green-pill">Connected</span></td></tr><tr><td>Exotel</td><td>Voice</td><td>99.90%</td><td>136 ms</td><td><span class="pill green-pill">Connected</span></td></tr></tbody></table></article>
+          <article class="card panel event-panel"><div class="panel-heading"><h2>Recent Channel Events</h2><button>View All</button></div><ul><li><i class="green-dot"></i><b>WhatsApp campaign route optimized</b><span>12 minutes ago · Routing Engine</span></li><li><i class="orange-dot"></i><b>SMS provider failover triggered</b><span>24 minutes ago · Twilio India</span></li><li><i class="blue-dot"></i><b>Email domain reputation checked</b><span>38 minutes ago · SendGrid</span></li><li><i class="purple-dot"></i><b>In-App push batch completed</b><span>1 hour ago · Firebase</span></li></ul></article>
+          <article class="card panel health-panel"><div class="panel-heading"><h2>Channel Health Score</h2><button>Live</button></div><div class="gauge"><strong>92<span>/100</span></strong><em>Excellent</em></div><div class="mini-stats"><span>Reach<strong>96</strong></span><span>Speed<strong>89</strong></span><span>Quality<strong>94</strong></span><span>Cost<strong>87</strong></span></div></article>
+        </section>
+        <section class="quick-actions"><h2>Quick Actions</h2><div><button><span>&#9993;</span><b>Send Broadcast</b><small>Launch cross-channel message</small></button><button><span>&#9636;</span><b>Create Channel Rule</b><small>Configure routing logic</small></button><button><span>&#9888;</span><b>Review Failures</b><small>Inspect failed deliveries</small></button><button><span>&#9635;</span><b>Provider Settings</b><small>Manage integrations</small></button></div></section>
+      </div>
+    </section>
+  </main>
+  <dialog id="channel-dialog"><h2></h2><div class="dialog-body"></div><form method="dialog"><button>Close</button></form></dialog>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
