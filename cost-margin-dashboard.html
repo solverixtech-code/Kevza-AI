@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KevzaAI - Cost &amp; Margin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="cost-margin-dashboard.css">
+  <script type="module" src="cost-margin-dashboard.js"></script>
+</head>
+<body>
+  <main class="admin-app cost-shell">
+    <aside class="admin-sidebar cost-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="admin-profile.html"><span>&#8962;</span>Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9783;</span>Customers <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9671;</span>Plans &amp; Subscriptions <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9635;</span>Billing &amp; Wallet <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9673;</span>Channels <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9636;</span>Templates</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9992;</span>Campaigns</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9743;</span>Chatbots &amp; AI <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#8984;</span>Automations <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>CRM &amp; Integrations <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Platform Usage</a>
+        <a class="is-active" href="cost-margin-dashboard.html"><span>&#9649;</span>Cost &amp; Margin</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Analytics &amp; Reports <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9825;</span>Customer Success <b>&rsaquo;</b></a>
+        <a href="support-dashboard.html"><span>&#9678;</span>Support Dashboard <b>&rsaquo;</b></a>
+        <a href="security.html"><span>&#9672;</span>My Security</a>
+        <a href="login-history.html"><span>&#9672;</span>Login History</a>
+        <a href="active-sessions.html"><span>&#9635;</span>Active Sessions</a>
+        <a href="change-password.html"><span>&#11039;</span>Change Password</a>
+        <a href="notification-preferences.html"><span>&#9673;</span>Notification Preferences</a>
+        <a href="infrastructure-health.html"><span>&#9638;</span>System Operations</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9638;</span>Compliance Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9638;</span>System Health</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>Settings <b>&rsaquo;</b></a>
+      </nav>
+      <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+    </aside>
+
+    <section class="cost-main">
+      <header class="cost-topbar">
+        <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>Cost &amp; Margin</strong></div>
+        <label class="admin-search"><span>&#9906;</span><input type="search" placeholder="Search anything..." aria-label="Search cost tables"><kbd>&#8984;K</kbd></label>
+        <button class="top-icon has-badge" data-panel="variance" aria-label="Notifications">&#9827;<i>12</i></button>
+        <button class="top-icon has-badge" data-panel="plans" aria-label="Messages">&#9635;<i>3</i></button>
+        <button class="top-icon" data-panel="help" aria-label="Help">?</button>
+        <div class="top-user"><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </header>
+
+      <div class="cost-page">
+        <section class="title-row">
+          <div><h1>Cost &amp; Margin Dashboard</h1><p>Track platform profitability, cost efficiency, and margin performance in real-time.</p></div>
+          <div class="actions"><button id="date-range">May 27, 2024 - Jun 02, 2024 <span>&#9635;</span></button><select aria-label="Comparison period"><option>Compare: May 20 - May 26</option><option>No comparison</option></select></div>
+        </section>
+
+        <section class="metric-grid" aria-label="Cost and margin summary">
+          <article class="card metric blue"><span>&#8377;</span><h2>Total Revenue</h2><strong>&#8377;1,24,85,230</strong><em>&#8593; 18.4%</em><p>vs May 20 - May 26</p><svg data-spark="blue"></svg></article>
+          <article class="card metric purple"><span>&#9635;</span><h2>Total Cost</h2><strong>&#8377;72,48,610</strong><em>&#8593; 14.7%</em><p>vs May 20 - May 26</p><svg data-spark="purple"></svg></article>
+          <article class="card metric green"><span>&#9827;</span><h2>Gross Profit</h2><strong>&#8377;52,36,620</strong><em>&#8593; 24.1%</em><p>vs May 20 - May 26</p><svg data-spark="green"></svg></article>
+          <article class="card metric cyan"><span>%</span><h2>Gross Margin</h2><strong>41.9%</strong><em>&#8593; 2.3pp</em><p>vs May 20 - May 26</p><svg data-spark="cyan"></svg></article>
+          <article class="card metric orange"><span>&#9636;</span><h2>Net Profit</h2><strong>&#8377;32,57,410</strong><em>&#8593; 26.8%</em><p>vs May 20 - May 26</p><svg data-spark="orange"></svg></article>
+          <article class="card metric pink"><span>&#9825;</span><h2>Net Margin</h2><strong>26.1%</strong><em>&#8593; 3.1pp</em><p>vs May 20 - May 26</p><svg data-spark="pink"></svg></article>
+        </section>
+
+        <section class="grid overview-grid">
+          <article class="card panel revenue-panel"><div class="panel-heading"><h2>Revenue, Cost &amp; Profit Trend</h2><div class="legend"><span><i class="blue-dot"></i>Revenue</span><span><i class="purple-dot"></i>Total Cost</span><span><i class="green-dot"></i>Gross Profit</span><span><i class="orange-dot"></i>Net Profit</span></div><div class="range"><button class="active">7D</button><button>30D</button><button>90D</button></div></div><div data-chart="revenue"></div></article>
+          <article class="card panel donut-panel"><h2>Cost Breakdown</h2><div class="donut cost-donut"><strong>&#8377;72,48,610<span>Total Cost</span></strong></div><ul class="breakdown"><li><i class="green-dot"></i>Messaging (API)<b>&#8377;30,48,120 (42.0%)</b></li><li><i class="blue-dot"></i>Infrastructure<b>&#8377;15,62,430 (21.6%)</b></li><li><i class="orange-dot"></i>AI &amp; Automation<b>&#8377;10,72,580 (14.8%)</b></li><li><i class="purple-dot"></i>Third Party Services<b>&#8377;6,28,240 (8.7%)</b></li><li><i class="cyan-dot"></i>Payment Gateway<b>&#8377;4,65,210 (6.4%)</b></li><li><i class="slate-dot"></i>Others<b>&#8377;5,06,030 (7.0%)</b></li></ul></article>
+          <article class="card panel donut-panel"><h2>Revenue by Channel</h2><div class="donut revenue-donut"><strong>&#8377;1,24,85,230<span>Total Revenue</span></strong></div><ul class="breakdown"><li><i class="green-dot"></i>WhatsApp<b>&#8377;54,12,680 (43.4%)</b></li><li><i class="blue-dot"></i>Email<b>&#8377;32,18,450 (25.8%)</b></li><li><i class="orange-dot"></i>SMS<b>&#8377;18,56,320 (14.9%)</b></li><li><i class="purple-dot"></i>Web Chat<b>&#8377;12,66,740 (10.1%)</b></li><li><i class="cyan-dot"></i>Voice<b>&#8377;7,82,540 (6.3%)</b></li><li><i class="slate-dot"></i>Others<b>&#8377;4,95,000 (4.0%)</b></li></ul></article>
+          <article class="card panel margin-panel"><h2>Margin Overview</h2><svg class="gauge" viewBox="0 0 220 135"><path d="M30 112 A80 80 0 0 1 190 112" pathLength="100"></path><path d="M30 112 A80 80 0 0 1 190 112" pathLength="100"></path><text x="110" y="88">41.9%</text><text x="110" y="107">Gross Margin</text></svg><p>&#8593; 2.3pp vs May 20 - May 26</p><div><span>Net Margin<strong>26.1%</strong><em>&#8593; 3.1pp</em></span><span>ROAS<strong>3.62x</strong><em>&#8593; 0.48x</em></span></div></article>
+        </section>
+
+        <section class="grid table-grid">
+          <article class="card panel table-panel" id="categories"><h2>Cost by Category</h2><table><thead><tr><th>Category</th><th>This Period</th><th>% of Cost</th><th>vs Last Period</th><th>Change</th></tr></thead><tbody><tr><td>Messaging (API)</td><td>30,48,120</td><td>42.0%</td><td>26,95,410</td><td class="positive">+13.1%</td></tr><tr><td>Infrastructure (Cloud)</td><td>15,62,430</td><td>21.6%</td><td>13,48,250</td><td class="positive">+15.9%</td></tr><tr><td>AI &amp; Automation</td><td>10,72,580</td><td>14.8%</td><td>9,21,440</td><td class="positive">+16.4%</td></tr><tr><td>Third Party Services</td><td>6,28,240</td><td>8.7%</td><td>5,40,210</td><td class="positive">+16.3%</td></tr><tr><td>Payment Gateway</td><td>4,65,210</td><td>6.0%</td><td>3,80,120</td><td class="positive">+14.7%</td></tr><tr><td>Others</td><td>5,06,030</td><td>7.0%</td><td>4,69,890</td><td class="positive">+8.3%</td></tr><tr><td>Total</td><td>72,48,610</td><td>100%</td><td>63,55,340</td><td class="positive">+14.0%</td></tr></tbody></table></article>
+          <article class="card panel table-panel" id="profit"><h2>Top Profit by Plan</h2><table><thead><tr><th>Plan</th><th>Revenue</th><th>Total Cost</th><th>Gross Profit</th><th>Margin</th></tr></thead><tbody><tr><td>Business Pro</td><td>45,12,450</td><td>22,65,340</td><td>22,47,110</td><td class="positive">49.8%</td></tr><tr><td>Business</td><td>32,18,760</td><td>17,28,950</td><td>14,89,810</td><td class="positive">46.3%</td></tr><tr><td>Growth</td><td>21,45,300</td><td>11,62,430</td><td>9,82,870</td><td class="positive">45.8%</td></tr><tr><td>Starter</td><td>11,28,900</td><td>6,11,320</td><td>5,17,580</td><td class="positive">45.9%</td></tr><tr><td>Free / Trial</td><td>2,79,820</td><td>1,80,570</td><td>99,250</td><td class="positive">35.5%</td></tr><tr><td>Total</td><td>1,24,85,230</td><td>59,48,610</td><td>65,36,620</td><td class="positive">41.9%</td></tr></tbody></table></article>
+          <article class="card panel table-panel" id="plans"><h2>Top Cost by Plan</h2><table><thead><tr><th>Plan</th><th>Total Cost</th><th>% of Cost</th><th>vs Last Period</th><th>Change</th></tr></thead><tbody><tr><td>Business Pro</td><td>22,65,340</td><td>31.2%</td><td>19,45,210</td><td class="positive">+16.5%</td></tr><tr><td>Business</td><td>17,28,950</td><td>23.8%</td><td>14,82,120</td><td class="positive">+16.6%</td></tr><tr><td>Growth</td><td>11,62,430</td><td>16.0%</td><td>9,88,560</td><td class="positive">+17.6%</td></tr><tr><td>Starter</td><td>6,11,320</td><td>8.4%</td><td>5,17,430</td><td class="positive">+18.1%</td></tr><tr><td>Free / Trial</td><td>1,80,570</td><td>2.5%</td><td>1,24,020</td><td class="positive">+45.6%</td></tr><tr><td>Total</td><td>59,48,610</td><td>81.9%</td><td>50,57,340</td><td class="positive">+17.6%</td></tr></tbody></table></article>
+        </section>
+
+        <section class="grid insight-grid">
+          <article class="card panel mini-panel"><h2>Cost per 1,000 Messages</h2><div class="mini-list"><p><span class="whatsapp">&#9673;</span>WhatsApp <b>&#8377;0.87</b><em>+4.8%</em></p><p><span class="sms">&#9635;</span>SMS <b>&#8377;0.32</b><em>+2.1%</em></p><p><span class="email">&#9636;</span>Email <b>&#8377;0.08</b><em>+1.1%</em></p><p><span class="voice">&#9825;</span>Voice <b>&#8377;1.25</b><em>+3.2%</em></p></div></article>
+          <article class="card panel mini-panel"><h2>Unit Economics</h2><div class="kv"><p>ARPU <strong>&#8377;512.34</strong><em>+12.6%</em></p><p>Cost per Active User <strong>&#8377;23.68</strong><em>+6.4%</em></p><p>LTV <strong>&#8377;2,184.60</strong><em>+18.2%</em></p><p>LTV / CAC <strong>3.68x</strong><em>+0.42x</em></p></div></article>
+          <article class="card panel mini-panel"><h2>Monthly P&amp;L Snapshot</h2><div class="kv"><p>Total Revenue <strong>&#8377;1,24,85,230</strong><em>+18.4%</em></p><p>Total Cost <strong>&#8377;72,48,610</strong><em>+14.7%</em></p><p>Gross Profit <strong>&#8377;52,36,620</strong><em>+24.1%</em></p><p>Operating Expense <strong>&#8377;19,79,210</strong><em>+11.2%</em></p><p>Net Profit <strong>&#8377;32,57,410</strong><em>+26.8%</em></p></div></article>
+          <article class="card panel mini-panel" id="variance"><div class="panel-heading"><h2>Cost Variance</h2><button data-open="variance">View Report</button></div><div class="kv"><p>Budgeted Cost <strong>&#8377;68,50,000</strong></p><p>Actual Cost <strong>&#8377;72,48,610</strong></p><p>Variance <strong>&#8377;3,98,610</strong></p><p>Variance % <strong>5.81%</strong></p><p>Status <strong class="negative">Over Budget</strong></p></div></article>
+          <article class="card panel budget-panel"><h2>Budget Utilization</h2><svg class="gauge" viewBox="0 0 220 135"><path d="M30 112 A80 80 0 0 1 190 112" pathLength="100"></path><path d="M30 112 A80 80 0 0 1 190 112" pathLength="100"></path><text x="110" y="88">84.2%</text><text x="110" y="107">&#8377;72,48,610 of &#8377;86,10,000</text></svg><button data-open="budget">View Budget Details</button></article>
+        </section>
+
+        <section class="quick-actions" aria-label="Quick actions">
+          <h2>Quick Actions</h2>
+          <button><span>&#9635;</span><strong>Cost Report</strong><em>Detailed cost breakdown</em></button>
+          <button><span>&#9636;</span><strong>Margin Report</strong><em>Plan &amp; channel margins</em></button>
+          <button><span>&#9637;</span><strong>P&amp;L Statement</strong><em>Profit &amp; loss statement</em></button>
+          <button><span>&#9719;</span><strong>Cost Forecast</strong><em>Predict future cost</em></button>
+          <button><span>&#9881;</span><strong>Budget Settings</strong><em>Configure cost budgets</em></button>
+          <button><span>&#8681;</span><strong>Export Data</strong><em>Download reports</em></button>
+        </section>
+      </div>
+    </section>
+  </main>
+  <dialog id="cost-dialog"><h2></h2><div class="dialog-body"></div><form method="dialog"><button>Close</button></form></dialog>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

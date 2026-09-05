@@ -1,0 +1,114 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KevzaAI - Support Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="support-dashboard.css">
+  <script type="module" src="support-dashboard.js"></script>
+</head>
+<body>
+  <main class="admin-app support-shell">
+    <aside class="admin-sidebar support-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="admin-profile.html"><span>&#8962;</span>Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9783;</span>Customers <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9671;</span>Plans &amp; Subscriptions <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9635;</span>Billing &amp; Wallet <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9673;</span>Channels <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9636;</span>Templates</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9992;</span>Campaigns</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9743;</span>Chatbots &amp; AI <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#8984;</span>Automations <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>CRM &amp; Integrations <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Platform Usage</a>
+        <a href="cost-margin-dashboard.html"><span>&#9649;</span>Cost &amp; Margin</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Analytics &amp; Reports <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9825;</span>Customer Success <b>&rsaquo;</b></a>
+        <a class="is-active" href="support-dashboard.html"><span>&#9678;</span>Support Dashboard <b>&rsaquo;</b></a>
+        <a href="security.html"><span>&#9672;</span>My Security</a>
+        <a href="login-history.html"><span>&#9672;</span>Login History</a>
+        <a href="active-sessions.html"><span>&#9635;</span>Active Sessions</a>
+        <a href="change-password.html"><span>&#11039;</span>Change Password</a>
+        <a href="notification-preferences.html"><span>&#9673;</span>Notification Preferences</a>
+        <a href="infrastructure-health.html"><span>&#9638;</span>System Operations</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9638;</span>Compliance Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9638;</span>System Health</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>Settings <b>&rsaquo;</b></a>
+      </nav>
+      <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+    </aside>
+    <section class="support-main">
+      <header class="support-topbar">
+        <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>Support</strong></div>
+        <label class="admin-search"><span>&#9906;</span><input type="search" placeholder="Search anything..." aria-label="Search tickets"><kbd>&#8984;K</kbd></label>
+        <button class="top-icon has-badge" data-panel="alerts" aria-label="Notifications">&#9827;<i>12</i></button>
+        <button class="top-icon has-badge" data-panel="tickets" aria-label="Messages">&#9635;<i>3</i></button>
+        <button class="top-icon" data-panel="help" aria-label="Help">?</button>
+        <div class="top-user"><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </header>
+
+      <div class="support-page">
+        <section class="support-title-row">
+          <div>
+            <h1>Support Dashboard</h1>
+            <p>Real-time overview of support operations and customer satisfaction.</p>
+          </div>
+          <div class="support-actions">
+            <button class="date-control" id="date-range">May 27, 2024 - Jun 02, 2024 <span>&#9635;</span></button>
+            <select class="date-control" aria-label="Comparison period"><option>Compare: May 20 - May 26</option><option>No comparison</option></select>
+          </div>
+        </section>
+
+        <section class="support-metrics" aria-label="Support summary">
+          <article class="support-card metric blue"><span class="metric-icon">&#9635;</span><div><h2>Total Tickets</h2><strong>5,248</strong><em class="up">&#8593; 12.6%</em><p>vs May 20 - May 26</p></div><svg data-spark="blue"></svg></article>
+          <article class="support-card metric red"><span class="metric-icon">&#9635;</span><div><h2>Open Tickets</h2><strong>1,287</strong><em class="up">&#8593; 8.3%</em><p>vs May 20 - May 26</p></div><svg data-spark="green"></svg></article>
+          <article class="support-card metric purple"><span class="metric-icon">&#9636;</span><div><h2>Resolved Tickets</h2><strong>3,614</strong><em class="up">&#8593; 18.7%</em><p>vs May 20 - May 26</p></div><svg data-spark="purple"></svg></article>
+          <article class="support-card metric orange"><span class="metric-icon">&#9719;</span><div><h2>Avg. Response Time</h2><strong>1h 24m</strong><em class="up">&#8595; 14.2%</em><p>vs May 20 - May 26</p></div><svg data-spark="orange"></svg></article>
+          <article class="support-card metric cyan"><span class="metric-icon">&#9825;</span><div><h2>Avg. Resolution Time</h2><strong>12h 36m</strong><em class="up">&#8595; 10.5%</em><p>vs May 20 - May 26</p></div><svg data-spark="cyan"></svg></article>
+          <article class="support-card metric pink"><span class="metric-icon">&#9786;</span><div><h2>Customer Satisfaction (CSAT)</h2><strong>4.6 / 5</strong><em class="up">&#8593; 0.2</em><p>vs May 20 - May 26</p></div><svg data-spark="pink"></svg></article>
+          <article class="support-card metric green"><span class="metric-icon">&#9825;</span><div><h2>First Contact Resolution</h2><strong>72.8%</strong><em class="up">&#8593; 6.1%</em><p>vs May 20 - May 26</p></div><svg data-spark="green"></svg></article>
+        </section>
+
+        <section class="dashboard-grid overview-grid">
+          <article class="support-card panel wide"><div class="panel-heading"><h2>Tickets Overview</h2><div class="legend"><span><i class="blue-dot"></i>Total Tickets</span><span><i class="green-dot"></i>Resolved</span><span><i class="orange-dot"></i>Open</span></div><div class="range"><button class="active">7D</button><button>30D</button><button>90D</button></div></div><div data-chart="tickets"></div></article>
+          <article class="support-card panel donut-panel"><h2>Tickets by Status</h2><div class="donut status-donut"><strong>5,248<span>Total Tickets</span></strong></div><ul class="breakdown"><li><i class="blue-dot"></i>Open <b>1,287 (24.5%)</b></li><li><i class="cyan-dot"></i>In Progress <b>1,356 (25.8%)</b></li><li><i class="purple-dot"></i>Pending Customer <b>892 (17.0%)</b></li><li><i class="orange-dot"></i>On Hold <b>458 (8.7%)</b></li><li><i class="red-dot"></i>Resolved <b>3,614 (68.9%)</b></li><li><i class="slate-dot"></i>Closed <b>622 (11.9%)</b></li></ul></article>
+          <article class="support-card panel donut-panel"><h2>Tickets by Priority</h2><div class="donut priority-donut"><strong>5,248<span>Total Tickets</span></strong></div><ul class="breakdown"><li><i class="red-dot"></i>Urgent <b>532 (10.1%)</b></li><li><i class="orange-dot"></i>High <b>1,684 (32.1%)</b></li><li><i class="blue-dot"></i>Medium <b>2,143 (40.8%)</b></li><li><i class="green-dot"></i>Low <b>909 (17.3%)</b></li></ul></article>
+          <article class="support-card panel sla-panel" id="sla"><h2>SLA Performance</h2><svg class="sla-gauge" viewBox="0 0 220 135" aria-label="SLA performance 91.2 percent"><path d="M30 112 A80 80 0 0 1 190 112" pathLength="100"></path><path d="M30 112 A80 80 0 0 1 190 112" pathLength="100"></path><text x="110" y="88">91.2%</text><text x="110" y="108">SLA Met</text></svg><p class="delta up">&#8593; 6.4% vs May 20 - May 26</p><div class="sla-stats"><span>Met<strong>4,786</strong><em>91.2%</em></span><span>Breached<strong>462</strong><em>8.8%</em></span><span>At Risk<strong>156</strong><em>3.0%</em></span></div></article>
+        </section>
+
+        <section class="dashboard-grid tables-grid">
+          <article class="support-card panel table-panel" id="tickets"><div class="panel-heading"><h2>Recent Tickets</h2><button data-open="tickets">View all</button></div><table><thead><tr><th>ID</th><th>Subject</th><th>Customer</th><th>Priority</th><th>Status</th><th>Agent</th><th>Updated</th></tr></thead><tbody><tr><td>TK-6321</td><td>WhatsApp API not connecting</td><td>TechNova Solutions</td><td><span class="pill high">High</span></td><td><span class="pill open">Open</span></td><td>Neha Verma</td><td>5m ago</td></tr><tr><td>TK-6320</td><td>Campaign messages failed</td><td>Bright Edu Pvt Ltd</td><td><span class="pill urgent">Urgent</span></td><td><span class="pill progress">In Progress</span></td><td>Karan Mehta</td><td>18m ago</td></tr><tr><td>TK-6319</td><td>Billing discrepancy in invoice</td><td>Acme Corp</td><td><span class="pill medium">Medium</span></td><td><span class="pill pending">Pending Customer</span></td><td>Sana Khan</td><td>32m ago</td></tr><tr><td>TK-6318</td><td>AI bot not responding</td><td>EduSmart Global</td><td><span class="pill high">High</span></td><td><span class="pill open">Open</span></td><td>Rahul Singh</td><td>45m ago</td></tr><tr><td>TK-6317</td><td>Need help with automation</td><td>GrowthMakers Inc</td><td><span class="pill medium">Medium</span></td><td><span class="pill progress">In Progress</span></td><td>Priya Singh</td><td>1h ago</td></tr><tr><td>TK-6316</td><td>Webhook integration issue</td><td>HealthFirst Clinics</td><td><span class="pill medium">Medium</span></td><td><span class="pill hold">On Hold</span></td><td>Amit Patel</td><td>2h ago</td></tr><tr><td>TK-6315</td><td>Can&apos;t add team member</td><td>DesignHub Studio</td><td><span class="pill low">Low</span></td><td><span class="pill resolved">Resolved</span></td><td>Neha Verma</td><td>3h ago</td></tr><tr><td>TK-6314</td><td>Export report not working</td><td>ShopSmart Retail</td><td><span class="pill low">Low</span></td><td><span class="pill resolved">Resolved</span></td><td>Karan Mehta</td><td>4h ago</td></tr></tbody></table></article>
+          <article class="support-card panel" id="categories"><div class="panel-heading"><h2>Top Issue Categories</h2><button data-open="categories">View all</button></div><div class="category-list"><div><span>API &amp; Integration</span><i style="--w:83%;--c:#2466ff"></i><b>1,148</b><em>21.9%</em></div><div><span>Billing &amp; Payments</span><i style="--w:65%;--c:#12a56f"></i><b>986</b><em>18.8%</em></div><div><span>Account &amp; Access</span><i style="--w:56%;--c:#9b47ff"></i><b>842</b><em>16.0%</em></div><div><span>Campaigns &amp; Messaging</span><i style="--w:50%;--c:#ff8a00"></i><b>756</b><em>14.4%</em></div><div><span>Automation</span><i style="--w:40%;--c:#16b9d5"></i><b>612</b><em>11.6%</em></div><div><span>Reports &amp; Analytics</span><i style="--w:31%;--c:#ec4899"></i><b>398</b><em>7.6%</em></div><div><span>Others</span><i style="--w:25%;--c:#64748b"></i><b>406</b><em>7.8%</em></div></div></article>
+          <article class="support-card panel" id="team"><h2>Top Agents by Tickets Resolved</h2><div class="agent-list"><div><span class="face">NV</span><strong>Neha Verma</strong><b>542</b><em>4.8 &#9733;</em></div><div><span class="face">KM</span><strong>Karan Mehta</strong><b>498</b><em>4.7 &#9733;</em></div><div><span class="face">RS</span><strong>Rahul Singh</strong><b>472</b><em>4.6 &#9733;</em></div><div><span class="face">SK</span><strong>Sana Khan</strong><b>439</b><em>4.6 &#9733;</em></div><div><span class="face">AP</span><strong>Amit Patel</strong><b>415</b><em>4.5 &#9733;</em></div></div></article>
+        </section>
+
+        <section class="dashboard-grid bottom-grid">
+          <article class="support-card panel" id="satisfaction"><div class="panel-heading"><h2>Customer Satisfaction Trend</h2><div class="range"><button class="active">7D</button><button>30D</button><button>90D</button></div></div><div data-chart="csat"></div></article>
+          <article class="support-card panel"><div class="panel-heading"><h2>Response Time Trend (Avg.)</h2><div class="range"><button class="active">7D</button><button>30D</button><button>90D</button></div></div><div data-chart="response"></div></article>
+          <article class="support-card panel channel-panel"><h2>Channel Breakdown</h2><div class="donut channel-donut"><strong>5,248<span>Total Tickets</span></strong></div><ul class="breakdown"><li><i class="blue-dot"></i>In-App <b>2,348 (44.7%)</b></li><li><i class="green-dot"></i>Email <b>1,562 (29.8%)</b></li><li><i class="orange-dot"></i>WhatsApp <b>876 (16.7%)</b></li><li><i class="purple-dot"></i>Phone <b>284 (5.4%)</b></li><li><i class="pink-dot"></i>Other <b>178 (3.4%)</b></li></ul></article>
+          <article class="support-card panel knowledge-panel" id="knowledge"><h2>Knowledge Base</h2><div class="knowledge-grid"><div><span>&#9635;</span><p>Articles</p><strong>1,248</strong><em>&#8593; 12</em></div><div><span>&#9672;</span><p>Views (This Week)</p><strong>18,642</strong><em>&#8593; 16.6%</em></div><div><span>&#9825;</span><p>Helpful Votes</p><strong>7,842</strong><em>&#8593; 16.3%</em></div><div><span>&#9906;</span><p>Searches (This Week)</p><strong>3,256</strong><em>&#8593; 14.8%</em></div></div><button data-open="knowledge">View Knowledge Base</button></article>
+        </section>
+
+        <section class="quick-actions" aria-label="Quick actions" id="canned">
+          <h2>Quick Actions</h2>
+          <button><span>&#9635;</span><strong>Create Ticket</strong><em>Manually create a support ticket</em></button>
+          <button><span>&#9636;</span><strong>Canned Responses</strong><em>Manage canned responses</em></button>
+          <button><span>&#9635;</span><strong>Knowledge Base</strong><em>Manage help articles</em></button>
+          <button><span>&#9719;</span><strong>SLA Settings</strong><em>Configure SLA policies</em></button>
+          <button><span>&#9637;</span><strong>Support Reports</strong><em>View detailed reports</em></button>
+          <button><span>&#9635;</span><strong>Provide Announcement</strong><em>Send announcement to customers</em></button>
+        </section>
+      </div>
+    </section>
+  </main>
+  <dialog id="support-dialog"><h2></h2><div class="dialog-body"></div><form method="dialog"><button>Close</button></form></dialog>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

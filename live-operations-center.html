@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KevzaAI - Live Operations Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="live-operations-center.css">
+  <script type="module" src="live-operations-center.js"></script>
+</head>
+<body>
+  <main class="admin-app live-shell">
+    <aside class="admin-sidebar live-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="admin-profile.html"><span>&#8962;</span>Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9783;</span>Customers <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9671;</span>Plans &amp; Subscriptions <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9635;</span>Billing &amp; Wallet <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9673;</span>Channels <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9636;</span>Templates</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9992;</span>Campaigns</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9743;</span>Chatbots &amp; AI <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#8984;</span>Automations <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>CRM &amp; Integrations <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Platform Usage</a>
+        <a href="cost-margin-dashboard.html"><span>&#9649;</span>Cost &amp; Margin</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Analytics &amp; Reports <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9825;</span>Customer Success <b>&rsaquo;</b></a>
+        <a href="support-dashboard.html"><span>&#9678;</span>Support Dashboard <b>&rsaquo;</b></a>
+        <a class="is-active" href="live-operations-center.html"><span>&#9636;</span>Live Operations Center</a>
+        <a href="security.html"><span>&#9672;</span>My Security</a>
+        <a href="login-history.html"><span>&#9672;</span>Login History</a>
+        <a href="active-sessions.html"><span>&#9635;</span>Active Sessions</a>
+        <a href="change-password.html"><span>&#11039;</span>Change Password</a>
+        <a href="notification-preferences.html"><span>&#9673;</span>Notification Preferences</a>
+        <a href="infrastructure-health.html"><span>&#9638;</span>System Operations</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9638;</span>Compliance Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9638;</span>System Health</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>Settings <b>&rsaquo;</b></a>
+      </nav>
+      <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+    </aside>
+
+    <section class="live-main">
+      <header class="live-topbar">
+        <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>Live Operations Center</strong></div>
+        <label class="admin-search"><span>&#9906;</span><input type="search" placeholder="Search anything..." aria-label="Search live operations"><kbd>&#8984;K</kbd></label>
+        <button class="top-icon has-badge" data-panel="alerts" aria-label="Notifications">&#9827;<i>12</i></button>
+        <button class="top-icon has-badge" data-panel="broadcast" aria-label="Messages">&#9635;<i>3</i></button>
+        <button class="top-icon" data-panel="help" aria-label="Help">?</button>
+        <div class="top-user"><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </header>
+
+      <div class="live-page">
+        <section class="live-title-row">
+          <div><h1>Live Operations Center <span>LIVE</span></h1><p>Real-time monitoring of platform operations, activities, and key metrics.</p></div>
+          <div class="live-actions"><button>&#9635; Wallboard View</button><button>&#9881; Settings</button><button>May 27, 2024</button><button>03:24:16 PM IST</button><button>&#8635;</button><em>All Systems Operational</em></div>
+        </section>
+
+        <section class="live-metrics" aria-label="Live operations summary">
+          <article class="live-card metric green"><span>&#9819;</span><h2>Users Online</h2><strong>1,248</strong><p>Live right now</p><svg data-spark="green"></svg></article>
+          <article class="live-card metric blue"><span>&#9636;</span><h2>Messages / min</h2><strong>8,642</strong><p>&uarr; 12.4% vs 5 min ago</p><svg data-spark="blue"></svg></article>
+          <article class="live-card metric purple"><span>&#9636;</span><h2>API Requests / min</h2><strong>24,598</strong><p>&uarr; 8.7% vs 5 min ago</p><svg data-spark="purple"></svg></article>
+          <article class="live-card metric orange"><span>&#9783;</span><h2>Active Conversations</h2><strong>3,256</strong><p>&uarr; 15.3% vs 5 min ago</p><svg data-spark="orange"></svg></article>
+          <article class="live-card metric cyan"><span>&#9636;</span><h2>Running Automations</h2><strong>1,182</strong><p>&uarr; 9.1% vs 5 min ago</p><svg data-spark="cyan"></svg></article>
+          <article class="live-card metric red"><span>&#9635;</span><h2>Open Tickets</h2><strong>1,287</strong><p>&darr; 6.2% vs 5 min ago</p><svg data-spark="red"></svg></article>
+        </section>
+
+        <section class="live-grid top-grid">
+          <article class="live-card map-panel"><div class="panel-heading"><h2>Live User Map</h2><em>Real-time</em></div><div class="map"><span class="pulse p1">215</span><span class="pulse p2">123</span><span class="pulse p3">632</span><span class="pulse p4">83</span><span class="pulse p5">95</span><span class="pulse p6">94</span><button>+</button><button>-</button><button>&#9974;</button><div><i></i><b></b><i></i></div></div></article>
+          <article class="live-card feed-panel"><div class="panel-heading"><h2>Live Activity Feed</h2><em>Live</em></div><ul class="feed"><li><i>1</i><strong>Message sent to 91 recipients</strong><span>Campaign: Summer Offer</span><time>03:24:10 PM</time></li><li><i>2</i><strong>New user registered</strong><span>Company: TechNova Solutions</span><time>03:24:03 PM</time></li><li><i>3</i><strong>Automation executed</strong><span>Workflow: Lead Nurture</span><time>03:24:07 PM</time></li><li><i>4</i><strong>New subscription created</strong><span>Plan: Professional (Monthly)</span><time>03:24:05 PM</time></li><li><i>5</i><strong>API request spike detected</strong><span>Endpoint: /api/messages</span><time>03:24:02 PM</time></li></ul><a href="javascript:void(0)" data-panel="activity">View all live activity &#8594;</a></article>
+          <article class="live-card status-panel"><div class="panel-heading"><h2>Live System Status</h2><em>All Healthy</em></div><ul><li><b></b>Web Server Cluster<span>Healthy</span><time>24 ms</time></li><li><b></b>API Gateway<span>Healthy</span><time>28 ms</time></li><li><b></b>Database (Primary)<span>Healthy</span><time>12 ms</time></li><li><b></b>Redis Cache<span>Healthy</span><time>5 ms</time></li><li><b></b>Queue Workers<span>Healthy</span><time>18 ms</time></li><li><b></b>Storage Service<span>Healthy</span><time>32 ms</time></li><li><b></b>Message Queue<span>Healthy</span><time>9 ms</time></li></ul><a href="infrastructure-health.html">View all services &#8594;</a></article>
+          <article class="live-card alerts-panel"><div class="panel-heading"><h2>Live Alerts</h2><strong>3 Active</strong></div><ul><li><span class="high">High</span><strong>Message queue lag high</strong><em>Queue: notifications</em><time>03:23 PM</time></li><li><span class="medium">Medium</span><strong>API response time elevated</strong><em>Endpoint: /api/campaigns</em><time>03:22 PM</time></li><li><span class="low">Low</span><strong>High memory usage</strong><em>Server: worker-02</em><time>03:21 PM</time></li></ul><a href="javascript:void(0)" data-panel="alerts">View all alerts &#8594;</a></article>
+        </section>
+
+        <section class="live-grid mid-grid">
+          <article class="live-card channels"><div class="panel-heading"><h2>Top Live Channels</h2><em>Live</em></div><table><thead><tr><th>Channel</th><th>Messages / min</th><th>Active Users</th><th>Delivery Rate</th></tr></thead><tbody><tr><td><i class="whatsapp"></i>WhatsApp</td><td>5,642</td><td>856</td><td><b style="--w:92%"></b></td></tr><tr><td><i class="email"></i>Email</td><td>1,842</td><td>214</td><td><b style="--w:86%"></b></td></tr><tr><td><i class="sms"></i>SMS</td><td>786</td><td>98</td><td><b style="--w:79%"></b></td></tr><tr><td><i class="web"></i>Web Chat</td><td>254</td><td>63</td><td><b style="--w:83%"></b></td></tr><tr><td><i class="voice"></i>Voice</td><td>118</td><td>17</td><td><b style="--w:72%"></b></td></tr></tbody></table></article>
+          <article class="live-card flow"><div class="panel-heading"><h2>Message Flow (Last 5 Minutes)</h2><em>Live</em></div><div class="legend"><span class="blue-dot"></span>Sent <span class="green-dot"></span>Delivered <span class="red-dot"></span>Failed</div><div data-chart="message-flow"></div></article>
+          <article class="live-card automation"><div class="panel-heading"><h2>Automation Runs (Live)</h2><em>Live</em></div><div class="donut"><strong>642<span>Total Runs</span></strong></div><ul><li><i class="green-dot"></i>Successful <b>512 (79.8%)</b></li><li><i class="blue-dot"></i>In Progress <b>68 (10.6%)</b></li><li><i class="orange-dot"></i>Failed <b>34 (5.3%)</b></li><li><i class="red-dot"></i>Cancelled <b>28 (4.3%)</b></li></ul><a href="javascript:void(0)">View all automations &#8594;</a></article>
+          <article class="live-card conversations"><div class="panel-heading"><h2>Recent Conversations (Live)</h2><em>Live</em></div><ul><li><span>SS</span><strong>Sarah Johnson</strong><p>Need help with integration</p><time>03:24 PM</time><b>Open</b></li><li><span>AP</span><strong>Amit Patel</strong><p>Pricing details please</p><time>03:24 PM</time><b>Open</b></li><li><span>TS</span><strong>TechNova Solutions</strong><p>Demo request received</p><time>03:23 PM</time><b>In Progress</b></li><li><span>NV</span><strong>Neha Verma</strong><p>Support for campaign issue</p><time>03:23 PM</time><b>Open</b></li><li><span>BF</span><strong>Bright Future Pvt Ltd</strong><p>Thanks, issue resolved</p><time>03:22 PM</time><b>Resolved</b></li></ul><a href="javascript:void(0)">View all conversations &#8594;</a></article>
+        </section>
+
+        <section class="ticker"><strong>LIVE STREAM</strong><span>03:24 PM New user from Mumbai, India</span><span>03:24 PM 24 messages sent via WhatsApp</span><span>03:24 PM Automation "Welcome Series" executed</span><span>03:24 PM Payment received from TechNova Solutions</span><span>03:23 PM New ticket #TKT-5821 created</span><button>Pause</button><button>Full Screen</button></section>
+
+        <section class="quick-actions live-quick" aria-label="Quick actions"><h2>Quick Actions</h2><button><span>&#9636;</span><strong>Broadcast Message</strong><em>Send to all channels</em></button><button><span>&#9636;</span><strong>Create Announcement</strong><em>Notify all users</em></button><button><span>&#9888;</span><strong>View All Alerts</strong><em>Monitor active alerts</em></button><button><span>&#9635;</span><strong>Open Activity Log</strong><em>View detailed logs</em></button><button><span>&#9637;</span><strong>System Wallboard</strong><em>Full screen view</em></button><button><span>&#8681;</span><strong>Download Live Report</strong><em>Export current data</em></button></section>
+      </div>
+    </section>
+  </main>
+  <dialog id="live-dialog"><h2></h2><div class="dialog-body"></div><form method="dialog"><button>Close</button></form></dialog>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

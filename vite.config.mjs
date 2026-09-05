@@ -1,4 +1,4 @@
-﻿import { resolve } from 'path';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -15,10 +15,16 @@ export default defineConfig({
         activeSessions: resolve(import.meta.dirname, 'active-sessions.html'),
         changePassword: resolve(import.meta.dirname, 'change-password.html'),
         notificationPreferences: resolve(import.meta.dirname, 'notification-preferences.html'),
+        mySecurity: resolve(import.meta.dirname, 'security.html'),
+        infrastructureHealth: resolve(import.meta.dirname, 'infrastructure-health.html'),
+        supportDashboard: resolve(import.meta.dirname, 'support-dashboard.html'),
+        costMarginDashboard: resolve(import.meta.dirname, 'cost-margin-dashboard.html'),
       },
     },
   },
 });
+
+
 
 
 
