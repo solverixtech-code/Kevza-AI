@@ -26,10 +26,12 @@ export default defineConfig({
         automationOperationsDashboard: resolve(import.meta.dirname, 'automation-operations-dashboard.html'),
         messagingDashboard: resolve(import.meta.dirname, 'messaging-dashboard.html'),
         subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
+        channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
       },
     },
   },
 });
+
 
 
 
