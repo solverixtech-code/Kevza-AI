@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI – Billing &amp; Wallet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="billing-wallet.css" />
+</head>
+<body>
+<main class="admin-app bw-shell">
+
+  <!-- ═══════════ SIDEBAR ═══════════ -->
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home">
+      <span class="brand-mark">K</span>
+      <span>Kevza<span>AI</span></span>
+    </a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user">
+      <div class="mini-avatar">AA</div>
+      <div><strong>Aman Ansari</strong><span>Super Admin</span></div>
+      <b>&#8964;</b>
+    </div>
+  </aside>
+
+  <!-- ═══════════ MAIN ═══════════ -->
+  <section class="bw-main">
+
+    <!-- Top bar -->
+    <header class="bw-topbar">
+      <nav class="bw-bread">
+        <span>Admin</span><span class="sep">/</span>
+        <strong>Billing &amp; Wallet</strong>
+      </nav>
+      <label class="bw-search">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" placeholder="Search invoices, transactions…" />
+        <kbd>&#8984;K</kbd>
+      </label>
+      <div class="bw-topbar-right">
+        <button class="bw-icon-btn has-badge" aria-label="Notifications">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <i>8</i>
+        </button>
+        <button class="bw-icon-btn has-badge" aria-label="Messages">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <i>3</i>
+        </button>
+        <button class="bw-icon-btn" aria-label="Help">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </button>
+        <div class="bw-topbar-user">
+          <div class="bw-avatar">AA</div>
+          <div><strong>Aman Ansari</strong><span>Super Admin</span></div>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page -->
+    <div class="bw-page">
+
+      <!-- ── Title row ── -->
+      <div class="bw-title-row">
+        <div>
+          <h1>Billing &amp; Wallet</h1>
+          <p>Manage subscriptions, invoices, wallet balance and payment methods for the platform.</p>
+        </div>
+        <div class="bw-title-actions">
+          <button class="bw-btn-outline">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export
+          </button>
+          <button class="bw-btn-primary">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Funds
+          </button>
+        </div>
+      </div>
+
+      <!-- ══ TOP ROW: Wallet card + 4 KPI cards ══ -->
+      <div class="bw-top-row">
+
+        <!-- Wallet balance hero card -->
+        <div class="bw-wallet-card">
+          <div class="wallet-bg-glow"></div>
+          <div class="wallet-header">
+            <div class="wallet-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><circle cx="17" cy="15" r="1.5" fill="currentColor"/></svg>
+            </div>
+            <span class="wallet-label">Platform Wallet Balance</span>
+            <span class="wallet-status">&#9679; Active</span>
+          </div>
+          <div class="wallet-amount">&#8377;2,34,850</div>
+          <div class="wallet-sub">Available credits &amp; prepaid balance</div>
+          <div class="wallet-meta">
+            <div class="wallet-meta-item">
+              <span>Auto-recharge</span>
+              <strong class="wm-green">Enabled</strong>
+            </div>
+            <div class="wallet-divider"></div>
+            <div class="wallet-meta-item">
+              <span>Threshold</span>
+              <strong>&#8377;50,000</strong>
+            </div>
+            <div class="wallet-divider"></div>
+            <div class="wallet-meta-item">
+              <span>Top-up Amount</span>
+              <strong>&#8377;1,00,000</strong>
+            </div>
+          </div>
+          <div class="wallet-actions">
+            <button class="w-btn w-btn-white">Withdraw</button>
+            <button class="w-btn w-btn-outline">Transaction History</button>
+          </div>
+        </div>
+
+        <!-- 4 KPI cards -->
+        <div class="bw-kpis">
+
+          <div class="bw-kpi bw-kpi-blue">
+            <div class="bwk-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="bwk-info">
+              <span class="bwk-label">Total Revenue (MTD)</span>
+              <strong class="bwk-val">&#8377;48,65,231</strong>
+              <div class="bwk-foot"><em class="bwk-d pos">&#9650; 21.7%</em><span>vs last month</span></div>
+            </div>
+            <svg class="bwk-spark" viewBox="0 0 120 28" preserveAspectRatio="none" id="bsp-rev"></svg>
+          </div>
+
+          <div class="bw-kpi bw-kpi-green">
+            <div class="bwk-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <div class="bwk-info">
+              <span class="bwk-label">Invoices Collected</span>
+              <strong class="bwk-val">1,024</strong>
+              <div class="bwk-foot"><em class="bwk-d pos">&#9650; 14.2%</em><span>vs last month</span></div>
+            </div>
+            <svg class="bwk-spark" viewBox="0 0 120 28" preserveAspectRatio="none" id="bsp-inv"></svg>
+          </div>
+
+          <div class="bw-kpi bw-kpi-orange">
+            <div class="bwk-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="bwk-info">
+              <span class="bwk-label">Pending Payments</span>
+              <strong class="bwk-val">&#8377;3,24,500</strong>
+              <div class="bwk-foot"><em class="bwk-d neg">&#9660; 8.3%</em><span>vs last month</span></div>
+            </div>
+            <svg class="bwk-spark" viewBox="0 0 120 28" preserveAspectRatio="none" id="bsp-pend"></svg>
+          </div>
+
+          <div class="bw-kpi bw-kpi-purple">
+            <div class="bwk-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="bwk-info">
+              <span class="bwk-label">Failed Transactions</span>
+              <strong class="bwk-val">18</strong>
+              <div class="bwk-foot"><em class="bwk-d pos">&#9660; 33%</em><span>vs last month</span></div>
+            </div>
+            <svg class="bwk-spark" viewBox="0 0 120 28" preserveAspectRatio="none" id="bsp-fail"></svg>
+          </div>
+
+        </div>
+      </div><!-- /bw-top-row -->
+
+      <!-- ══ REVENUE CHART + BREAKDOWN ══ -->
+      <div class="bw-mid-row">
+
+        <!-- Revenue trend -->
+        <div class="bw-card bw-revenue-card">
+          <div class="bw-card-head">
+            <div>
+              <h2>Revenue Overview</h2>
+              <p>Monthly recurring revenue vs one-time payments</p>
+            </div>
+            <div class="bw-range">
+              <button class="br active">7D</button>
+              <button class="br">30D</button>
+              <button class="br">90D</button>
+              <button class="br">1Y</button>
+            </div>
+          </div>
+          <div class="rev-legend">
+            <span><i class="rl-dot" style="background:#367dff"></i>MRR</span>
+            <span><i class="rl-dot" style="background:#21c79a"></i>One-time</span>
+            <span><i class="rl-dot" style="background:#f59e0b"></i>Refunds</span>
+          </div>
+          <div class="rev-chart-wrap">
+            <div class="rev-y">
+              <span>&#8377;60L</span><span>&#8377;50L</span><span>&#8377;40L</span>
+              <span>&#8377;30L</span><span>&#8377;20L</span><span>&#8377;0</span>
+            </div>
+            <div class="rev-chart-body">
+              <svg class="rev-svg" viewBox="0 0 580 180" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="revBlue" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#367dff" stop-opacity="0.18"/>
+                    <stop offset="100%" stop-color="#367dff" stop-opacity="0.02"/>
+                  </linearGradient>
+                  <linearGradient id="revGreen" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#21c79a" stop-opacity="0.15"/>
+                    <stop offset="100%" stop-color="#21c79a" stop-opacity="0.02"/>
+                  </linearGradient>
+                </defs>
+                <line x1="0" y1="0"   x2="580" y2="0"   stroke="#edf1f8" stroke-width="1"/>
+                <line x1="0" y1="36"  x2="580" y2="36"  stroke="#edf1f8" stroke-width="1"/>
+                <line x1="0" y1="72"  x2="580" y2="72"  stroke="#edf1f8" stroke-width="1"/>
+                <line x1="0" y1="108" x2="580" y2="108" stroke="#edf1f8" stroke-width="1"/>
+                <line x1="0" y1="144" x2="580" y2="144" stroke="#edf1f8" stroke-width="1"/>
+                <line x1="0" y1="180" x2="580" y2="180" stroke="#edf1f8" stroke-width="1"/>
+                <!-- MRR blue -->
+                <path d="M0,148 L96,126 L193,118 L290,98 L386,88 L483,70 L580,50 L580,180 L0,180Z" fill="url(#revBlue)"/>
+                <polyline points="0,148 96,126 193,118 290,98 386,88 483,70 580,50" fill="none" stroke="#367dff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- One-time green -->
+                <path d="M0,165 L96,158 L193,155 L290,148 L386,145 L483,138 L580,132 L580,180 L0,180Z" fill="url(#revGreen)"/>
+                <polyline points="0,165 96,158 193,155 290,148 386,145 483,138 580,132" fill="none" stroke="#21c79a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Refund dots (amber) -->
+                <circle cx="96"  cy="174" r="3" fill="#f59e0b"/>
+                <circle cx="290" cy="172" r="3" fill="#f59e0b"/>
+                <circle cx="483" cy="170" r="3" fill="#f59e0b"/>
+                <!-- Dots MRR -->
+                <circle cx="0"   cy="148" r="4" fill="#fff" stroke="#367dff" stroke-width="2"/>
+                <circle cx="96"  cy="126" r="4" fill="#fff" stroke="#367dff" stroke-width="2"/>
+                <circle cx="193" cy="118" r="4" fill="#fff" stroke="#367dff" stroke-width="2"/>
+                <circle cx="290" cy="98"  r="4" fill="#fff" stroke="#367dff" stroke-width="2"/>
+                <circle cx="386" cy="88"  r="4" fill="#fff" stroke="#367dff" stroke-width="2"/>
+                <circle cx="483" cy="70"  r="4" fill="#367dff" stroke="#367dff" stroke-width="2"/>
+                <circle cx="580" cy="50"  r="4" fill="#367dff" stroke="#367dff" stroke-width="2"/>
+              </svg>
+              <div class="rev-x">
+                <span>May 27</span><span>May 28</span><span>May 29</span>
+                <span>May 30</span><span>May 31</span><span>Jun 01</span><span>Jun 02</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Revenue breakdown donut -->
+        <div class="bw-card bw-breakdown-card">
+          <div class="bw-card-head">
+            <h2>Revenue by Plan</h2>
+            <a href="#" class="bw-link">View Report</a>
+          </div>
+          <div class="bd-donut-wrap">
+            <div class="bd-donut">
+              <div class="bd-ring"></div>
+              <div class="bd-center">
+                <strong>&#8377;48.6L</strong>
+                <span>Total MRR</span>
+              </div>
+            </div>
+          </div>
+          <ul class="bd-legend">
+            <li>
+              <span class="bdl-dot" style="background:#21c79a"></span>
+              <span class="bdl-name">Professional</span>
+              <div class="bdl-bar-wrap"><div class="bdl-bar" style="width:44%;background:#21c79a"></div></div>
+              <span class="bdl-pct">43.8%</span>
+            </li>
+            <li>
+              <span class="bdl-dot" style="background:#367dff"></span>
+              <span class="bdl-name">Business</span>
+              <div class="bdl-bar-wrap"><div class="bdl-bar" style="width:31%;background:#367dff"></div></div>
+              <span class="bdl-pct">31.3%</span>
+            </li>
+            <li>
+              <span class="bdl-dot" style="background:#8b5cf6"></span>
+              <span class="bdl-name">Starter</span>
+              <div class="bdl-bar-wrap"><div class="bdl-bar" style="width:15%;background:#8b5cf6"></div></div>
+              <span class="bdl-pct">15.1%</span>
+            </li>
+            <li>
+              <span class="bdl-dot" style="background:#f59e0b"></span>
+              <span class="bdl-name">Enterprise</span>
+              <div class="bdl-bar-wrap"><div class="bdl-bar" style="width:7%;background:#f59e0b"></div></div>
+              <span class="bdl-pct">7.1%</span>
+            </li>
+            <li>
+              <span class="bdl-dot" style="background:#06b6d4"></span>
+              <span class="bdl-name">Agency</span>
+              <div class="bdl-bar-wrap"><div class="bdl-bar" style="width:3%;background:#06b6d4"></div></div>
+              <span class="bdl-pct">2.7%</span>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /bw-mid-row -->
+
+      <!-- ══ INVOICES + PAYMENT METHODS ══ -->
+      <div class="bw-lower-row">
+
+        <!-- Recent Invoices table -->
+        <div class="bw-card bw-invoices-card">
+          <div class="bw-card-head">
+            <h2>Recent Invoices</h2>
+            <div class="bw-head-right">
+              <div class="bw-sel-wrap">
+                <select aria-label="Filter invoices">
+                  <option>All Status</option>
+                  <option>Paid</option>
+                  <option>Pending</option>
+                  <option>Failed</option>
+                  <option>Refunded</option>
+                </select>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+              <a href="#" class="bw-link">View All</a>
+            </div>
+          </div>
+          <div class="inv-table-wrap">
+            <table class="inv-table">
+              <thead>
+                <tr>
+                  <th>Invoice ID</th>
+                  <th>Customer</th>
+                  <th>Plan</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Due Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="inv-id">#INV-2024-1248</td>
+                  <td class="td-cust-name">
+                    <div class="inv-av" style="background:linear-gradient(135deg,#1766d8,#3b82f6)">TN</div>
+                    TechNova Solutions
+                  </td>
+                  <td><span class="inv-plan ip-ent">Enterprise</span></td>
+                  <td class="inv-amt">&#8377;24,999</td>
+                  <td>02 Jun, 2024</td>
+                  <td>02 Jun, 2024</td>
+                  <td><span class="inv-status is-paid">Paid</span></td>
+                  <td class="inv-acts">
+                    <button class="inv-btn" title="Download">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
+                    <button class="inv-btn" title="View">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="inv-id">#INV-2024-1247</td>
+                  <td class="td-cust-name">
+                    <div class="inv-av" style="background:linear-gradient(135deg,#0d9467,#10b981)">BG</div>
+                    Bright Growth Marketing
+                  </td>
+                  <td><span class="inv-plan ip-pro">Professional</span></td>
+                  <td class="inv-amt">&#8377;9,999</td>
+                  <td>02 Jun, 2024</td>
+                  <td>02 Jun, 2024</td>
+                  <td><span class="inv-status is-paid">Paid</span></td>
+                  <td class="inv-acts">
+                    <button class="inv-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                    <button class="inv-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="inv-id">#INV-2024-1246</td>
+                  <td class="td-cust-name">
+                    <div class="inv-av" style="background:linear-gradient(135deg,#c5d0e8,#dce6f8);color:#3b5998">AC</div>
+                    Acme Corp
+                  </td>
+                  <td><span class="inv-plan ip-ent">Enterprise</span></td>
+                  <td class="inv-amt">&#8377;29,999</td>
+                  <td>01 Jun, 2024</td>
+                  <td>08 Jun, 2024</td>
+                  <td><span class="inv-status is-pending">Pending</span></td>
+                  <td class="inv-acts">
+                    <button class="inv-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                    <button class="inv-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="inv-id">#INV-2024-1245</td>
+                  <td class="td-cust-name">
+                    <div class="inv-av" style="background:linear-gradient(135deg,#6d28d9,#a78bfa)">HF</div>
+                    HealthFirst Clinics
+                  </td>
+                  <td><span class="inv-plan ip-biz">Business</span></td>
+                  <td class="inv-amt">&#8377;14,999</td>
+                  <td>30 May, 2024</td>
+                  <td>30 May, 2024</td>
+                  <td><span class="inv-status is-paid">Paid</span></td>
+                  <td class="inv-acts">
+                    <button class="inv-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                    <button class="inv-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="inv-id">#INV-2024-1244</td>
+                  <td class="td-cust-name">
+                    <div class="inv-av" style="background:linear-gradient(135deg,#dc2626,#f87171)">WG</div>
+                    WebGenius Agency
+                  </td>
+                  <td><span class="inv-plan ip-str">Starter</span></td>
+                  <td class="inv-amt">&#8377;999</td>
+                  <td>28 May, 2024</td>
+                  <td>28 May, 2024</td>
+                  <td><span class="inv-status is-failed">Failed</span></td>
+                  <td class="inv-acts">
+                    <button class="inv-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                    <button class="inv-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="inv-id">#INV-2024-1243</td>
+                  <td class="td-cust-name">
+                    <div class="inv-av" style="background:linear-gradient(135deg,#5b21b6,#8b5cf6)">DT</div>
+                    DataPro Technologies
+                  </td>
+                  <td><span class="inv-plan ip-ent">Enterprise</span></td>
+                  <td class="inv-amt">&#8377;29,999</td>
+                  <td>26 May, 2024</td>
+                  <td>26 May, 2024</td>
+                  <td><span class="inv-status is-paid">Paid</span></td>
+                  <td class="inv-acts">
+                    <button class="inv-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                    <button class="inv-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Invoice pagination -->
+          <div class="inv-footer">
+            <span>Showing 1 to 6 of 1,024 invoices</span>
+            <div class="bw-pg">
+              <button class="bwpg-btn" disabled>&#8249;</button>
+              <button class="bwpg-btn bwpg-active">1</button>
+              <button class="bwpg-btn">2</button>
+              <button class="bwpg-btn">3</button>
+              <span class="bwpg-dots">&#8230;</span>
+              <button class="bwpg-btn">171</button>
+              <button class="bwpg-btn">&#8250;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: Payment methods + Upcoming renewals -->
+        <div class="bw-right-col">
+
+          <!-- Payment Methods -->
+          <div class="bw-card bw-pm-card">
+            <div class="bw-card-head">
+              <h2>Payment Methods</h2>
+              <button class="bw-btn-sm">+ Add New</button>
+            </div>
+            <div class="pm-list">
+
+              <div class="pm-item pm-active">
+                <div class="pm-icon pm-visa">
+                  <svg width="28" height="18" viewBox="0 0 50 32" fill="none"><rect width="50" height="32" rx="5" fill="#1A1F71"/><text x="5" y="22" fill="#fff" font-size="12" font-weight="800" font-family="Arial">VISA</text></svg>
+                </div>
+                <div class="pm-info">
+                  <strong>•••• •••• •••• 4242</strong>
+                  <span>Expires 12/26 · Visa Classic</span>
+                </div>
+                <div class="pm-badges">
+                  <span class="pm-default">Default</span>
+                </div>
+                <button class="pm-menu">&#8943;</button>
+              </div>
+
+              <div class="pm-item">
+                <div class="pm-icon pm-mc">
+                  <svg width="28" height="18" viewBox="0 0 50 32" fill="none"><rect width="50" height="32" rx="5" fill="#EB001B" opacity="0.1"/><circle cx="19" cy="16" r="10" fill="#EB001B"/><circle cx="31" cy="16" r="10" fill="#F79E1B"/></svg>
+                </div>
+                <div class="pm-info">
+                  <strong>•••• •••• •••• 8765</strong>
+                  <span>Expires 09/25 · Mastercard</span>
+                </div>
+                <div class="pm-badges"></div>
+                <button class="pm-menu">&#8943;</button>
+              </div>
+
+              <div class="pm-item">
+                <div class="pm-icon pm-upi">
+                  <svg width="28" height="18" viewBox="0 0 50 32" fill="none"><rect width="50" height="32" rx="5" fill="#F0F4FF"/><text x="8" y="22" fill="#5B2DB7" font-size="11" font-weight="800" font-family="Arial">UPI</text></svg>
+                </div>
+                <div class="pm-info">
+                  <strong>aman@kevzaai</strong>
+                  <span>UPI ID · PhonePe</span>
+                </div>
+                <div class="pm-badges"></div>
+                <button class="pm-menu">&#8943;</button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Upcoming Renewals -->
+          <div class="bw-card bw-renewals-card">
+            <div class="bw-card-head">
+              <h2>Upcoming Renewals</h2>
+              <a href="#" class="bw-link">View All</a>
+            </div>
+            <ul class="renewals-list">
+              <li>
+                <div class="ren-av" style="background:linear-gradient(135deg,#1766d8,#3b82f6)">TN</div>
+                <div class="ren-info">
+                  <strong>TechNova Solutions</strong>
+                  <span>Enterprise · &#8377;24,999/mo</span>
+                </div>
+                <span class="ren-days ren-soon">3 days</span>
+              </li>
+              <li>
+                <div class="ren-av" style="background:linear-gradient(135deg,#6d28d9,#a78bfa)">HF</div>
+                <div class="ren-info">
+                  <strong>HealthFirst Clinics</strong>
+                  <span>Business · &#8377;14,999/mo</span>
+                </div>
+                <span class="ren-days ren-ok">6 days</span>
+              </li>
+              <li>
+                <div class="ren-av" style="background:linear-gradient(135deg,#0d9467,#10b981)">BG</div>
+                <div class="ren-info">
+                  <strong>Bright Growth Mktg</strong>
+                  <span>Professional · &#8377;9,999/mo</span>
+                </div>
+                <span class="ren-days ren-ok">8 days</span>
+              </li>
+              <li>
+                <div class="ren-av" style="background:linear-gradient(135deg,#5b21b6,#8b5cf6)">DT</div>
+                <div class="ren-info">
+                  <strong>DataPro Technologies</strong>
+                  <span>Enterprise · &#8377;29,999/mo</span>
+                </div>
+                <span class="ren-days ren-far">12 days</span>
+              </li>
+              <li>
+                <div class="ren-av" style="background:linear-gradient(135deg,#0e7490,#06b6d4)">RE</div>
+                <div class="ren-info">
+                  <strong>RetailEdge Store</strong>
+                  <span>Business · &#8377;7,499/mo</span>
+                </div>
+                <span class="ren-days ren-far">16 days</span>
+              </li>
+            </ul>
+          </div>
+
+        </div><!-- /bw-right-col -->
+
+      </div><!-- /bw-lower-row -->
+
+      <!-- ══ TRANSACTION HISTORY ══ -->
+      <div class="bw-card bw-txn-card">
+        <div class="bw-card-head">
+          <h2>Transaction History</h2>
+          <div class="bw-head-right">
+            <label class="bw-txn-search">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="search" placeholder="Search transactions…" />
+            </label>
+            <div class="bw-sel-wrap">
+              <select aria-label="Transaction type">
+                <option>All Types</option>
+                <option>Payment</option>
+                <option>Refund</option>
+                <option>Top-up</option>
+                <option>Withdrawal</option>
+              </select>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <button class="bw-btn-outline">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export CSV
+            </button>
+          </div>
+        </div>
+        <div class="txn-table-wrap">
+          <table class="txn-table">
+            <thead>
+              <tr>
+                <th>Transaction ID</th>
+                <th>Description</th>
+                <th>Customer</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Gateway</th>
+                <th>Date &amp; Time</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="txn-id">#TXN-8840213</td>
+                <td>Monthly subscription – Enterprise</td>
+                <td class="txn-cust">TechNova Solutions</td>
+                <td><span class="txn-type tt-payment">Payment</span></td>
+                <td class="txn-amt amt-cr">+&#8377;24,999</td>
+                <td class="txn-gw">
+                  <span class="gw-badge gw-razorpay">Razorpay</span>
+                </td>
+                <td class="txn-date">02 Jun, 2024 · 10:42 AM</td>
+                <td><span class="txn-st ts-success">Success</span></td>
+              </tr>
+              <tr>
+                <td class="txn-id">#TXN-8840198</td>
+                <td>Monthly subscription – Professional</td>
+                <td class="txn-cust">Bright Growth Marketing</td>
+                <td><span class="txn-type tt-payment">Payment</span></td>
+                <td class="txn-amt amt-cr">+&#8377;9,999</td>
+                <td class="txn-gw"><span class="gw-badge gw-stripe">Stripe</span></td>
+                <td class="txn-date">02 Jun, 2024 · 09:18 AM</td>
+                <td><span class="txn-st ts-success">Success</span></td>
+              </tr>
+              <tr>
+                <td class="txn-id">#TXN-8840155</td>
+                <td>Wallet top-up by admin</td>
+                <td class="txn-cust">Platform Wallet</td>
+                <td><span class="txn-type tt-topup">Top-up</span></td>
+                <td class="txn-amt amt-cr">+&#8377;1,00,000</td>
+                <td class="txn-gw"><span class="gw-badge gw-neft">NEFT</span></td>
+                <td class="txn-date">01 Jun, 2024 · 04:05 PM</td>
+                <td><span class="txn-st ts-success">Success</span></td>
+              </tr>
+              <tr>
+                <td class="txn-id">#TXN-8839982</td>
+                <td>Monthly subscription – Starter</td>
+                <td class="txn-cust">WebGenius Agency</td>
+                <td><span class="txn-type tt-payment">Payment</span></td>
+                <td class="txn-amt amt-dr">-&#8377;999</td>
+                <td class="txn-gw"><span class="gw-badge gw-razorpay">Razorpay</span></td>
+                <td class="txn-date">28 May, 2024 · 11:22 AM</td>
+                <td><span class="txn-st ts-failed">Failed</span></td>
+              </tr>
+              <tr>
+                <td class="txn-id">#TXN-8839901</td>
+                <td>Refund – duplicate charge</td>
+                <td class="txn-cust">GreenLeaf Marketing</td>
+                <td><span class="txn-type tt-refund">Refund</span></td>
+                <td class="txn-amt amt-dr">-&#8377;999</td>
+                <td class="txn-gw"><span class="gw-badge gw-stripe">Stripe</span></td>
+                <td class="txn-date">27 May, 2024 · 02:44 PM</td>
+                <td><span class="txn-st ts-refunded">Refunded</span></td>
+              </tr>
+              <tr>
+                <td class="txn-id">#TXN-8839876</td>
+                <td>Monthly subscription – Business</td>
+                <td class="txn-cust">RetailEdge Store</td>
+                <td><span class="txn-type tt-payment">Payment</span></td>
+                <td class="txn-amt amt-cr">+&#8377;7,499</td>
+                <td class="txn-gw"><span class="gw-badge gw-upi">UPI</span></td>
+                <td class="txn-date">27 May, 2024 · 10:15 AM</td>
+                <td><span class="txn-st ts-success">Success</span></td>
+              </tr>
+              <tr>
+                <td class="txn-id">#TXN-8839840</td>
+                <td>Annual plan upgrade – Enterprise</td>
+                <td class="txn-cust">DataPro Technologies</td>
+                <td><span class="txn-type tt-payment">Payment</span></td>
+                <td class="txn-amt amt-cr">+&#8377;2,99,988</td>
+                <td class="txn-gw"><span class="gw-badge gw-razorpay">Razorpay</span></td>
+                <td class="txn-date">26 May, 2024 · 03:30 PM</td>
+                <td><span class="txn-st ts-success">Success</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="txn-footer">
+          <span>Showing 1 to 7 of 8,840 transactions</span>
+          <div class="bw-pg">
+            <button class="bwpg-btn" disabled>&#8249;</button>
+            <button class="bwpg-btn bwpg-active">1</button>
+            <button class="bwpg-btn">2</button>
+            <button class="bwpg-btn">3</button>
+            <button class="bwpg-btn">4</button>
+            <button class="bwpg-btn">5</button>
+            <span class="bwpg-dots">&#8230;</span>
+            <button class="bwpg-btn">1262</button>
+            <button class="bwpg-btn">&#8250;</button>
+            <div class="bwpg-pp">
+              <select><option>10 / page</option><option>25 / page</option><option>50 / page</option></select>
+            </div>
+          </div>
+        </div>
+      </div><!-- /bw-txn-card -->
+
+    </div><!-- /bw-page -->
+  </section>
+
+</main>
+
+<script type="module" src="admin-navigation.js"></script>
+<script>
+// Sparklines
+const SC = { rev:'#367dff', inv:'#21c79a', pend:'#f59e0b', fail:'#ff4966' };
+const SD = {
+  rev:  [42,48,45,52,50,58,55,62,60,64,58,65,68,72,70,75,72,78,76,82,86],
+  inv:  [80,85,82,88,86,90,88,92,90,94,89,93,96,98,95,99,97,100,98,102,104],
+  pend: [40,36,38,32,35,30,33,28,31,26,29,24,27,22,25,20,23,18,21,16,14],
+  fail: [6,8,7,9,8,10,9,7,8,6,7,5,6,4,5,4,3,4,3,3,2]
+};
+function spark(vals, color) {
+  const W=120,H=28,P=2;
+  const mn=Math.min(...vals),mx=Math.max(...vals),sp=mx-mn||1;
+  const pts=vals.map((v,i)=>{
+    const x=P+i*((W-P*2)/(vals.length-1));
+    const y=H-P-((v-mn)/sp)*(H-P*2);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
+}
+['rev','inv','pend','fail'].forEach(k=>{
+  const el=document.getElementById('bsp-'+k);
+  if(el) el.innerHTML=spark(SD[k],SC[k]);
+});
+// Range buttons
+document.querySelectorAll('.br').forEach(b=>{
+  b.addEventListener('click',()=>{
+    b.closest('.bw-range').querySelectorAll('.br').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

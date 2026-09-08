@@ -1,4 +1,4 @@
-﻿import { resolve } from 'path';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -27,10 +27,16 @@ export default defineConfig({
         messagingDashboard: resolve(import.meta.dirname, 'messaging-dashboard.html'),
         subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
+        customerActivationQueue: resolve(import.meta.dirname, 'customer-activation-queue.html'),
+        plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
+        allPlans: resolve(import.meta.dirname, 'all-plans.html'),
+        allCustomers: resolve(import.meta.dirname, 'all-customers.html'),
       },
     },
   },
 });
+
+
 
 
 

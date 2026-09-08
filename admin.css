@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --admin-bg: #f4f7fb;
   --admin-panel: #ffffff;
   --admin-panel-soft: #f8fbff;
@@ -49,13 +49,16 @@ input {
 .admin-app {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 268px minmax(0, 1fr);
+  grid-template-columns: var(--admin-sidebar-width, 268px) minmax(0, 1fr);
 }
 
 .admin-sidebar {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 18px 14px 14px;
   color: #f4f8ff;
   background:
@@ -917,3 +920,340 @@ input {
 }
 
 
+
+.admin-sidebar {
+  position: relative;
+}
+
+.admin-sidebar-resizer {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: -4px;
+  width: 8px;
+  height: 100%;
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.admin-sidebar-resizer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 3px;
+  width: 2px;
+  height: 100%;
+  background: transparent;
+  transition: background-color 160ms ease;
+}
+
+.admin-sidebar-resizer:hover::after,
+.admin-sidebar-resizer.is-dragging::after {
+  background: var(--admin-blue);
+}
+
+body.is-resizing-sidebar {
+  cursor: col-resize;
+  user-select: none;
+}
+@media (max-width: 1040px) {
+  .admin-sidebar-resizer { display: none; }
+}
+
+.security-list > div strong {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.admin-sidebar {
+  align-self: stretch;
+}
+
+.security-list > div {
+  min-width: 0;
+}
+
+.security-list > div span {
+  min-width: 0;
+}
+.admin-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+}
+/* Profile dashboard reference layout */
+.profile-page {
+  padding: 28px 28px 36px;
+}
+
+.profile-title-row {
+  margin-bottom: 22px;
+}
+
+.profile-title-row h1 {
+  font-size: 28px;
+}
+
+.profile-title-row p {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.edit-button {
+  min-height: 42px;
+  padding: 0 18px;
+  font-size: 13px;
+}
+
+.account-tabs {
+  min-height: 70px;
+  margin-bottom: 28px;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 10px;
+}
+
+.account-tabs a {
+  min-height: 52px;
+  padding: 0 22px;
+  font-size: 14px;
+}
+
+.profile-grid {
+  grid-template-columns: 372px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 22px;
+}
+
+.identity-card {
+  padding: 26px 26px 18px;
+}
+
+.profile-photo {
+  width: 124px;
+  height: 124px;
+  font-size: 34px;
+}
+
+.profile-photo-wrap {
+  margin-bottom: 18px;
+}
+
+.identity-card h2 {
+  font-size: 23px;
+}
+
+.role-pill {
+  margin: 10px auto 16px;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.identity-card > p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.identity-list {
+  margin-top: 24px;
+}
+
+.identity-list div {
+  padding: 15px 0;
+}
+
+.identity-list span,
+.info-grid span,
+.security-list span,
+.session-entry p {
+  font-size: 14px;
+}
+
+.identity-list strong,
+.info-grid strong,
+.security-list strong,
+.session-entry strong,
+.session-entry time {
+  font-size: 14px;
+}
+
+.stats-strip {
+  gap: 22px;
+}
+
+.metric-card {
+  padding: 26px 18px 22px;
+  min-height: 250px;
+}
+
+.metric-icon {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 18px;
+  font-size: 22px;
+}
+
+.metric-card p {
+  font-size: 15px;
+}
+
+.metric-card strong {
+  margin-top: 16px;
+  font-size: 24px;
+}
+
+.metric-card small {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.personal-card,
+.security-card,
+.sessions-card {
+  padding: 22px 26px 24px;
+}
+
+.card-heading {
+  margin-bottom: 24px;
+}
+
+.card-heading h3 {
+  font-size: 18px;
+}
+
+.info-grid {
+  gap: 24px 40px;
+}
+
+.info-grid div {
+  gap: 8px;
+}
+
+.security-list {
+  gap: 0;
+}
+
+.security-list > div {
+  min-height: 60px;
+  padding: 14px 0;
+}
+
+.session-list {
+  gap: 20px;
+}
+
+.session-entry {
+  gap: 14px;
+}
+
+@media (max-width: 1220px) {
+  .profile-grid {
+    grid-template-columns: minmax(300px, .9fr) minmax(0, 1.1fr);
+  }
+
+  .identity-card {
+    grid-row: span 2;
+  }
+
+  .stats-strip {
+    grid-column: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .personal-card,
+  .security-card,
+  .sessions-card {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 720px) {
+  .profile-page {
+    padding: 20px 14px 28px;
+  }
+
+  .profile-title-row h1 {
+    font-size: 24px;
+  }
+
+  .account-tabs a {
+    min-height: 42px;
+    font-size: 12px;
+  }
+
+  .metric-card {
+    min-height: 0;
+  }
+}
+/* Compact profile dashboard reference scale */
+.profile-shell { grid-template-columns: var(--admin-sidebar-width, 168px) minmax(0, 1fr); }
+.profile-shell .profile-page { padding: 22px 18px 28px; }
+.profile-shell .profile-title-row { margin-bottom: 16px; }
+.profile-shell .profile-title-row h1 { font-size: 22px; }
+.profile-shell .profile-title-row p { font-size: 12px; }
+.profile-shell .edit-button { min-height: 36px; padding: 0 14px; font-size: 12px; }
+.profile-shell .account-tabs { min-height: 0; margin-bottom: 18px; padding: 6px; gap: 4px; overflow-x: auto; }
+.profile-shell .account-tabs a { min-height: 38px; padding: 0 14px; font-size: 12px; }
+.profile-shell .profile-grid { grid-template-columns: 270px minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+.profile-shell .identity-card { padding: 18px 18px 14px; }
+.profile-shell .profile-photo { width: 88px; height: 88px; font-size: 26px; }
+.profile-shell .identity-card h2 { font-size: 17px; }
+.profile-shell .role-pill { margin: 8px auto 10px; padding: 5px 10px; font-size: 11px; }
+.profile-shell .identity-card > p { font-size: 11.5px; }
+.profile-shell .identity-list { margin-top: 18px; }
+.profile-shell .identity-list div { padding: 11px 0; }
+.profile-shell .stats-strip { gap: 14px; }
+.profile-shell .metric-card { min-height: 156px; padding: 18px 16px 16px; }
+.profile-shell .metric-icon { width: 42px; height: 42px; margin-bottom: 12px; font-size: 16px; }
+.profile-shell .metric-card p { font-size: 12px; }
+.profile-shell .metric-card strong { margin-top: 10px; font-size: 18px; }
+.profile-shell .metric-card small { margin-top: 8px; font-size: 11px; }
+.profile-shell .personal-card, .profile-shell .security-card, .profile-shell .sessions-card { padding: 16px 18px 18px; }
+.profile-shell .card-heading { margin-bottom: 16px; }
+.profile-shell .card-heading h3 { font-size: 13px; }
+.profile-shell .info-grid { gap: 16px 28px; }
+.profile-shell .info-grid span, .profile-shell .security-list span, .profile-shell .session-entry p { font-size: 11.5px; }
+.profile-shell .info-grid strong, .profile-shell .security-list strong, .profile-shell .session-entry strong, .profile-shell .session-entry time { font-size: 12px; }
+.profile-shell .security-list > div { min-height: 0; padding: 11px 0; }
+.profile-shell .session-list { gap: 14px; }
+@media (max-width: 1220px) {
+  .profile-shell .profile-grid { grid-template-columns: minmax(250px, .9fr) minmax(0, 1.1fr); }
+  .profile-shell .stats-strip { grid-column: 2; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile-shell .personal-card, .profile-shell .security-card, .profile-shell .sessions-card { grid-column: 2; }
+}
+/* Keep the shared navigation width consistent across every page. */
+.profile-shell,
+.enterprise-shell,
+.subscription-shell,
+.growth-shell {
+  grid-template-columns: var(--admin-sidebar-width, 268px) minmax(0, 1fr);
+}
+
+
+/* ================================================================
+   GLOBAL SIDEBAR WIDTH CONSISTENCY
+   All page shells use the same --admin-sidebar-width so the
+   sidebar stays identical in size when navigating between pages.
+   ================================================================ */
+.profile-shell,
+.enterprise-shell,
+.subscription-shell,
+.growth-shell,
+.caq-shell,
+.activation-shell,
+.admin-app {
+  grid-template-columns: var(--admin-sidebar-width, 268px) minmax(0, 1fr);
+}
+
+/* Reset any per-page overrides that shrank the sidebar */
+.activation-shell,
+.caq-shell {
+  --admin-sidebar-width: 268px;
+}
+
+.activation-queue-page .activation-shell,
+.activation-queue-page .caq-shell {
+  --admin-sidebar-width: 268px;
+}

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI – Enterprise Customers</title>
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="enterprise-customers.css" />
+</head>
+<body>
+<main class="admin-app enterprise-shell">
+
+  <!-- ═══════════════ SIDEBAR ═══════════════ -->
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html">
+      <span class="brand-mark">K</span>
+      <span>Kevza<span>AI</span></span>
+    </a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user">
+      <div class="mini-avatar">AA</div>
+      <div>
+        <strong>Aman Ansari</strong>
+        <span>Super Admin</span>
+      </div>
+      <b>&#8942;</b>
+    </div>
+  </aside>
+
+  <!-- ═══════════════ MAIN ═══════════════ -->
+  <section class="ec-main">
+
+    <!-- Top bar -->
+    <header class="ec-topbar">
+      <nav class="ec-breadcrumb">
+        <span>Admin</span>
+        <span class="sep">/</span>
+        <span>Customers</span>
+        <span class="sep">/</span>
+        <strong>Enterprise Customers</strong>
+      </nav>
+      <label class="ec-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input placeholder="Search anything..." />
+        <kbd>⌘K</kbd>
+      </label>
+      <div class="ec-topbar-icons">
+        <button class="ec-icon-btn has-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <i>8</i>
+        </button>
+        <button class="ec-icon-btn has-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <i>3</i>
+        </button>
+        <button class="ec-icon-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+      <div class="ec-topbar-user">
+        <div class="mini-avatar" style="width:32px;height:32px;font-size:11px;">AA</div>
+        <div>
+          <strong>Aman Ansari</strong>
+          <span>Super Admin</span>
+        </div>
+        <b>&#8964;</b>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="ec-page">
+
+      <!-- Page heading -->
+      <div class="ec-page-head">
+        <div>
+          <h1>Enterprise Customers</h1>
+          <p>View and manage enterprise customers with large-scale deployments and custom solutions.</p>
+        </div>
+        <div class="ec-page-actions">
+          <button class="btn-export">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export
+          </button>
+          <button class="btn-add-customer">+ Add Customer</button>
+        </div>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="ec-kpis">
+
+        <div class="ec-kpi-card">
+          <div class="kpi-top">
+            <div class="kpi-icon kpi-blue">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-label">Total Enterprise Customers</span>
+              <div class="kpi-value-row">
+                <strong class="kpi-value">28</strong>
+                <span class="kpi-delta pos">&#9650; 27.3%</span>
+              </div>
+              <span class="kpi-sub">vs last 30 days</span>
+            </div>
+          </div>
+          <svg class="kpi-spark" viewBox="0 0 120 32" preserveAspectRatio="none">
+            <polyline points="0,28 20,24 40,20 55,22 70,16 85,12 100,8 120,4" fill="none" stroke="#367dff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="ec-kpi-card">
+          <div class="kpi-top">
+            <div class="kpi-icon kpi-green">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-label">Total MRR (Enterprise)</span>
+              <div class="kpi-value-row">
+                <strong class="kpi-value">&#8377;12,48,900</strong>
+                <span class="kpi-delta pos">&#9650; 34.2%</span>
+              </div>
+              <span class="kpi-sub">vs last 30 days</span>
+            </div>
+          </div>
+          <svg class="kpi-spark" viewBox="0 0 120 32" preserveAspectRatio="none">
+            <polyline points="0,26 18,22 35,18 50,15 65,12 80,9 100,6 120,2" fill="none" stroke="#21c79a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="ec-kpi-card">
+          <div class="kpi-top">
+            <div class="kpi-icon kpi-purple">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-label">Total Active Users (Enterprise)</span>
+              <div class="kpi-value-row">
+                <strong class="kpi-value">3,842</strong>
+                <span class="kpi-delta pos">&#9650; 18.6%</span>
+              </div>
+              <span class="kpi-sub">vs last 30 days</span>
+            </div>
+          </div>
+          <svg class="kpi-spark" viewBox="0 0 120 32" preserveAspectRatio="none">
+            <polyline points="0,27 20,23 38,21 55,17 70,14 88,11 105,7 120,5" fill="none" stroke="#9f67ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="ec-kpi-card">
+          <div class="kpi-top">
+            <div class="kpi-icon kpi-orange">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18M3 9h18M3 15h18M3 21h18"/></svg>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-label">Avg. Contract Value</span>
+              <div class="kpi-value-row">
+                <strong class="kpi-value">&#8377;4,96,000</strong>
+                <span class="kpi-delta pos">&#9650; 22.1%</span>
+              </div>
+              <span class="kpi-sub">vs last 30 days</span>
+            </div>
+          </div>
+          <svg class="kpi-spark" viewBox="0 0 120 32" preserveAspectRatio="none">
+            <polyline points="0,28 22,24 42,20 58,18 74,14 90,10 108,7 120,3" fill="none" stroke="#ffab2e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+      </div><!-- /ec-kpis -->
+
+      <!-- Toolbar: tabs + filters -->
+      <div class="ec-toolbar">
+        <div class="ec-tabs">
+          <button class="ec-tab active">All Enterprise <span class="tab-count">28</span></button>
+          <button class="ec-tab">Active <span class="tab-count">24</span></button>
+          <button class="ec-tab">Onboarding <span class="tab-count">3</span></button>
+          <button class="ec-tab">Suspended <span class="tab-count">1</span></button>
+        </div>
+        <div class="ec-filters">
+          <div class="ec-select-wrap">
+            <select>
+              <option>All Industries</option>
+              <option>IT Services</option>
+              <option>Manufacturing</option>
+              <option>Automotive</option>
+              <option>Banking &amp; Finance</option>
+              <option>FMCG</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="ec-select-wrap">
+            <select>
+              <option>All Plans</option>
+              <option>Enterprise+</option>
+              <option>Enterprise Plus</option>
+              <option>Enterprise</option>
+              <option>Custom Plan</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="ec-select-wrap">
+            <select>
+              <option>All Account Managers</option>
+              <option>Rohit Sharma</option>
+              <option>Priya Mehta</option>
+              <option>Karan Patel</option>
+              <option>Sneha Iyer</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <button class="ec-date-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            May 27, 2024 – Jun 02, 2024
+          </button>
+          <button class="ec-filter-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            Filters
+          </button>
+        </div>
+      </div>
+
+      <!-- Customer Table -->
+      <div class="ec-table-wrap card">
+        <div class="ec-table-scroll">
+          <table class="ec-table">
+            <thead>
+              <tr>
+                <th class="col-check"><input type="checkbox" /></th>
+                <th class="col-num">#</th>
+                <th class="col-customer">Customer</th>
+                <th class="col-plan">Plan</th>
+                <th class="col-industry">Industry</th>
+                <th class="col-users">Total Users</th>
+                <th class="col-mrr">MRR (&#8377;)</th>
+                <th class="col-start">Contract Start</th>
+                <th class="col-end">Contract End</th>
+                <th class="col-status">Status</th>
+                <th class="col-manager">Account Manager</th>
+                <th class="col-actions">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="num">1</td>
+                <td class="td-customer">
+                  <div class="cust-avatar" style="background:linear-gradient(135deg,#1e40af,#3b82f6)">RI</div>
+                  <div>
+                    <strong>Reliance Industries Ltd.</strong>
+                    <small>reliance.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-badge badge-ep">Enterprise+</span></td>
+                <td>Manufacturing</td>
+                <td>450</td>
+                <td class="mrr">1,93,000</td>
+                <td>01 Jan, 2025</td>
+                <td>31 Dec, 2026</td>
+                <td><span class="status-pill pill-active">Active</span></td>
+                <td class="td-manager">
+                  <div class="mgr-avatar" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">RS</div>
+                  <span>Rohit Sharma</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn" title="View">&#128065;</button>
+                  <button class="act-btn" title="Edit">&#9998;</button>
+                  <button class="act-btn" title="More">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="num">2</td>
+                <td class="td-customer">
+                  <div class="cust-avatar" style="background:linear-gradient(135deg,#0e7490,#06b6d4)">TC</div>
+                  <div>
+                    <strong>Tata Consultancy Services</strong>
+                    <small>tcs.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-badge badge-eplus">Enterprise Plus</span></td>
+                <td>IT Services</td>
+                <td>320</td>
+                <td class="mrr">1,49,000</td>
+                <td>15 Jan, 2025</td>
+                <td>14 Jan, 2026</td>
+                <td><span class="status-pill pill-active">Active</span></td>
+                <td class="td-manager">
+                  <div class="mgr-avatar" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)">PM</div>
+                  <span>Priya Mehta</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn">&#128065;</button>
+                  <button class="act-btn">&#9998;</button>
+                  <button class="act-btn">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="num">3</td>
+                <td class="td-customer">
+                  <div class="cust-avatar" style="background:linear-gradient(135deg,#064e3b,#059669)">HB</div>
+                  <div>
+                    <strong>HDFC Bank</strong>
+                    <small>hdfcbank.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-badge badge-ent">Enterprise</span></td>
+                <td>Banking &amp; Finance</td>
+                <td>280</td>
+                <td class="mrr">1,24,000</td>
+                <td>10 Feb, 2025</td>
+                <td>09 Feb, 2026</td>
+                <td><span class="status-pill pill-active">Active</span></td>
+                <td class="td-manager">
+                  <div class="mgr-avatar" style="background:linear-gradient(135deg,#b45309,#f59e0b)">KP</div>
+                  <span>Karan Patel</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn">&#128065;</button>
+                  <button class="act-btn">&#9998;</button>
+                  <button class="act-btn">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="num">4</td>
+                <td class="td-customer">
+                  <div class="cust-avatar" style="background:linear-gradient(135deg,#1e3a8a,#6366f1)">IN</div>
+                  <div>
+                    <strong>Infosys Limited</strong>
+                    <small>infosys.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-badge badge-eplus">Enterprise Plus</span></td>
+                <td>IT Services</td>
+                <td>260</td>
+                <td class="mrr">1,19,000</td>
+                <td>20 Jan, 2025</td>
+                <td>19 Jan, 2026</td>
+                <td><span class="status-pill pill-active">Active</span></td>
+                <td class="td-manager">
+                  <div class="mgr-avatar" style="background:linear-gradient(135deg,#065f46,#10b981)">SI</div>
+                  <span>Sneha Iyer</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn">&#128065;</button>
+                  <button class="act-btn">&#9998;</button>
+                  <button class="act-btn">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="num">5</td>
+                <td class="td-customer">
+                  <div class="cust-avatar" style="background:linear-gradient(135deg,#7c2d12,#f97316)">AG</div>
+                  <div>
+                    <strong>Adani Group</strong>
+                    <small>adani.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-badge badge-ent">Enterprise</span></td>
+                <td>Conglomerate</td>
+                <td>190</td>
+                <td class="mrr">99,000</td>
+                <td>05 Mar, 2025</td>
+                <td>04 Mar, 2026</td>
+                <td><span class="status-pill pill-active">Active</span></td>
+                <td class="td-manager">
+                  <div class="mgr-avatar" style="background:linear-gradient(135deg,#4c1d95,#8b5cf6)">VS</div>
+                  <span>Vikram Singh</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn">&#128065;</button>
+                  <button class="act-btn">&#9998;</button>
+                  <button class="act-btn">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="num">6</td>
+                <td class="td-customer">
+                  <div class="cust-avatar" style="background:linear-gradient(135deg,#831843,#ec4899)">MM</div>
+                  <div>
+                    <strong>Mahindra &amp; Mahindra</strong>
+                    <small>mahindra.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-badge badge-ent">Enterprise</span></td>
+                <td>Automotive</td>
+                <td>180</td>
+                <td class="mrr">89,000</td>
+                <td>18 Feb, 2025</td>
+                <td>17 Feb, 2026</td>
+                <td><span class="status-pill pill-active">Active</span></td>
+                <td class="td-manager">
+                  <div class="mgr-avatar" style="background:linear-gradient(135deg,#701a75,#d946ef)">AV</div>
+                  <span>Anjali Verma</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn">&#128065;</button>
+                  <button class="act-btn">&#9998;</button>
+                  <button class="act-btn">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="num">7</td>
+                <td class="td-customer">
+                  <div class="cust-avatar" style="background:linear-gradient(135deg,#166534,#22c55e)">IT</div>
+                  <div>
+                    <strong>ITC Limited</strong>
+                    <small>itcportal.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-badge badge-ent">Enterprise</span></td>
+                <td>FMCG</td>
+                <td>150</td>
+                <td class="mrr">79,000</td>
+                <td>12 Mar, 2025</td>
+                <td>11 Mar, 2026</td>
+                <td><span class="status-pill pill-active">Active</span></td>
+                <td class="td-manager">
+                  <div class="mgr-avatar" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">RS</div>
+                  <span>Rohit Sharma</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn">&#128065;</button>
+                  <button class="act-btn">&#9998;</button>
+                  <button class="act-btn">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="num">8</td>
+                <td class="td-customer">
+                  <div class="cust-avatar" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">LT</div>
+                  <div>
+                    <strong>Larsen &amp; Toubro</strong>
+                    <small>lnt.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-badge badge-eplus">Enterprise Plus</span></td>
+                <td>Engineering &amp; Construction</td>
+                <td>140</td>
+                <td class="mrr">74,000</td>
+                <td>01 Apr, 2025</td>
+                <td>31 Mar, 2026</td>
+                <td><span class="status-pill pill-onboarding">Onboarding</span></td>
+                <td class="td-manager">
+                  <div class="mgr-avatar" style="background:linear-gradient(135deg,#9d174d,#f472b6)">PN</div>
+                  <span>Pooja Nair</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn">&#128065;</button>
+                  <button class="act-btn">&#9998;</button>
+                  <button class="act-btn">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="num">9</td>
+                <td class="td-customer">
+                  <div class="cust-avatar" style="background:linear-gradient(135deg,#92400e,#f59e0b)">AP</div>
+                  <div>
+                    <strong>Asian Paints</strong>
+                    <small>asianpaints.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-badge badge-ent">Enterprise</span></td>
+                <td>Manufacturing</td>
+                <td>120</td>
+                <td class="mrr">69,000</td>
+                <td>15 Apr, 2025</td>
+                <td>14 Apr, 2026</td>
+                <td><span class="status-pill pill-active">Active</span></td>
+                <td class="td-manager">
+                  <div class="mgr-avatar" style="background:linear-gradient(135deg,#b45309,#f59e0b)">KP</div>
+                  <span>Karan Patel</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn">&#128065;</button>
+                  <button class="act-btn">&#9998;</button>
+                  <button class="act-btn">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="num">10</td>
+                <td class="td-customer">
+                  <div class="cust-avatar" style="background:linear-gradient(135deg,#0f4c81,#3b82f6)">MS</div>
+                  <div>
+                    <strong>Maruti Suzuki India</strong>
+                    <small>marutisuzuki.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-badge badge-ent">Enterprise</span></td>
+                <td>Automotive</td>
+                <td>110</td>
+                <td class="mrr">59,000</td>
+                <td>20 Apr, 2025</td>
+                <td>19 Apr, 2026</td>
+                <td><span class="status-pill pill-active">Active</span></td>
+                <td class="td-manager">
+                  <div class="mgr-avatar" style="background:linear-gradient(135deg,#065f46,#10b981)">SI</div>
+                  <span>Sneha Iyer</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn">&#128065;</button>
+                  <button class="act-btn">&#9998;</button>
+                  <button class="act-btn">&#8943;</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Table footer: info + pagination -->
+        <div class="ec-table-foot">
+          <span class="table-info">Showing 1 to 10 of 28 enterprise customers</span>
+          <div class="ec-pagination">
+            <button class="pg-btn" disabled>&#8249;</button>
+            <button class="pg-btn pg-active">1</button>
+            <button class="pg-btn">2</button>
+            <button class="pg-btn">3</button>
+            <button class="pg-btn">&#8250;</button>
+            <div class="pg-per-page">
+              <select>
+                <option>10 / page</option>
+                <option>25 / page</option>
+                <option>50 / page</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div><!-- /ec-table-wrap -->
+
+      <!-- Analytics bottom row -->
+      <div class="ec-analytics">
+
+        <!-- Industry bar chart -->
+        <div class="card ec-analytics-card">
+          <h3 class="analytics-title">Enterprise Customers by Industry</h3>
+          <div class="industry-bars">
+            <div class="bar-row">
+              <span class="bar-label">IT Services</span>
+              <div class="bar-track"><div class="bar-fill" style="width:78%;background:#367dff"></div></div>
+              <span class="bar-count">6 (21.4%)</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Manufacturing</span>
+              <div class="bar-track"><div class="bar-fill" style="width:64%;background:#21c79a"></div></div>
+              <span class="bar-count">5 (17.9%)</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Automotive</span>
+              <div class="bar-track"><div class="bar-fill" style="width:52%;background:#ffab2e"></div></div>
+              <span class="bar-count">4 (14.3%)</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Banking &amp; Finance</span>
+              <div class="bar-track"><div class="bar-fill" style="width:42%;background:#9f67ff"></div></div>
+              <span class="bar-count">3 (10.7%)</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">FMCG</span>
+              <div class="bar-track"><div class="bar-fill" style="width:34%;background:#ff4966"></div></div>
+              <span class="bar-count">3 (10.7%)</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Others</span>
+              <div class="bar-track"><div class="bar-fill" style="width:58%;background:#94a3b8"></div></div>
+              <span class="bar-count">7 (25.0%)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Revenue by plan donut -->
+        <div class="card ec-analytics-card">
+          <h3 class="analytics-title">Revenue by Plan</h3>
+          <div class="donut-wrap">
+            <div class="donut-chart">
+              <!-- Conic gradient donut: Enterprise Plus 39.3% blue, Enterprise 46.4% purple, Custom 7.1% light purple, Others 7.1% gray -->
+              <div class="donut-ring"></div>
+              <div class="donut-center">
+                <strong>&#8377;12,48,900</strong>
+                <span>Total MRR</span>
+              </div>
+            </div>
+            <ul class="donut-legend">
+              <li><span class="legend-dot" style="background:#367dff"></span>Enterprise Plus <b>11 (39.3%)</b></li>
+              <li><span class="legend-dot" style="background:#9f67ff"></span>Enterprise <b>13 (46.4%)</b></li>
+              <li><span class="legend-dot" style="background:#c4b5fd"></span>Custom Plan <b>2 (7.1%)</b></li>
+              <li><span class="legend-dot" style="background:#94a3b8"></span>Others <b>2 (7.1%)</b></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Growth trend line chart -->
+        <div class="card ec-analytics-card">
+          <div class="analytics-card-head">
+            <h3 class="analytics-title">Enterprise Growth Trend</h3>
+            <span class="analytics-badge">Last 6 Months</span>
+          </div>
+          <div class="trend-chart-wrap">
+            <div class="trend-y-labels">
+              <span>40</span>
+              <span>30</span>
+              <span>20</span>
+              <span>10</span>
+            </div>
+            <svg class="trend-svg" viewBox="0 0 260 100" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#367dff" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#367dff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,88 L43,74 L86,62 L130,55 L173,48 L216,36 L260,18" fill="none" stroke="#367dff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M0,88 L43,74 L86,62 L130,55 L173,48 L216,36 L260,18 L260,100 L0,100 Z" fill="url(#trendFill)"/>
+              <circle cx="0"   cy="88" r="3" fill="#367dff"/>
+              <circle cx="43"  cy="74" r="3" fill="#367dff"/>
+              <circle cx="86"  cy="62" r="3" fill="#367dff"/>
+              <circle cx="130" cy="55" r="3" fill="#367dff"/>
+              <circle cx="173" cy="48" r="3" fill="#367dff"/>
+              <circle cx="216" cy="36" r="3" fill="#367dff"/>
+              <circle cx="260" cy="18" r="3" fill="#367dff"/>
+            </svg>
+          </div>
+          <div class="trend-x-labels">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+          </div>
+        </div>
+
+        <!-- Top accounts list -->
+        <div class="card ec-analytics-card">
+          <div class="analytics-card-head">
+            <h3 class="analytics-title">Top Enterprise Customers (by MRR)</h3>
+            <a href="#" class="analytics-link">View all</a>
+          </div>
+          <ol class="top-accounts">
+            <li>
+              <div class="ta-left">
+                <div class="cust-avatar ta-av" style="background:linear-gradient(135deg,#1e40af,#3b82f6)">RI</div>
+                <span>Reliance Industries Ltd.</span>
+              </div>
+              <strong>&#8377;1,93,000</strong>
+            </li>
+            <li>
+              <div class="ta-left">
+                <div class="cust-avatar ta-av" style="background:linear-gradient(135deg,#0e7490,#06b6d4)">TC</div>
+                <span>Tata Consultancy Services</span>
+              </div>
+              <strong>&#8377;1,49,000</strong>
+            </li>
+            <li>
+              <div class="ta-left">
+                <div class="cust-avatar ta-av" style="background:linear-gradient(135deg,#064e3b,#059669)">HB</div>
+                <span>HDFC Bank</span>
+              </div>
+              <strong>&#8377;1,24,000</strong>
+            </li>
+            <li>
+              <div class="ta-left">
+                <div class="cust-avatar ta-av" style="background:linear-gradient(135deg,#1e3a8a,#6366f1)">IN</div>
+                <span>Infosys Limited</span>
+              </div>
+              <strong>&#8377;1,19,000</strong>
+            </li>
+            <li>
+              <div class="ta-left">
+                <div class="cust-avatar ta-av" style="background:linear-gradient(135deg,#7c2d12,#f97316)">AG</div>
+                <span>Adani Group</span>
+              </div>
+              <strong>&#8377;99,000</strong>
+            </li>
+          </ol>
+        </div>
+
+      </div><!-- /ec-analytics -->
+
+    </div><!-- /ec-page -->
+  </section>
+
+</main>
+<script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
