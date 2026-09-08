@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI – All Customers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="all-customers.css" />
+</head>
+<body>
+<main class="admin-app customers-shell">
+
+  <!-- ═══════════ SIDEBAR ═══════════ -->
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home">
+      <span class="brand-mark">K</span>
+      <span>Kevza<span>AI</span></span>
+    </a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user">
+      <div class="mini-avatar">AA</div>
+      <div><strong>Aman Ansari</strong><span>Super Admin</span></div>
+      <b>&#8964;</b>
+    </div>
+  </aside>
+
+  <!-- ═══════════ MAIN ═══════════ -->
+  <section class="cust-main">
+
+    <!-- Top bar -->
+    <header class="cust-topbar">
+      <nav class="cust-bread">
+        <span>Admin</span><span class="bc-sep">/</span>
+        <span>Customers</span><span class="bc-sep">/</span>
+        <strong>All Customers</strong>
+      </nav>
+      <label class="cust-search">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" placeholder="Search anything…" />
+        <kbd>&#8984;K</kbd>
+      </label>
+      <div class="cust-topbar-right">
+        <button class="ctb-btn has-badge star-btn" aria-label="Favourites">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <i class="nb nb-gold">24</i>
+        </button>
+        <button class="ctb-btn has-badge" aria-label="Messages">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <i class="nb nb-blue">12</i>
+        </button>
+        <button class="ctb-btn" aria-label="Help">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </button>
+        <div class="ctb-user">
+          <strong>Aman Ansari</strong>
+          <span>Super Admin</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page body -->
+    <div class="cust-page">
+
+      <!-- Title + actions -->
+      <div class="cust-title-row">
+        <div>
+          <h1>All Customers</h1>
+          <p>View and manage all customers / tenants on the platform.</p>
+        </div>
+        <div class="cust-page-actions">
+          <button class="btn-filters">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            Filters
+          </button>
+          <button class="btn-export">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export
+          </button>
+          <button class="btn-import">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Import Customers
+          </button>
+          <button class="btn-add-customer">+ Add Customer</button>
+        </div>
+      </div>
+
+      <!-- ══ KPI CARDS: 5 across ══ -->
+      <div class="cust-kpis">
+
+        <!-- Total Customers -->
+        <div class="ckpi ckpi-blue">
+          <div class="ckpi-top">
+            <div class="ckpi-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="ckpi-info">
+              <span class="ckpi-label">Total Customers</span>
+              <strong class="ckpi-val">1,248</strong>
+              <p class="ckpi-sub"><em class="pos">+ 12.4%</em> vs last 30 days</p>
+            </div>
+          </div>
+          <svg class="ckpi-spark" viewBox="0 0 170 38" preserveAspectRatio="none">
+            <polyline points="2,31 17,27 32,20 47,24 62,14 77,27 92,22 107,25 122,20 137,12 152,20 168,15" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Active Customers -->
+        <div class="ckpi ckpi-green">
+          <div class="ckpi-top">
+            <div class="ckpi-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="ckpi-info">
+              <span class="ckpi-label">Active Customers</span>
+              <strong class="ckpi-val">1,086</strong>
+              <p class="ckpi-sub"><em class="pos">+ 10.2%</em> vs last 30 days</p>
+            </div>
+          </div>
+          <svg class="ckpi-spark" viewBox="0 0 170 38" preserveAspectRatio="none">
+            <polyline points="2,30 18,27 34,24 50,15 66,29 82,26 98,13 114,16 130,14 146,22 168,12" fill="none" stroke="#08a777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Trial Customers -->
+        <div class="ckpi ckpi-orange">
+          <div class="ckpi-top">
+            <div class="ckpi-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h14M5 3a2 2 0 0 0-2 2v1M5 3l4 9 3-4 3 4 4-9M19 3a2 2 0 0 1 2 2v1M3 5h18M12 19v2M12 15v2"/></svg>
+            </div>
+            <div class="ckpi-info">
+              <span class="ckpi-label">Trial Customers</span>
+              <strong class="ckpi-val">96</strong>
+              <p class="ckpi-sub"><em class="pos">+ 8.1%</em> vs last 30 days</p>
+            </div>
+          </div>
+          <svg class="ckpi-spark" viewBox="0 0 170 38" preserveAspectRatio="none">
+            <polyline points="2,27 18,30 34,23 50,15 66,25 82,30 98,21 114,12 130,20 146,28 168,18" fill="none" stroke="#ff9015" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Suspended Customers -->
+        <div class="ckpi ckpi-red">
+          <div class="ckpi-top">
+            <div class="ckpi-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            </div>
+            <div class="ckpi-info">
+              <span class="ckpi-label">Suspended Customers</span>
+              <strong class="ckpi-val">38</strong>
+              <p class="ckpi-sub"><em class="neg">- 5.6%</em> vs last 30 days</p>
+            </div>
+          </div>
+          <svg class="ckpi-spark" viewBox="0 0 170 38" preserveAspectRatio="none">
+            <polyline points="2,30 18,19 34,14 50,21 66,31 82,16 98,29 114,18 130,24 146,20 168,18" fill="none" stroke="#ff4966" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Inactive Customers -->
+        <div class="ckpi ckpi-gray">
+          <div class="ckpi-top">
+            <div class="ckpi-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <div class="ckpi-info">
+              <span class="ckpi-label">Inactive Customers</span>
+              <strong class="ckpi-val">28</strong>
+              <p class="ckpi-sub"><em class="neg">- 7.3%</em> vs last 30 days</p>
+            </div>
+          </div>
+          <svg class="ckpi-spark" viewBox="0 0 170 38" preserveAspectRatio="none">
+            <polyline points="2,28 18,27 34,22 50,30 66,18 82,29 98,20 114,22 130,30 146,25 168,31" fill="none" stroke="#8fa0b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+      </div><!-- /cust-kpis -->
+
+      <!-- ══ DIRECTORY TABLE CARD ══ -->
+      <div class="cust-directory-card">
+
+        <!-- Tabs + Filter toolbar -->
+        <div class="dir-toolbar">
+          <div class="dir-tabs">
+            <button class="dir-tab active">All Customers <span class="tab-ct">1,248</span></button>
+            <button class="dir-tab">Active <span class="tab-ct">1,086</span></button>
+            <button class="dir-tab">Trial <span class="tab-ct">96</span></button>
+            <button class="dir-tab">Suspended <span class="tab-ct">38</span></button>
+            <button class="dir-tab">Inactive <span class="tab-ct">28</span></button>
+          </div>
+          <div class="dir-actions">
+            <div class="dir-sel-wrap">
+              <select aria-label="Filter by plan">
+                <option>All Plans</option>
+                <option>Enterprise</option>
+                <option>Professional</option>
+                <option>Business</option>
+                <option>Starter</option>
+              </select>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="dir-sel-wrap">
+              <select aria-label="Filter by status">
+                <option>All Status</option>
+                <option>Active</option>
+                <option>Trial</option>
+                <option>Suspended</option>
+                <option>Inactive</option>
+              </select>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <label class="dir-search">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="search" placeholder="Search customers…" />
+            </label>
+            <button class="dir-icon-btn" title="Grid view">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            </button>
+            <button class="dir-ghost-btn">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              Filters
+            </button>
+            <button class="dir-ghost-btn">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export
+            </button>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="dir-table-scroll">
+          <table class="dir-table">
+            <thead>
+              <tr>
+                <th class="col-check"><input type="checkbox" aria-label="Select all" /></th>
+                <th class="col-customer">Customer</th>
+                <th class="col-plan">Plan</th>
+                <th class="col-status">Status</th>
+                <th class="col-users">Users</th>
+                <th class="col-contacts">Contacts</th>
+                <th class="col-usage">Usage</th>
+                <th class="col-mrr">MRR (&#8377;)</th>
+                <th class="col-renewal">Renewal Date</th>
+                <th class="col-joined">Joined On</th>
+                <th class="col-actions">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-cust">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#1766d8,#3b82f6)">TS</div>
+                  <div class="cust-nm"><strong>TechNova Solutions Pvt. Ltd.</strong><small>technova.com</small></div>
+                </td>
+                <td><span class="plan-tag pt-ent">Enterprise</span></td>
+                <td><span class="st-pill st-active">&#9679; Active</span></td>
+                <td>24</td>
+                <td>1,245</td>
+                <td class="td-usage">
+                  <span class="usage-pct" style="color:#08a777">76%</span>
+                  <div class="usage-bar"><div class="usage-fill" style="width:76%;background:#08a777"></div></div>
+                </td>
+                <td class="td-mrr">24,999</td>
+                <td class="td-renewal"><strong>18 Jun, 2025</strong><small class="in-days good">in 22 days</small></td>
+                <td>18 Dec, 2023</td>
+                <td class="td-actions">
+                  <button class="ra-btn" title="View"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ra-btn" title="Edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="ra-btn ra-more" title="More">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-cust">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#0d9467,#10b981)">BG</div>
+                  <div class="cust-nm"><strong>Bright Growth Marketing</strong><small>brightgrowth.com</small></div>
+                </td>
+                <td><span class="plan-tag pt-pro">Professional</span></td>
+                <td><span class="st-pill st-active">&#9679; Active</span></td>
+                <td>12</td><td>856</td>
+                <td class="td-usage">
+                  <span class="usage-pct" style="color:#08a777">62%</span>
+                  <div class="usage-bar"><div class="usage-fill" style="width:62%;background:#08a777"></div></div>
+                </td>
+                <td class="td-mrr">9,999</td>
+                <td class="td-renewal"><strong>22 Jun, 2025</strong><small class="in-days good">in 26 days</small></td>
+                <td>22 Feb, 2024</td>
+                <td class="td-actions">
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="ra-btn ra-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-cust">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#c5d0e8,#dce6f8);color:#3b5998">AC</div>
+                  <div class="cust-nm"><strong>Acme Corp</strong><small>acmecorp.io</small></div>
+                </td>
+                <td><span class="plan-tag pt-ent">Enterprise</span></td>
+                <td><span class="st-pill st-trial">&#9679; Trial</span></td>
+                <td>8</td><td>230</td>
+                <td class="td-usage">
+                  <span class="usage-pct" style="color:#ff9015">22%</span>
+                  <div class="usage-bar"><div class="usage-fill" style="width:22%;background:#ff9015"></div></div>
+                </td>
+                <td class="td-mrr">–</td>
+                <td class="td-renewal"><strong>05 Jun, 2025</strong><small class="in-days good">in 9 days</small></td>
+                <td>05 May, 2025</td>
+                <td class="td-actions">
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="ra-btn ra-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-cust">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#6d28d9,#a78bfa)">HF</div>
+                  <div class="cust-nm"><strong>HealthFirst Clinics</strong><small>healthfirst.in</small></div>
+                </td>
+                <td><span class="plan-tag pt-biz">Business</span></td>
+                <td><span class="st-pill st-active">&#9679; Active</span></td>
+                <td>16</td><td>1,102</td>
+                <td class="td-usage">
+                  <span class="usage-pct" style="color:#08a777">65%</span>
+                  <div class="usage-bar"><div class="usage-fill" style="width:65%;background:#08a777"></div></div>
+                </td>
+                <td class="td-mrr">14,999</td>
+                <td class="td-renewal"><strong>30 Jun, 2025</strong><small class="in-days good">in 34 days</small></td>
+                <td>30 Jan, 2024</td>
+                <td class="td-actions">
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="ra-btn ra-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-cust">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#c2600a,#f97316)">LS</div>
+                  <div class="cust-nm"><strong>LearnSmart Education</strong><small>learnsmart.edu</small></div>
+                </td>
+                <td><span class="plan-tag pt-pro">Professional</span></td>
+                <td><span class="st-pill st-suspended">&#9679; Suspended</span></td>
+                <td>6</td><td>125</td>
+                <td class="td-usage">
+                  <span class="usage-pct" style="color:#ff4966">10%</span>
+                  <div class="usage-bar"><div class="usage-fill" style="width:10%;background:#ff4966"></div></div>
+                </td>
+                <td class="td-mrr">4,999</td>
+                <td class="td-renewal"><span class="in-days">Suspended</span></td>
+                <td>10 Apr, 2024</td>
+                <td class="td-actions">
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="ra-btn ra-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-cust">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#0e7490,#06b6d4)">RE</div>
+                  <div class="cust-nm"><strong>RetailEdge Store</strong><small>retailedge.store</small></div>
+                </td>
+                <td><span class="plan-tag pt-biz">Business</span></td>
+                <td><span class="st-pill st-active">&#9679; Active</span></td>
+                <td>10</td><td>540</td>
+                <td class="td-usage">
+                  <span class="usage-pct" style="color:#08a777">45%</span>
+                  <div class="usage-bar"><div class="usage-fill" style="width:45%;background:#08a777"></div></div>
+                </td>
+                <td class="td-mrr">7,499</td>
+                <td class="td-renewal"><strong>12 Jun, 2025</strong><small class="in-days good">in 16 days</small></td>
+                <td>12 Mar, 2024</td>
+                <td class="td-actions">
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="ra-btn ra-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-cust">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#dc2626,#f87171)">WG</div>
+                  <div class="cust-nm"><strong>WebGenius Agency</strong><small>webgenius.co</small></div>
+                </td>
+                <td><span class="plan-tag pt-str">Starter</span></td>
+                <td><span class="st-pill st-inactive">&#9679; Inactive</span></td>
+                <td>2</td><td>45</td>
+                <td class="td-usage">
+                  <span class="usage-pct" style="color:#9aabbd">0%</span>
+                  <div class="usage-bar"><div class="usage-fill" style="width:0%;background:#c8d5e8"></div></div>
+                </td>
+                <td class="td-mrr">999</td>
+                <td class="td-renewal"><strong>–</strong><small class="in-days">Expired</small></td>
+                <td>01 Nov, 2023</td>
+                <td class="td-actions">
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="ra-btn ra-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-cust">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#5b21b6,#8b5cf6)">DT</div>
+                  <div class="cust-nm"><strong>DataPro Technologies</strong><small>datapro.tech</small></div>
+                </td>
+                <td><span class="plan-tag pt-ent">Enterprise</span></td>
+                <td><span class="st-pill st-active">&#9679; Active</span></td>
+                <td>32</td><td>2,340</td>
+                <td class="td-usage">
+                  <span class="usage-pct" style="color:#08a777">85%</span>
+                  <div class="usage-bar"><div class="usage-fill" style="width:85%;background:#08a777"></div></div>
+                </td>
+                <td class="td-mrr">29,999</td>
+                <td class="td-renewal"><strong>25 Jul, 2025</strong><small class="in-days good">in 57 days</small></td>
+                <td>25 Jul, 2023</td>
+                <td class="td-actions">
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="ra-btn ra-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-cust">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#d97706,#fbbf24)">SM</div>
+                  <div class="cust-nm"><strong>SME Connect</strong><small>smeconnect.com</small></div>
+                </td>
+                <td><span class="plan-tag pt-str">Starter</span></td>
+                <td><span class="st-pill st-trial">&#9679; Trial</span></td>
+                <td>3</td><td>78</td>
+                <td class="td-usage">
+                  <span class="usage-pct" style="color:#ff9015">15%</span>
+                  <div class="usage-bar"><div class="usage-fill" style="width:15%;background:#ff9015"></div></div>
+                </td>
+                <td class="td-mrr">–</td>
+                <td class="td-renewal"><strong>08 Jun, 2025</strong><small class="in-days good">in 12 days</small></td>
+                <td>24 May, 2025</td>
+                <td class="td-actions">
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="ra-btn ra-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-cust">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#047857,#34d399)">IF</div>
+                  <div class="cust-nm"><strong>InstaFinance Services</strong><small>instafinance.in</small></div>
+                </td>
+                <td><span class="plan-tag pt-biz">Business</span></td>
+                <td><span class="st-pill st-active">&#9679; Active</span></td>
+                <td>14</td><td>980</td>
+                <td class="td-usage">
+                  <span class="usage-pct" style="color:#08a777">70%</span>
+                  <div class="usage-bar"><div class="usage-fill" style="width:70%;background:#08a777"></div></div>
+                </td>
+                <td class="td-mrr">12,499</td>
+                <td class="td-renewal"><strong>03 Jul, 2025</strong><small class="in-days good">in 35 days</small></td>
+                <td>03 Apr, 2024</td>
+                <td class="td-actions">
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ra-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="ra-btn ra-more">&#8943;</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Table footer: count + pagination -->
+        <div class="dir-footer">
+          <span class="dir-count">Showing 1 to 10 of 1,248 customers</span>
+          <div class="dir-pagination">
+            <button class="pg-btn" disabled>&#8249;</button>
+            <button class="pg-btn pg-active">1</button>
+            <button class="pg-btn">2</button>
+            <button class="pg-btn">3</button>
+            <button class="pg-btn">4</button>
+            <button class="pg-btn">5</button>
+            <span class="pg-ellipsis">&#8230;</span>
+            <button class="pg-btn">125</button>
+            <button class="pg-btn">&#8250;</button>
+            <div class="pg-per-page">
+              <select aria-label="Per page">
+                <option>10 / page</option>
+                <option>25 / page</option>
+                <option>50 / page</option>
+              </select>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cust-directory-card -->
+
+    </div><!-- /cust-page -->
+  </section>
+
+</main>
+<script type="module" src="admin-navigation.js"></script>
+<script>
+  // Tab switching
+  document.querySelectorAll('.dir-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.dir-tabs').querySelectorAll('.dir-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

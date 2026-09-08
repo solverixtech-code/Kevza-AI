@@ -1,0 +1,118 @@
+:root {
+  --component-space-1: 6px;
+  --component-space-2: 10px;
+  --component-space-3: 14px;
+  --component-space-4: 18px;
+  --component-space-5: 24px;
+  --component-radius: 8px;
+  --component-border: #e2eaf4;
+  --component-surface: #ffffff;
+  --component-muted: #647899;
+  --component-ink: #0b2156;
+  --component-blue: #2f6bff;
+  --component-green: #08a777;
+  --component-red: #ff4966;
+  --component-shadow: 0 8px 24px rgba(28, 57, 102, .05);
+}
+
+.admin-component,
+.card,
+.panel,
+.profile-card,
+.metric-card,
+.growth-card,
+.growth-metric {
+  border: 1px solid var(--component-border);
+  border-radius: var(--component-radius);
+  background: var(--component-surface);
+  box-shadow: var(--component-shadow);
+}
+
+.card-heading,
+.panel-heading,
+.card-head {
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--component-space-3);
+}
+
+.card-heading h2,
+.card-heading h3,
+.panel-heading h2,
+.card-head h2 {
+  margin: 0;
+  color: var(--component-ink);
+  font-weight: 800;
+}
+
+.metric-card,
+.growth-metric,
+.metric {
+  min-width: 0;
+}
+
+.metric-card strong,
+.growth-metric strong,
+.metric strong {
+  color: var(--component-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-card small,
+.growth-metric p,
+.metric p {
+  color: var(--component-muted);
+}
+
+.admin-chart,
+.chart,
+.growth-chart,
+[data-chart] {
+  min-width: 0;
+  width: 100%;
+}
+
+.admin-table,
+.table-panel table,
+.fastest-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.table-panel th,
+.fastest-card th {
+  color: var(--component-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.admin-table td,
+.table-panel td,
+.fastest-card td {
+  border-top: 1px solid #edf1f7;
+  color: var(--component-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-grid {
+  display: grid;
+  gap: var(--component-space-4);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.kpi-grid {
+  display: grid;
+  gap: var(--component-space-4);
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+@media (max-width: 760px) {
+  .admin-grid,
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
