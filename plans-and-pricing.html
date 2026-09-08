@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -34,7 +34,7 @@
     <div class="plans-page">
       <div class="plans-title-row">
         <div><h1>All Plans</h1><p>Manage subscription plans, features, limits and pricing for all workspaces. These plans are used for customer onboarding and upgrades.</p></div>
-        <button class="plan-primary-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Create New Plan</button>
+        <button class="plan-primary-btn" data-open-plan-modal><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Create New Plan</button>
       </div>
 
       <div class="plans-dashboard-grid">
@@ -71,13 +71,142 @@
 
         <aside class="plans-side">
           <section class="side-card distribution-card"><h2>Plan Type Distribution</h2><div class="donut-row"><div class="plan-donut"><div><strong>6</strong><span>Plans</span></div></div><ul class="donut-legend"><li><span style="background:#2f6bff"></span><b>Self-Serve</b><em>4</em></li><li><span style="background:#8b5cf6"></span><b>Sales Assisted</b><em>1</em></li><li><span style="background:#f5b642"></span><b>Custom</b><em>1</em></li></ul></div></section>
-          <section class="side-card quick-card"><h2>Quick Actions</h2><button><span>&#10010;</span>Create New Plan</button><button><span>&#9881;</span>Manage Features</button><button><span>&#9635;</span>Manage Add-ons</button><button><span>&#9638;</span>Plan Comparison</button><button><span>&#8681;</span>Import Plans</button><button><span>&#8681;</span>Export Plans</button></section>
+          <section class="side-card quick-card"><h2>Quick Actions</h2><button data-open-plan-modal><span>&#10010;</span>Create New Plan</button><button><span>&#9881;</span>Manage Features</button><button><span>&#9635;</span>Manage Add-ons</button><button><span>&#9638;</span>Plan Comparison</button><button><span>&#8681;</span>Import Plans</button><button><span>&#8681;</span>Export Plans</button></section>
           <section class="help-card"><div class="help-icon">i</div><div><h2>Need Help?</h2><p>Configure plans, features, limits and pricing for your platform. Changes will apply to new signups and plan upgrades.</p><button>View Documentation</button></div></section>
         </aside>
       </div>
     </div>
   </section>
 </main>
+<div class="create-plan-modal" id="createPlanModal" aria-hidden="true">
+  <div class="create-plan-backdrop" data-close-plan-modal></div>
+  <section class="create-plan-dialog" role="dialog" aria-modal="true" aria-labelledby="createPlanTitle">
+    <header class="create-plan-head">
+      <div>
+        <nav class="plans-bread" aria-label="Create plan breadcrumb"><span>Admin</span><span class="bc-sep">/</span><span>Plans &amp; Entitlements</span><span class="bc-sep">/</span><strong>Create Plan</strong></nav>
+        <h2 id="createPlanTitle">Create Plan</h2>
+        <p>Set up a new subscription plan with features, limits and pricing. This plan will be available for new signups and upgrades.</p>
+      </div>
+      <button class="modal-back-btn" data-close-plan-modal type="button"><span>&larr;</span>Back to Plans</button>
+    </header>
+
+    <div class="create-plan-layout">
+      <form class="create-plan-form">
+        <section class="form-panel">
+          <h3>Basic Information <span>Define the plan details and basic settings.</span></h3>
+          <div class="form-grid two-cols">
+            <label>Plan Name <b>*</b><input type="text" placeholder="e.g. Professional" /></label>
+            <label>Internal Plan Code <b>*</b><input type="text" placeholder="e.g. professional" /></label>
+            <label>Plan Type <b>*</b><select><option>Select plan type</option><option>Self-Serve</option><option>Sales Assisted</option><option>Custom</option></select></label>
+            <label>Tag / Badge<select><option>e.g. Most Popular</option><option>Your Plan Badge</option><option>Recommended</option></select></label>
+            <label>Short Description <b>*</b><textarea maxlength="150" placeholder="Brief description about this plan..."></textarea><small>0/150</small></label>
+            <label>Detailed Description<textarea maxlength="500" placeholder="Detailed description about features, benefits and who this plan is for..."></textarea><small>0/500</small></label>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <h3>Pricing &amp; Billing <span>Set the pricing for this plan.</span></h3>
+          <div class="form-grid two-cols">
+            <label>Monthly Price (INR) <b>*</b><input type="text" value="&#8377; 0" /></label>
+            <label class="recommended-field">Yearly Price (INR)<em>Recommended</em><input type="text" value="&#8377; 0" /></label>
+            <label>Billing Cycle<select><option>Monthly</option><option>Yearly</option><option>Custom</option></select></label>
+            <label>Trial Period (Days)<input type="number" value="0" /><small>Set 0 for no trial</small></label>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <h3>Plan Features &amp; Limits <span>Configure what's included in this plan.</span><button class="load-plan-btn" type="button">Load from Existing Plan</button></h3>
+          <div class="features-grid">
+            <div class="limit-list">
+              <label>WhatsApp Contacts / Month<input type="number" value="0" /><small>Set 0 for unlimited</small></label>
+              <label>AI Chatbot Flows<input type="number" value="0" /><small>Set 0 for unlimited</small></label>
+              <label>Broadcast Campaigns / Month<input type="number" value="0" /><small>Set 0 for unlimited</small></label>
+              <label>Team Members<input type="number" value="0" /><small>Set 0 for unlimited</small></label>
+            </div>
+            <div class="toggle-list">
+              <label>Multiple Workspaces<input type="checkbox" role="switch" /></label>
+              <label>API Access<input type="checkbox" role="switch" /></label>
+              <label>Custom Domain<input type="checkbox" role="switch" /></label>
+              <label>White Label<input type="checkbox" role="switch" /></label>
+              <label>Dedicated Support<input type="checkbox" role="switch" /></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <h3>Status &amp; Visibility <span>Control plan availability and display settings.</span></h3>
+          <div class="status-grid">
+            <label>Status<select><option>&#9679; Active</option><option>Inactive</option></select></label>
+            <label>Sort Order<input type="number" value="0" /><small>Lower number will appear first</small></label>
+            <div class="toggle-list compact">
+              <label>Show in Signup<input type="checkbox" role="switch" checked /><small>Make this plan available for new customers</small></label>
+              <label>Mark as Popular<input type="checkbox" role="switch" /><small>Display a popular badge on this plan</small></label>
+            </div>
+          </div>
+        </section>
+
+        <div class="create-plan-actions">
+          <button class="modal-cancel-btn" type="button" data-close-plan-modal>Cancel</button>
+          <button class="modal-create-btn" type="button"><span>&#9635;</span>Create Plan</button>
+        </div>
+      </form>
+
+      <aside class="create-plan-aside">
+        <section class="preview-panel">
+          <h3>Plan Preview</h3>
+          <p>This is how the plan will appear to customers.</p>
+          <div class="preview-card">
+            <span class="preview-badge">Your Plan Badge</span>
+            <div class="preview-crown">&#9819;</div>
+            <h4>Plan Name</h4>
+            <p>Short description about this plan</p>
+            <strong>&#8377;0 <span>/month</span></strong>
+            <small>&#9679; Billed monthly</small>
+            <ul>
+              <li>0 WhatsApp contacts / month</li><li>0 AI chatbot flows</li><li>0 Broadcast campaigns / month</li><li>0 Team members</li><li>Multiple workspaces</li><li>API access</li><li>Custom domain</li><li>White label</li><li>Dedicated support</li>
+            </ul>
+            <button type="button">Get Started</button>
+          </div>
+        </section>
+        <section class="tips-panel">
+          <h3><span>i</span>Tips for Creating a Plan</h3>
+          <ul>
+            <li>Use clear and simple plan names.</li>
+            <li>Set realistic limits based on your infrastructure capacity.</li>
+            <li>Highlight key features that differentiate this plan.</li>
+            <li>You can always edit the plan later.</li>
+            <li>Make sure to test the plan before making it live.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </section>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById('createPlanModal');
+    if (!modal) return;
+    function openModal() {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('plan-modal-open');
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('plan-modal-open');
+    }
+    document.querySelectorAll('[data-open-plan-modal]').forEach(function (button) {
+      button.addEventListener('click', openModal);
+    });
+    modal.querySelectorAll('[data-close-plan-modal]').forEach(function (button) {
+      button.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  }());
+</script>
 <script type="module" src="admin-navigation.js"></script>
 </body>
 </html>
