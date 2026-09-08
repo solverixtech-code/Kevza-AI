@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KevzaAI - Channel Operations Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css"><link rel="stylesheet" href="admin-components.css">
+  <link rel="stylesheet" href="channel-operations-dashboard.css">
+  <script type="module" src="channel-operations-dashboard.js"></script>
+</head>
+<body>
+  <main class="admin-app channel-shell">
+    <aside class="admin-sidebar channel-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="admin-profile.html"><span>&#8962;</span>Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9783;</span>Customers <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9671;</span>Plans &amp; Subscriptions <b>&rsaquo;</b></a>
+        <a href="subscription-dashboard.html"><span>&#9673;</span>Subscription Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9635;</span>Billing &amp; Wallet <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9673;</span>Channels <b>&rsaquo;</b></a>
+        <a class="is-active" href="channel-operations-dashboard.html"><span>&#9638;</span>Channel Operations</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9636;</span>Templates</a>
+        <a href="campaign-operations-dashboard.html"><span>&#9992;</span>Campaign Operations</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9743;</span>Chatbots &amp; AI <b>&rsaquo;</b></a>
+        <a href="ai-operations-dashboard.html"><span>&#9672;</span>AI Operations</a>
+        <a href="automation-operations-dashboard.html"><span>&#8984;</span>Automation Operations</a>
+        <a href="messaging-dashboard.html"><span>&#9673;</span>Messaging Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>CRM &amp; Integrations <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Platform Usage</a>
+        <a href="cost-margin-dashboard.html"><span>&#9649;</span>Cost &amp; Margin</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9637;</span>Analytics &amp; Reports <b>&rsaquo;</b></a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9825;</span>Customer Success <b>&rsaquo;</b></a>
+        <a href="support-dashboard.html"><span>&#9678;</span>Support Dashboard <b>&rsaquo;</b></a>
+        <a href="live-operations-center.html"><span>&#9636;</span>Live Operations Center</a>
+        <a href="security.html"><span>&#9672;</span>My Security</a>
+        <a href="login-history.html"><span>&#9672;</span>Login History</a>
+        <a href="active-sessions.html"><span>&#9635;</span>Active Sessions</a>
+        <a href="change-password.html"><span>&#11039;</span>Change Password</a>
+        <a href="notification-preferences.html"><span>&#9673;</span>Notification Preferences</a>
+        <a href="infrastructure-health.html"><span>&#9638;</span>System Operations</a>
+        <a href="compliance-dashboard.html"><span>&#9638;</span>Compliance Dashboard</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9638;</span>System Health</a>
+        <a href="javascript:void(0)" data-nav-placeholder="true"><span>&#9881;</span>Settings <b>&rsaquo;</b></a>
+      </nav>
+      <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+    </aside>
+
+    <section class="channel-main">
+      <header class="channel-topbar">
+        <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>Channel Operations</strong></div>
+        <label class="admin-search"><span>&#9906;</span><input type="search" placeholder="Search anything..." aria-label="Search channel operations"><kbd>&#8984;K</kbd></label>
+        <button class="top-icon has-badge" data-panel="alerts" aria-label="Notifications">&#9827;<i>12</i></button>
+        <button class="top-icon has-badge" data-panel="messages" aria-label="Messages">&#9635;<i>7</i></button>
+        <button class="top-icon" data-panel="help" aria-label="Help">?</button>
+        <div class="top-user"><div class="mini-avatar photo">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </header>
+
+      <div class="channel-page">
+        <section class="title-row">
+          <div>
+            <h1>Channel Operations Dashboard</h1>
+            <p>Monitor all communication channels, performance, and engagement in real-time.</p>
+          </div>
+          <div class="actions">
+            <button>May 27, 2024 - Jun 02, 2024 <span>&#9635;</span></button>
+            <select aria-label="Comparison period"><option>Compare: May 20 - May 26</option><option>No comparison</option></select>
+          </div>
+        </section>
+
+        <section class="metric-grid" aria-label="Channel KPI summary">
+          <article class="card metric green"><span>WA</span><div><h2>WhatsApp</h2><strong>18.64M</strong><em>+ 23.8%</em><p>Messages Sent</p></div><small>Delivered 17.52M (94.0%)</small><svg data-spark="whatsapp"></svg></article>
+          <article class="card metric blue"><span>EM</span><div><h2>Email</h2><strong>7.32M</strong><em>+ 17.4%</em><p>Emails Sent</p></div><small>Delivered 6.41M (87.6%)</small><svg data-spark="email"></svg></article>
+          <article class="card metric orange"><span>SM</span><div><h2>SMS</h2><strong>2.91M</strong><em>+ 12.6%</em><p>SMS Sent</p></div><small>Delivered 2.41M (82.8%)</small><svg data-spark="sms"></svg></article>
+          <article class="card metric purple"><span>VC</span><div><h2>Voice Calls</h2><strong>482.1K</strong><em>+ 9.6%</em><p>Calls Made</p></div><small>Connected 312.6K (64.9%)</small><svg data-spark="voice"></svg></article>
+          <article class="card metric cyan"><span>WP</span><div><h2>Web Push</h2><strong>1.24M</strong><em>+ 18.1%</em><p>Push Sent</p></div><small>Clicked 248.7K (20.1%)</small><svg data-spark="webpush"></svg></article>
+          <article class="card metric red"><span>IA</span><div><h2>In-App</h2><strong>563.2K</strong><em>+ 15.2%</em><p>Messages Sent</p></div><small>Delivered 412.8K (73.2%)</small><svg data-spark="inapp"></svg></article>
+        </section>
+
+        <section class="grid overview-grid">
+          <article class="card panel trend-panel">
+            <div class="panel-heading"><h2>Channel Volume Trend</h2><button>Last 7 Days</button></div>
+            <div class="legend"><span><i class="green-dot"></i>WhatsApp</span><span><i class="blue-dot"></i>Email</span><span><i class="orange-dot"></i>SMS</span><span><i class="purple-dot"></i>Voice Calls</span><span><i class="cyan-dot"></i>Web Push</span><span><i class="red-dot"></i>In-App</span></div>
+            <div data-chart="volume"></div>
+          </article>
+          <article class="card panel donut-panel">
+            <h2>Channel Performance Overview</h2>
+            <div class="donut mix-donut"><strong>31.15M<span>Total Messages</span></strong></div>
+            <ul class="breakdown">
+              <li><i class="green-dot"></i><span>WhatsApp<b>18.64M (59.9%)</b></span></li><li><i class="blue-dot"></i><span>Email<b>7.32M (23.5%)</b></span></li><li><i class="orange-dot"></i><span>SMS<b>2.91M (9.4%)</b></span></li><li><i class="purple-dot"></i><span>Voice Calls<b>482.1K (1.5%)</b></span></li><li><i class="cyan-dot"></i><span>Web Push<b>1.24M (4.0%)</b></span></li><li><i class="red-dot"></i><span>In-App<b>563.2K (1.8%)</b></span></li>
+            </ul>
+          </article>
+          <article class="card panel health-table">
+            <div class="panel-heading"><h2>Channel Health</h2><button>View All</button></div>
+            <table><thead><tr><th>Channel</th><th>Status</th><th>Delivery Rate</th><th>Response Time</th></tr></thead><tbody><tr><td><i class="green-dot"></i>WhatsApp</td><td><span class="pill ok">Operational</span></td><td>94.0%</td><td>1.2s</td></tr><tr><td><i class="blue-dot"></i>Email</td><td><span class="pill ok">Operational</span></td><td>87.6%</td><td>2.4s</td></tr><tr><td><i class="orange-dot"></i>SMS</td><td><span class="pill ok">Operational</span></td><td>82.8%</td><td>1.8s</td></tr><tr><td><i class="purple-dot"></i>Voice Calls</td><td><span class="pill ok">Operational</span></td><td>64.9%</td><td>-</td></tr><tr><td><i class="cyan-dot"></i>Web Push</td><td><span class="pill ok">Operational</span></td><td>89.2%</td><td>0.6s</td></tr><tr><td><i class="red-dot"></i>In-App</td><td><span class="pill ok">Operational</span></td><td>73.2%</td><td>0.9s</td></tr></tbody></table>
+          </article>
+        </section>
+
+        <section class="grid middle-grid">
+          <article class="card panel table-panel"><div class="panel-heading"><h2>Delivery &amp; Engagement Summary</h2></div><table><thead><tr><th>Channel</th><th>Sent</th><th>Delivered</th><th>Delivery Rate</th><th>Open/Read Rate</th><th>Click Rate</th></tr></thead><tbody><tr><td><i class="green-dot"></i>WhatsApp</td><td>18.64M</td><td>17.52M</td><td>94.0%</td><td>81.3%</td><td>24.7%</td></tr><tr><td><i class="blue-dot"></i>Email</td><td>7.32M</td><td>6.41M</td><td>87.6%</td><td>32.1%</td><td>8.6%</td></tr><tr><td><i class="orange-dot"></i>SMS</td><td>2.91M</td><td>2.41M</td><td>82.8%</td><td>-</td><td>-</td></tr><tr><td><i class="purple-dot"></i>Voice Calls</td><td>482.1K</td><td>312.6K</td><td>64.9%</td><td>-</td><td>-</td></tr><tr><td><i class="cyan-dot"></i>Web Push</td><td>1.24M</td><td>1.10M</td><td>89.2%</td><td>18.7%</td><td>6.3%</td></tr><tr><td><i class="red-dot"></i>In-App</td><td>563.2K</td><td>412.8K</td><td>73.2%</td><td>27.6%</td><td>11.4%</td></tr></tbody></table></article>
+          <article class="card panel table-panel"><div class="panel-heading"><h2>Top Performing Campaigns by Channel</h2><button>View All</button></div><table><thead><tr><th>Campaign</th><th>Channel</th><th>Sent</th><th>Delivered</th><th>Engagement</th></tr></thead><tbody><tr><td>Summer Offer Blast</td><td><i class="green-dot"></i></td><td>1.24M</td><td>1.18M</td><td>28.4%</td></tr><tr><td>Monthly Newsletter - May</td><td><i class="blue-dot"></i></td><td>650K</td><td>592K</td><td>12.6%</td></tr><tr><td>Product Update Alert</td><td><i class="orange-dot"></i></td><td>820K</td><td>676K</td><td>-</td></tr><tr><td>IVR Follow-up Calls</td><td><i class="purple-dot"></i></td><td>120K</td><td>78K</td><td>65.0%</td></tr><tr><td>Push: New Features</td><td><i class="cyan-dot"></i></td><td>310K</td><td>284K</td><td>7.8%</td></tr><tr><td>In-App Promo - May</td><td><i class="red-dot"></i></td><td>200K</td><td>148K</td><td>15.3%</td></tr></tbody></table></article>
+          <article class="card panel alert-list"><div class="panel-heading"><h2>Recent Channel Alerts</h2><button>View All</button></div><ul><li><span class="alert-dot danger">!</span><b>WhatsApp Delivery rate dropped below 90%</b><time>2 minutes ago</time></li><li><span class="alert-dot warn">!</span><b>SMS route SMPP-2 response delay high</b><time>15 minutes ago</time></li><li><span class="alert-dot warn">!</span><b>Email bounce rate increased (5.6%)</b><time>32 minutes ago</time></li><li><span class="alert-dot info">i</span><b>Voice Call connection rate improved</b><time>1 hour ago</time></li><li><span class="alert-dot ok">i</span><b>Web Push click rate above 20%</b><time>2 hours ago</time></li><li><span class="alert-dot danger">!</span><b>In-App message delivery delay detected</b><time>3 hours ago</time></li></ul></article>
+        </section>
+
+        <section class="bottom-metrics" aria-label="Channel delivery rates">
+          <article class="mini-card green"><span>WA</span><div><h3>WhatsApp</h3><strong>17.52M <small>/ 18.64M</small></strong><p>Delivery Rate <b>94.0%</b></p><i style="--w:94%"></i><footer><em>Read Rate: 81.3%</em><em>Click Rate: 24.7%</em></footer></div></article>
+          <article class="mini-card blue"><span>EM</span><div><h3>Email</h3><strong>6.41M <small>/ 7.32M</small></strong><p>Delivery Rate <b>87.6%</b></p><i style="--w:87.6%"></i><footer><em>Open Rate: 32.1%</em><em>Click Rate: 8.6%</em></footer></div></article>
+          <article class="mini-card orange"><span>SM</span><div><h3>SMS</h3><strong>2.41M <small>/ 2.91M</small></strong><p>Delivery Rate <b>82.8%</b></p><i style="--w:82.8%"></i><footer><em>-</em><em>-</em></footer></div></article>
+          <article class="mini-card purple"><span>VC</span><div><h3>Voice Calls</h3><strong>312.6K <small>/ 482.1K</small></strong><p>Connection Rate <b class="bad">64.9%</b></p><i style="--w:64.9%"></i><footer><em>Avg. Call Duration: 02:34</em><em>Success Rate: 64.9%</em></footer></div></article>
+          <article class="mini-card cyan"><span>WP</span><div><h3>Web Push</h3><strong>1.10M <small>/ 1.24M</small></strong><p>Delivery Rate <b>89.2%</b></p><i style="--w:89.2%"></i><footer><em>Click Rate: 18.7%</em><em>CTR: 6.3%</em></footer></div></article>
+          <article class="mini-card red"><span>IA</span><div><h3>In-App</h3><strong>412.8K <small>/ 563.2K</small></strong><p>Delivery Rate <b class="bad">73.2%</b></p><i style="--w:73.2%"></i><footer><em>Read Rate: 27.6%</em><em>Click Rate: 11.4%</em></footer></div></article>
+        </section>
+      </div>
+    </section>
+  </main>
+  <dialog id="channel-dialog"><h2></h2><div class="dialog-body"></div><form method="dialog"><button>Close</button></form></dialog>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

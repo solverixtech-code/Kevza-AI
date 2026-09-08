@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI - Plans and Pricing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="all-plans.css" />
+  <link rel="stylesheet" href="professional-plan.css" />
+</head>
+<body>
+<main class="admin-app plans-shell">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+  </aside>
+
+  <section class="plans-main">
+    <header class="plans-topbar">
+      <nav class="plans-bread" aria-label="Breadcrumb"><span>Admin</span><span class="bc-sep">/</span><span>Plans &amp; Entitlements</span><span class="bc-sep">/</span><strong>All Plans</strong></nav>
+      <label class="plans-search" aria-label="Search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <div class="plans-topbar-right">
+        <button class="ptb-btn has-badge" aria-label="Notifications"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><i>12</i></button>
+        <button class="ptb-btn has-badge" aria-label="Messages"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><i>3</i></button>
+        <button class="ptb-btn" aria-label="Help"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
+        <div class="ptb-user"><strong>Aman Ansari</strong><span>Super Admin</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+      </div>
+    </header>
+
+    <div class="plans-page">
+      <div class="plans-title-row">
+        <div><h1>All Plans</h1><p>Manage subscription plans, features, limits and pricing for all workspaces. These plans are used for customer onboarding and upgrades.</p></div>
+        <button class="plan-primary-btn" data-open-plan-modal><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Create New Plan</button>
+      </div>
+
+      <div class="plans-dashboard-grid">
+        <section class="plans-left">
+          <div class="plan-kpis">
+            <article class="plan-kpi kpi-blue"><div class="plan-kpi-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div><div><span>Total Plans</span><strong>6</strong><small class="trend-up">+ 20% from last month</small></div></article>
+            <article class="plan-kpi kpi-indigo"><div class="plan-kpi-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a3 3 0 0 0-2.2-2.9"/><path d="M16 3.2a4 4 0 0 1 0 7.6"/></svg></div><div><span>Active Plans</span><strong>5</strong><small class="trend-up">+ 25% from last month</small></div></article>
+            <article class="plan-kpi kpi-red"><div class="plan-kpi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M10 5v14M14 5v14"/></svg></div><div><span>Inactive Plans</span><strong>1</strong><small class="trend-down">- 50% from last month</small></div></article>
+            <article class="plan-kpi kpi-violet"><div class="plan-kpi-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><span>Total Customers</span><strong>156</strong><small class="trend-up">+ 32% from last month</small></div></article>
+          </div>
+
+          <div class="plans-table-card">
+            <div class="plans-filterbar">
+              <label class="plan-table-search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search by plan name or description..." /></label>
+              <div class="plan-select"><select><option>All Status</option><option>Active</option><option>Inactive</option></select></div>
+              <div class="plan-select"><select><option>All Billing Cycles</option><option>Monthly</option><option>Yearly</option></select></div>
+              <div class="plan-select"><select><option>All Plan Types</option><option>Self-Serve</option><option>Sales Assisted</option><option>Custom</option></select></div>
+              <button class="plan-filter-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>More Filters</button>
+            </div>
+            <div class="plans-table-scroll"><table class="plans-table"><thead><tr><th><input type="checkbox" aria-label="Select all plans" /></th><th>#</th><th>Plan Name</th><th>Type</th><th>Price (Monthly)</th><th>Price (Yearly)</th><th>Customers</th><th>Status</th><th>Sort Order</th><th>Actions</th></tr></thead><tbody>
+              <tr><td><input type="checkbox" /></td><td>1</td><td class="plan-name-cell"><span class="plan-avatar rocket">&#8599;</span><div><strong>Starter</strong><small>For small businesses</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;1,999</td><td>&#8377;19,990</td><td>48</td><td><span class="status-pill active"><i></i>Active</span></td><td>1</td><td><button class="more-btn">&#8943;</button></td></tr>
+              <tr><td><input type="checkbox" /></td><td>2</td><td class="plan-name-cell"><span class="plan-avatar bars">|||</span><div><button class="plan-detail-link" type="button" data-open-professional-modal>Professional</button><small>For growing teams</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;3,999</td><td>&#8377;39,990</td><td>62</td><td><span class="status-pill active"><i></i>Active</span></td><td>2</td><td><button class="more-btn">&#8943;</button></td></tr>
+              <tr><td><input type="checkbox" /></td><td>3</td><td class="plan-name-cell"><span class="plan-avatar building">&#9818;</span><div><strong>Business</strong><small>Advanced features for business</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;6,999</td><td>&#8377;69,990</td><td>28</td><td><span class="status-pill active"><i></i>Active</span></td><td>3</td><td><button class="more-btn">&#8943;</button></td></tr>
+              <tr><td><input type="checkbox" /></td><td>4</td><td class="plan-name-cell"><span class="plan-avatar crown">&#9819;</span><div><strong>Enterprise</strong><small>For large organizations</small></div></td><td><span class="type-pill sales">Sales Assisted</span></td><td>&#8377;14,999</td><td>&#8377;149,990</td><td>12</td><td><span class="status-pill active"><i></i>Active</span></td><td>4</td><td><button class="more-btn">&#8943;</button></td></tr>
+              <tr><td><input type="checkbox" /></td><td>5</td><td class="plan-name-cell"><span class="plan-avatar trial">&#9874;</span><div><strong>Trial</strong><small>14 days free trial</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;0</td><td>-</td><td>6</td><td><span class="status-pill active"><i></i>Active</span></td><td>5</td><td><button class="more-btn">&#8943;</button></td></tr>
+              <tr><td><input type="checkbox" /></td><td>6</td><td class="plan-name-cell"><span class="plan-avatar legacy">&#9719;</span><div><strong>Legacy</strong><small>Old plan (not for new signups)</small></div></td><td><span class="type-pill custom">Custom</span></td><td>&#8377;2,999</td><td>&#8377;29,990</td><td>0</td><td><span class="status-pill inactive"><i></i>Inactive</span></td><td>6</td><td><button class="more-btn">&#8943;</button></td></tr>
+            </tbody></table></div>
+          </div>
+
+          <section class="feature-card"><h2>Plan Features Comparison</h2><p>Quick comparison of key features across plans</p><div class="feature-table-scroll"><table class="feature-table"><thead><tr><th>Feature</th><th>Starter</th><th>Professional</th><th>Business</th><th>Enterprise</th></tr></thead><tbody>
+            <tr><td>WhatsApp Contacts / Month</td><td>1,000</td><td>5,000</td><td>25,000</td><td>100,000</td></tr><tr><td>AI Chatbot Flows</td><td>5</td><td>25</td><td>100</td><td>Unlimited</td></tr><tr><td>Broadcast Campaigns / Month</td><td>10</td><td>50</td><td>250</td><td>Unlimited</td></tr><tr><td>Team Members</td><td>3</td><td>10</td><td>25</td><td>Unlimited</td></tr><tr><td>Multiple Workspaces</td><td><span class="no-mark">x</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td></tr><tr><td>API Access</td><td><span class="no-mark">x</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td></tr><tr><td>White Label</td><td><span class="no-mark">x</span></td><td><span class="no-mark">x</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td></tr><tr><td>Custom Domain</td><td><span class="no-mark">x</span></td><td><span class="no-mark">x</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td></tr><tr><td>Dedicated Support</td><td><span class="no-mark">x</span></td><td><span class="no-mark">x</span></td><td><span class="yes-mark">&#10003;</span></td><td>Priority</td></tr>
+          </tbody></table></div></section>
+        </section>
+
+        <aside class="plans-side">
+          <section class="side-card distribution-card"><h2>Plan Type Distribution</h2><div class="donut-row"><div class="plan-donut"><div><strong>6</strong><span>Plans</span></div></div><ul class="donut-legend"><li><span style="background:#2f6bff"></span><b>Self-Serve</b><em>4</em></li><li><span style="background:#8b5cf6"></span><b>Sales Assisted</b><em>1</em></li><li><span style="background:#f5b642"></span><b>Custom</b><em>1</em></li></ul></div></section>
+          <section class="side-card quick-card"><h2>Quick Actions</h2><button data-open-plan-modal><span>&#10010;</span>Create New Plan</button><button><span>&#9881;</span>Manage Features</button><button><span>&#9635;</span>Manage Add-ons</button><button><span>&#9638;</span>Plan Comparison</button><button><span>&#8681;</span>Import Plans</button><button><span>&#8681;</span>Export Plans</button></section>
+          <section class="help-card"><div class="help-icon">i</div><div><h2>Need Help?</h2><p>Configure plans, features, limits and pricing for your platform. Changes will apply to new signups and plan upgrades.</p><button>View Documentation</button></div></section>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="professional-plan-modal" id="professionalPlanModal" aria-hidden="true">
+  <div class="professional-plan-backdrop" data-close-professional-modal></div>
+  <section class="professional-plan-dialog" role="dialog" aria-modal="true" aria-labelledby="professionalPlanTitle">
+    <header class="professional-modal-head">
+      <div>
+        <nav class="plans-bread" aria-label="Professional plan breadcrumb"><span>Admin</span><span class="bc-sep">/</span><span>Plans &amp; Entitlements</span><span class="bc-sep">/</span><strong>Plan Detail</strong></nav>
+        <h2 id="professionalPlanTitle">Professional Plan <span class="status-pill active"><i></i>Active</span></h2>
+        <p>For growing teams with advanced features and higher limits.</p>
+      </div>
+      <div class="professional-modal-actions">
+        <button type="button" data-open-edit-plan-modal><span>&#9998;</span>Edit Plan</button>
+        <button type="button"><span>&#9635;</span>Duplicate</button>
+        <button class="danger" type="button"><span>&#9211;</span>Deactivate</button>
+        <button class="modal-back-btn" data-close-professional-modal type="button"><span>&larr;</span>Back to Plans</button>
+      </div>
+    </header>
+
+    <div class="professional-modal-body">
+      <section class="plan-summary-card">
+        <article class="summary-plan-name"><span class="plan-detail-icon bars">|||</span><div><strong>Professional</strong><small>Self-Serve Plan</small></div></article>
+        <article><strong>&#8377;3,999</strong><span>Monthly Price</span></article>
+        <article><strong>&#8377;39,990</strong><span>Yearly Price</span><em>Save 16%</em></article>
+        <article><strong>62</strong><span>Active Customers</span></article>
+        <article><strong>2</strong><span>Sort Order</span></article>
+        <article><strong>12 Mar 2025</strong><span>Created Date</span></article>
+        <article><strong>15 Jul 2026</strong><span>Last Updated</span></article>
+      </section>
+
+      <nav class="detail-tabs" aria-label="Plan detail tabs">
+        <a class="is-active" href="#professional-overview">Overview</a><a href="#professional-features">Features &amp; Limits</a><a href="#professional-customers">Customers (62)</a><a href="#professional-addons">Add-ons (5)</a><a href="#professional-pricing">Pricing &amp; Discounts</a><a href="#professional-analytics">Usage Analytics</a><a href="#professional-log">Change Log</a>
+      </nav>
+
+      <div class="detail-grid" id="professional-overview">
+        <section class="detail-card info-card">
+          <header><h2>Plan Information</h2><button type="button" data-open-edit-plan-modal>Edit</button></header>
+          <dl><dt>Plan Name</dt><dd>Professional</dd><dt>Internal Plan Code</dt><dd>PRO</dd><dt>Plan Type</dt><dd><span class="type-pill self">Self-Serve</span></dd><dt>Tag / Badge</dt><dd><span class="type-pill popular">Popular</span></dd><dt>Short Description</dt><dd>For growing teams with advanced features.</dd><dt>Detailed Description</dt><dd>Ideal for small and medium businesses looking to scale their customer communication with automation, team collaboration and advanced features.</dd><dt>Status</dt><dd><span class="status-pill active"><i></i>Active</span></dd><dt>Sort Order</dt><dd>2</dd><dt>Created Date</dt><dd>12 Mar 2025, 10:24 AM</dd><dt>Last Updated</dt><dd>15 Jul 2026, 04:15 PM</dd></dl>
+        </section>
+        <section class="detail-card billing-card" id="professional-pricing">
+          <header><h2>Pricing &amp; Billing</h2><button type="button" data-open-edit-plan-modal>Edit</button></header>
+          <dl><dt>Monthly Price (INR)</dt><dd>&#8377;3,999</dd><dt>Yearly Price (INR)</dt><dd>&#8377;39,990 <em>Save 16%</em></dd><dt>Billing Cycle</dt><dd>Monthly / Yearly</dd><dt>Trial Period</dt><dd>0 Days <span class="muted-dot">i</span></dd><dt>Setup Fee</dt><dd>&#8377;0</dd><dt>Currency</dt><dd>INR</dd><dt>Auto Renewal</dt><dd><span class="yes-mark">&#10003;</span> Enabled</dd><dt>Cancellation</dt><dd>Allowed anytime</dd><dt>Proration</dt><dd><span class="yes-mark">&#10003;</span> Enabled</dd></dl>
+        </section>
+        <aside class="detail-card plan-preview-detail">
+          <header><h2>Plan Preview</h2><button type="button">View as Customer</button></header>
+          <div class="professional-preview"><span class="preview-badge">Most Popular</span><span class="plan-detail-icon bars">|||</span><h3>Professional</h3><p>For growing teams with advanced features.</p><strong>&#8377;3,999 <span>/month</span></strong><ul><li>5,000 WhatsApp contacts / month</li><li>25 AI chatbot flows</li><li>50 Broadcast campaigns / month</li><li>10 Team members</li><li>Multiple workspaces</li><li>API access</li><li>Custom domain</li><li>Dedicated support</li></ul><button type="button">Get Started</button></div>
+        </aside>
+        <section class="detail-card limits-card" id="professional-features">
+          <header><h2>Key Features &amp; Limits</h2><button type="button" data-open-edit-plan-modal>Edit</button></header>
+          <div class="limits-grid"><dl><dt>WhatsApp Contacts / Month</dt><dd>5,000</dd><dt>AI Chatbot Flows</dt><dd>25</dd><dt>Broadcast Campaigns / Month</dt><dd>50</dd><dt>Team Members</dt><dd>10</dd><dt>Multiple Workspaces</dt><dd><span class="yes-mark">&#10003;</span> Yes</dd></dl><dl><dt>API Access</dt><dd><span class="yes-mark">&#10003;</span> Yes</dd><dt>Custom Domain</dt><dd><span class="yes-mark">&#10003;</span> Yes</dd><dt>White Label</dt><dd><span class="no-mark">x</span> No</dd><dt>Dedicated Support</dt><dd><span class="yes-mark">&#10003;</span> Yes</dd><dt>Custom Reports</dt><dd><span class="no-mark">x</span> No</dd></dl></div>
+        </section>
+        <section class="detail-card customers-card" id="professional-customers">
+          <header><h2>Customers on This Plan</h2><button type="button">View All</button></header><div class="customer-count"><strong>62</strong><span>Active Customers</span></div><div class="mini-chart" aria-label="Customers by month"><span style="height:38%"><b>Jan</b></span><span style="height:58%"><b>Feb</b></span><span style="height:54%"><b>Mar</b></span><span style="height:72%"><b>Apr</b></span><span style="height:78%"><b>May</b></span><span style="height:88%"><b>Jun</b></span><span style="height:100%"><b>Jul</b></span></div>
+        </section>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="edit-plan-modal" id="editPlanModal" aria-hidden="true">
+  <div class="edit-plan-backdrop" data-close-edit-plan-modal></div>
+  <section class="edit-plan-dialog" role="dialog" aria-modal="true" aria-labelledby="editPlanTitle">
+    <header class="edit-plan-head">
+      <div>
+        <nav class="plans-bread" aria-label="Edit plan breadcrumb"><span>Admin</span><span class="bc-sep">/</span><span>Plans &amp; Entitlements</span><span class="bc-sep">/</span><strong>Edit Plan</strong></nav>
+        <h2 id="editPlanTitle">Edit Plan</h2>
+        <p>Update plan details, features, limits and pricing. Changes will apply to new signups and future renewals.</p>
+      </div>
+      <button class="modal-back-btn" data-close-edit-plan-modal type="button"><span>&larr;</span>Back to Plan</button>
+    </header>
+
+    <div class="edit-plan-layout">
+      <form class="edit-plan-form">
+        <section class="form-panel">
+          <h3>Basic Information <span>Define the plan details and basic settings.</span></h3>
+          <div class="form-grid two-cols">
+            <label>Plan Name <b>*</b><input type="text" value="Professional" /></label>
+            <label>Internal Plan Code <b>*</b><input type="text" value="PRO" /></label>
+            <label>Plan Type <b>*</b><select><option>Self-Serve</option><option>Sales Assisted</option><option>Custom</option></select></label>
+            <label>Tag / Badge<select><option>Popular</option><option>Most Popular</option><option>Recommended</option></select></label>
+            <label>Short Description <b>*</b><textarea maxlength="150">For growing teams with advanced features.</textarea><small>46/150</small></label>
+            <label>Detailed Description<textarea maxlength="500">Ideal for small and medium businesses looking to scale their customer communication with automation, team collaboration and advanced features.</textarea><small>120/500</small></label>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <h3>Pricing &amp; Billing <span>Set the pricing for this plan.</span></h3>
+          <div class="form-grid two-cols edit-pricing-grid">
+            <label>Monthly Price (INR) <b>*</b><input type="text" value="&#8377; 3999" /></label>
+            <label class="recommended-field">Yearly Price (INR)<em>Save 16%</em><input type="text" value="&#8377; 39990" /></label>
+            <label>Billing Cycle<select><option>Monthly</option><option>Yearly</option><option>Monthly / Yearly</option></select></label>
+            <label>Currency<select><option>INR</option><option>USD</option></select></label>
+            <label class="check-row"><input type="checkbox" checked />Offer free trial</label>
+            <label>Setup Fee (INR)<input type="text" value="&#8377; 0" /></label>
+            <label>Trial Period (Days)<input type="number" value="0" /><small>Set 0 for no trial</small></label>
+            <div class="billing-checks"><label><input type="checkbox" checked />Enable auto renewal</label><label><input type="checkbox" checked />Allow cancellation anytime</label><label>Proration<select><option>Enabled</option><option>Disabled</option></select></label></div>
+          </div>
+        </section>
+
+        <div class="edit-bottom-grid">
+          <section class="form-panel">
+            <h3>Plan Features &amp; Limits <span>Configure what's included in this plan.</span></h3>
+            <div class="edit-limit-list">
+              <label>WhatsApp Contacts / Month<input type="number" value="5000" /><span><input type="checkbox" />Unlimited</span></label>
+              <label>AI Chatbot Flows<input type="number" value="25" /><span><input type="checkbox" />Unlimited</span></label>
+              <label>Broadcast Campaigns / Month<input type="number" value="50" /><span><input type="checkbox" />Unlimited</span></label>
+              <label>Team Members<input type="number" value="10" /><span><input type="checkbox" />Unlimited</span></label>
+              <label>Multiple Workspaces<input type="checkbox" role="switch" checked /></label>
+            </div>
+          </section>
+
+          <section class="form-panel edit-toggle-panel">
+            <div class="toggle-list">
+              <label>API Access<input type="checkbox" role="switch" checked /></label>
+              <label>Custom Domain<input type="checkbox" role="switch" checked /></label>
+              <label>White Label<input type="checkbox" role="switch" checked /></label>
+              <label>Dedicated Support<input type="checkbox" role="switch" checked /></label>
+              <label>Custom Reports<input type="checkbox" role="switch" /></label>
+            </div>
+          </section>
+        </div>
+
+        <div class="edit-plan-actions">
+          <button class="modal-cancel-btn" type="button" data-close-edit-plan-modal>Cancel</button>
+          <button class="modal-create-btn" type="button"><span>&#9635;</span>Save Changes</button>
+        </div>
+      </form>
+
+      <aside class="edit-plan-aside">
+        <section class="preview-panel">
+          <h3>Plan Preview</h3>
+          <p>This is how the plan will appear to customers.</p>
+          <div class="professional-preview edit-preview"><span class="preview-badge">Popular</span><span class="plan-detail-icon bars">|||</span><h3>Professional</h3><p>For growing teams with advanced features.</p><strong>&#8377;3,999 <span>/month</span></strong><small>&#8377;39,990 billed yearly (Save 16%)</small><ul><li>5,000 WhatsApp contacts / month</li><li>25 AI chatbot flows</li><li>50 Broadcast campaigns / month</li><li>10 Team members</li><li>Multiple workspaces</li><li>API access</li><li>Custom domain</li><li>White label</li><li>Dedicated support</li></ul><button type="button">Get Started</button></div>
+        </section>
+        <section class="tips-panel"><h3><span>i</span>Tips for Editing a Plan</h3><ul><li>Changes to pricing and features apply to new customers and future renewals.</li><li>Existing customers on this plan will not be affected immediately.</li><li>Use versioning or create a new plan if you want to apply changes to existing customers.</li><li>Make sure to review the plan preview before saving.</li></ul></section>
+      </aside>
+    </div>
+  </section>
+</div>
+<div class="create-plan-modal" id="createPlanModal" aria-hidden="true">
+  <div class="create-plan-backdrop" data-close-plan-modal></div>
+  <section class="create-plan-dialog" role="dialog" aria-modal="true" aria-labelledby="createPlanTitle">
+    <header class="create-plan-head">
+      <div>
+        <nav class="plans-bread" aria-label="Create plan breadcrumb"><span>Admin</span><span class="bc-sep">/</span><span>Plans &amp; Entitlements</span><span class="bc-sep">/</span><strong>Create Plan</strong></nav>
+        <h2 id="createPlanTitle">Create Plan</h2>
+        <p>Set up a new subscription plan with features, limits and pricing. This plan will be available for new signups and upgrades.</p>
+      </div>
+      <button class="modal-back-btn" data-close-plan-modal type="button"><span>&larr;</span>Back to Plans</button>
+    </header>
+
+    <div class="create-plan-layout">
+      <form class="create-plan-form">
+        <section class="form-panel">
+          <h3>Basic Information <span>Define the plan details and basic settings.</span></h3>
+          <div class="form-grid two-cols">
+            <label>Plan Name <b>*</b><input type="text" placeholder="e.g. Professional" /></label>
+            <label>Internal Plan Code <b>*</b><input type="text" placeholder="e.g. professional" /></label>
+            <label>Plan Type <b>*</b><select><option>Select plan type</option><option>Self-Serve</option><option>Sales Assisted</option><option>Custom</option></select></label>
+            <label>Tag / Badge<select><option>e.g. Most Popular</option><option>Your Plan Badge</option><option>Recommended</option></select></label>
+            <label>Short Description <b>*</b><textarea maxlength="150" placeholder="Brief description about this plan..."></textarea><small>0/150</small></label>
+            <label>Detailed Description<textarea maxlength="500" placeholder="Detailed description about features, benefits and who this plan is for..."></textarea><small>0/500</small></label>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <h3>Pricing &amp; Billing <span>Set the pricing for this plan.</span></h3>
+          <div class="form-grid two-cols">
+            <label>Monthly Price (INR) <b>*</b><input type="text" value="&#8377; 0" /></label>
+            <label class="recommended-field">Yearly Price (INR)<em>Recommended</em><input type="text" value="&#8377; 0" /></label>
+            <label>Billing Cycle<select><option>Monthly</option><option>Yearly</option><option>Custom</option></select></label>
+            <label>Trial Period (Days)<input type="number" value="0" /><small>Set 0 for no trial</small></label>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <h3>Plan Features &amp; Limits <span>Configure what's included in this plan.</span><button class="load-plan-btn" type="button">Load from Existing Plan</button></h3>
+          <div class="features-grid">
+            <div class="limit-list">
+              <label>WhatsApp Contacts / Month<input type="number" value="0" /><small>Set 0 for unlimited</small></label>
+              <label>AI Chatbot Flows<input type="number" value="0" /><small>Set 0 for unlimited</small></label>
+              <label>Broadcast Campaigns / Month<input type="number" value="0" /><small>Set 0 for unlimited</small></label>
+              <label>Team Members<input type="number" value="0" /><small>Set 0 for unlimited</small></label>
+            </div>
+            <div class="toggle-list">
+              <label>Multiple Workspaces<input type="checkbox" role="switch" /></label>
+              <label>API Access<input type="checkbox" role="switch" /></label>
+              <label>Custom Domain<input type="checkbox" role="switch" /></label>
+              <label>White Label<input type="checkbox" role="switch" /></label>
+              <label>Dedicated Support<input type="checkbox" role="switch" /></label>
+            </div>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <h3>Status &amp; Visibility <span>Control plan availability and display settings.</span></h3>
+          <div class="status-grid">
+            <label>Status<select><option>&#9679; Active</option><option>Inactive</option></select></label>
+            <label>Sort Order<input type="number" value="0" /><small>Lower number will appear first</small></label>
+            <div class="toggle-list compact">
+              <label>Show in Signup<input type="checkbox" role="switch" checked /><small>Make this plan available for new customers</small></label>
+              <label>Mark as Popular<input type="checkbox" role="switch" /><small>Display a popular badge on this plan</small></label>
+            </div>
+          </div>
+        </section>
+
+        <div class="create-plan-actions">
+          <button class="modal-cancel-btn" type="button" data-close-plan-modal>Cancel</button>
+          <button class="modal-create-btn" type="button"><span>&#9635;</span>Create Plan</button>
+        </div>
+      </form>
+
+      <aside class="create-plan-aside">
+        <section class="preview-panel">
+          <h3>Plan Preview</h3>
+          <p>This is how the plan will appear to customers.</p>
+          <div class="preview-card">
+            <span class="preview-badge">Your Plan Badge</span>
+            <div class="preview-crown">&#9819;</div>
+            <h4>Plan Name</h4>
+            <p>Short description about this plan</p>
+            <strong>&#8377;0 <span>/month</span></strong>
+            <small>&#9679; Billed monthly</small>
+            <ul>
+              <li>0 WhatsApp contacts / month</li><li>0 AI chatbot flows</li><li>0 Broadcast campaigns / month</li><li>0 Team members</li><li>Multiple workspaces</li><li>API access</li><li>Custom domain</li><li>White label</li><li>Dedicated support</li>
+            </ul>
+            <button type="button">Get Started</button>
+          </div>
+        </section>
+        <section class="tips-panel">
+          <h3><span>i</span>Tips for Creating a Plan</h3>
+          <ul>
+            <li>Use clear and simple plan names.</li>
+            <li>Set realistic limits based on your infrastructure capacity.</li>
+            <li>Highlight key features that differentiate this plan.</li>
+            <li>You can always edit the plan later.</li>
+            <li>Make sure to test the plan before making it live.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </section>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById('createPlanModal');
+    if (!modal) return;
+    function openModal() {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('plan-modal-open');
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('plan-modal-open');
+    }
+    document.querySelectorAll('[data-open-plan-modal]').forEach(function (button) {
+      button.addEventListener('click', openModal);
+    });
+    modal.querySelectorAll('[data-close-plan-modal]').forEach(function (button) {
+      button.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  }());
+</script>
+<script>
+  (function () {
+    var modal = document.getElementById('professionalPlanModal');
+    if (!modal) return;
+    function openModal() {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('plan-modal-open');
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('plan-modal-open');
+    }
+    document.querySelectorAll('[data-open-professional-modal]').forEach(function (button) {
+      button.addEventListener('click', openModal);
+    });
+    modal.querySelectorAll('[data-close-professional-modal]').forEach(function (button) {
+      button.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  }());
+</script>
+<script>
+  (function () {
+    var modal = document.getElementById('editPlanModal');
+    if (!modal) return;
+    function openModal() {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('plan-modal-open');
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('plan-modal-open');
+    }
+    document.querySelectorAll('[data-open-edit-plan-modal]').forEach(function (button) {
+      button.addEventListener('click', openModal);
+    });
+    modal.querySelectorAll('[data-close-edit-plan-modal]').forEach(function (button) {
+      button.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  }());
+</script>
+<script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

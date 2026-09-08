@@ -1,4 +1,4 @@
-﻿import { resolve } from 'path';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -11,8 +11,45 @@ export default defineConfig({
         resetPassword: resolve(import.meta.dirname, 'reset-password.html'),
         verifyLogin: resolve(import.meta.dirname, 'verify-login.html'),
         verifySession: resolve(import.meta.dirname, 'verify-session.html'),
+        loginHistory: resolve(import.meta.dirname, 'login-history.html'),
+        activeSessions: resolve(import.meta.dirname, 'active-sessions.html'),
+        changePassword: resolve(import.meta.dirname, 'change-password.html'),
+        notificationPreferences: resolve(import.meta.dirname, 'notification-preferences.html'),
+        mySecurity: resolve(import.meta.dirname, 'security.html'),
+        infrastructureHealth: resolve(import.meta.dirname, 'infrastructure-health.html'),
+        supportDashboard: resolve(import.meta.dirname, 'support-dashboard.html'),
+        costMarginDashboard: resolve(import.meta.dirname, 'cost-margin-dashboard.html'),
+        liveOperationsCenter: resolve(import.meta.dirname, 'live-operations-center.html'),
+        complianceDashboard: resolve(import.meta.dirname, 'compliance-dashboard.html'),
+        aiOperationsDashboard: resolve(import.meta.dirname, 'ai-operations-dashboard.html'),
+        campaignOperationsDashboard: resolve(import.meta.dirname, 'campaign-operations-dashboard.html'),
+        automationOperationsDashboard: resolve(import.meta.dirname, 'automation-operations-dashboard.html'),
+        messagingDashboard: resolve(import.meta.dirname, 'messaging-dashboard.html'),
+        subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
+        channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
+        customerActivationQueue: resolve(import.meta.dirname, 'customer-activation-queue.html'),
+        plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
+        professionalPlan: resolve(import.meta.dirname, 'professional-plan.html'),
+        allPlans: resolve(import.meta.dirname, 'all-plans.html'),
+        allCustomers: resolve(import.meta.dirname, 'all-customers.html'),
       },
     },
   },
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI – Customer Activation Queue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="customer-activation-queue.css" />
+</head>
+<body>
+<main class="admin-app caq-shell">
+
+  <!-- ═══════════════ SIDEBAR ═══════════════ -->
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home">
+      <span class="brand-mark">K</span>
+      <span>Kevza<span>AI</span></span>
+    </a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user">
+      <div class="mini-avatar">AA</div>
+      <div>
+        <strong>Aman Ansari</strong>
+        <span>Super Admin</span>
+      </div>
+      <b>&#8964;</b>
+    </div>
+  </aside>
+
+  <!-- ═══════════════ MAIN ═══════════════ -->
+  <section class="caq-main">
+
+    <!-- Top bar -->
+    <header class="caq-topbar">
+      <nav class="caq-breadcrumb" aria-label="Breadcrumb">
+        <span>Admin</span>
+        <span class="sep">/</span>
+        <span>Customers</span>
+        <span class="sep">/</span>
+        <strong>Customer Activation Queue</strong>
+      </nav>
+
+      <label class="caq-search" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" placeholder="Search anything..." />
+        <kbd>&#8984;K</kbd>
+      </label>
+
+      <div class="caq-topbar-right">
+        <button class="caq-icon-btn has-badge" aria-label="Notifications">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <i>8</i>
+        </button>
+        <button class="caq-icon-btn has-badge" aria-label="Messages">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <i>3</i>
+        </button>
+        <button class="caq-icon-btn" aria-label="Help">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </button>
+        <div class="caq-topbar-user">
+          <div class="mini-avatar" style="width:30px;height:30px;font-size:11px;">AA</div>
+          <div>
+            <strong>Aman Ansari</strong>
+            <span>Super Admin</span>
+          </div>
+          <b>&#8964;</b>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page scroll area -->
+    <div class="caq-page">
+
+      <!-- Page heading -->
+      <div class="caq-page-head">
+        <div>
+          <h1>Customer Activation Queue</h1>
+          <p>Manage trial signups and pending activations. Review, verify, and activate customers.</p>
+        </div>
+        <div class="caq-page-actions">
+          <button class="btn-export">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export
+          </button>
+          <button class="btn-activate">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+            Activate Selected
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI cards -->
+      <div class="caq-kpis">
+
+        <div class="caq-kpi-card kpi-blue">
+          <div class="kpi-body">
+            <div class="kpi-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="kpi-text">
+              <span class="kpi-label">Pending Activation</span>
+              <div class="kpi-value-row">
+                <strong>42</strong>
+                <span class="kpi-delta pos">&#9650; 18.6%</span>
+              </div>
+              <span class="kpi-sub">vs last 7 days</span>
+            </div>
+          </div>
+          <svg class="kpi-spark" viewBox="0 0 140 30" preserveAspectRatio="none">
+            <polyline points="0,26 23,22 45,18 65,20 85,14 105,10 125,7 140,3" fill="none" stroke="#367dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="caq-kpi-card kpi-cyan">
+          <div class="kpi-body">
+            <div class="kpi-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="kpi-text">
+              <span class="kpi-label">Avg. Pending Time</span>
+              <div class="kpi-value-row">
+                <strong>1.8 days</strong>
+                <span class="kpi-delta neg">&#9660; 32.5%</span>
+              </div>
+              <span class="kpi-sub">vs last 7 days</span>
+            </div>
+          </div>
+          <svg class="kpi-spark" viewBox="0 0 140 30" preserveAspectRatio="none">
+            <polyline points="0,8 23,12 45,10 65,16 85,13 105,19 125,22 140,26" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="caq-kpi-card kpi-purple">
+          <div class="kpi-body">
+            <div class="kpi-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="kpi-text">
+              <span class="kpi-label">KYC Pending</span>
+              <div class="kpi-value-row">
+                <strong>14</strong>
+                <span class="kpi-delta pos">&#9650; 27.3%</span>
+              </div>
+              <span class="kpi-sub">vs last 7 days</span>
+            </div>
+          </div>
+          <svg class="kpi-spark" viewBox="0 0 140 30" preserveAspectRatio="none">
+            <polyline points="0,24 23,20 45,22 65,16 85,18 105,12 125,8 140,5" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="caq-kpi-card kpi-green">
+          <div class="kpi-body">
+            <div class="kpi-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="kpi-text">
+              <span class="kpi-label">Ready to Activate</span>
+              <div class="kpi-value-row">
+                <strong>28</strong>
+                <span class="kpi-delta pos">&#9650; 46.2%</span>
+              </div>
+              <span class="kpi-sub">vs last 7 days</span>
+            </div>
+          </div>
+          <svg class="kpi-spark" viewBox="0 0 140 30" preserveAspectRatio="none">
+            <polyline points="0,27 23,23 45,20 65,16 85,14 105,10 125,6 140,2" fill="none" stroke="#21c79a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+      </div><!-- /caq-kpis -->
+
+      <!-- Toolbar -->
+      <div class="caq-toolbar">
+        <div class="caq-tabs">
+          <button class="caq-tab active">All Pending <span class="tab-badge">42</span></button>
+          <button class="caq-tab">KYC Pending <span class="tab-badge">14</span></button>
+          <button class="caq-tab">Payment Pending <span class="tab-badge">10</span></button>
+          <button class="caq-tab">Verification Pending <span class="tab-badge">8</span></button>
+          <button class="caq-tab">Ready to Activate <span class="tab-badge">28</span></button>
+        </div>
+        <div class="caq-filters">
+          <div class="caq-select-wrap">
+            <select aria-label="Filter by plan">
+              <option>All Plans</option>
+              <option>Professional</option>
+              <option>Business</option>
+              <option>Enterprise</option>
+              <option>Starter</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="caq-select-wrap">
+            <select aria-label="Filter by industry">
+              <option>All Industries</option>
+              <option>Technology</option>
+              <option>Healthcare</option>
+              <option>Education</option>
+              <option>Retail</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <button class="caq-date-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            May 27, 2024 – Jun 02, 2024
+          </button>
+          <button class="caq-filter-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            Filters
+          </button>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="caq-table-wrap card">
+        <div class="caq-table-scroll">
+          <table class="caq-table">
+            <thead>
+              <tr>
+                <th class="col-check"><input type="checkbox" aria-label="Select all" /></th>
+                <th class="col-num">#</th>
+                <th class="col-customer">Customer</th>
+                <th class="col-plan">Plan</th>
+                <th class="col-signup">Signup Date</th>
+                <th class="col-pending">Pending Since</th>
+                <th class="col-status">Activation Status</th>
+                <th class="col-action">Next Action</th>
+                <th class="col-manager">Assigned To</th>
+                <th class="col-actions">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-num">1</td>
+                <td class="td-customer">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#1766d8,#3b82f6)">TS</div>
+                  <div class="cust-info">
+                    <strong>TechNova Solutions Pvt. Ltd.</strong>
+                    <small>technova.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-pill pill-pro">Professional</span></td>
+                <td>30 May, 2025</td>
+                <td class="td-since">2 hours ago</td>
+                <td><span class="status-chip chip-ready">&#9679; Ready to Activate</span></td>
+                <td><span class="action-chip chip-activate">&#9654; Activate Account</span></td>
+                <td class="td-assignee">
+                  <div class="mgr-av" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">RS</div>
+                  <span>Rohit Sharma</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn" title="View">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                  <button class="act-btn" title="Edit">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                  </button>
+                  <button class="act-btn act-more" title="More">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-num">2</td>
+                <td class="td-customer">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#0d9467,#10b981)">BG</div>
+                  <div class="cust-info">
+                    <strong>Bright Growth Marketing</strong>
+                    <small>brightgrowth.com</small>
+                  </div>
+                </td>
+                <td><span class="plan-pill pill-biz">Business</span></td>
+                <td>29 May, 2025</td>
+                <td class="td-since">6 hours ago</td>
+                <td><span class="status-chip chip-kyc">&#9679; KYC Pending</span></td>
+                <td><span class="action-chip chip-verify">&#9654; Verify Documents</span></td>
+                <td class="td-assignee">
+                  <div class="mgr-av" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)">PM</div>
+                  <span>Priya Mehta</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="act-btn act-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-num">3</td>
+                <td class="td-customer">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#c5d0e8,#dce6f8);color:#3b5998">AC</div>
+                  <div class="cust-info">
+                    <strong>Acme Corp</strong>
+                    <small>acmecorp.io</small>
+                  </div>
+                </td>
+                <td><span class="plan-pill pill-ent">Enterprise</span></td>
+                <td>29 May, 2025</td>
+                <td class="td-since">1 day ago</td>
+                <td><span class="status-chip chip-payment">&#9679; Payment Pending</span></td>
+                <td><span class="action-chip chip-confirm">&#9654; Confirm Payment</span></td>
+                <td class="td-assignee">
+                  <div class="mgr-av" style="background:linear-gradient(135deg,#b45309,#f59e0b)">KP</div>
+                  <span>Karan Patel</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="act-btn act-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-num">4</td>
+                <td class="td-customer">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#6d28d9,#a78bfa)">HF</div>
+                  <div class="cust-info">
+                    <strong>HealthFirst Clinics</strong>
+                    <small>healthfirst.in</small>
+                  </div>
+                </td>
+                <td><span class="plan-pill pill-biz">Business</span></td>
+                <td>28 May, 2025</td>
+                <td class="td-since">1 day ago</td>
+                <td><span class="status-chip chip-kyc">&#9679; KYC Pending</span></td>
+                <td><span class="action-chip chip-verify">&#9654; Verify Documents</span></td>
+                <td class="td-assignee">
+                  <div class="mgr-av" style="background:linear-gradient(135deg,#065f46,#10b981)">SI</div>
+                  <span>Sneha Iyer</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="act-btn act-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-num">5</td>
+                <td class="td-customer">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#c2600a,#f97316)">LS</div>
+                  <div class="cust-info">
+                    <strong>LearnSmart Education</strong>
+                    <small>learnsmart.edu</small>
+                  </div>
+                </td>
+                <td><span class="plan-pill pill-pro">Professional</span></td>
+                <td>27 May, 2025</td>
+                <td class="td-since">2 days ago</td>
+                <td><span class="status-chip chip-ready">&#9679; Ready to Activate</span></td>
+                <td><span class="action-chip chip-activate">&#9654; Activate Account</span></td>
+                <td class="td-assignee">
+                  <div class="mgr-av" style="background:linear-gradient(135deg,#4c1d95,#8b5cf6)">VS</div>
+                  <span>Vikram Singh</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="act-btn act-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-num">6</td>
+                <td class="td-customer">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#0e7490,#06b6d4)">RE</div>
+                  <div class="cust-info">
+                    <strong>RetailEdge Store</strong>
+                    <small>retailedge.store</small>
+                  </div>
+                </td>
+                <td><span class="plan-pill pill-biz">Business</span></td>
+                <td>27 May, 2025</td>
+                <td class="td-since">2 days ago</td>
+                <td><span class="status-chip chip-verification">&#9679; Verification Pending</span></td>
+                <td><span class="action-chip chip-verify-biz">&#9654; Verify Business Details</span></td>
+                <td class="td-assignee">
+                  <div class="mgr-av" style="background:linear-gradient(135deg,#831843,#ec4899)">AV</div>
+                  <span>Anjali Verma</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="act-btn act-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-num">7</td>
+                <td class="td-customer">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#dc2626,#f87171)">WG</div>
+                  <div class="cust-info">
+                    <strong>WebGenius Agency</strong>
+                    <small>webgenius.io</small>
+                  </div>
+                </td>
+                <td><span class="plan-pill pill-starter">Starter</span></td>
+                <td>26 May, 2025</td>
+                <td class="td-since">3 days ago</td>
+                <td><span class="status-chip chip-payment">&#9679; Payment Pending</span></td>
+                <td><span class="action-chip chip-confirm">&#9654; Confirm Payment</span></td>
+                <td class="td-assignee">
+                  <div class="mgr-av" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">RS</div>
+                  <span>Rohit Sharma</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="act-btn act-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-num">8</td>
+                <td class="td-customer">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#5b21b6,#8b5cf6)">DP</div>
+                  <div class="cust-info">
+                    <strong>DataPro Technologies</strong>
+                    <small>datapro.tech</small>
+                  </div>
+                </td>
+                <td><span class="plan-pill pill-ent">Enterprise</span></td>
+                <td>26 May, 2025</td>
+                <td class="td-since">3 days ago</td>
+                <td><span class="status-chip chip-ready">&#9679; Ready to Activate</span></td>
+                <td><span class="action-chip chip-activate">&#9654; Activate Account</span></td>
+                <td class="td-assignee">
+                  <div class="mgr-av" style="background:linear-gradient(135deg,#9d174d,#f472b6)">PN</div>
+                  <span>Pooja Nair</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="act-btn act-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-num">9</td>
+                <td class="td-customer">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#d97706,#fbbf24)">SC</div>
+                  <div class="cust-info">
+                    <strong>SmartConnect Agencies</strong>
+                    <small>smartconnect.agency</small>
+                  </div>
+                </td>
+                <td><span class="plan-pill pill-pro">Professional</span></td>
+                <td>25 May, 2025</td>
+                <td class="td-since">4 days ago</td>
+                <td><span class="status-chip chip-kyc">&#9679; KYC Pending</span></td>
+                <td><span class="action-chip chip-verify">&#9654; Verify Documents</span></td>
+                <td class="td-assignee">
+                  <div class="mgr-av" style="background:linear-gradient(135deg,#b45309,#f59e0b)">KP</div>
+                  <span>Karan Patel</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="act-btn act-more">&#8943;</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="td-num">10</td>
+                <td class="td-customer">
+                  <div class="cust-av" style="background:linear-gradient(135deg,#047857,#34d399)">IF</div>
+                  <div class="cust-info">
+                    <strong>InstaFinance Services</strong>
+                    <small>instafinance.in</small>
+                  </div>
+                </td>
+                <td><span class="plan-pill pill-biz">Business</span></td>
+                <td>25 May, 2025</td>
+                <td class="td-since">4 days ago</td>
+                <td><span class="status-chip chip-verification">&#9679; Verification Pending</span></td>
+                <td><span class="action-chip chip-verify-biz">&#9654; Verify Business Details</span></td>
+                <td class="td-assignee">
+                  <div class="mgr-av" style="background:linear-gradient(135deg,#065f46,#10b981)">SI</div>
+                  <span>Sneha Iyer</span>
+                </td>
+                <td class="td-actions">
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="act-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="act-btn act-more">&#8943;</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Table footer -->
+        <div class="caq-table-foot">
+          <span class="table-info">Showing 1 to 10 of 42 pending activations</span>
+          <div class="caq-pagination">
+            <button class="pg-btn" disabled>&#8249;</button>
+            <button class="pg-btn pg-active">1</button>
+            <button class="pg-btn">2</button>
+            <button class="pg-btn">3</button>
+            <button class="pg-btn">4</button>
+            <button class="pg-btn">5</button>
+            <span class="pg-ellipsis">&#8230;</span>
+            <button class="pg-btn">&#8250;</button>
+            <div class="pg-per-page">
+              <select aria-label="Items per page">
+                <option>10 / page</option>
+                <option>25 / page</option>
+                <option>50 / page</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div><!-- /caq-table-wrap -->
+
+      <!-- Analytics bottom row -->
+      <div class="caq-analytics">
+
+        <!-- Activation funnel -->
+        <div class="card caq-analytics-card">
+          <h3 class="analytics-title">Activation Funnel</h3>
+          <div class="funnel-bars">
+            <div class="funnel-row">
+              <span class="funnel-label">Signups</span>
+              <div class="funnel-track"><div class="funnel-fill" style="width:100%;background:#367dff"></div></div>
+              <span class="funnel-count">42 (100%)</span>
+            </div>
+            <div class="funnel-row">
+              <span class="funnel-label">KYC Verified</span>
+              <div class="funnel-track"><div class="funnel-fill" style="width:67%;background:#9f67ff"></div></div>
+              <span class="funnel-count">28 (66.7%)</span>
+            </div>
+            <div class="funnel-row">
+              <span class="funnel-label">Payment Verified</span>
+              <div class="funnel-track"><div class="funnel-fill" style="width:57%;background:#ff4966"></div></div>
+              <span class="funnel-count">24 (57.1%)</span>
+            </div>
+            <div class="funnel-row">
+              <span class="funnel-label">Ready to Activate</span>
+              <div class="funnel-track"><div class="funnel-fill" style="width:67%;background:#21c79a"></div></div>
+              <span class="funnel-count">28 (66.7%)</span>
+            </div>
+            <div class="funnel-row">
+              <span class="funnel-label">Activated</span>
+              <div class="funnel-track"><div class="funnel-fill" style="width:43%;background:#367dff"></div></div>
+              <span class="funnel-count">18 (42.9%)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending by reason donut -->
+        <div class="card caq-analytics-card">
+          <h3 class="analytics-title">Pending by Reason</h3>
+          <div class="donut-wrap">
+            <div class="donut-chart">
+              <div class="donut-ring"></div>
+              <div class="donut-center">
+                <strong>42</strong>
+                <span>Pending</span>
+              </div>
+            </div>
+            <ul class="donut-legend">
+              <li><span class="leg-dot" style="background:#ffab2e"></span>KYC Pending <b>14 (33.3%)</b></li>
+              <li><span class="leg-dot" style="background:#ff4966"></span>Payment Pending <b>10 (23.8%)</b></li>
+              <li><span class="leg-dot" style="background:#9f67ff"></span>Verification Pending <b>8 (19.0%)</b></li>
+              <li><span class="leg-dot" style="background:#94a3b8"></span>Other <b>10 (23.8%)</b></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pending trend chart -->
+        <div class="card caq-analytics-card">
+          <div class="caq-analytics-head">
+            <h3 class="analytics-title">Pending Activation Trend</h3>
+            <span class="analytics-badge">Last 7 Days</span>
+          </div>
+          <div class="trend-wrap">
+            <div class="trend-y-labels">
+              <span>50</span>
+              <span>40</span>
+              <span>30</span>
+              <span>20</span>
+            </div>
+            <svg class="trend-svg" viewBox="0 0 260 100" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="caqFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#367dff" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#367dff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,88 L43,57 L86,70 L130,52 L173,45 L216,28 L260,15" fill="none" stroke="#367dff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M0,88 L43,57 L86,70 L130,52 L173,45 L216,28 L260,15 L260,100 L0,100 Z" fill="url(#caqFill)"/>
+              <circle cx="0"   cy="88" r="3" fill="#367dff"/>
+              <circle cx="43"  cy="57" r="3" fill="#367dff"/>
+              <circle cx="86"  cy="70" r="3" fill="#367dff"/>
+              <circle cx="130" cy="52" r="3" fill="#367dff"/>
+              <circle cx="173" cy="45" r="3" fill="#367dff"/>
+              <circle cx="216" cy="28" r="3" fill="#367dff"/>
+              <circle cx="260" cy="15" r="3" fill="#367dff"/>
+            </svg>
+          </div>
+          <div class="trend-x-labels">
+            <span>May 27</span><span>May 28</span><span>May 29</span>
+            <span>May 30</span><span>May 31</span><span>Jun 1</span><span>Jun 2</span>
+          </div>
+        </div>
+
+        <!-- Top pending customers -->
+        <div class="card caq-analytics-card">
+          <div class="caq-analytics-head">
+            <h3 class="analytics-title">Top Pending Customers (by Plan)</h3>
+            <a href="#" class="analytics-link">View all</a>
+          </div>
+          <ul class="top-pending">
+            <li>
+              <div class="tp-left">
+                <div class="cust-av tp-av" style="background:linear-gradient(135deg,#c5d0e8,#dce6f8);color:#3b5998">AC</div>
+                <div class="tp-info">
+                  <span>Acme Corp</span>
+                  <span class="plan-pill pill-ent" style="font-size:9px;padding:1px 6px;">Enterprise</span>
+                </div>
+              </div>
+              <span class="tp-time">3 days</span>
+            </li>
+            <li>
+              <div class="tp-left">
+                <div class="cust-av tp-av" style="background:linear-gradient(135deg,#5b21b6,#8b5cf6)">DP</div>
+                <div class="tp-info">
+                  <span>DataPro Technologies</span>
+                  <span class="plan-pill pill-ent" style="font-size:9px;padding:1px 6px;">Enterprise</span>
+                </div>
+              </div>
+              <span class="tp-time">3 days</span>
+            </li>
+            <li>
+              <div class="tp-left">
+                <div class="cust-av tp-av" style="background:linear-gradient(135deg,#1766d8,#3b82f6)">TS</div>
+                <div class="tp-info">
+                  <span>TechNova Solutions</span>
+                  <span class="plan-pill pill-pro" style="font-size:9px;padding:1px 6px;">Professional</span>
+                </div>
+              </div>
+              <span class="tp-time">2 hours</span>
+            </li>
+            <li>
+              <div class="tp-left">
+                <div class="cust-av tp-av" style="background:linear-gradient(135deg,#c2600a,#f97316)">LS</div>
+                <div class="tp-info">
+                  <span>LearnSmart Education</span>
+                  <span class="plan-pill pill-pro" style="font-size:9px;padding:1px 6px;">Professional</span>
+                </div>
+              </div>
+              <span class="tp-time">2 days</span>
+            </li>
+            <li>
+              <div class="tp-left">
+                <div class="cust-av tp-av" style="background:linear-gradient(135deg,#0d9467,#10b981)">BG</div>
+                <div class="tp-info">
+                  <span>Bright Growth Marketing</span>
+                  <span class="plan-pill pill-biz" style="font-size:9px;padding:1px 6px;">Business</span>
+                </div>
+              </div>
+              <span class="tp-time">6 hours</span>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /caq-analytics -->
+
+    </div><!-- /caq-page -->
+  </section>
+
+</main>
+<script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+﻿.notification-page {
+  padding: 24px 28px 30px;
+}
+
+.notification-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.notification-title-row h1 {
+  margin: 0;
+  color: #13264a;
+  font-size: 24px;
+  line-height: 1.18;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.notification-title-row p,
+.notification-card-heading p,
+.notification-overview-card p,
+.preference-row p,
+.type-card p {
+  color: #71829e;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.notification-title-row p,
+.notification-overview-card p,
+.preference-row p,
+.type-card p,
+.notification-card-heading p {
+  margin: 8px 0 0;
+}
+
+.save-preferences-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 7px;
+  color: #ffffff;
+  background: #0fb981;
+  box-shadow: 0 12px 22px rgba(15, 185, 129, 0.2);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.notification-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.6fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.notification-overview-card,
+.notification-settings-card,
+.notification-note {
+  border: 1px solid #e5ebf4;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(20, 45, 87, 0.06);
+}
+
+.notification-overview-card {
+  padding: 28px 22px 24px;
+}
+
+.notification-hero-icon {
+  display: grid;
+  width: 86px;
+  height: 86px;
+  place-items: center;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  color: #377dff;
+  background: #eaf1ff;
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.notification-overview-card h2,
+.notification-card-heading h2 {
+  margin: 0;
+  color: #13264a;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.notification-summary-list {
+  display: grid;
+  gap: 0;
+  margin-top: 22px;
+}
+
+.notification-summary-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 0;
+  border-top: 1px solid #edf2f7;
+}
+
+.notification-summary-list span {
+  color: #71829e;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.notification-summary-list strong {
+  color: #13264a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.notification-settings-card {
+  padding: 22px;
+}
+
+.notification-settings-card.wide,
+.schedule-card {
+  grid-column: 2;
+}
+
+.preference-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.preference-row {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #e7edf5;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.preference-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.preference-icon.email {
+  color: #377dff;
+  background: #eaf1ff;
+}
+
+.preference-icon.push {
+  color: #18bd91;
+  background: #ddfbf0;
+}
+
+.preference-icon.sms {
+  color: #ff9d16;
+  background: #fff3df;
+}
+
+.preference-icon.app {
+  color: #8f5cff;
+  background: #f1eaff;
+}
+
+.preference-row strong,
+.type-card strong {
+  display: block;
+  color: #21365d;
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 800;
+}
+
+.preference-row input,
+.type-card input {
+  width: 18px;
+  height: 18px;
+  accent-color: #0fb981;
+}
+
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.type-card {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  min-height: 132px;
+  padding: 16px 46px 16px 16px;
+  border: 1px solid #e7edf5;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.type-card input {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.type-card span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 9px;
+  color: #377dff;
+  background: #eef5ff;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.schedule-grid label {
+  display: grid;
+  gap: 9px;
+}
+
+.schedule-grid span {
+  color: #13264a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.schedule-grid input,
+.schedule-grid select {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #dfe7f2;
+  border-radius: 7px;
+  outline: none;
+  color: #13264a;
+  background: #ffffff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.notification-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  color: #465c80;
+  background: #eef5ff;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.notification-note span {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #377dff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+@media (max-width: 1080px) {
+  .notification-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .notification-settings-card.wide,
+  .schedule-card {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .notification-page {
+    padding: 22px 14px 28px;
+  }
+
+  .notification-title-row,
+  .notification-note {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .type-grid,
+  .schedule-grid,
+  .preference-row {
+    grid-template-columns: 1fr;
+  }
+}

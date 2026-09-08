@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI - Plans and Pricing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="all-plans.css" />
+</head>
+<body>
+<main class="admin-app plans-shell">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+  </aside>
+
+  <section class="plans-main">
+    <header class="plans-topbar">
+      <nav class="plans-bread" aria-label="Breadcrumb"><span>Admin</span><span class="bc-sep">/</span><span>Plans &amp; Entitlements</span><span class="bc-sep">/</span><strong>All Plans</strong></nav>
+      <label class="plans-search" aria-label="Search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <div class="plans-topbar-right">
+        <button class="ptb-btn has-badge" aria-label="Notifications"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><i>12</i></button>
+        <button class="ptb-btn has-badge" aria-label="Messages"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><i>3</i></button>
+        <button class="ptb-btn" aria-label="Help"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
+        <div class="ptb-user"><strong>Aman Ansari</strong><span>Super Admin</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+      </div>
+    </header>
+
+    <div class="plans-page">
+      <div class="plans-title-row">
+        <div><h1>All Plans</h1><p>Manage subscription plans, features, limits and pricing for all workspaces. These plans are used for customer onboarding and upgrades.</p></div>
+        <button class="plan-primary-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Create New Plan</button>
+      </div>
+
+      <div class="plans-dashboard-grid">
+        <section class="plans-left">
+          <div class="plan-kpis">
+            <article class="plan-kpi kpi-blue"><div class="plan-kpi-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div><div><span>Total Plans</span><strong>6</strong><small class="trend-up">+ 20% from last month</small></div></article>
+            <article class="plan-kpi kpi-indigo"><div class="plan-kpi-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a3 3 0 0 0-2.2-2.9"/><path d="M16 3.2a4 4 0 0 1 0 7.6"/></svg></div><div><span>Active Plans</span><strong>5</strong><small class="trend-up">+ 25% from last month</small></div></article>
+            <article class="plan-kpi kpi-red"><div class="plan-kpi-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M10 5v14M14 5v14"/></svg></div><div><span>Inactive Plans</span><strong>1</strong><small class="trend-down">- 50% from last month</small></div></article>
+            <article class="plan-kpi kpi-violet"><div class="plan-kpi-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><span>Total Customers</span><strong>156</strong><small class="trend-up">+ 32% from last month</small></div></article>
+          </div>
+
+          <div class="plans-table-card">
+            <div class="plans-filterbar">
+              <label class="plan-table-search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search by plan name or description..." /></label>
+              <div class="plan-select"><select><option>All Status</option><option>Active</option><option>Inactive</option></select></div>
+              <div class="plan-select"><select><option>All Billing Cycles</option><option>Monthly</option><option>Yearly</option></select></div>
+              <div class="plan-select"><select><option>All Plan Types</option><option>Self-Serve</option><option>Sales Assisted</option><option>Custom</option></select></div>
+              <button class="plan-filter-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>More Filters</button>
+            </div>
+            <div class="plans-table-scroll"><table class="plans-table"><thead><tr><th><input type="checkbox" aria-label="Select all plans" /></th><th>#</th><th>Plan Name</th><th>Type</th><th>Price (Monthly)</th><th>Price (Yearly)</th><th>Customers</th><th>Status</th><th>Sort Order</th><th>Actions</th></tr></thead><tbody>
+              <tr><td><input type="checkbox" /></td><td>1</td><td class="plan-name-cell"><span class="plan-avatar rocket">&#8599;</span><div><strong>Starter</strong><small>For small businesses</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;1,999</td><td>&#8377;19,990</td><td>48</td><td><span class="status-pill active"><i></i>Active</span></td><td>1</td><td><button class="more-btn">&#8943;</button></td></tr>
+              <tr><td><input type="checkbox" /></td><td>2</td><td class="plan-name-cell"><span class="plan-avatar bars">|||</span><div><strong>Professional</strong><small>For growing teams</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;3,999</td><td>&#8377;39,990</td><td>62</td><td><span class="status-pill active"><i></i>Active</span></td><td>2</td><td><button class="more-btn">&#8943;</button></td></tr>
+              <tr><td><input type="checkbox" /></td><td>3</td><td class="plan-name-cell"><span class="plan-avatar building">&#9818;</span><div><strong>Business</strong><small>Advanced features for business</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;6,999</td><td>&#8377;69,990</td><td>28</td><td><span class="status-pill active"><i></i>Active</span></td><td>3</td><td><button class="more-btn">&#8943;</button></td></tr>
+              <tr><td><input type="checkbox" /></td><td>4</td><td class="plan-name-cell"><span class="plan-avatar crown">&#9819;</span><div><strong>Enterprise</strong><small>For large organizations</small></div></td><td><span class="type-pill sales">Sales Assisted</span></td><td>&#8377;14,999</td><td>&#8377;149,990</td><td>12</td><td><span class="status-pill active"><i></i>Active</span></td><td>4</td><td><button class="more-btn">&#8943;</button></td></tr>
+              <tr><td><input type="checkbox" /></td><td>5</td><td class="plan-name-cell"><span class="plan-avatar trial">&#9874;</span><div><strong>Trial</strong><small>14 days free trial</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;0</td><td>-</td><td>6</td><td><span class="status-pill active"><i></i>Active</span></td><td>5</td><td><button class="more-btn">&#8943;</button></td></tr>
+              <tr><td><input type="checkbox" /></td><td>6</td><td class="plan-name-cell"><span class="plan-avatar legacy">&#9719;</span><div><strong>Legacy</strong><small>Old plan (not for new signups)</small></div></td><td><span class="type-pill custom">Custom</span></td><td>&#8377;2,999</td><td>&#8377;29,990</td><td>0</td><td><span class="status-pill inactive"><i></i>Inactive</span></td><td>6</td><td><button class="more-btn">&#8943;</button></td></tr>
+            </tbody></table></div>
+          </div>
+
+          <section class="feature-card"><h2>Plan Features Comparison</h2><p>Quick comparison of key features across plans</p><div class="feature-table-scroll"><table class="feature-table"><thead><tr><th>Feature</th><th>Starter</th><th>Professional</th><th>Business</th><th>Enterprise</th></tr></thead><tbody>
+            <tr><td>WhatsApp Contacts / Month</td><td>1,000</td><td>5,000</td><td>25,000</td><td>100,000</td></tr><tr><td>AI Chatbot Flows</td><td>5</td><td>25</td><td>100</td><td>Unlimited</td></tr><tr><td>Broadcast Campaigns / Month</td><td>10</td><td>50</td><td>250</td><td>Unlimited</td></tr><tr><td>Team Members</td><td>3</td><td>10</td><td>25</td><td>Unlimited</td></tr><tr><td>Multiple Workspaces</td><td><span class="no-mark">x</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td></tr><tr><td>API Access</td><td><span class="no-mark">x</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td></tr><tr><td>White Label</td><td><span class="no-mark">x</span></td><td><span class="no-mark">x</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td></tr><tr><td>Custom Domain</td><td><span class="no-mark">x</span></td><td><span class="no-mark">x</span></td><td><span class="yes-mark">&#10003;</span></td><td><span class="yes-mark">&#10003;</span></td></tr><tr><td>Dedicated Support</td><td><span class="no-mark">x</span></td><td><span class="no-mark">x</span></td><td><span class="yes-mark">&#10003;</span></td><td>Priority</td></tr>
+          </tbody></table></div></section>
+        </section>
+
+        <aside class="plans-side">
+          <section class="side-card distribution-card"><h2>Plan Type Distribution</h2><div class="donut-row"><div class="plan-donut"><div><strong>6</strong><span>Plans</span></div></div><ul class="donut-legend"><li><span style="background:#2f6bff"></span><b>Self-Serve</b><em>4</em></li><li><span style="background:#8b5cf6"></span><b>Sales Assisted</b><em>1</em></li><li><span style="background:#f5b642"></span><b>Custom</b><em>1</em></li></ul></div></section>
+          <section class="side-card quick-card"><h2>Quick Actions</h2><button><span>&#10010;</span>Create New Plan</button><button><span>&#9881;</span>Manage Features</button><button><span>&#9635;</span>Manage Add-ons</button><button><span>&#9638;</span>Plan Comparison</button><button><span>&#8681;</span>Import Plans</button><button><span>&#8681;</span>Export Plans</button></section>
+          <section class="help-card"><div class="help-icon">i</div><div><h2>Need Help?</h2><p>Configure plans, features, limits and pricing for your platform. Changes will apply to new signups and plan upgrades.</p><button>View Documentation</button></div></section>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+<script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
