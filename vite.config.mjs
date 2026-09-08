@@ -29,6 +29,7 @@ export default defineConfig({
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
         customerActivationQueue: resolve(import.meta.dirname, 'customer-activation-queue.html'),
         plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
+        professionalPlan: resolve(import.meta.dirname, 'professional-plan.html'),
         allPlans: resolve(import.meta.dirname, 'all-plans.html'),
         allCustomers: resolve(import.meta.dirname, 'all-customers.html'),
       },

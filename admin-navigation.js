@@ -51,6 +51,7 @@
 
   function activateCurrentPage() {
     var currentPage = normalizePath(window.location.pathname);
+    if (currentPage === 'professional-plan.html') currentPage = 'plans-and-pricing.html';
     var links = document.querySelectorAll('.admin-nav a[href]');
 
     links.forEach(function (link) {
