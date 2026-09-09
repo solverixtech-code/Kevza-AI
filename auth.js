@@ -1,5 +1,8 @@
 ﻿const passwordToggles = document.querySelectorAll("[data-password-toggle]");
 
+const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000/api/v1";
+const AUTH_STORAGE_KEY = "kevza.auth";
+
 passwordToggles.forEach((toggle) => {
   toggle.addEventListener("click", () => {
     const field = toggle.parentElement?.querySelector("[data-password-input]");
@@ -74,3 +77,77 @@ methodCards.forEach((card) => {
   });
 });
 
+const loginForm = document.querySelector("[data-login-form]");
+
+if (loginForm) {
+  const message = loginForm.querySelector("[data-login-message]");
+  const submitButton = loginForm.querySelector('button[type="submit"]');
+
+  loginForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(loginForm);
+    const email = String(formData.get("email") ?? "").trim();
+    const password = String(formData.get("password") ?? "");
+    const remember = formData.get("remember") === "on";
+
+    setLoginMessage(message, "");
+
+    if (!email || !password) {
+      setLoginMessage(message, "Enter your email and password.");
+      return;
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+    }
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const payload = await response.json();
+
+      if (!response.ok) {
+        throw new Error(payload.message || "Unable to sign in. Please try again.");
+      }
+
+      const storage = remember ? window.localStorage : window.sessionStorage;
+      window.localStorage.removeItem(AUTH_STORAGE_KEY);
+      window.sessionStorage.removeItem(AUTH_STORAGE_KEY);
+      storage.setItem(
+        AUTH_STORAGE_KEY,
+        JSON.stringify({
+          accessToken: payload.accessToken,
+          tokenType: payload.tokenType,
+          user: payload.user,
+          tenant: payload.tenant,
+        }),
+      );
+
+      window.location.assign("admin-profile.html");
+    } catch (error) {
+      setLoginMessage(
+        message,
+        error instanceof Error ? error.message : "Unable to sign in. Please try again.",
+      );
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+      }
+    }
+  });
+}
+
+function setLoginMessage(element, text) {
+  if (!element) {
+    return;
+  }
+
+  element.textContent = text;
+  element.hidden = !text;
+}

@@ -63,12 +63,12 @@
             <p>Sign in to access your KevzaAI admin dashboard</p>
           </div>
 
-          <form class="login-form" action="verify-login.html">
+          <form class="login-form" data-login-form novalidate>
             <label class="login-field">
               <span>Email address</span>
               <span class="login-input-wrap">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16v11H4z" /><path d="m4 8 8 5 8-5" /></svg>
-                <input type="email" placeholder="Enter your email" required />
+                <input id="login-email" name="email" type="email" autocomplete="email" placeholder="Enter your email" required />
               </span>
             </label>
 
@@ -76,17 +76,18 @@
               <span>Password</span>
               <span class="login-input-wrap">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
-                <input type="password" placeholder="Enter your password" data-password-input required />
+                <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" data-password-input required />
                 <button type="button" class="login-eye" data-password-toggle aria-label="Show password"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" /><circle cx="12" cy="12" r="2.4" /></svg></button>
               </span>
             </label>
 
             <div class="login-options">
-              <label><input type="checkbox" checked /><span>Remember me</span></label>
+              <label><input name="remember" type="checkbox" checked /><span>Remember me</span></label>
               <a href="forgot-password.html">Forgot password?</a>
             </div>
 
             <button class="login-primary" type="submit">Sign in to Dashboard <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></button>
+            <p class="login-form-message" data-login-message role="alert" hidden></p>
             <div class="login-divider"><span>OR</span></div>
             <a class="login-sso" href="verify-session.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-3.5 7-9V5.5L12 3 5 5.5V12c0 5.5 7 9 7 9Z" /><path d="m9.5 12 1.7 1.7 3.8-4" /></svg>Sign in with SSO</a>
           </form>
@@ -105,7 +106,6 @@
     <script type="module" src="auth.js"></script>
   </body>
 </html>
-
 
 
 
