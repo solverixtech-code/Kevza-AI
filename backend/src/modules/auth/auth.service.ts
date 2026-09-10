@@ -6,7 +6,8 @@ import {
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
-import { UserRole } from '../../../generated/prisma/client';
+import { randomInt } from 'crypto';
+import { EmailOtpPurpose, UserRole } from '../../../generated/prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
 
 type JwtPayload = {
@@ -14,6 +15,9 @@ type JwtPayload = {
   tenantId: string;
   role: UserRole;
 };
+
+const SIGNUP_OTP_TTL_MINUTES = 10;
+const MAX_OTP_ATTEMPTS = 5;
 
 @Injectable()
 export class AuthService {
@@ -57,6 +61,10 @@ export class AuthService {
     }
 
     const passwordHash = await bcrypt.hash(password, 12);
+    const otpCode = this.generateOtpCode();
+    const otpHash = await bcrypt.hash(otpCode, 12);
+    const expiresAt = this.getOtpExpiry();
+
     const { tenant, user } = await this.prisma.$transaction(async (tx) => {
       const tenant = await tx.tenant.create({
         data: {
@@ -76,10 +84,27 @@ export class AuthService {
         },
       });
 
+      await tx.emailOtp.create({
+        data: {
+          userId: user.id,
+          email,
+          purpose: EmailOtpPurpose.SIGNUP,
+          codeHash: otpHash,
+          expiresAt,
+        },
+      });
+
       return { tenant, user };
     });
 
-    return this.createAuthResponse(user, tenant);
+    this.logDevelopmentOtp(email, otpCode);
+
+    return {
+      requiresVerification: true,
+      email: user.email,
+      tenant: this.safeTenant(tenant),
+      devOtp: this.shouldExposeDevelopmentOtp() ? otpCode : undefined,
+    };
   }
 
   async login(input: { email?: string; password?: string }) {
@@ -99,7 +124,115 @@ export class AuthService {
       throw new UnauthorizedException('Invalid email or password');
     }
 
+    if (!user.emailVerifiedAt) {
+      throw new UnauthorizedException('Please verify your email before signing in');
+    }
+
     return this.createAuthResponse(user, user.tenant);
+  }
+
+  async verifyEmailOtp(input: { email?: string; code?: string }) {
+    const email = this.normalizeEmail(input.email);
+    const code = input.code?.trim();
+
+    if (!email || !code) {
+      throw new BadRequestException('Email and OTP code are required');
+    }
+
+    if (!/^\d{6}$/.test(code)) {
+      throw new BadRequestException('Enter a valid 6-digit OTP code');
+    }
+
+    const otp = await this.prisma.emailOtp.findFirst({
+      where: {
+        email,
+        purpose: EmailOtpPurpose.SIGNUP,
+        consumedAt: null,
+      },
+      orderBy: { createdAt: 'desc' },
+      include: { user: { include: { tenant: true } } },
+    });
+
+    if (!otp) {
+      throw new BadRequestException('OTP code not found or already used');
+    }
+
+    if (otp.expiresAt <= new Date()) {
+      throw new BadRequestException('OTP code has expired');
+    }
+
+    if (otp.attempts >= MAX_OTP_ATTEMPTS) {
+      throw new BadRequestException('Too many OTP attempts. Request a new code');
+    }
+
+    const isValidCode = await bcrypt.compare(code, otp.codeHash);
+
+    if (!isValidCode) {
+      await this.prisma.emailOtp.update({
+        where: { id: otp.id },
+        data: { attempts: { increment: 1 } },
+      });
+      throw new BadRequestException('Invalid OTP code');
+    }
+
+    const { user } = await this.prisma.$transaction(async (tx) => {
+      await tx.emailOtp.update({
+        where: { id: otp.id },
+        data: { consumedAt: new Date() },
+      });
+
+      const user = await tx.user.update({
+        where: { id: otp.userId },
+        data: { emailVerifiedAt: new Date() },
+        include: { tenant: true },
+      });
+
+      return { user };
+    });
+
+    return this.createAuthResponse(user, user.tenant);
+  }
+
+  async resendSignupOtp(input: { email?: string }) {
+    const email = this.normalizeEmail(input.email);
+
+    if (!email) {
+      throw new BadRequestException('Email is required');
+    }
+
+    const user = await this.prisma.user.findFirst({
+      where: { email },
+      select: { id: true, email: true, emailVerifiedAt: true },
+    });
+
+    if (!user) {
+      throw new BadRequestException('Account not found');
+    }
+
+    if (user.emailVerifiedAt) {
+      throw new BadRequestException('Email is already verified');
+    }
+
+    const otpCode = this.generateOtpCode();
+    const otpHash = await bcrypt.hash(otpCode, 12);
+
+    await this.prisma.emailOtp.create({
+      data: {
+        userId: user.id,
+        email: user.email,
+        purpose: EmailOtpPurpose.SIGNUP,
+        codeHash: otpHash,
+        expiresAt: this.getOtpExpiry(),
+      },
+    });
+
+    this.logDevelopmentOtp(user.email, otpCode);
+
+    return {
+      sent: true,
+      email: user.email,
+      devOtp: this.shouldExposeDevelopmentOtp() ? otpCode : undefined,
+    };
   }
 
   async getCurrentUser(authorization?: string) {
@@ -159,6 +292,7 @@ export class AuthService {
     email: string;
     role: UserRole;
     phone?: string | null;
+    emailVerifiedAt?: Date | null;
   }) {
     return {
       id: user.id,
@@ -166,6 +300,7 @@ export class AuthService {
       name: user.name,
       email: user.email,
       phone: user.phone ?? null,
+      emailVerifiedAt: user.emailVerifiedAt ?? null,
       role: user.role,
     };
   }
@@ -204,5 +339,23 @@ export class AuthService {
     }
 
     return token;
+  }
+
+  private generateOtpCode() {
+    return String(randomInt(0, 1_000_000)).padStart(6, '0');
+  }
+
+  private getOtpExpiry() {
+    return new Date(Date.now() + SIGNUP_OTP_TTL_MINUTES * 60 * 1000);
+  }
+
+  private shouldExposeDevelopmentOtp() {
+    return process.env.NODE_ENV !== 'production';
+  }
+
+  private logDevelopmentOtp(email: string, otpCode: string) {
+    if (this.shouldExposeDevelopmentOtp()) {
+      console.log(`[Auth] Signup OTP for ${email}: ${otpCode}`);
+    }
   }
 }

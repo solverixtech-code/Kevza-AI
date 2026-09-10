@@ -26,6 +26,16 @@ export class AuthController {
     return this.authService.login(body);
   }
 
+  @Post('verify-email-otp')
+  verifyEmailOtp(@Body() body: { email?: string; code?: string }) {
+    return this.authService.verifyEmailOtp(body);
+  }
+
+  @Post('resend-email-otp')
+  resendEmailOtp(@Body() body: { email?: string }) {
+    return this.authService.resendSignupOtp(body);
+  }
+
   @Get('me')
   me(@Headers('authorization') authorization?: string) {
     return this.authService.getCurrentUser(authorization);

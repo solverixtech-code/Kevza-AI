@@ -2,6 +2,7 @@
 
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000/api/v1";
 const AUTH_STORAGE_KEY = "kevza.auth";
+const PENDING_EMAIL_VERIFICATION_KEY = "kevza.pendingEmailVerification";
 
 passwordToggles.forEach((toggle) => {
   toggle.addEventListener("click", () => {
@@ -21,7 +22,7 @@ passwordToggles.forEach((toggle) => {
   });
 });
 
-const codeGroups = document.querySelectorAll(".code-inputs");
+const codeGroups = document.querySelectorAll(".code-inputs, .auth-code-row");
 
 codeGroups.forEach((group) => {
   const inputs = Array.from(group.querySelectorAll("[data-code-input]"));
@@ -79,6 +80,7 @@ methodCards.forEach((card) => {
 
 const loginForm = document.querySelector("[data-login-form]");
 const signupForm = document.querySelector("[data-signup-form]");
+const emailOtpForm = document.querySelector("[data-email-otp-form]");
 
 if (loginForm) {
   const message = loginForm.querySelector("[data-login-message]");
@@ -191,6 +193,12 @@ if (signupForm) {
         throw new Error(payload.message || "Unable to create account. Please try again.");
       }
 
+      if (payload.requiresVerification) {
+        storePendingEmailVerification(payload.email, payload.devOtp);
+        window.location.assign(`verify-login.html?email=${encodeURIComponent(payload.email)}`);
+        return;
+      }
+
       storeAuthSession(payload, window.localStorage);
       window.location.assign("admin-profile.html");
     } catch (error) {
@@ -207,6 +215,111 @@ if (signupForm) {
   });
 }
 
+if (emailOtpForm) {
+  const message = emailOtpForm.querySelector("[data-email-otp-message]");
+  const help = emailOtpForm.querySelector("[data-email-otp-help]");
+  const submitButton = emailOtpForm.querySelector('button[type="submit"]');
+  const resendButton = emailOtpForm.querySelector("[data-resend-email-otp]");
+  const pendingVerification = getPendingEmailVerification();
+  const email = getVerificationEmail(pendingVerification);
+
+  if (help && email) {
+    help.textContent = pendingVerification?.devOtp
+      ? `Local dev OTP for ${email}: ${pendingVerification.devOtp}`
+      : `Enter the 6-digit code sent to ${email}.`;
+  }
+
+  emailOtpForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    setLoginMessage(message, "");
+
+    const code = getOtpCode(emailOtpForm);
+
+    if (!email) {
+      setLoginMessage(message, "Signup email is missing. Please create your account again.");
+      return;
+    }
+
+    if (!/^\d{6}$/.test(code)) {
+      setLoginMessage(message, "Enter the complete 6-digit OTP code.");
+      return;
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+    }
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/auth/verify-email-otp`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, code }),
+      });
+      const payload = await response.json();
+
+      if (!response.ok) {
+        throw new Error(payload.message || "Unable to verify OTP. Please try again.");
+      }
+
+      window.sessionStorage.removeItem(PENDING_EMAIL_VERIFICATION_KEY);
+      storeAuthSession(payload, window.localStorage);
+      window.location.assign("admin-profile.html");
+    } catch (error) {
+      setLoginMessage(
+        message,
+        error instanceof Error ? error.message : "Unable to verify OTP. Please try again.",
+      );
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+      }
+    }
+  });
+
+  resendButton?.addEventListener("click", async () => {
+    setLoginMessage(message, "");
+
+    if (!email) {
+      setLoginMessage(message, "Signup email is missing. Please create your account again.");
+      return;
+    }
+
+    resendButton.disabled = true;
+    resendButton.setAttribute("aria-busy", "true");
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/auth/resend-email-otp`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const payload = await response.json();
+
+      if (!response.ok) {
+        throw new Error(payload.message || "Unable to send a new OTP. Please try again.");
+      }
+
+      storePendingEmailVerification(email, payload.devOtp);
+      if (help) {
+        help.textContent = payload.devOtp
+          ? `Local dev OTP for ${email}: ${payload.devOtp}`
+          : `A new 6-digit code was sent to ${email}.`;
+      }
+      setLoginMessage(message, "New OTP sent.");
+    } catch (error) {
+      setLoginMessage(
+        message,
+        error instanceof Error ? error.message : "Unable to send a new OTP. Please try again.",
+      );
+    } finally {
+      resendButton.disabled = false;
+      resendButton.removeAttribute("aria-busy");
+    }
+  });
+}
+
 function storeAuthSession(payload, storage) {
   window.localStorage.removeItem(AUTH_STORAGE_KEY);
   window.sessionStorage.removeItem(AUTH_STORAGE_KEY);
@@ -219,6 +332,36 @@ function storeAuthSession(payload, storage) {
       tenant: payload.tenant,
     }),
   );
+}
+
+function storePendingEmailVerification(email, devOtp) {
+  window.sessionStorage.setItem(
+    PENDING_EMAIL_VERIFICATION_KEY,
+    JSON.stringify({
+      email,
+      devOtp: devOtp ?? null,
+    }),
+  );
+}
+
+function getPendingEmailVerification() {
+  try {
+    const raw = window.sessionStorage.getItem(PENDING_EMAIL_VERIFICATION_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+function getVerificationEmail(pendingVerification) {
+  const queryEmail = new URLSearchParams(window.location.search).get("email");
+  return queryEmail || pendingVerification?.email || "";
+}
+
+function getOtpCode(form) {
+  return Array.from(form.querySelectorAll("[data-code-input]"))
+    .map((input) => input.value.trim())
+    .join("");
 }
 
 function setLoginMessage(element, text) {
