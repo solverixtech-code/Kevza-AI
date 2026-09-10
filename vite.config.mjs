@@ -31,6 +31,7 @@ export default defineConfig({
         customerActivationQueue: resolve(import.meta.dirname, 'customer-activation-queue.html'),
         plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
         professionalPlan: resolve(import.meta.dirname, 'professional-plan.html'),
+        planFeatures: resolve(import.meta.dirname, 'plan-features.html'),
         allPlans: resolve(import.meta.dirname, 'all-plans.html'),
         allCustomers: resolve(import.meta.dirname, 'all-customers.html'),
       },
