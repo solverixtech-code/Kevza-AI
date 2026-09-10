@@ -32,6 +32,7 @@ export default defineConfig({
         plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
         professionalPlan: resolve(import.meta.dirname, 'professional-plan.html'),
         planFeatures: resolve(import.meta.dirname, 'plan-features.html'),
+        planLimits: resolve(import.meta.dirname, 'plan-limits.html'),
         allPlans: resolve(import.meta.dirname, 'all-plans.html'),
         allCustomers: resolve(import.meta.dirname, 'all-customers.html'),
       },

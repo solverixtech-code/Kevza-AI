@@ -51,7 +51,7 @@
 
   function activateCurrentPage() {
     var currentPage = normalizePath(window.location.pathname);
-    if (currentPage === 'professional-plan.html' || currentPage === 'plan-features.html') currentPage = 'plans-and-pricing.html';
+    if (currentPage === 'professional-plan.html' || currentPage === 'plan-features.html' || currentPage === 'plan-limits.html') currentPage = 'plans-and-pricing.html';
     var links = document.querySelectorAll('.admin-nav a[href]');
 
     links.forEach(function (link) {
