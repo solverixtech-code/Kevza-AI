@@ -52,7 +52,7 @@
       <div class="feature-layout">
         <section class="feature-workspace">
           <div class="feature-tools">
-            <nav class="feature-tabs" aria-label="Plan feature sections"><a class="is-active" href="plan-features.html">Feature Settings</a><a href="plan-limits.html">Usage Limits</a><a href="channel-entitlements.html">Channel Entitlements</a><a href="ai-entitlements.html">AI Entitlements</a><a href="contact-limits.html">Contact Limits</a><a href="automation-limits.html">Automation Limits</a><a href="api-limits.html">API Limits</a><a href="#addons">Add-on Access</a></nav>
+            <nav class="feature-tabs" aria-label="Plan feature sections"><a class="is-active" href="plan-features.html">Feature Settings</a><a href="plan-limits.html">Usage Limits</a><a href="channel-entitlements.html">Channel Entitlements</a><a href="ai-entitlements.html">AI Entitlements</a><a href="contact-limits.html">Contact Limits</a><a href="automation-limits.html">Automation Limits</a><a href="api-limits.html">API Limits</a><a href="overage-rules.html">Overage Rules</a><a href="#addons">Add-on Access</a></nav>
             <label class="feature-search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search features..." /></label>
             <select class="feature-category-select" aria-label="Filter feature category"><option>All Categories</option><option>WhatsApp &amp; Messaging</option><option>AI &amp; Automation</option><option>Team &amp; Collaboration</option><option>Reports &amp; Analytics</option></select>
           </div>
@@ -112,7 +112,7 @@
     var params = new URLSearchParams(window.location.search);
     if (params.get('modal') !== '1') return;
     document.body.classList.add('modal-embed');
-    var modalPages = ['plan-features.html', 'plan-limits.html', 'channel-entitlements.html', 'ai-entitlements.html', 'contact-limits.html', 'automation-limits.html', 'api-limits.html'];
+    var modalPages = ['plan-features.html', 'plan-limits.html', 'channel-entitlements.html', 'ai-entitlements.html', 'contact-limits.html', 'automation-limits.html', 'api-limits.html', 'overage-rules.html'];
     document.querySelectorAll('a[href]').forEach(function (link) {
       var rawHref = link.getAttribute('href') || '';
       var page = rawHref.split('?')[0].split('#')[0];

@@ -38,6 +38,7 @@ export default defineConfig({
         contactLimits: resolve(import.meta.dirname, 'contact-limits.html'),
         automationLimits: resolve(import.meta.dirname, 'automation-limits.html'),
         apiLimits: resolve(import.meta.dirname, 'api-limits.html'),
+        overageRules: resolve(import.meta.dirname, 'overage-rules.html'),
         allPlans: resolve(import.meta.dirname, 'all-plans.html'),
         allCustomers: resolve(import.meta.dirname, 'all-customers.html'),
       },

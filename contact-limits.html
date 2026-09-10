@@ -40,7 +40,7 @@
 
       <div class="feature-layout">
         <section class="feature-workspace">
-          <div class="feature-tools contact-tools"><nav class="feature-tabs" aria-label="Contact limit sections"><a href="plan-features.html">Feature Settings</a><a href="plan-limits.html">Usage Limits</a><a href="channel-entitlements.html">Channel Entitlements</a><a href="ai-entitlements.html">AI Entitlements</a><a class="is-active" href="contact-limits.html">Contact Limits</a><a href="automation-limits.html">Automation Limits</a><a href="api-limits.html">API Limits</a></nav></div>
+          <div class="feature-tools contact-tools"><nav class="feature-tabs" aria-label="Contact limit sections"><a href="plan-features.html">Feature Settings</a><a href="plan-limits.html">Usage Limits</a><a href="channel-entitlements.html">Channel Entitlements</a><a href="ai-entitlements.html">AI Entitlements</a><a class="is-active" href="contact-limits.html">Contact Limits</a><a href="automation-limits.html">Automation Limits</a><a href="api-limits.html">API Limits</a><a href="overage-rules.html">Overage Rules</a></nav></div>
 
           <div class="channel-table-card contact-table-card">
             <header class="channel-card-head"><h2>Contact Limits</h2><p>Define how many contacts, segments and contact-related records are allowed for this plan.</p></header>
@@ -79,7 +79,7 @@
     var params = new URLSearchParams(window.location.search);
     if (params.get('modal') !== '1') return;
     document.body.classList.add('modal-embed');
-    var modalPages = ['plan-features.html', 'plan-limits.html', 'channel-entitlements.html', 'ai-entitlements.html', 'contact-limits.html', 'automation-limits.html', 'api-limits.html'];
+    var modalPages = ['plan-features.html', 'plan-limits.html', 'channel-entitlements.html', 'ai-entitlements.html', 'contact-limits.html', 'automation-limits.html', 'api-limits.html', 'overage-rules.html'];
     document.querySelectorAll('a[href]').forEach(function (link) {
       var rawHref = link.getAttribute('href') || '';
       var page = rawHref.split('?')[0].split('#')[0];
