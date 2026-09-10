@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Headers, Post } from '@nestjs/common';
+import { Body, Controller, Get, Headers, Post, Query, Res } from '@nestjs/common';
+import type { Response } from 'express';
 import { AuthService } from './auth.service';
 
 @Controller('auth')
@@ -34,6 +35,20 @@ export class AuthController {
   @Post('resend-email-otp')
   resendEmailOtp(@Body() body: { email?: string }) {
     return this.authService.resendSignupOtp(body);
+  }
+
+  @Get('google')
+  google(@Res() response: Response) {
+    response.redirect(this.authService.getGoogleAuthUrl());
+  }
+
+  @Get('google/callback')
+  async googleCallback(
+    @Query('code') code: string | undefined,
+    @Query('error') error: string | undefined,
+    @Res() response: Response,
+  ) {
+    response.redirect(await this.authService.getGoogleCallbackRedirectUrl(code, error));
   }
 
   @Get('me')

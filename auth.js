@@ -81,6 +81,20 @@ methodCards.forEach((card) => {
 const loginForm = document.querySelector("[data-login-form]");
 const signupForm = document.querySelector("[data-signup-form]");
 const emailOtpForm = document.querySelector("[data-email-otp-form]");
+const googleAuthLinks = document.querySelectorAll("[data-google-auth]");
+const authCallback = document.querySelector("[data-auth-callback]");
+
+googleAuthLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.assign(`${API_BASE_URL}/auth/google`);
+  });
+});
+
+if (authCallback) {
+  const message = authCallback.querySelector("[data-auth-callback-message]");
+  handleAuthCallback(message);
+}
 
 if (loginForm) {
   const message = loginForm.querySelector("[data-login-message]");
@@ -332,6 +346,60 @@ function storeAuthSession(payload, storage) {
       tenant: payload.tenant,
     }),
   );
+}
+
+async function handleAuthCallback(message) {
+  const params = new URLSearchParams(window.location.hash.slice(1));
+  const error = params.get("error");
+  const accessToken = params.get("accessToken");
+  const tokenType = params.get("tokenType") || "Bearer";
+
+  if (error) {
+    setAuthCallbackMessage(message, error);
+    return;
+  }
+
+  if (!accessToken) {
+    setAuthCallbackMessage(message, "Google sign-in did not return an access token.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/auth/me`, {
+      headers: { Authorization: `${tokenType} ${accessToken}` },
+    });
+    const payload = await response.json();
+
+    if (!response.ok) {
+      throw new Error(payload.message || "Unable to complete Google sign-in.");
+    }
+
+    storeAuthSession(
+      {
+        accessToken,
+        tokenType,
+        user: payload.user,
+        tenant: payload.tenant,
+      },
+      window.localStorage,
+    );
+    window.location.replace("admin-profile.html");
+  } catch (caughtError) {
+    setAuthCallbackMessage(
+      message,
+      caughtError instanceof Error
+        ? caughtError.message
+        : "Unable to complete Google sign-in.",
+    );
+  }
+}
+
+function setAuthCallbackMessage(element, text) {
+  if (!element) {
+    return;
+  }
+
+  element.textContent = text;
 }
 
 function storePendingEmailVerification(email, devOtp) {

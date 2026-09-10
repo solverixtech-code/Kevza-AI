@@ -2,8 +2,10 @@ import {
   BadRequestException,
   ConflictException,
   Injectable,
+  InternalServerErrorException,
   UnauthorizedException,
 } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
 import { randomInt } from 'crypto';
@@ -17,6 +19,18 @@ type JwtPayload = {
   role: UserRole;
 };
 
+type GoogleTokenResponse = {
+  access_token?: string;
+  error?: string;
+  error_description?: string;
+};
+
+type GoogleUserInfo = {
+  email?: string;
+  email_verified?: boolean;
+  name?: string;
+};
+
 const SIGNUP_OTP_TTL_MINUTES = 10;
 const MAX_OTP_ATTEMPTS = 5;
 
@@ -26,6 +40,7 @@ export class AuthService {
     private readonly prisma: PrismaService,
     private readonly jwtService: JwtService,
     private readonly emailService: EmailService,
+    private readonly config: ConfigService,
   ) {}
 
   async register(input: {
@@ -274,6 +289,47 @@ export class AuthService {
     };
   }
 
+  getGoogleAuthUrl() {
+    const clientId = this.getGoogleClientId();
+    const callbackUrl = this.getGoogleCallbackUrl();
+    const params = new URLSearchParams({
+      client_id: clientId,
+      redirect_uri: callbackUrl,
+      response_type: 'code',
+      scope: 'openid email profile',
+      prompt: 'select_account',
+    });
+
+    return `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
+  }
+
+  async getGoogleCallbackRedirectUrl(code?: string, error?: string) {
+    if (error) {
+      return this.getFrontendAuthCallbackUrl({ error });
+    }
+
+    if (!code) {
+      return this.getFrontendAuthCallbackUrl({ error: 'Google login was cancelled' });
+    }
+
+    try {
+      const token = await this.exchangeGoogleCode(code);
+      const profile = await this.getGoogleProfile(token);
+      const authResponse = await this.upsertGoogleUser(profile);
+
+      return this.getFrontendAuthCallbackUrl({
+        accessToken: authResponse.accessToken,
+        tokenType: authResponse.tokenType,
+      });
+    } catch (caughtError) {
+      const message =
+        caughtError instanceof Error
+          ? caughtError.message
+          : 'Unable to complete Google login';
+      return this.getFrontendAuthCallbackUrl({ error: message });
+    }
+  }
+
   private async createAuthResponse(
     user: {
       id: string;
@@ -297,6 +353,93 @@ export class AuthService {
       user: this.safeUser(user),
       tenant: this.safeTenant(tenant),
     };
+  }
+
+  private async exchangeGoogleCode(code: string) {
+    const response = await fetch('https://oauth2.googleapis.com/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        code,
+        client_id: this.getGoogleClientId(),
+        client_secret: this.getGoogleClientSecret(),
+        redirect_uri: this.getGoogleCallbackUrl(),
+        grant_type: 'authorization_code',
+      }),
+    });
+    const payload = (await response.json()) as GoogleTokenResponse;
+
+    if (!response.ok || !payload.access_token) {
+      throw new UnauthorizedException(
+        payload.error_description || payload.error || 'Google token exchange failed',
+      );
+    }
+
+    return payload.access_token;
+  }
+
+  private async getGoogleProfile(accessToken: string) {
+    const response = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+    const profile = (await response.json()) as GoogleUserInfo;
+    const email = this.normalizeEmail(profile.email);
+
+    if (!response.ok || !email) {
+      throw new UnauthorizedException('Unable to read Google account profile');
+    }
+
+    if (!profile.email_verified) {
+      throw new UnauthorizedException('Google email is not verified');
+    }
+
+    return {
+      email,
+      name: profile.name?.trim() || email.split('@')[0],
+    };
+  }
+
+  private async upsertGoogleUser(profile: { email: string; name: string }) {
+    const existingUser = await this.prisma.user.findFirst({
+      where: { email: profile.email },
+      include: { tenant: true },
+    });
+
+    if (existingUser) {
+      const user = await this.prisma.user.update({
+        where: { id: existingUser.id },
+        data: {
+          name: existingUser.name || profile.name,
+          emailVerifiedAt: existingUser.emailVerifiedAt || new Date(),
+        },
+        include: { tenant: true },
+      });
+
+      return this.createAuthResponse(user, user.tenant);
+    }
+
+    const { user, tenant } = await this.prisma.$transaction(async (tx) => {
+      const tenant = await tx.tenant.create({
+        data: {
+          name: `${profile.name} Workspace`,
+          timezone: 'Asia/Kolkata',
+          country: 'IN',
+        },
+      });
+      const user = await tx.user.create({
+        data: {
+          tenantId: tenant.id,
+          email: profile.email,
+          name: profile.name,
+          emailVerifiedAt: new Date(),
+          role: UserRole.OWNER,
+        },
+      });
+
+      return { user, tenant };
+    });
+
+    return this.createAuthResponse(user, tenant);
   }
 
   private safeUser(user: {
@@ -365,5 +508,58 @@ export class AuthService {
 
   private shouldExposeDevelopmentOtp(wasSent: boolean) {
     return !wasSent && process.env.NODE_ENV !== 'production';
+  }
+
+  private getGoogleClientId() {
+    return this.getRequiredConfig('GOOGLE_CLIENT_ID');
+  }
+
+  private getGoogleClientSecret() {
+    return this.getRequiredConfig('GOOGLE_CLIENT_SECRET');
+  }
+
+  private getGoogleCallbackUrl() {
+    return (
+      this.config.get<string>('GOOGLE_CALLBACK_URL') ||
+      'http://localhost:3000/api/v1/auth/google/callback'
+    );
+  }
+
+  private getFrontendUrl() {
+    return this.config.get<string>('FRONTEND_URL') || 'http://localhost:5173';
+  }
+
+  private getRequiredConfig(key: string) {
+    const value = this.config.get<string>(key);
+
+    if (!value) {
+      throw new InternalServerErrorException(`${key} is not configured`);
+    }
+
+    return value;
+  }
+
+  private getFrontendAuthCallbackUrl(input: {
+    accessToken?: string;
+    tokenType?: string;
+    error?: string;
+  }) {
+    const callbackUrl = new URL('/auth-callback.html', this.getFrontendUrl());
+    const hash = new URLSearchParams();
+
+    if (input.accessToken) {
+      hash.set('accessToken', input.accessToken);
+    }
+
+    if (input.tokenType) {
+      hash.set('tokenType', input.tokenType);
+    }
+
+    if (input.error) {
+      hash.set('error', input.error);
+    }
+
+    callbackUrl.hash = hash.toString();
+    return callbackUrl.toString();
   }
 }
