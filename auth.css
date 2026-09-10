@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --auth-bg: #eff3ea;
   --auth-ink: #0f2a1f;
   --auth-muted: #5f6f65;
@@ -900,6 +900,64 @@ img {
   font-weight: 700;
 }
 
+.signup-form-panel {
+  padding-top: 48px;
+}
+
+.signup-card {
+  width: 386px;
+  transform: translateY(1px);
+}
+
+.signup-heading h2 {
+  font-size: 26px;
+}
+
+.signup-form {
+  gap: 12px;
+  margin-top: 23px;
+}
+
+.signup-form .login-field {
+  gap: 7px;
+}
+
+.signup-form .login-input-wrap input {
+  height: 38px;
+}
+
+.signup-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.signup-options {
+  margin-top: 0;
+}
+
+.signup-options label {
+  align-items: flex-start;
+  line-height: 1.35;
+}
+
+.signup-switch {
+  margin: 15px 0 0;
+  color: #617087;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.signup-switch a {
+  color: #0fc28f;
+  font-weight: 900;
+}
+
+.signup-security-row {
+  margin-top: 24px;
+}
+
 @media (max-width: 996px), (max-height: 665px) {
   .login-shell {
     width: 100vw;
@@ -955,8 +1013,21 @@ img {
     margin-top: 26px;
   }
 
+  .signup-form {
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .signup-form .login-input-wrap input {
+    height: 36px;
+  }
+
   .login-security-row {
     margin-top: 29px;
+  }
+
+  .signup-security-row {
+    margin-top: 18px;
   }
 }
 
@@ -1028,6 +1099,10 @@ img {
   .login-security-row {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .signup-field-grid {
+    grid-template-columns: 1fr;
   }
 }
 /* end login reference page */
@@ -1689,3 +1764,4 @@ img {
   }
 }
 /* end reset reference polish */
+
