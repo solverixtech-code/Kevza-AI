@@ -8,6 +8,7 @@ import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
 import { randomInt } from 'crypto';
 import { EmailOtpPurpose, UserRole } from '../../../generated/prisma/client';
+import { EmailService } from '../email/email.service';
 import { PrismaService } from '../../prisma/prisma.service';
 
 type JwtPayload = {
@@ -24,6 +25,7 @@ export class AuthService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly jwtService: JwtService,
+    private readonly emailService: EmailService,
   ) {}
 
   async register(input: {
@@ -97,13 +99,19 @@ export class AuthService {
       return { tenant, user };
     });
 
-    this.logDevelopmentOtp(email, otpCode);
+    const delivery = await this.emailService.sendSignupOtp({
+      to: user.email,
+      name: user.name,
+      code: otpCode,
+      expiresInMinutes: SIGNUP_OTP_TTL_MINUTES,
+    });
 
     return {
       requiresVerification: true,
       email: user.email,
       tenant: this.safeTenant(tenant),
-      devOtp: this.shouldExposeDevelopmentOtp() ? otpCode : undefined,
+      devOtp: this.shouldExposeDevelopmentOtp(delivery.sent) ? otpCode : undefined,
+      otpDelivery: delivery.mode,
     };
   }
 
@@ -226,12 +234,18 @@ export class AuthService {
       },
     });
 
-    this.logDevelopmentOtp(user.email, otpCode);
+    const delivery = await this.emailService.sendSignupOtp({
+      to: user.email,
+      name: 'there',
+      code: otpCode,
+      expiresInMinutes: SIGNUP_OTP_TTL_MINUTES,
+    });
 
     return {
       sent: true,
       email: user.email,
-      devOtp: this.shouldExposeDevelopmentOtp() ? otpCode : undefined,
+      devOtp: this.shouldExposeDevelopmentOtp(delivery.sent) ? otpCode : undefined,
+      otpDelivery: delivery.mode,
     };
   }
 
@@ -349,13 +363,7 @@ export class AuthService {
     return new Date(Date.now() + SIGNUP_OTP_TTL_MINUTES * 60 * 1000);
   }
 
-  private shouldExposeDevelopmentOtp() {
-    return process.env.NODE_ENV !== 'production';
-  }
-
-  private logDevelopmentOtp(email: string, otpCode: string) {
-    if (this.shouldExposeDevelopmentOtp()) {
-      console.log(`[Auth] Signup OTP for ${email}: ${otpCode}`);
-    }
+  private shouldExposeDevelopmentOtp(wasSent: boolean) {
+    return !wasSent && process.env.NODE_ENV !== 'production';
   }
 }
