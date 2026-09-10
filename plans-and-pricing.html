@@ -57,7 +57,7 @@
             </div>
             <div class="plans-table-scroll"><table class="plans-table"><thead><tr><th><input type="checkbox" aria-label="Select all plans" /></th><th>#</th><th>Plan Name</th><th>Type</th><th>Price (Monthly)</th><th>Price (Yearly)</th><th>Customers</th><th>Status</th><th>Sort Order</th><th>Actions</th></tr></thead><tbody>
               <tr><td><input type="checkbox" /></td><td>1</td><td class="plan-name-cell"><span class="plan-avatar rocket">&#8599;</span><div><strong>Starter</strong><small>For small businesses</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;1,999</td><td>&#8377;19,990</td><td>48</td><td><span class="status-pill active"><i></i>Active</span></td><td>1</td><td><button class="more-btn">&#8943;</button></td></tr>
-              <tr><td><input type="checkbox" /></td><td>2</td><td class="plan-name-cell"><span class="plan-avatar bars">|||</span><div><a class="plan-detail-link" href="plan-features.html">Professional</a><small>For growing teams</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;3,999</td><td>&#8377;39,990</td><td>62</td><td><span class="status-pill active"><i></i>Active</span></td><td>2</td><td><button class="more-btn">&#8943;</button></td></tr>
+              <tr><td><input type="checkbox" /></td><td>2</td><td class="plan-name-cell"><span class="plan-avatar bars">|||</span><div><a class="plan-detail-link" href="plan-features.html" data-entitlement-modal data-modal-title="Plan Features">Professional</a><small>For growing teams</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;3,999</td><td>&#8377;39,990</td><td>62</td><td><span class="status-pill active"><i></i>Active</span></td><td>2</td><td><button class="more-btn">&#8943;</button></td></tr>
               <tr><td><input type="checkbox" /></td><td>3</td><td class="plan-name-cell"><span class="plan-avatar building">&#9818;</span><div><strong>Business</strong><small>Advanced features for business</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;6,999</td><td>&#8377;69,990</td><td>28</td><td><span class="status-pill active"><i></i>Active</span></td><td>3</td><td><button class="more-btn">&#8943;</button></td></tr>
               <tr><td><input type="checkbox" /></td><td>4</td><td class="plan-name-cell"><span class="plan-avatar crown">&#9819;</span><div><strong>Enterprise</strong><small>For large organizations</small></div></td><td><span class="type-pill sales">Sales Assisted</span></td><td>&#8377;14,999</td><td>&#8377;149,990</td><td>12</td><td><span class="status-pill active"><i></i>Active</span></td><td>4</td><td><button class="more-btn">&#8943;</button></td></tr>
               <tr><td><input type="checkbox" /></td><td>5</td><td class="plan-name-cell"><span class="plan-avatar trial">&#9874;</span><div><strong>Trial</strong><small>14 days free trial</small></div></td><td><span class="type-pill self">Self-Serve</span></td><td>&#8377;0</td><td>-</td><td>6</td><td><span class="status-pill active"><i></i>Active</span></td><td>5</td><td><button class="more-btn">&#8943;</button></td></tr>
@@ -72,7 +72,7 @@
 
         <aside class="plans-side">
           <section class="side-card distribution-card"><h2>Plan Type Distribution</h2><div class="donut-row"><div class="plan-donut"><div><strong>6</strong><span>Plans</span></div></div><ul class="donut-legend"><li><span style="background:#2f6bff"></span><b>Self-Serve</b><em>4</em></li><li><span style="background:#8b5cf6"></span><b>Sales Assisted</b><em>1</em></li><li><span style="background:#f5b642"></span><b>Custom</b><em>1</em></li></ul></div></section>
-          <section class="side-card quick-card"><h2>Quick Actions</h2><button data-open-plan-modal><span>&#10010;</span>Create New Plan</button><a class="quick-action-link" href="plan-features.html"><span>&#9881;</span>Manage Features</a><button><span>&#9635;</span>Manage Add-ons</button><button><span>&#9638;</span>Plan Comparison</button><button><span>&#8681;</span>Import Plans</button><button><span>&#8681;</span>Export Plans</button></section>
+          <section class="side-card quick-card"><h2>Quick Actions</h2><button data-open-plan-modal><span>&#10010;</span>Create New Plan</button><a class="quick-action-link" href="plan-features.html" data-entitlement-modal data-modal-title="Plan Features"><span>&#9881;</span>Manage Features</a><a class="quick-action-link" href="channel-entitlements.html" data-entitlement-modal data-modal-title="Channel Entitlements"><span>&#8644;</span>Channel Entitlements</a><a class="quick-action-link" href="ai-entitlements.html" data-entitlement-modal data-modal-title="AI Entitlements"><span>&#9881;</span>AI Entitlements</a><a class="quick-action-link" href="contact-limits.html" data-entitlement-modal data-modal-title="Contact Limits"><span>&#9783;</span>Contact Limits</a><a class="quick-action-link" href="automation-limits.html" data-entitlement-modal data-modal-title="Automation Limits"><span>&#9881;</span>Automation Limits</a><a class="quick-action-link" href="api-limits.html" data-entitlement-modal data-modal-title="API Limits"><span>&#9881;</span>API Limits</a><button><span>&#9635;</span>Manage Add-ons</button><button><span>&#9638;</span>Plan Comparison</button><button><span>&#8681;</span>Import Plans</button><button><span>&#8681;</span>Export Plans</button></section>
           <section class="help-card"><div class="help-icon">i</div><div><h2>Need Help?</h2><p>Configure plans, features, limits and pricing for your platform. Changes will apply to new signups and plan upgrades.</p><button>View Documentation</button></div></section>
         </aside>
       </div>
@@ -108,7 +108,7 @@
       </section>
 
       <nav class="detail-tabs" aria-label="Plan detail tabs">
-        <a class="is-active" href="#professional-overview">Overview</a><a href="plan-features.html">Features</a><a href="plan-limits.html">Usage Limits</a><a href="#professional-customers">Customers (62)</a><a href="#professional-addons">Add-ons (5)</a><a href="#professional-pricing">Pricing &amp; Discounts</a><a href="#professional-analytics">Usage Analytics</a><a href="#professional-log">Change Log</a>
+        <a class="is-active" href="#professional-overview">Overview</a><a href="plan-features.html" data-entitlement-modal data-modal-title="Plan Features">Features</a><a href="plan-limits.html" data-entitlement-modal data-modal-title="Plan Limits">Usage Limits</a><a href="channel-entitlements.html" data-entitlement-modal data-modal-title="Channel Entitlements">Channel Entitlements</a><a href="ai-entitlements.html" data-entitlement-modal data-modal-title="AI Entitlements">AI Entitlements</a><a href="contact-limits.html" data-entitlement-modal data-modal-title="Contact Limits">Contact Limits</a><a href="automation-limits.html" data-entitlement-modal data-modal-title="Automation Limits">Automation Limits</a><a href="api-limits.html" data-entitlement-modal data-modal-title="API Limits">API Limits</a><a href="#professional-customers">Customers (62)</a><a href="#professional-addons">Add-ons (5)</a><a href="#professional-pricing">Pricing &amp; Discounts</a><a href="#professional-analytics">Usage Analytics</a><a href="#professional-log">Change Log</a>
       </nav>
 
       <div class="detail-grid" id="professional-overview">
@@ -319,6 +319,18 @@
     </div>
   </section>
 </div>
+<div class="entitlement-modal" id="entitlementModal" aria-hidden="true">
+  <div class="entitlement-modal-backdrop" data-close-entitlement-modal></div>
+  <section class="entitlement-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="entitlementModalTitle">
+    <header class="entitlement-modal-head">
+      <div>
+        <nav class="plans-bread" aria-label="Entitlement modal breadcrumb"><span>Admin</span><span class="bc-sep">/</span><span>Plans &amp; Entitlements</span><span class="bc-sep">/</span><span>Professional</span><span class="bc-sep">/</span><strong id="entitlementModalTitle">Plan Configuration</strong></nav>
+      </div>
+      <button class="modal-back-btn" type="button" data-close-entitlement-modal><span>&larr;</span>Back to Plan</button>
+    </header>
+    <iframe class="entitlement-modal-frame" title="Plan entitlement configuration"></iframe>
+  </section>
+</div>
 <script>
   (function () {
     var modal = document.getElementById('createPlanModal');
@@ -394,6 +406,47 @@
     });
   }());
 </script>
-<script type="module" src="admin-navigation.js"></script>
+<script>
+  (function () {
+    var modal = document.getElementById('entitlementModal');
+    if (!modal) return;
+    var frame = modal.querySelector('.entitlement-modal-frame');
+    var title = modal.querySelector('#entitlementModalTitle');
+    function modalUrl(rawUrl) {
+      var url = new URL(rawUrl, window.location.href);
+      url.searchParams.set('modal', '1');
+      return url.pathname.replace(/^\//, '') + url.search + url.hash;
+    }
+    function openModal(link) {
+      if (!frame || !link) return;
+      title.textContent = link.dataset.modalTitle || link.textContent.trim() || 'Plan Configuration';
+      frame.src = modalUrl(link.getAttribute('href'));
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('plan-modal-open');
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('plan-modal-open');
+      if (frame) frame.src = 'about:blank';
+    }
+    document.querySelectorAll('[data-entitlement-modal]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        openModal(link);
+      });
+    });
+    modal.querySelectorAll('[data-close-entitlement-modal]').forEach(function (button) {
+      button.addEventListener('click', closeModal);
+    });
+    window.addEventListener('message', function (event) {
+      if (event.data === 'close-entitlement-modal') closeModal();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  }());
+</script><script type="module" src="admin-navigation.js"></script>
 </body>
 </html>

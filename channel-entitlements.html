@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI - Channel Entitlements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="all-plans.css" />
+  <link rel="stylesheet" href="plan-features.css" />
+  <link rel="stylesheet" href="plan-limits.css" />
+  <link rel="stylesheet" href="channel-entitlements.css" />
+</head>
+<body>
+<main class="admin-app plans-shell plan-features-shell">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+  </aside>
+
+  <section class="plans-main plan-features-main">
+    <header class="plans-topbar">
+      <nav class="plans-bread" aria-label="Breadcrumb"><span>Admin</span><span class="bc-sep">/</span><a href="plans-and-pricing.html">Plans &amp; Entitlements</a><span class="bc-sep">/</span><a href="professional-plan.html">Professional</a><span class="bc-sep">/</span><strong>Channel Entitlements</strong></nav>
+      <label class="plans-search" aria-label="Search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <div class="plans-topbar-right">
+        <button class="ptb-btn has-badge" aria-label="Notifications"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><i>12</i></button>
+        <button class="ptb-btn has-badge" aria-label="Messages"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><i>3</i></button>
+        <button class="ptb-btn" aria-label="Help"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
+        <div class="ptb-user"><strong>Aman Ansari</strong><span>Super Admin</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+      </div>
+    </header>
+
+    <div class="feature-page channel-page">
+      <div class="feature-title-row">
+        <div><h1>Channel Entitlements</h1><p>Configure which communication channels are available for the Professional plan and set usage limits for each channel.</p></div>
+        <a class="feature-back-btn" href="plans-and-pricing.html"><span>&larr;</span>Back to Plan</a>
+      </div>
+
+      <section class="feature-plan-strip">
+        <article class="feature-plan-name"><span class="feature-plan-icon">|||</span><div><strong>Professional</strong><small>Self-Serve Plan</small><em>For growing teams with advanced features.</em></div><span class="status-pill active"><i></i>Active</span></article>
+        <article><strong>&#8377;3,999</strong><span>Monthly Price</span></article>
+        <article><strong>&#8377;39,990</strong><span>Yearly Price</span><em>Save 16%</em></article>
+        <article><strong>62</strong><span>Active Customers</span></article>
+        <article><strong>2</strong><span>Sort Order</span></article>
+      </section>
+
+      <div class="feature-layout">
+        <section class="feature-workspace">
+          <div class="feature-tools channel-tools"><nav class="feature-tabs" aria-label="Channel entitlement sections"><a href="plan-features.html">Feature Settings</a><a href="plan-limits.html">Usage Limits</a><a class="is-active" href="channel-entitlements.html">Channel Entitlements</a><a href="ai-entitlements.html">AI Entitlements</a><a href="contact-limits.html">Contact Limits</a><a href="automation-limits.html">Automation Limits</a><a href="api-limits.html">API Limits</a></nav></div>
+
+          <div class="channel-table-card">
+            <header class="channel-card-head"><h2>Channel Entitlements</h2><p>Enable or disable channels and set monthly limits for this plan.</p></header>
+            <table class="plan-feature-table channel-table">
+              <thead><tr><th>#</th><th>Channel</th><th>Description</th><th>Enabled</th><th>Monthly Limit</th><th>Unit</th><th>Settings</th><th>Actions</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td><span class="channel-name"><i class="channel-icon whatsapp">W</i>WhatsApp</span></td><td>Send and receive WhatsApp messages via WhatsApp Business API</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="50,000" /></td><td><select class="channel-unit"><option>Messages</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="WhatsApp actions">...</button></td></tr>
+                <tr><td>2</td><td><span class="channel-name"><i class="channel-icon sms">S</i>SMS</span></td><td>Send SMS messages to customers</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="10,000" /></td><td><select class="channel-unit"><option>Messages</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="SMS actions">...</button></td></tr>
+                <tr><td>3</td><td><span class="channel-name"><i class="channel-icon email">M</i>Email</span></td><td>Send email campaigns and transactional emails</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="25,000" /></td><td><select class="channel-unit"><option>Emails</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="Email actions">...</button></td></tr>
+                <tr><td>4</td><td><span class="channel-name"><i class="channel-icon voice">V</i>Voice Calls</span></td><td>Make outbound voice calls (telephony/IVR)</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="5,000" /></td><td><select class="channel-unit"><option>Minutes</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="Voice Calls actions">...</button></td></tr>
+                <tr><td>5</td><td><span class="channel-name"><i class="channel-icon chat">C</i>Web Chat</span></td><td>Live chat widget on website</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="Unlimited" /></td><td><select class="channel-unit"><option>Conversations</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="Web Chat actions">...</button></td></tr>
+                <tr><td>6</td><td><span class="channel-name"><i class="channel-icon instagram">I</i>Instagram</span></td><td>Manage Instagram DMs and comments</td><td><label class="feature-switch"><input type="checkbox" /><span></span></label></td><td><input class="limit-value-input" value="0" /></td><td><select class="channel-unit"><option>Messages</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="Instagram actions">...</button></td></tr>
+                <tr><td>7</td><td><span class="channel-name"><i class="channel-icon facebook">F</i>Facebook</span></td><td>Manage Facebook Messenger</td><td><label class="feature-switch"><input type="checkbox" /><span></span></label></td><td><input class="limit-value-input" value="0" /></td><td><select class="channel-unit"><option>Messages</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="Facebook actions">...</button></td></tr>
+                <tr><td>8</td><td><span class="channel-name"><i class="channel-icon telegram">T</i>Telegram</span></td><td>Send and receive Telegram messages</td><td><label class="feature-switch"><input type="checkbox" /><span></span></label></td><td><input class="limit-value-input" value="0" /></td><td><select class="channel-unit"><option>Messages</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="Telegram actions">...</button></td></tr>
+                <tr><td>9</td><td><span class="channel-name"><i class="channel-icon webhook">L</i>Webhook</span></td><td>Incoming and outgoing webhooks</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="Unlimited" /></td><td><select class="channel-unit"><option>Requests</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="Webhook actions">...</button></td></tr>
+                <tr><td>10</td><td><span class="channel-name"><i class="channel-icon api">API</i>API Access</span></td><td>Access REST APIs for integrations</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="Unlimited" /></td><td><select class="channel-unit"><option>Requests</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="API Access actions">...</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <section class="advanced-channel-settings"><header><span>&#9881;</span><h2>Advanced Channel Settings</h2></header><div><label><input type="checkbox" checked />Allow customers to add additional channel add-ons</label><label><input type="checkbox" />Send email notification on 80% usage</label><label><input type="checkbox" checked />Enforce channel limits strictly</label><label><input type="checkbox" checked />Allow per-customer override (admin only)</label></div></section>
+          <div class="feature-action-row"><button class="reset-feature-btn" type="button">Cancel</button><button class="save-feature-btn" type="button"><span>&#9635;</span>Save Changes</button></div>
+        </section>
+
+        <aside class="feature-side-panel">
+          <section class="feature-summary-card">
+            <h2>Plan Overview</h2>
+            <div class="summary-plan"><span class="feature-plan-icon">|||</span><div><strong>Professional</strong><span class="status-pill active"><i></i>Active</span><small>Self-Serve Plan</small></div></div>
+            <div class="summary-price"><strong>&#8377;3,999</strong><span>/month</span><small>&#8377;39,990 /year (Save 16%)</small></div>
+            <ul class="summary-stats"><li><span>&#9783;</span><strong>62 Active Customers</strong></li><li><span>&#8644;</span><strong>10 Channels Enabled</strong></li><li><span>&#9881;</span><strong>4 Channels Disabled</strong></li><li><span>&#9711;</span><strong>Last Updated</strong><em>15 Jul 2026, 04:15 PM</em></li></ul>
+          </section>
+          <section class="feature-help-card channel-note-card"><span>i</span><div><h2>Channel Usage Note</h2><p>Monthly channel limits will be enforced for all customers on this plan. You can override these limits for individual customers from their account settings.</p></div></section>
+          <section class="feature-summary-card quick-limits-card"><h2>Quick Actions</h2><a href="#"><span>&#9654;</span>Enable All Channels</a><a href="#"><span>&#9208;</span>Disable All Channels</a><a href="#"><span>&#9635;</span>Copy from Another Plan</a><a href="#"><span>&#8635;</span>Reset to Default</a></section>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('modal') !== '1') return;
+    document.body.classList.add('modal-embed');
+    var modalPages = ['plan-features.html', 'plan-limits.html', 'channel-entitlements.html', 'ai-entitlements.html', 'contact-limits.html', 'automation-limits.html', 'api-limits.html'];
+    document.querySelectorAll('a[href]').forEach(function (link) {
+      var rawHref = link.getAttribute('href') || '';
+      var page = rawHref.split('?')[0].split('#')[0];
+      if (modalPages.indexOf(page) !== -1) {
+        var url = new URL(rawHref, window.location.href);
+        url.searchParams.set('modal', '1');
+        link.setAttribute('href', url.pathname.replace(/^\//, '') + url.search + url.hash);
+      }
+    });
+    document.querySelectorAll('.feature-back-btn').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        window.parent.postMessage('close-entitlement-modal', '*');
+      });
+    });
+  }());
+</script><script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
