@@ -148,7 +148,21 @@ export class AuthService {
     }
 
     if (!user.emailVerifiedAt) {
-      throw new UnauthorizedException('Please verify your email before signing in');
+      const delivery = await this.createAndSendSignupOtp({
+        id: user.id,
+        email: user.email,
+        name: user.name,
+      });
+
+      return {
+        requiresVerification: true,
+        email: user.email,
+        tenant: this.safeTenant(user.tenant),
+        devOtp: this.shouldExposeDevelopmentOtp(delivery.sent)
+          ? delivery.otpCode
+          : undefined,
+        otpDelivery: delivery.mode,
+      };
     }
 
     return this.createAuthResponse(user, user.tenant);
@@ -262,6 +276,34 @@ export class AuthService {
       devOtp: this.shouldExposeDevelopmentOtp(delivery.sent) ? otpCode : undefined,
       otpDelivery: delivery.mode,
     };
+  }
+
+  private async createAndSendSignupOtp(user: {
+    id: string;
+    email: string;
+    name: string;
+  }) {
+    const otpCode = this.generateOtpCode();
+    const otpHash = await bcrypt.hash(otpCode, 12);
+
+    await this.prisma.emailOtp.create({
+      data: {
+        userId: user.id,
+        email: user.email,
+        purpose: EmailOtpPurpose.SIGNUP,
+        codeHash: otpHash,
+        expiresAt: this.getOtpExpiry(),
+      },
+    });
+
+    const delivery = await this.emailService.sendSignupOtp({
+      to: user.email,
+      name: user.name,
+      code: otpCode,
+      expiresInMinutes: SIGNUP_OTP_TTL_MINUTES,
+    });
+
+    return { ...delivery, otpCode };
   }
 
   async getCurrentUser(authorization?: string) {

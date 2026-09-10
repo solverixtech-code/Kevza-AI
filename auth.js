@@ -132,6 +132,12 @@ if (loginForm) {
         throw new Error(payload.message || "Unable to sign in. Please try again.");
       }
 
+      if (payload.requiresVerification) {
+        storePendingEmailVerification(payload.email, payload.devOtp);
+        window.location.assign(`verify-login.html?email=${encodeURIComponent(payload.email)}`);
+        return;
+      }
+
       storeAuthSession(payload, remember ? window.localStorage : window.sessionStorage);
 
       window.location.assign("admin-profile.html");
