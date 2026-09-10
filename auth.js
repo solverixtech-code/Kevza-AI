@@ -78,6 +78,7 @@ methodCards.forEach((card) => {
 });
 
 const loginForm = document.querySelector("[data-login-form]");
+const signupForm = document.querySelector("[data-signup-form]");
 
 if (loginForm) {
   const message = loginForm.querySelector("[data-login-message]");
@@ -115,18 +116,7 @@ if (loginForm) {
         throw new Error(payload.message || "Unable to sign in. Please try again.");
       }
 
-      const storage = remember ? window.localStorage : window.sessionStorage;
-      window.localStorage.removeItem(AUTH_STORAGE_KEY);
-      window.sessionStorage.removeItem(AUTH_STORAGE_KEY);
-      storage.setItem(
-        AUTH_STORAGE_KEY,
-        JSON.stringify({
-          accessToken: payload.accessToken,
-          tokenType: payload.tokenType,
-          user: payload.user,
-          tenant: payload.tenant,
-        }),
-      );
+      storeAuthSession(payload, remember ? window.localStorage : window.sessionStorage);
 
       window.location.assign("admin-profile.html");
     } catch (error) {
@@ -141,6 +131,94 @@ if (loginForm) {
       }
     }
   });
+}
+
+if (signupForm) {
+  const message = signupForm.querySelector("[data-signup-message]");
+  const submitButton = signupForm.querySelector('button[type="submit"]');
+
+  signupForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(signupForm);
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const businessName = String(formData.get("businessName") ?? "").trim();
+    const phone = String(formData.get("phone") ?? "").trim();
+    const password = String(formData.get("password") ?? "");
+    const confirmPassword = String(formData.get("confirmPassword") ?? "");
+    const acceptedTerms = formData.get("terms") === "on";
+
+    setLoginMessage(message, "");
+
+    if (!name || !email || !businessName || !phone || !password || !confirmPassword) {
+      setLoginMessage(message, "Fill all required details to create your account.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setLoginMessage(message, "Password and confirm password do not match.");
+      return;
+    }
+
+    if (!acceptedTerms) {
+      setLoginMessage(message, "Accept the Terms & Privacy Policy to continue.");
+      return;
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+    }
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/auth/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          businessName,
+          name,
+          email,
+          phone,
+          password,
+          timezone: "Asia/Kolkata",
+          country: "IN",
+        }),
+      });
+      const payload = await response.json();
+
+      if (!response.ok) {
+        throw new Error(payload.message || "Unable to create account. Please try again.");
+      }
+
+      storeAuthSession(payload, window.localStorage);
+      window.location.assign("admin-profile.html");
+    } catch (error) {
+      setLoginMessage(
+        message,
+        error instanceof Error ? error.message : "Unable to create account. Please try again.",
+      );
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+      }
+    }
+  });
+}
+
+function storeAuthSession(payload, storage) {
+  window.localStorage.removeItem(AUTH_STORAGE_KEY);
+  window.sessionStorage.removeItem(AUTH_STORAGE_KEY);
+  storage.setItem(
+    AUTH_STORAGE_KEY,
+    JSON.stringify({
+      accessToken: payload.accessToken,
+      tokenType: payload.tokenType,
+      user: payload.user,
+      tenant: payload.tenant,
+    }),
+  );
 }
 
 function setLoginMessage(element, text) {

@@ -26,6 +26,7 @@ export class AuthService {
     businessName?: string;
     name?: string;
     email?: string;
+    phone?: string;
     password?: string;
     timezone?: string;
     country?: string;
@@ -33,6 +34,7 @@ export class AuthService {
     const businessName = input.businessName?.trim();
     const name = input.name?.trim();
     const email = this.normalizeEmail(input.email);
+    const phone = input.phone?.trim() || null;
     const password = input.password;
 
     if (!businessName || !name || !email || !password) {
@@ -68,6 +70,7 @@ export class AuthService {
           tenantId: tenant.id,
           name,
           email,
+          phone,
           passwordHash,
           role: UserRole.OWNER,
         },
@@ -125,7 +128,14 @@ export class AuthService {
   }
 
   private async createAuthResponse(
-    user: { id: string; tenantId: string; email: string; name: string; role: UserRole },
+    user: {
+      id: string;
+      tenantId: string;
+      email: string;
+      name: string;
+      phone?: string | null;
+      role: UserRole;
+    },
     tenant: { id: string; name: string; status: string; timezone: string; country: string },
   ) {
     const accessToken = await this.jwtService.signAsync({
@@ -148,12 +158,14 @@ export class AuthService {
     name: string;
     email: string;
     role: UserRole;
+    phone?: string | null;
   }) {
     return {
       id: user.id,
       tenantId: user.tenantId,
       name: user.name,
       email: user.email,
+      phone: user.phone ?? null,
       role: user.role,
     };
   }

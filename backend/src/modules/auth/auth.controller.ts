@@ -12,6 +12,7 @@ export class AuthController {
       businessName?: string;
       name?: string;
       email?: string;
+      phone?: string;
       password?: string;
       timezone?: string;
       country?: string;
