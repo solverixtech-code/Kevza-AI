@@ -135,7 +135,7 @@
       ['billing-wallet.html', '&#9635;', 'Billing &amp; Wallet'],
       ['javascript:void(0)', '&#9673;', 'Channels', true],
       ['channel-operations-dashboard.html', '&#9638;', 'Channel Operations'],
-      ['javascript:void(0)', '&#9636;', 'Templates', true, false],
+      ['templates.html', '&#9636;', 'Templates'],
       ['campaign-operations-dashboard.html', '&#9992;', 'Campaign Operations'],
       ['javascript:void(0)', '&#9743;', 'Chatbots &amp; AI', true],
       ['ai-operations-dashboard.html', '&#9672;', 'AI Operations'],
