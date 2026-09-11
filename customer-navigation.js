@@ -53,7 +53,7 @@
       ['customer-dashboard.html', '&#8962;', 'Dashboard'],
       ['all-customers.html', '&#9783;', 'Customers / Contacts'],
       ['messaging-dashboard.html', '&#9993;', 'Inbox / Messaging', false, '<i class="nav-alert">3</i>'],
-      ['javascript:void(0)', '&#9636;', 'Templates', true],
+      ['templates.html', '&#9636;', 'Templates'],
       ['campaign-operations-dashboard.html', '&#9873;', 'Campaigns'],
       ['ai-operations-dashboard.html', '&#9881;', 'Chatbots &amp; AI'],
       ['automation-operations-dashboard.html', '&#8984;', 'Automation'],

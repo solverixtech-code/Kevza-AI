@@ -199,7 +199,7 @@
       ['billing-wallet.html', '&#9635;', 'Billing &amp; Wallet'],
       ['javascript:void(0)', '&#9673;', 'Channels', true],
       ['channel-operations-dashboard.html', '&#9638;', 'Channel Operations'],
-      ['javascript:void(0)', '&#9636;', 'Templates', true, false],
+      ['templates.html', '&#9636;', 'Templates'],
       ['campaign-operations-dashboard.html', '&#9992;', 'Campaign Operations'],
       ['javascript:void(0)', '&#9743;', 'Chatbots &amp; AI', true],
       ['ai-operations-dashboard.html', '&#9672;', 'AI Operations'],
@@ -237,7 +237,7 @@
       ['customer-dashboard.html', '&#8962;', 'Dashboard'],
       ['all-customers.html', '&#9783;', 'Customers / Contacts'],
       ['messaging-dashboard.html', '&#9993;', 'Inbox / Messaging', false, '<i class="nav-alert">3</i>'],
-      ['javascript:void(0)', '&#9636;', 'Templates', true],
+      ['templates.html', '&#9636;', 'Templates'],
       ['campaign-operations-dashboard.html', '&#9873;', 'Campaigns'],
       ['ai-operations-dashboard.html', '&#9881;', 'Chatbots &amp; AI'],
       ['automation-operations-dashboard.html', '&#8984;', 'Automation'],
@@ -363,5 +363,4 @@
     }
   }, true);
 }());
-
 
