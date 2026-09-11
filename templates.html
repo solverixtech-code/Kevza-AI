@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI - Templates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="templates.css" />
+</head>
+<body>
+  <main class="admin-app templates-shell">
+    <aside class="admin-sidebar templates-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Admin navigation"></nav>
+      <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+    </aside>
+
+    <section class="templates-main">
+      <header class="templates-topbar">
+        <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>Templates</strong></div>
+        <label class="admin-search"><span>&#9906;</span><input type="search" placeholder="Search templates..." aria-label="Search templates" /><kbd>&#8984;K</kbd></label>
+        <button class="top-icon has-badge" aria-label="Notifications">&#9827;<i>12</i></button>
+        <button class="top-icon has-badge" aria-label="Messages">&#9635;<i>3</i></button>
+        <button class="top-icon" aria-label="Help">?</button>
+        <div class="top-user"><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </header>
+
+      <div class="templates-page">
+        <section class="templates-title-row">
+          <div>
+            <span class="eyebrow">Customer Messaging</span>
+            <h1>Templates</h1>
+            <p>Create, manage and monitor reusable WhatsApp, email, SMS and chatbot templates for campaigns and automations.</p>
+          </div>
+          <div class="template-actions">
+            <button class="secondary-action" type="button">Import Templates</button>
+            <button class="primary-action" type="button">+ Create Template</button>
+          </div>
+        </section>
+
+        <section class="template-metrics" aria-label="Template summary">
+          <article class="template-card metric-card"><span class="metric-icon blue">&#9636;</span><div><p>Total Templates</p><strong>128</strong><small>Across all channels</small></div></article>
+          <article class="template-card metric-card"><span class="metric-icon green">&#10003;</span><div><p>Approved</p><strong>94</strong><small>Ready to use</small></div></article>
+          <article class="template-card metric-card"><span class="metric-icon orange">&#8987;</span><div><p>Pending Review</p><strong>18</strong><small>Awaiting approval</small></div></article>
+          <article class="template-card metric-card"><span class="metric-icon purple">&#8599;</span><div><p>Monthly Sends</p><strong>42.8K</strong><small>+14.2% this month</small></div></article>
+        </section>
+
+        <section class="templates-grid">
+          <article class="template-card template-library">
+            <div class="section-head">
+              <div><h2>Template Library</h2><p>Browse reusable templates by channel, purpose and approval status.</p></div>
+              <div class="template-filters" aria-label="Template filters"><button class="active" type="button">All</button><button type="button">WhatsApp</button><button type="button">Email</button><button type="button">SMS</button><button type="button">Chatbot</button></div>
+            </div>
+
+            <div class="template-toolbar">
+              <label><span>&#9906;</span><input type="search" placeholder="Search by template name, tag or content" /></label>
+              <select aria-label="Filter by category"><option>All Categories</option><option>Marketing</option><option>Support</option><option>Transactional</option><option>Automation</option></select>
+              <select aria-label="Filter by status"><option>All Status</option><option>Approved</option><option>Pending</option><option>Draft</option><option>Rejected</option></select>
+            </div>
+
+            <div class="template-table-wrap">
+              <table class="template-table">
+                <thead><tr><th>Template</th><th>Channel</th><th>Category</th><th>Status</th><th>Language</th><th>Usage</th><th>Updated</th><th>Actions</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Welcome Offer</strong><span>Hi {{name}}, welcome to KevzaAI. Here is your starter offer...</span></td><td><em class="channel whatsapp">WhatsApp</em></td><td>Marketing</td><td><b class="status approved">Approved</b></td><td>English</td><td>12,480</td><td>Today</td><td><button class="row-menu">...</button></td></tr>
+                  <tr><td><strong>Payment Reminder</strong><span>Your invoice {{invoice_id}} is due on {{date}}. Pay securely...</span></td><td><em class="channel sms">SMS</em></td><td>Transactional</td><td><b class="status approved">Approved</b></td><td>English</td><td>8,940</td><td>Yesterday</td><td><button class="row-menu">...</button></td></tr>
+                  <tr><td><strong>Demo Follow-up</strong><span>Thanks for joining the demo. Would you like us to activate your trial?</span></td><td><em class="channel email">Email</em></td><td>Sales</td><td><b class="status pending">Pending</b></td><td>English</td><td>3,120</td><td>2 days ago</td><td><button class="row-menu">...</button></td></tr>
+                  <tr><td><strong>Support Resolution</strong><span>Your support request has been resolved. Reply if you need more help.</span></td><td><em class="channel whatsapp">WhatsApp</em></td><td>Support</td><td><b class="status approved">Approved</b></td><td>English</td><td>6,782</td><td>4 days ago</td><td><button class="row-menu">...</button></td></tr>
+                  <tr><td><strong>Cart Recovery Flow</strong><span>You left {{item}} in your cart. Complete checkout and save 10%.</span></td><td><em class="channel bot">Chatbot</em></td><td>Automation</td><td><b class="status draft">Draft</b></td><td>English</td><td>1,540</td><td>5 days ago</td><td><button class="row-menu">...</button></td></tr>
+                  <tr><td><strong>Festival Campaign</strong><span>Celebrate with an exclusive festive deal, valid until {{end_date}}.</span></td><td><em class="channel whatsapp">WhatsApp</em></td><td>Marketing</td><td><b class="status rejected">Rejected</b></td><td>Hindi</td><td>0</td><td>1 week ago</td><td><button class="row-menu">...</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          
+
+            <section class="template-insights" aria-label="Template performance insights"><article><span class="insight-icon whatsapp">W</span><div><strong>Best channel</strong><p>WhatsApp templates drive 64% of total sends.</p></div></article><article><span class="insight-icon speed">&#9889;</span><div><strong>Fastest approval</strong><p>Transactional templates average 2.4 hours to approve.</p></div></article><article><span class="insight-icon improve">&#8593;</span><div><strong>Needs attention</strong><p>5 rejected templates need content edits before resubmission.</p></div></article></section>
+          </article>
+
+          
+          <aside class="template-side">
+            <section class="template-card preview-card">
+              <div class="section-head compact"><div><h2>Live Preview</h2><p>WhatsApp marketing template</p></div><span class="status approved">Approved</span></div>
+              <div class="phone-preview">
+                <div class="phone-top"><span>KevzaAI</span><i>online</i></div>
+                <div class="chat-bubble"><strong>Welcome Offer</strong><p>Hi Sarah, welcome to KevzaAI. Here is your starter offer for this month. Tap below to activate your AI sales automation trial.</p><button>Start Trial</button></div>
+                <div class="chat-meta">Template variables: {{name}}, {{offer}}, {{link}}</div>
+              </div>
+            </section>
+
+            <section class="template-card approval-card">
+              <h2>Approval Health</h2>
+              <div class="approval-ring"><strong>73%</strong><span>approved</span></div>
+              <ul>
+                <li><span class="dot green"></span>94 Approved</li>
+                <li><span class="dot orange"></span>18 Pending</li>
+                <li><span class="dot blue"></span>11 Drafts</li>
+                <li><span class="dot red"></span>5 Rejected</li>
+              </ul>
+            </section>
+
+            <section class="template-card quick-template-actions">
+              <h2>Quick Actions</h2>
+              <a href="#"><span>+</span>Create WhatsApp Template</a>
+              <a href="#"><span>&#9993;</span>Create Email Template</a>
+              <a href="#"><span>&#9636;</span>Duplicate Top Template</a>
+              <a href="#"><span>&#8599;</span>Submit for Approval</a>
+            </section>
+          </aside>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
