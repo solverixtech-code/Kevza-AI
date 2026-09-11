@@ -1,4 +1,8 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Req, UseGuards } from '@nestjs/common';
+import { CUSTOMER_ROLES, Roles } from '../auth/rbac/roles.decorator';
+import type { AuthenticatedRequest } from '../auth/rbac/authenticated-user';
+import { JwtAuthGuard } from '../auth/rbac/jwt-auth.guard';
+import { RolesGuard } from '../auth/rbac/roles.guard';
 import { ContactsService } from './contacts.service';
 
 @Controller('contacts')
@@ -6,6 +10,8 @@ export class ContactsController {
   constructor(private readonly contactsService: ContactsService) {}
 
   @Post()
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(...CUSTOMER_ROLES)
   createContact(
     @Body()
     body: {
@@ -18,13 +24,19 @@ export class ContactsController {
       consent?: boolean;
       createLead?: boolean;
     },
+    @Req() request: AuthenticatedRequest,
   ) {
-    return this.contactsService.createContact(body);
+    return this.contactsService.createContact({
+      ...body,
+      tenantId: request.user?.tenantId,
+    });
   }
 
   @Get()
-  listContacts(@Query('tenantId') tenantId?: string) {
-    return this.contactsService.listContacts(tenantId);
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(...CUSTOMER_ROLES)
+  listContacts(@Req() request: AuthenticatedRequest) {
+    return this.contactsService.listContacts(request.user?.tenantId);
   }
 
   @Get('readiness')
@@ -33,7 +45,9 @@ export class ContactsController {
   }
 
   @Get(':id')
-  getContact(@Param('id') id: string, @Query('tenantId') tenantId?: string) {
-    return this.contactsService.getContact(id, tenantId);
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(...CUSTOMER_ROLES)
+  getContact(@Param('id') id: string, @Req() request: AuthenticatedRequest) {
+    return this.contactsService.getContact(id, request.user?.tenantId);
   }
 }

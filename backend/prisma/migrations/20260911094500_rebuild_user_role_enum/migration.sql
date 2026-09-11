@@ -1,0 +1,18 @@
+ALTER TABLE "User" ALTER COLUMN role DROP DEFAULT;
+
+CREATE TYPE "UserRole_new" AS ENUM ('OWNER', 'TEAM_MEMBER', 'SUPER_ADMIN');
+
+ALTER TABLE "User"
+ALTER COLUMN role TYPE "UserRole_new"
+USING (
+  CASE role::text
+    WHEN 'OWNER' THEN 'OWNER'::"UserRole_new"
+    WHEN 'SUPER_ADMIN' THEN 'SUPER_ADMIN'::"UserRole_new"
+    ELSE 'TEAM_MEMBER'::"UserRole_new"
+  END
+);
+
+DROP TYPE "UserRole";
+ALTER TYPE "UserRole_new" RENAME TO "UserRole";
+
+ALTER TABLE "User" ALTER COLUMN role SET DEFAULT 'TEAM_MEMBER';
