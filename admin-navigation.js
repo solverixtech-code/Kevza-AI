@@ -1,5 +1,30 @@
 (function () {
   var sidebarScrollKey = 'kevza-admin-sidebar-scroll';
+  var authStorageKey = 'kevza.auth';
+  var customerRoles = ['OWNER', 'TEAM_MEMBER'];
+  var internalOnlyPages = [
+    'admin-profile.html',
+    'enterprise-customers.html',
+    'customer-growth-dashboard.html',
+    'plans-and-pricing.html',
+    'all-plans.html',
+    'professional-plan.html',
+    'plan-features.html',
+    'plan-limits.html',
+    'channel-entitlements.html',
+    'ai-entitlements.html',
+    'contact-limits.html',
+    'automation-limits.html',
+    'api-limits.html',
+    'overage-rules.html',
+    'customer-activation-queue.html',
+    'billing-wallet.html',
+    'cost-margin-dashboard.html',
+    'support-dashboard.html',
+    'live-operations-center.html',
+    'infrastructure-health.html',
+    'compliance-dashboard.html'
+  ];
 
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -7,6 +32,45 @@
 
   function normalizePath(path) {
     return path.replace(/\\/g, '/').split('/').pop() || 'index.html';
+  }
+
+  function getAuthSession() {
+    try {
+      var raw = localStorage.getItem(authStorageKey) || sessionStorage.getItem(authStorageKey);
+      return raw ? JSON.parse(raw) : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function getCurrentRole() {
+    var session = getAuthSession();
+    return session && session.user ? session.user.role : null;
+  }
+
+  function isCustomerRole(role) {
+    return customerRoles.indexOf(role) !== -1;
+  }
+
+  function isInternalOnlyPage(page) {
+    return internalOnlyPages.indexOf(page) !== -1;
+  }
+
+  function enforceDashboardAccess() {
+    var role = getCurrentRole();
+    var currentPage = normalizePath(window.location.pathname);
+
+    if (!role) {
+      window.location.replace('login.html');
+      return false;
+    }
+
+    if (isCustomerRole(role) && isInternalOnlyPage(currentPage)) {
+      window.location.replace('customer-dashboard.html');
+      return false;
+    }
+
+    return true;
   }
 
   function getSidebar() {
@@ -168,6 +232,29 @@
       }).join('');
     });
   }
+  function renderCustomerNavigation() {
+    var items = [
+      ['customer-dashboard.html', '&#8962;', 'Dashboard'],
+      ['all-customers.html', '&#9783;', 'Customers / Contacts'],
+      ['messaging-dashboard.html', '&#9993;', 'Inbox / Messaging', false, '<i class="nav-alert">3</i>'],
+      ['javascript:void(0)', '&#9636;', 'Templates', true],
+      ['campaign-operations-dashboard.html', '&#9873;', 'Campaigns'],
+      ['ai-operations-dashboard.html', '&#9881;', 'Chatbots &amp; AI'],
+      ['automation-operations-dashboard.html', '&#8984;', 'Automation'],
+      ['channel-operations-dashboard.html', '&#8644;', 'Channels'],
+      ['subscription-dashboard.html', '&#9635;', 'Billing / Plan'],
+      ['security.html', '&#9881;', 'Settings / Profile']
+    ];
+
+    document.querySelectorAll('.admin-nav').forEach(function (nav) {
+      nav.setAttribute('aria-label', 'Customer navigation');
+      nav.innerHTML = items.map(function (item) {
+        var placeholder = item[3] ? ' data-nav-placeholder="true"' : '';
+        var badge = item[4] || '';
+        return '<a href="' + item[0] + '"' + placeholder + '><span>' + item[1] + '</span>' + item[2] + badge + '</a>';
+      }).join('');
+    });
+  }
   function ensureCustomerGrowthLink() {
     document.querySelectorAll('.admin-nav').forEach(function (nav) {
       if (nav.querySelector('a[href="customer-growth-dashboard.html"]')) return;
@@ -224,12 +311,17 @@
     });
   }
   document.addEventListener('DOMContentLoaded', function () {
-    renderPrimaryNavigation();
-    ensureEnterpriseCustomersLink();
-    ensureActivationQueueLink();
-    ensureCustomerGrowthLink();
-    ensureAllCustomersLink();
-    normalizePrimaryNavOrder();
+    if (!enforceDashboardAccess()) return;
+    if (isCustomerRole(getCurrentRole())) {
+      renderCustomerNavigation();
+    } else {
+      renderPrimaryNavigation();
+      ensureEnterpriseCustomersLink();
+      ensureActivationQueueLink();
+      ensureCustomerGrowthLink();
+      ensureAllCustomersLink();
+      normalizePrimaryNavOrder();
+    }
     activateCurrentPage();
     restoreSidebarScroll();
     if (!document.body.classList.contains('activation-queue-page')) setupSidebarResizer();
@@ -271,6 +363,5 @@
     }
   }, true);
 }());
-
 
 

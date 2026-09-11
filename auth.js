@@ -3,6 +3,11 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000/api/v1";
 const AUTH_STORAGE_KEY = "kevza.auth";
 const PENDING_EMAIL_VERIFICATION_KEY = "kevza.pendingEmailVerification";
+const ROLE_HOME_PAGES = {
+  SUPER_ADMIN: "admin-profile.html",
+  OWNER: "customer-dashboard.html",
+  TEAM_MEMBER: "customer-dashboard.html",
+};
 
 passwordToggles.forEach((toggle) => {
   toggle.addEventListener("click", () => {
@@ -140,7 +145,7 @@ if (loginForm) {
 
       storeAuthSession(payload, remember ? window.localStorage : window.sessionStorage);
 
-      window.location.assign("admin-profile.html");
+      redirectToRoleHome(payload.user);
     } catch (error) {
       setLoginMessage(
         message,
@@ -220,7 +225,7 @@ if (signupForm) {
       }
 
       storeAuthSession(payload, window.localStorage);
-      window.location.assign("admin-profile.html");
+      redirectToRoleHome(payload.user);
     } catch (error) {
       setLoginMessage(
         message,
@@ -284,7 +289,7 @@ if (emailOtpForm) {
 
       window.sessionStorage.removeItem(PENDING_EMAIL_VERIFICATION_KEY);
       storeAuthSession(payload, window.localStorage);
-      window.location.assign("admin-profile.html");
+      redirectToRoleHome(payload.user);
     } catch (error) {
       setLoginMessage(
         message,
@@ -389,7 +394,7 @@ async function handleAuthCallback(message) {
       },
       window.localStorage,
     );
-    window.location.replace("admin-profile.html");
+    window.location.replace(getRoleHomePage(payload.user));
   } catch (caughtError) {
     setAuthCallbackMessage(
       message,
@@ -406,6 +411,14 @@ function setAuthCallbackMessage(element, text) {
   }
 
   element.textContent = text;
+}
+
+function redirectToRoleHome(user) {
+  window.location.assign(getRoleHomePage(user));
+}
+
+function getRoleHomePage(user) {
+  return ROLE_HOME_PAGES[user?.role] ?? "customer-dashboard.html";
 }
 
 function storePendingEmailVerification(email, devOtp) {

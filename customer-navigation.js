@@ -1,5 +1,7 @@
 (function () {
   var sidebarScrollKey = 'kevza-customer-sidebar-scroll';
+  var authStorageKey = 'kevza.auth';
+  var customerRoles = ['OWNER', 'TEAM_MEMBER'];
 
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -7,6 +9,32 @@
 
   function normalizePath(path) {
     return path.replace(/\\/g, '/').split('/').pop() || 'customer-dashboard.html';
+  }
+
+  function getAuthSession() {
+    try {
+      var raw = localStorage.getItem(authStorageKey) || sessionStorage.getItem(authStorageKey);
+      return raw ? JSON.parse(raw) : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function enforceCustomerAccess() {
+    var session = getAuthSession();
+    var role = session && session.user ? session.user.role : null;
+
+    if (!role) {
+      window.location.replace('login.html');
+      return false;
+    }
+
+    if (customerRoles.indexOf(role) === -1) {
+      window.location.replace('admin-profile.html');
+      return false;
+    }
+
+    return true;
   }
 
   function activate(link) {
@@ -72,6 +100,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    if (!enforceCustomerAccess()) return;
     renderNavigation();
     activateCurrentPage();
     restoreSidebarScroll();
