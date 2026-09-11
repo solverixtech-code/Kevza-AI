@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI - AI Entitlements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="all-plans.css" />
+  <link rel="stylesheet" href="plan-features.css" />
+  <link rel="stylesheet" href="plan-limits.css" />
+  <link rel="stylesheet" href="channel-entitlements.css" />
+  <link rel="stylesheet" href="ai-entitlements.css" />
+</head>
+<body>
+<main class="admin-app plans-shell plan-features-shell">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+  </aside>
+
+  <section class="plans-main plan-features-main">
+    <header class="plans-topbar">
+      <nav class="plans-bread" aria-label="Breadcrumb"><span>Admin</span><span class="bc-sep">/</span><a href="plans-and-pricing.html">Plans &amp; Entitlements</a><span class="bc-sep">/</span><a href="professional-plan.html">Professional</a><span class="bc-sep">/</span><strong>AI Entitlements</strong></nav>
+      <label class="plans-search" aria-label="Search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <div class="plans-topbar-right">
+        <button class="ptb-btn has-badge" aria-label="Notifications"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><i>12</i></button>
+        <button class="ptb-btn has-badge" aria-label="Messages"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><i>3</i></button>
+        <button class="ptb-btn" aria-label="Help"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
+        <div class="ptb-user"><strong>Aman Ansari</strong><span>Super Admin</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+      </div>
+    </header>
+
+    <div class="feature-page ai-page">
+      <div class="feature-title-row">
+        <div><h1>AI Entitlements</h1><p>Configure AI features, usage limits and model access for the Professional plan.</p></div>
+        <a class="feature-back-btn" href="plans-and-pricing.html"><span>&larr;</span>Back to Plan</a>
+      </div>
+
+      <section class="feature-plan-strip">
+        <article class="feature-plan-name"><span class="feature-plan-icon">|||</span><div><strong>Professional</strong><small>Self-Serve Plan</small><em>For growing teams with advanced features.</em></div><span class="status-pill active"><i></i>Active</span></article>
+        <article><strong>&#8377;3,999</strong><span>Monthly Price</span></article>
+        <article><strong>&#8377;39,990</strong><span>Yearly Price</span><em>Save 16%</em></article>
+        <article><strong>62</strong><span>Active Customers</span></article>
+        <article><strong>2</strong><span>Sort Order</span></article>
+      </section>
+
+      <div class="feature-layout">
+        <section class="feature-workspace">
+          <div class="feature-tools ai-tools">
+            <nav class="feature-tabs" aria-label="AI entitlement sections"><a href="plan-features.html">Feature Settings</a><a href="plan-limits.html">Usage Limits</a><a href="channel-entitlements.html">Channel Entitlements</a><a class="is-active" href="ai-entitlements.html">AI Entitlements</a><a href="contact-limits.html">Contact Limits</a><a href="automation-limits.html">Automation Limits</a><a href="api-limits.html">API Limits</a><a href="overage-rules.html">Overage Rules</a></nav>
+          </div>
+
+          <div class="channel-table-card ai-table-card">
+            <header class="channel-card-head"><h2>AI Features &amp; Entitlements</h2><p>Enable or disable AI features and set usage limits for this plan.</p></header>
+            <table class="plan-feature-table ai-table">
+              <thead><tr><th>#</th><th>AI Feature</th><th>Description</th><th>Enabled</th><th>Limit / Quota</th><th>Unit</th><th>Settings</th><th>Actions</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td><span class="ai-feature-name"><i class="ai-icon bot">B</i>AI Chatbot</span></td><td>Create and deploy AI chatbots for customer support</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="25" /></td><td><select class="channel-unit"><option>Chatbot Flows</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="AI Chatbot actions">...</button></td></tr>
+                <tr><td>2</td><td><span class="ai-feature-name"><i class="ai-icon message">M</i>AI Message Generation</span></td><td>Generate personalized messages using AI</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="10,000" /></td><td><select class="channel-unit"><option>Messages / Month</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="AI Message Generation actions">...</button></td></tr>
+                <tr><td>3</td><td><span class="ai-feature-name"><i class="ai-icon template">T</i>AI Template Writer</span></td><td>Generate message templates from prompts</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="500" /></td><td><select class="channel-unit"><option>Templates / Month</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="AI Template Writer actions">...</button></td></tr>
+                <tr><td>4</td><td><span class="ai-feature-name"><i class="ai-icon campaign">C</i>AI Campaign Assistant</span></td><td>Create and optimize marketing campaigns with AI</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="50" /></td><td><select class="channel-unit"><option>Campaigns / Month</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="AI Campaign Assistant actions">...</button></td></tr>
+                <tr><td>5</td><td><span class="ai-feature-name"><i class="ai-icon lead">L</i>AI Lead Insights</span></td><td>Get AI-powered lead analysis and scoring</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="Unlimited" /></td><td><select class="channel-unit"><option>Analyses</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="AI Lead Insights actions">...</button></td></tr>
+                <tr><td>6</td><td><span class="ai-feature-name"><i class="ai-icon reply">R</i>AI Reply Suggestions</span></td><td>Smart reply suggestions for live chat</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="Unlimited" /></td><td><select class="channel-unit"><option>Suggestions</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="AI Reply Suggestions actions">...</button></td></tr>
+                <tr><td>7</td><td><span class="ai-feature-name"><i class="ai-icon summary">S</i>AI Summarization</span></td><td>Summarize conversations and call logs</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="1,000" /></td><td><select class="channel-unit"><option>Summaries / Month</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="AI Summarization actions">...</button></td></tr>
+                <tr><td>8</td><td><span class="ai-feature-name"><i class="ai-icon translation">TR</i>AI Translation</span></td><td>Translate messages to multiple languages</td><td><label class="feature-switch"><input type="checkbox" checked /><span></span></label></td><td><input class="limit-value-input" value="5,000" /></td><td><select class="channel-unit"><option>Translations / Month</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="AI Translation actions">...</button></td></tr>
+                <tr><td>9</td><td><span class="ai-feature-name"><i class="ai-icon image">I</i>AI Image Generation</span></td><td>Generate marketing images and creatives</td><td><label class="feature-switch"><input type="checkbox" /><span></span></label></td><td><input class="limit-value-input" value="0" /></td><td><select class="channel-unit"><option>Images / Month</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="AI Image Generation actions">...</button></td></tr>
+                <tr><td>10</td><td><span class="ai-feature-name"><i class="ai-icon voice">V</i>AI Voice (TTS/STT)</span></td><td>Text to speech and speech to text</td><td><label class="feature-switch"><input type="checkbox" /><span></span></label></td><td><input class="limit-value-input" value="0" /></td><td><select class="channel-unit"><option>Minutes / Month</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="AI Voice actions">...</button></td></tr>
+                <tr><td>11</td><td><span class="ai-feature-name"><i class="ai-icon workflow">W</i>AI Workflow Builder</span></td><td>Create automation workflows using AI</td><td><label class="feature-switch"><input type="checkbox" /><span></span></label></td><td><input class="limit-value-input" value="0" /></td><td><select class="channel-unit"><option>Workflows / Month</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="AI Workflow Builder actions">...</button></td></tr>
+                <tr><td>12</td><td><span class="ai-feature-name"><i class="ai-icon prompt">P</i>Custom AI Prompts</span></td><td>Allow custom prompts and fine-tuned AI</td><td><label class="feature-switch"><input type="checkbox" /><span></span></label></td><td><input class="limit-value-input" value="0" /></td><td><select class="channel-unit"><option>Prompts / Month</option></select></td><td><button class="channel-settings" type="button">&#9881; Settings</button></td><td><button class="feature-menu" aria-label="Custom AI Prompts actions">...</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <section class="advanced-channel-settings ai-policy-card" id="ai-settings"><header><span>&#9881;</span><h2>AI Usage Policy</h2><p>Configure general AI usage policies for this plan.</p></header><div><label><input type="checkbox" checked />Allow AI usage for all users in this plan</label><label><input type="checkbox" checked />Block prohibited content</label><label><input type="checkbox" checked />Enforce monthly limits</label><label><input type="checkbox" checked />Log AI usage for audit</label></div></section>
+          <div class="feature-action-row"><span></span><button class="save-feature-btn" type="button"><span>&#9635;</span>Save Changes</button></div>
+        </section>
+
+        <aside class="feature-side-panel">
+          <section class="feature-summary-card">
+            <h2>Plan Overview</h2>
+            <div class="summary-plan"><span class="feature-plan-icon">|||</span><div><strong>Professional</strong><span class="status-pill active"><i></i>Active</span><small>Self-Serve Plan</small></div></div>
+            <div class="summary-price"><strong>&#8377;3,999</strong><span>/month</span><small>&#8377;39,990 /year (Save 16%)</small></div>
+            <ul class="summary-stats"><li><span>&#9783;</span><strong>62 Active Customers</strong></li><li><span>&#9881;</span><strong>12 AI Features Enabled</strong></li><li><span>&#10006;</span><strong>3 AI Features Disabled</strong></li><li><span>&#9711;</span><strong>Last Updated</strong><em>15 Jul 2026, 04:15 PM</em></li></ul>
+          </section>
+          <section class="feature-summary-card model-card" id="model-access"><h2>Model Access</h2><ul><li><span class="model-dot gpt">G</span><strong>GPT-4o</strong><em class="enabled">Enabled</em><b>&rsaquo;</b></li><li><span class="model-dot mini">G</span><strong>GPT-4o mini</strong><em class="enabled">Enabled</em><b>&rsaquo;</b></li><li><span class="model-dot claude">C</span><strong>Claude</strong><em>Disabled</em><b>&rsaquo;</b></li><li><span class="model-dot gemini">G</span><strong>Gemini</strong><em>Disabled</em><b>&rsaquo;</b></li><li><span class="model-dot llama">L</span><strong>Llama</strong><em>Disabled</em><b>&rsaquo;</b></li></ul></section>
+          <section class="feature-summary-card quick-limits-card"><h2>Quick Actions</h2><a href="#"><span>&#9654;</span>Enable All AI Features</a><a href="#"><span>&#9208;</span>Disable All AI Features</a><a href="#"><span>&#9635;</span>Copy AI Settings from Plan</a><a href="#"><span>&#8635;</span>Reset to Default</a></section>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('modal') !== '1') return;
+    document.body.classList.add('modal-embed');
+    var modalPages = ['plan-features.html', 'plan-limits.html', 'channel-entitlements.html', 'ai-entitlements.html', 'contact-limits.html', 'automation-limits.html', 'api-limits.html', 'overage-rules.html'];
+    document.querySelectorAll('a[href]').forEach(function (link) {
+      var rawHref = link.getAttribute('href') || '';
+      var page = rawHref.split('?')[0].split('#')[0];
+      if (modalPages.indexOf(page) !== -1) {
+        var url = new URL(rawHref, window.location.href);
+        url.searchParams.set('modal', '1');
+        link.setAttribute('href', url.pathname.replace(/^\//, '') + url.search + url.hash);
+      }
+    });
+    document.querySelectorAll('.feature-back-btn').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        window.parent.postMessage('close-entitlement-modal', '*');
+      });
+    });
+  }());
+</script>
+<script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

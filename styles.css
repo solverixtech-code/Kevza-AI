@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --navy: #07142a;
   --navy-2: #062468;
   --royal: #07348f;
@@ -2533,4 +2533,29 @@ body {
 ::selection {
   background: rgba(16, 217, 149, 0.28);
   color: #04101f;
+}
+
+.nav-dashboard {
+  display: inline-flex;
+  min-width: 168px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(16, 217, 149, 0.7);
+  border-radius: 8px;
+  color: #10d995;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  background: rgba(16, 217, 149, 0.08);
+}
+
+.nav-dashboard:hover {
+  color: #051326;
+  background: linear-gradient(135deg, #10d995, #0ebc7f);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 760px) {
+  .nav-dashboard { display: none; }
 }

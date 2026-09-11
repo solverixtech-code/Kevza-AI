@@ -6,6 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
+        customerDashboard: resolve(import.meta.dirname, 'customer-dashboard.html'),
         login: resolve(import.meta.dirname, 'login.html'),
         signup: resolve(import.meta.dirname, 'signup.html'),
         forgotPassword: resolve(import.meta.dirname, 'forgot-password.html'),
@@ -33,6 +34,12 @@ export default defineConfig({
         professionalPlan: resolve(import.meta.dirname, 'professional-plan.html'),
         planFeatures: resolve(import.meta.dirname, 'plan-features.html'),
         planLimits: resolve(import.meta.dirname, 'plan-limits.html'),
+        channelEntitlements: resolve(import.meta.dirname, 'channel-entitlements.html'),
+        aiEntitlements: resolve(import.meta.dirname, 'ai-entitlements.html'),
+        contactLimits: resolve(import.meta.dirname, 'contact-limits.html'),
+        automationLimits: resolve(import.meta.dirname, 'automation-limits.html'),
+        apiLimits: resolve(import.meta.dirname, 'api-limits.html'),
+        overageRules: resolve(import.meta.dirname, 'overage-rules.html'),
         allPlans: resolve(import.meta.dirname, 'all-plans.html'),
         allCustomers: resolve(import.meta.dirname, 'all-customers.html'),
       },
