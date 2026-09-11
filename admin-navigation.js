@@ -25,6 +25,17 @@
     'infrastructure-health.html',
     'compliance-dashboard.html'
   ];
+  var customerOnlyPages = [
+    'customer-dashboard.html',
+    'all-customers.html',
+    'messaging-dashboard.html',
+    'templates.html',
+    'campaign-operations-dashboard.html',
+    'ai-operations-dashboard.html',
+    'automation-operations-dashboard.html',
+    'channel-operations-dashboard.html',
+    'subscription-dashboard.html'
+  ];
 
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -48,6 +59,40 @@
     return session && session.user ? session.user.role : null;
   }
 
+  function formatRole(role) {
+    if (role === 'SUPER_ADMIN') return 'Super Admin';
+    if (role === 'OWNER') return 'Owner';
+    if (role === 'TEAM_MEMBER') return 'Team Member';
+    return 'User';
+  }
+
+  function getInitials(name, email) {
+    var source = (name || email || 'User').trim();
+    var parts = source.split(/\s+/).filter(Boolean);
+    if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+    return source.slice(0, 2).toUpperCase();
+  }
+
+  function hydrateCurrentUser() {
+    var session = getAuthSession();
+    var user = session && session.user ? session.user : null;
+    if (!user) return;
+
+    var displayName = user.name || user.email || 'Admin User';
+    var roleLabel = formatRole(user.role);
+    var initials = getInitials(user.name, user.email);
+
+    document.querySelectorAll('.sidebar-user, .top-user, .ptb-user, .customer-user').forEach(function (container) {
+      var strong = container.querySelector('strong');
+      var span = container.querySelector('span, small');
+      var avatar = container.querySelector('.mini-avatar');
+
+      if (strong) strong.textContent = displayName;
+      if (span) span.textContent = roleLabel;
+      if (avatar) avatar.textContent = initials;
+    });
+  }
+
   function isCustomerRole(role) {
     return customerRoles.indexOf(role) !== -1;
   }
@@ -56,17 +101,26 @@
     return internalOnlyPages.indexOf(page) !== -1;
   }
 
+  function isCustomerOnlyPage(page) {
+    return customerOnlyPages.indexOf(page) !== -1;
+  }
+
   function enforceDashboardAccess() {
     var role = getCurrentRole();
     var currentPage = normalizePath(window.location.pathname);
 
     if (!role) {
-      window.location.replace('login.html');
+      window.location.replace(isInternalOnlyPage(currentPage) ? 'admin-login.html' : 'login.html');
       return false;
     }
 
     if (isCustomerRole(role) && isInternalOnlyPage(currentPage)) {
       window.location.replace('customer-dashboard.html');
+      return false;
+    }
+
+    if (role === 'SUPER_ADMIN' && isCustomerOnlyPage(currentPage)) {
+      window.location.replace('admin-profile.html');
       return false;
     }
 
@@ -187,40 +241,17 @@
   function renderPrimaryNavigation() {
     var items = [
       ['admin-profile.html', '&#8962;', 'Dashboard'],
-      ['customer-dashboard.html', '&#9638;', 'Customer Dashboard'],
       ['enterprise-customers.html', '&#9635;', 'Enterprise Customers'],
       ['customer-growth-dashboard.html', '&#9673;', 'Customer Growth'],
-      ['all-customers.html', '&#9783;', 'Customer Directory'],
-      ['javascript:void(0)', '&#9783;', 'Customers', true],
-      ['javascript:void(0)', '&#9671;', 'Plans &amp; Subscriptions', true],
-      ['subscription-dashboard.html', '&#9673;', 'Subscription Dashboard'],
-      ['plans-and-pricing.html', '&#9671;', 'Plans &amp; Pricing'],
       ['customer-activation-queue.html', '&#9673;', 'Customer Activation Queue'],
+      ['plans-and-pricing.html', '&#9671;', 'Plans &amp; Pricing'],
       ['billing-wallet.html', '&#9635;', 'Billing &amp; Wallet'],
-      ['javascript:void(0)', '&#9673;', 'Channels', true],
-      ['channel-operations-dashboard.html', '&#9638;', 'Channel Operations'],
-      ['templates.html', '&#9636;', 'Templates'],
-      ['campaign-operations-dashboard.html', '&#9992;', 'Campaign Operations'],
-      ['javascript:void(0)', '&#9743;', 'Chatbots &amp; AI', true],
-      ['ai-operations-dashboard.html', '&#9672;', 'AI Operations'],
-      ['automation-operations-dashboard.html', '&#8984;', 'Automation Operations'],
-      ['messaging-dashboard.html', '&#9673;', 'Messaging Dashboard'],
-      ['javascript:void(0)', '&#9881;', 'CRM &amp; Integrations', true],
-      ['javascript:void(0)', '&#9637;', 'Platform Usage', true, false],
       ['cost-margin-dashboard.html', '&#9649;', 'Cost &amp; Margin'],
-      ['javascript:void(0)', '&#9637;', 'Analytics &amp; Reports', true],
-      ['javascript:void(0)', '&#9825;', 'Customer Success', true],
       ['support-dashboard.html', '&#9678;', 'Support Dashboard'],
       ['live-operations-center.html', '&#9636;', 'Live Operations Center'],
-      ['security.html', '&#9672;', 'My Security'],
-      ['login-history.html', '&#9672;', 'Login History'],
-      ['active-sessions.html', '&#9635;', 'Active Sessions'],
-      ['change-password.html', '&#11039;', 'Change Password'],
-      ['notification-preferences.html', '&#9673;', 'Notification Preferences'],
       ['infrastructure-health.html', '&#9638;', 'System Operations'],
       ['compliance-dashboard.html', '&#9638;', 'Compliance Dashboard'],
-      ['javascript:void(0)', '&#9638;', 'System Health', true, false],
-      ['javascript:void(0)', '&#9881;', 'Settings', true]
+      ['security.html', '&#9672;', 'My Security']
     ];
 
     document.querySelectorAll('.admin-nav').forEach(function (nav) {
@@ -322,6 +353,7 @@
       ensureAllCustomersLink();
       normalizePrimaryNavOrder();
     }
+    hydrateCurrentUser();
     activateCurrentPage();
     restoreSidebarScroll();
     if (!document.body.classList.contains('activation-queue-page')) setupSidebarResizer();
@@ -363,4 +395,3 @@
     }
   }, true);
 }());
-

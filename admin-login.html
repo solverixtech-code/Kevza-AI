@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KevzaAI - Super Admin Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body class="login-reference-page">
+    <main class="login-shell">
+      <section class="login-brand-panel">
+        <a href="index.html" class="login-logo-link" aria-label="Back to KevzaAI home"><span class="login-logo-mark">K</span><span class="login-logo-word">Kevza<span>AI</span></span></a>
+
+        <div class="login-brand-copy">
+          <h1>KevzaAI<br />Internal Control<br />Center</h1>
+          <p>Restricted access for KevzaAI platform administrators managing customers, billing, operations, compliance, and support.</p>
+        </div>
+
+        <div class="login-feature-list" aria-label="KevzaAI internal admin highlights">
+          <div class="login-feature">
+            <span class="login-feature-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-3.5 7-9V5.5L12 3 5 5.5V12c0 5.5 7 9 7 9Z" /><path d="m9 12 2 2 4-4" /></svg>
+            </span>
+            <div><strong>Super Admin Only</strong><p>Credential-based access for internal KevzaAI operators.</p></div>
+          </div>
+          <div class="login-feature">
+            <span class="login-feature-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16" /><path d="M9 7h3M9 11h3M3 21h18" /></svg>
+            </span>
+            <div><strong>Platform Operations</strong><p>Manage tenants, plans, billing, support, and infrastructure health.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="login-form-panel">
+        <div class="login-language">
+          <button type="button" aria-label="Language selector">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg>
+            English
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+          </button>
+        </div>
+
+        <div class="login-card">
+          <div class="login-heading">
+            <h2>Super Admin Login</h2>
+            <p>Use your internal KevzaAI credentials to continue</p>
+          </div>
+
+          <form class="login-form" data-admin-login-form novalidate>
+            <label class="login-field">
+              <span>Email address</span>
+              <span class="login-input-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16v11H4z" /><path d="m4 8 8 5 8-5" /></svg>
+                <input name="email" type="email" autocomplete="email" placeholder="Enter super admin email" required />
+              </span>
+            </label>
+
+            <label class="login-field">
+              <span>Password</span>
+              <span class="login-input-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
+                <input name="password" type="password" autocomplete="current-password" placeholder="Enter your password" data-password-input required />
+                <button type="button" class="login-eye" data-password-toggle aria-label="Show password"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" /><circle cx="12" cy="12" r="2.4" /></svg></button>
+              </span>
+            </label>
+
+            <div class="login-options">
+              <label><input name="remember" type="checkbox" checked /><span>Remember me</span></label>
+              <a href="forgot-password.html">Forgot password?</a>
+            </div>
+
+            <button class="login-primary" type="submit">Sign in to Super Admin <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></button>
+            <p class="login-form-message" data-admin-login-message role="alert" hidden></p>
+          </form>
+
+          <p class="signup-switch">Customer user? <a href="login.html">Go to customer login</a></p>
+
+          <div class="login-security-row">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-3.5 7-9V5.5L12 3 5 5.5V12c0 5.5 7 9 7 9Z" /></svg>Internal access only</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>SSL Encrypted</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="auth.js"></script>
+  </body>
+</html>

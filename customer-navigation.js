@@ -20,6 +20,44 @@
     }
   }
 
+  function formatRole(role) {
+    if (role === 'OWNER') return 'Owner';
+    if (role === 'TEAM_MEMBER') return 'Team Member';
+    return 'Customer';
+  }
+
+  function getInitials(name, email) {
+    var source = (name || email || 'User').trim();
+    var parts = source.split(/\s+/).filter(Boolean);
+    if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+    return source.slice(0, 2).toUpperCase();
+  }
+
+  function hydrateCurrentUser() {
+    var session = getAuthSession();
+    var user = session && session.user ? session.user : null;
+    if (!user) return;
+
+    var displayName = user.name || user.email || 'Customer User';
+    var roleLabel = formatRole(user.role);
+    var initials = getInitials(user.name, user.email);
+
+    document.querySelectorAll('.sidebar-user, .customer-user, .top-user, .ptb-user').forEach(function (container) {
+      var strong = container.querySelector('strong');
+      var span = container.querySelector('span');
+      var avatar = container.querySelector('.mini-avatar');
+
+      if (strong) strong.textContent = displayName;
+      if (span) span.textContent = roleLabel;
+      if (avatar) avatar.textContent = initials;
+    });
+
+    var heroTitle = document.querySelector('.customer-hero-row h1');
+    if (heroTitle) {
+      heroTitle.innerHTML = 'Good morning, ' + displayName + '! <span aria-hidden="true">&#128075;</span>';
+    }
+  }
+
   function enforceCustomerAccess() {
     var session = getAuthSession();
     var role = session && session.user ? session.user.role : null;
@@ -102,6 +140,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     if (!enforceCustomerAccess()) return;
     renderNavigation();
+    hydrateCurrentUser();
     activateCurrentPage();
     restoreSidebarScroll();
   });

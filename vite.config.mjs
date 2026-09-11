@@ -8,6 +8,7 @@ export default defineConfig({
         main: resolve(import.meta.dirname, 'index.html'),
         customerDashboard: resolve(import.meta.dirname, 'customer-dashboard.html'),
         login: resolve(import.meta.dirname, 'login.html'),
+        adminLogin: resolve(import.meta.dirname, 'admin-login.html'),
         signup: resolve(import.meta.dirname, 'signup.html'),
         forgotPassword: resolve(import.meta.dirname, 'forgot-password.html'),
         resetPassword: resolve(import.meta.dirname, 'reset-password.html'),
@@ -47,7 +48,6 @@ export default defineConfig({
     },
   },
 });
-
 
 
 

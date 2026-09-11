@@ -84,6 +84,7 @@ methodCards.forEach((card) => {
 });
 
 const loginForm = document.querySelector("[data-login-form]");
+const adminLoginForm = document.querySelector("[data-admin-login-form]");
 const signupForm = document.querySelector("[data-signup-form]");
 const emailOtpForm = document.querySelector("[data-email-otp-form]");
 const googleAuthLinks = document.querySelectorAll("[data-google-auth]");
@@ -143,10 +144,76 @@ if (loginForm) {
         return;
       }
 
+      if (payload.user?.role === "SUPER_ADMIN") {
+        throw new Error("Use the Super Admin login page for this account.");
+      }
+
       storeAuthSession(payload, remember ? window.localStorage : window.sessionStorage);
 
       redirectToRoleHome(payload.user);
     } catch (error) {
+      setLoginMessage(
+        message,
+        error instanceof Error ? error.message : "Unable to sign in. Please try again.",
+      );
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+      }
+    }
+  });
+}
+
+if (adminLoginForm) {
+  const message = adminLoginForm.querySelector("[data-admin-login-message]");
+  const submitButton = adminLoginForm.querySelector('button[type="submit"]');
+
+  adminLoginForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(adminLoginForm);
+    const email = String(formData.get("email") ?? "").trim();
+    const password = String(formData.get("password") ?? "");
+    const remember = formData.get("remember") === "on";
+
+    setLoginMessage(message, "");
+
+    if (!email || !password) {
+      setLoginMessage(message, "Enter your super admin email and password.");
+      return;
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+    }
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const payload = await response.json();
+
+      if (!response.ok) {
+        throw new Error(payload.message || "Unable to sign in. Please try again.");
+      }
+
+      if (payload.requiresVerification) {
+        throw new Error("Super admin account must be verified before access.");
+      }
+
+      if (payload.user?.role !== "SUPER_ADMIN") {
+        throw new Error("This login is only for KevzaAI super admins.");
+      }
+
+      storeAuthSession(payload, remember ? window.localStorage : window.sessionStorage);
+      redirectToRoleHome(payload.user);
+    } catch (error) {
+      window.localStorage.removeItem(AUTH_STORAGE_KEY);
+      window.sessionStorage.removeItem(AUTH_STORAGE_KEY);
       setLoginMessage(
         message,
         error instanceof Error ? error.message : "Unable to sign in. Please try again.",

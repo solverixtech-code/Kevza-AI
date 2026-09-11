@@ -108,6 +108,7 @@ ul {
 }
 
 .nav-book-demo,
+.nav-admin-dashboard,
 .nav-get-started {
   display: inline-flex;
   min-width: 126px;
@@ -122,6 +123,17 @@ ul {
 .nav-book-demo {
   border: 2px solid rgba(255, 255, 255, 0.55);
   color: #fff;
+}
+
+.nav-admin-dashboard {
+  border: 2px solid rgba(255, 255, 255, 0.38);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-admin-dashboard:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
 }
 
 .nav-get-started {
@@ -1306,7 +1318,8 @@ ul {
 
   .nav-links,
   .nav-login,
-  .nav-book-demo { display: none; }
+  .nav-book-demo,
+  .nav-admin-dashboard { display: none; }
   .logo-img { width: 145px; }
   .nav-get-started { min-width: auto; height: 40px; }
   .hero-title { font-size: 36px; }
@@ -2557,5 +2570,6 @@ body {
 }
 
 @media (max-width: 760px) {
-  .nav-dashboard { display: none; }
+  .nav-dashboard,
+  .nav-admin-dashboard { display: none; }
 }
