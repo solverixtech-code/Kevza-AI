@@ -123,6 +123,7 @@
   function renderPrimaryNavigation() {
     var items = [
       ['admin-profile.html', '&#8962;', 'Dashboard'],
+      ['customer-dashboard.html', '&#9638;', 'Customer Dashboard'],
       ['enterprise-customers.html', '&#9635;', 'Enterprise Customers'],
       ['customer-growth-dashboard.html', '&#9673;', 'Customer Growth'],
       ['all-customers.html', '&#9783;', 'Customer Directory'],
