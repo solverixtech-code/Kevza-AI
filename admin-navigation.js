@@ -51,7 +51,7 @@
 
   function activateCurrentPage() {
     var currentPage = normalizePath(window.location.pathname);
-    if (currentPage === 'professional-plan.html' || currentPage === 'plan-features.html' || currentPage === 'plan-limits.html') currentPage = 'plans-and-pricing.html';
+    if (currentPage === 'professional-plan.html' || currentPage === 'plan-features.html' || currentPage === 'plan-limits.html' || currentPage === 'channel-entitlements.html' || currentPage === 'ai-entitlements.html' || currentPage === 'contact-limits.html' || currentPage === 'automation-limits.html' || currentPage === 'api-limits.html' || currentPage === 'overage-rules.html') currentPage = 'plans-and-pricing.html';
     var links = document.querySelectorAll('.admin-nav a[href]');
 
     links.forEach(function (link) {
@@ -123,6 +123,7 @@
   function renderPrimaryNavigation() {
     var items = [
       ['admin-profile.html', '&#8962;', 'Dashboard'],
+      ['customer-dashboard.html', '&#9638;', 'Customer Dashboard'],
       ['enterprise-customers.html', '&#9635;', 'Enterprise Customers'],
       ['customer-growth-dashboard.html', '&#9673;', 'Customer Growth'],
       ['all-customers.html', '&#9783;', 'Customer Directory'],

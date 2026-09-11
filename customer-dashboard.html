@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kevza AI - Customer Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="customer-dashboard.css" />
+</head>
+<body>
+  <main class="admin-app customer-shell shared-nav-shell">
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Admin navigation"></nav>
+      <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+    </aside>
+
+    <section class="customer-main">
+      <header class="customer-topbar">
+        <label class="customer-search" aria-label="Search"><span>&#8981;</span><input type="search" placeholder="Search anything..." /></label>
+        <div class="customer-top-actions"><button class="customer-icon has-dot" aria-label="Notifications">&#128276;</button><button class="customer-icon" aria-label="Help">?</button><div class="customer-user"><div class="mini-avatar photo">SB</div><div><strong>Sarah Business</strong><span>Business Account</span></div><b>&#8964;</b></div></div>
+      </header>
+
+      <div class="customer-dashboard-page">
+        <section class="customer-hero-row">
+          <div><h1>Good morning, Sarah Business! <span aria-hidden="true">&#128075;</span></h1><p>Here's what's happening with your business today.</p></div>
+          <time class="dashboard-date" datetime="2025-09-10"><span>&#128197;</span><strong>Sep 10, 2025</strong><small>Tuesday</small></time>
+        </section>
+
+        <section class="customer-metrics" aria-label="Business metrics">
+          <article class="customer-card metric-tile"><span class="metric-badge blue">&#9783;</span><div><p>Customers</p><strong>2,458</strong><em class="positive">+12.4%</em><small>vs. last 30 days</small></div></article>
+          <article class="customer-card metric-tile"><span class="metric-badge purple">&#9636;</span><div><p>Messages</p><strong>18,420</strong><em class="positive">+8.2%</em><small>vs. last 30 days</small></div></article>
+          <article class="customer-card metric-tile"><span class="metric-badge green">&#9873;</span><div><p>Active Campaigns</p><strong>12</strong><em>3 active</em><small>vs. last 30 days</small></div></article>
+          <article class="customer-card metric-tile usage-tile"><span class="metric-badge violet">&#9881;</span><div><p>AI / Automation Usage</p><strong>68%</strong><small>Monthly usage</small><i><b style="width:68%"></b></i></div></article>
+        </section>
+
+        <section class="customer-content-grid">
+          <article class="customer-card chart-card">
+            <div class="customer-card-head"><h2>Message &amp; Customer Activity</h2><select aria-label="Chart period"><option>Last 7 days</option></select></div>
+            <div class="activity-chart" aria-label="Message and customer activity chart">
+              <div class="chart-scale"><span>2K</span><span>1.5K</span><span>1K</span><span>500</span><span>0</span></div>
+              <div class="chart-bars">
+                <div class="chart-day"><i style="height:31%"></i><i style="height:20%"></i><i style="height:18%"></i><span>Sep 4</span></div>
+                <div class="chart-day"><i style="height:16%"></i><i style="height:13%"></i><i style="height:11%"></i><span>Sep 5</span></div>
+                <div class="chart-day"><i style="height:35%"></i><i style="height:25%"></i><i style="height:18%"></i><span>Sep 6</span></div>
+                <div class="chart-day"><i style="height:20%"></i><i style="height:38%"></i><i style="height:22%"></i><span>Sep 7</span></div>
+                <div class="chart-day"><i style="height:47%"></i><i style="height:52%"></i><i style="height:33%"></i><span>Sep 8</span></div>
+                <div class="chart-day"><i style="height:24%"></i><i style="height:44%"></i><i style="height:20%"></i><span>Sep 9</span></div>
+                <div class="chart-day"><i style="height:60%"></i><i style="height:70%"></i><i style="height:36%"></i><span>Sep 10</span></div>
+                <svg viewBox="0 0 700 190" preserveAspectRatio="none" aria-hidden="true"><path class="line delivered" d="M20 120 C110 122 160 115 220 100 C280 84 330 105 380 82 C440 50 500 58 560 72 C620 82 660 50 690 38"/><path class="line replies" d="M20 140 C110 142 160 138 220 130 C280 118 330 126 380 104 C440 72 500 85 560 94 C620 105 660 86 690 76"/></svg>
+              </div>
+            </div>
+            <div class="chart-legend"><span><i class="sent"></i>Sent</span><span><i class="delivered-dot"></i>Delivered</span><span><i class="replies-dot"></i>Replies</span><span><i class="new-dot"></i>New Customers</span></div>
+          </article>
+
+          <aside class="customer-card conversations-card"><div class="customer-card-head"><h2>Recent Conversations</h2><a href="messaging-dashboard.html">View all &#8594;</a></div><div class="conversation-list">
+            <a href="messaging-dashboard.html"><span>SJ</span><div><strong>Sarah Johnson</strong><p>Hi, I'm interested in your services...</p></div><time>2m ago</time><i>2</i></a>
+            <a href="messaging-dashboard.html"><span>RS</span><div><strong>Rahul Sharma</strong><p>Can you share the pricing details?</p></div><time>8m ago</time><i>1</i></a>
+            <a href="messaging-dashboard.html"><span>PP</span><div><strong>Priya Patel</strong><p>Thanks for the quick response!</p></div><time>15m ago</time></a>
+            <a href="messaging-dashboard.html"><span>DW</span><div><strong>David Wilson</strong><p>That sounds great. Let's move forward...</p></div><time>22m ago</time></a>
+            <a href="messaging-dashboard.html"><span>NG</span><div><strong>Neha Gupta</strong><p>Is there a demo available?</p></div><time>35m ago</time></a>
+          </div></aside>
+
+          <article class="customer-card campaigns-card"><div class="customer-card-head"><h2>Recent Campaigns</h2><a href="campaign-operations-dashboard.html">View all &#8594;</a></div><div class="campaign-table"><table><thead><tr><th>Campaign</th><th>Status</th><th>Sent</th><th>Delivered</th><th>Opened</th><th>CTR</th></tr></thead><tbody><tr><td>Summer Promo</td><td><span class="status active">Active</span></td><td>8,240</td><td>7,821</td><td>6,921</td><td>18%</td></tr><tr><td>Welcome Flow</td><td><span class="status active">Active</span></td><td>2,120</td><td>1,982</td><td>1,654</td><td>24%</td></tr><tr><td>Product Launch</td><td><span class="status scheduled">Scheduled</span></td><td>5,600</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Customer Follow-up</td><td><span class="status completed">Completed</span></td><td>3,420</td><td>3,210</td><td>2,856</td><td>16%</td></tr></tbody></table></div></article>
+
+          <aside class="right-stack"><section class="customer-card quick-actions-card"><h2>Quick Actions</h2><div><a href="all-customers.html" class="action-blue">&#43; Add Customer</a><a href="campaign-operations-dashboard.html" class="action-purple">&#9873; Create Campaign</a><a href="ai-operations-dashboard.html" class="action-green">&#9881; Create Chatbot</a><a href="automation-operations-dashboard.html" class="action-orange">&#8984; Create Automation</a></div></section><section class="customer-card plan-card"><h2>Current Plan</h2><div class="plan-row"><span>&#11088;</span><div><strong>Professional Plan</strong><p>Billed monthly - Next Billing: Oct 10, 2025</p></div><em>68%</em></div><i class="plan-progress"><b style="width:68%"></b></i><a href="subscription-dashboard.html">Manage Plan &#8594;</a></section></aside>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
