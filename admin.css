@@ -1250,6 +1250,7 @@ body.is-resizing-sidebar {
 .mk-shell,
 .wb-shell,
 .ac-shell,
+.rgl-shell,
 .caq-shell,
 .activation-shell,
 .admin-app {
@@ -1266,6 +1267,7 @@ body.is-resizing-sidebar {
 .activation-queue-page .caq-shell {
   --admin-sidebar-width: 268px;
 }
+
 
 
 
