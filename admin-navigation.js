@@ -133,7 +133,9 @@
       ['plans-and-pricing.html', '&#9671;', 'Plans &amp; Pricing'],
       ['customer-onboarding-activation.html', '&#9673;', 'Customer Onboarding'],
       ['new-signups.html', '&#8853;', 'New Signups'],
+      ['onboarding-in-process.html', '&#8987;', 'Onboarding In Progress'],
       ['awaiting-whatsapp-connection.html', '&#9742;', 'Awaiting WhatsApp Connection'],
+      ['awaiting-template-approval.html', '&#9636;', 'Awaiting Template Approval'],
       ['activation-blocked.html', '&#9888;', 'Activation Blocked'],
       ['customer-activation-queue.html', '&#9673;', 'Customer Activation Queue'],
       ['billing-wallet.html', '&#9635;', 'Billing &amp; Wallet'],
@@ -287,6 +289,9 @@
     }
   }, true);
 }());
+
+
+
 
 
 

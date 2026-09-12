@@ -32,7 +32,10 @@ export default defineConfig({
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
         customerOnboardingActivation: resolve(import.meta.dirname, 'customer-onboarding-activation.html'),
         newSignups: resolve(import.meta.dirname, 'new-signups.html'),
+        onboardingInProgress: resolve(import.meta.dirname, 'onboarding-in-progress.html'),
+        onboardingInProcess: resolve(import.meta.dirname, 'onboarding-in-process.html'),
         awaitingWhatsappConnection: resolve(import.meta.dirname, 'awaiting-whatsapp-connection.html'),
+        awaitingTemplateApproval: resolve(import.meta.dirname, 'awaiting-template-approval.html'),
         activationBlocked: resolve(import.meta.dirname, 'activation-blocked.html'),
         customerActivationQueue: resolve(import.meta.dirname, 'customer-activation-queue.html'),
         plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
@@ -51,6 +54,9 @@ export default defineConfig({
     },
   },
 });
+
+
+
 
 
 
