@@ -134,6 +134,7 @@
       ['customer-onboarding-activation.html', '&#9673;', 'Customer Onboarding'],
       ['activated-customers.html', '&#10003;', 'Activated Customers'],
       ['ready-to-go-live.html', '&#128640;', 'Ready to Go Live'],
+      ['onboarding-funnel.html', '&#8649;', 'Onboarding Funnel'],
       ['new-signups.html', '&#8853;', 'New Signups'],
       ['onboarding-in-process.html', '&#8987;', 'Onboarding In Progress'],
       ['awaiting-whatsapp-connection.html', '&#9742;', 'Awaiting WhatsApp Connection'],
@@ -293,6 +294,7 @@
     }
   }, true);
 }());
+
 
 
 

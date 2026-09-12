@@ -33,6 +33,7 @@ export default defineConfig({
         customerOnboardingActivation: resolve(import.meta.dirname, 'customer-onboarding-activation.html'),
         activatedCustomers: resolve(import.meta.dirname, 'activated-customers.html'),
         readyToGoLive: resolve(import.meta.dirname, 'ready-to-go-live.html'),
+        onboardingFunnel: resolve(import.meta.dirname, 'onboarding-funnel.html'),
         newSignups: resolve(import.meta.dirname, 'new-signups.html'),
         onboardingInProgress: resolve(import.meta.dirname, 'onboarding-in-progress.html'),
         onboardingInProcess: resolve(import.meta.dirname, 'onboarding-in-process.html'),
@@ -58,6 +59,7 @@ export default defineConfig({
     },
   },
 });
+
 
 
 
