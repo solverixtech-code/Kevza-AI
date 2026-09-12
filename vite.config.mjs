@@ -31,6 +31,7 @@ export default defineConfig({
         subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
         customerOnboardingActivation: resolve(import.meta.dirname, 'customer-onboarding-activation.html'),
+        activationBlocked: resolve(import.meta.dirname, 'activation-blocked.html'),
         customerActivationQueue: resolve(import.meta.dirname, 'customer-activation-queue.html'),
         plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
         professionalPlan: resolve(import.meta.dirname, 'professional-plan.html'),
@@ -48,6 +49,7 @@ export default defineConfig({
     },
   },
 });
+
 
 
 

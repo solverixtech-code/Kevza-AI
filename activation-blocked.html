@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI - Activation Blocked</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="activation-blocked.css" />
+</head>
+<body>
+<main class="admin-app ab-shell">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+  </aside>
+
+  <section class="ab-main">
+    <header class="ab-topbar">
+      <nav class="ab-breadcrumb" aria-label="Breadcrumb"><span>Admin</span><span class="sep">/</span><span>Customer Onboarding &amp; Activation</span><span class="sep">/</span><strong>Activation Blocked</strong></nav>
+      <label class="ab-search" aria-label="Search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <div class="ab-topbar-right">
+        <button class="ab-icon-btn has-badge" aria-label="Notifications"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><i>8</i></button>
+        <button class="ab-icon-btn has-badge" aria-label="Messages"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><i>3</i></button>
+        <button class="ab-icon-btn" aria-label="Help"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
+        <div class="ab-topbar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </div>
+    </header>
+
+    <div class="ab-page">
+      <div class="ab-title-row"><div><h1>Activation Blocked</h1><p>View and manage customers whose activation is blocked. Identify issues and help them complete their onboarding.</p></div><button class="ab-primary-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg>Export</button></div>
+
+      <div class="ab-kpis">
+        <article class="ab-kpi danger"><span class="kpi-icon"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 17h.01"/></svg></span><div><span>Total Blocked</span><strong>20</strong><small class="neg">+15% from last week</small></div></article>
+        <article class="ab-kpi wait"><span class="kpi-icon"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 2h12M6 22h12M8 2c0 5 8 5 8 10s-8 5-8 10M16 2c0 5-8 5-8 10s8 5 8 10"/></svg></span><div><span>Awaiting Customer Action</span><strong>14</strong><small>70% of total</small></div></article>
+        <article class="ab-kpi support"><span class="kpi-icon"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><span>Requires Admin Support</span><strong>6</strong><small>30% of total</small></div></article>
+        <article class="ab-kpi clock"><span class="kpi-icon"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><span>Avg. Days Blocked</span><strong>2.8 days</strong><small class="neg">+40% from last week</small></div></article>
+      </div>
+
+      <div class="ab-grid">
+        <section class="ab-card ab-table-card">
+          <div class="ab-tabs" role="tablist" aria-label="Blocked customers"><button class="active">All Blocked (20)</button><button>Customer Action Required (14)</button><button>Admin Support Required (6)</button><button>Over 7 Days (4)</button></div>
+          <div class="ab-toolbar"><label class="ab-customer-search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search by customer name, email, workspace or issue..." /></label><select aria-label="Plan"><option>All Plans</option><option>Professional</option><option>Growth</option><option>Starter</option></select><select aria-label="Block reason"><option>All Block Reasons</option><option>WhatsApp Not Connected</option><option>Payment Pending</option><option>KYC Verification Pending</option></select><select aria-label="Source"><option>All Sources</option><option>Website</option><option>Referral</option><option>Partner</option></select><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Signup Date</button><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>More Filters</button></div>
+          <div class="ab-table-scroll"><table class="ab-table"><thead><tr><th><input type="checkbox" aria-label="Select all blocked customers" /></th><th>#</th><th>Customer</th><th>Workspace</th><th>Plan</th><th>Block Reason</th><th>Blocked Since</th><th>Days</th><th>Status</th><th>Actions</th></tr></thead><tbody>
+            <tr><td><input type="checkbox" /></td><td>1</td><td><div class="ab-customer"><span class="photo p1"></span><div><strong>Urban Kart</strong><small>contact@urbankart.com</small></div></div></td><td><div class="workspace red"><span>UK</span>Urban Kart</div></td><td>Growth</td><td><span class="reason red">WhatsApp Not Connected</span></td><td>02 Sep 2026<br><small>10:24 AM</small></td><td class="days">3</td><td><span class="blocked">Blocked</span></td><td><button class="more">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>2</td><td><div class="ab-customer"><span class="photo p2">HJ</span><div><strong>FitLife Gym</strong><small>hello@fitlife.com</small></div></div></td><td><div class="workspace purple"><span>FL</span>FitLife</div></td><td>Starter</td><td><span class="reason orange">Incomplete Business Profile</span></td><td>01 Sep 2026<br><small>04:15 PM</small></td><td class="days">4</td><td><span class="blocked">Blocked</span></td><td><button class="more">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>3</td><td><div class="ab-customer"><span class="photo p3">CP</span><div><strong>CarePlus Clinic</strong><small>hello@careplus.com</small></div></div></td><td><div class="workspace green"><span>+</span>CarePlus</div></td><td>Professional</td><td><span class="reason red">Payment Pending</span></td><td>31 Aug 2026<br><small>11:20 AM</small></td><td class="days">5</td><td><span class="blocked">Blocked</span></td><td><button class="more">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>4</td><td><div class="ab-customer"><span class="photo p4"></span><div><strong>Skyline Real Estate</strong><small>info@skylinerealty.com</small></div></div></td><td><div class="workspace blue"><span>SK</span>Skyline</div></td><td>Professional</td><td><span class="reason orange">Number Not Verified</span></td><td>31 Aug 2026<br><small>09:45 AM</small></td><td class="days">5</td><td><span class="blocked">Blocked</span></td><td><button class="more">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>5</td><td><div class="ab-customer"><span class="photo p5">TH</span><div><strong>Taste House</strong><small>hello@tastehouse.com</small></div></div></td><td><div class="workspace rose"><span>TH</span>Taste House</div></td><td>Starter</td><td><span class="reason orange">Business Profile Incomplete</span></td><td>30 Aug 2026<br><small>03:18 PM</small></td><td class="days">6</td><td><span class="blocked">Blocked</span></td><td><button class="more">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>6</td><td><div class="ab-customer"><span class="photo p6"></span><div><strong>Bright Minds School</strong><small>admin@brightminds.com</small></div></div></td><td><div class="workspace teal"><span>BM</span>Bright Minds</div></td><td>Professional</td><td><span class="reason red">Invalid WhatsApp Number</span></td><td>28 Aug 2026<br><small>12:40 PM</small></td><td class="days">8</td><td><span class="blocked">Blocked</span></td><td><button class="more">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>7</td><td><div class="ab-customer"><span class="photo p7"></span><div><strong>Global Travels</strong><small>info@globaltravels.com</small></div></div></td><td><div class="workspace sky"><span>GT</span>Global Travels</div></td><td>Growth</td><td><span class="reason orange">Template Approval Pending</span></td><td>27 Aug 2026<br><small>02:30 PM</small></td><td class="days">9</td><td><span class="blocked">Blocked</span></td><td><button class="more">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>8</td><td><div class="ab-customer"><span class="photo p8"></span><div><strong>Elite Automotives</strong><small>sales@eliteauto.com</small></div></div></td><td><div class="workspace car"><span>EA</span>Elite Auto</div></td><td>Starter</td><td><span class="reason orange">KYC Verification Pending</span></td><td>27 Aug 2026<br><small>11:10 AM</small></td><td class="days">9</td><td><span class="blocked">Blocked</span></td><td><button class="more">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>9</td><td><div class="ab-customer"><span class="photo p9"></span><div><strong>StyleHub</strong><small>support@stylehub.in</small></div></div></td><td><div class="workspace mint"><span>SH</span>StyleHub</div></td><td>Professional</td><td><span class="reason orange">Plan Upgrade Required</span></td><td>26 Aug 2026<br><small>04:32 PM</small></td><td class="days">10</td><td><span class="blocked">Blocked</span></td><td><button class="more">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>10</td><td><div class="ab-customer"><span class="photo p10"></span><div><strong>Green Care</strong><small>info@greencare.in</small></div></div></td><td><div class="workspace leaf"><span>GC</span>Green Care</div></td><td>Growth</td><td><span class="reason orange">Contact List Not Uploaded</span></td><td>25 Aug 2026<br><small>10:05 AM</small></td><td class="days">11</td><td><span class="blocked">Blocked</span></td><td><button class="more">...</button></td></tr>
+          </tbody></table></div>
+          <div class="ab-table-foot"><span>Showing 1 to 10 of 20 customers</span><div class="ab-pagination"><button aria-label="Previous page">&#8249;</button><button class="active">1</button><button>2</button><button>3</button><button aria-label="Next page">&#8250;</button><select aria-label="Rows per page"><option>10 / page</option><option>20 / page</option></select></div></div>
+        </section>
+
+        <aside class="ab-side-stack">
+          <section class="ab-card ab-reasons"><h2>Block Reasons</h2><div class="reason-body"><div class="reason-donut"><span><strong>20</strong><small>Blocked</small></span></div><ul><li><i class="c-red"></i>WhatsApp Not Connected <b>30%</b></li><li><i class="c-orange"></i>Business Profile Incomplete <b>25%</b></li><li><i class="c-pink"></i>Payment Pending <b>15%</b></li><li><i class="c-blue"></i>KYC Verification Pending <b>10%</b></li><li><i class="c-cyan"></i>Template Approval Pending <b>10%</b></li><li><i class="c-gray"></i>Others <b>10%</b></li></ul></div></section>
+          <section class="ab-card ab-aging"><h2>Aging Analysis</h2><div class="age-row"><span>1 - 3 days</span><b>45%</b><em><i style="width:45%"></i></em></div><div class="age-row"><span>4 - 7 days</span><b>30%</b><em><i style="width:30%"></i></em></div><div class="age-row"><span>8 - 14 days</span><b>20%</b><em><i class="orange" style="width:20%"></i></em></div><div class="age-row"><span>&gt; 14 days</span><b>5%</b><em><i class="red" style="width:5%"></i></em></div></section>
+          <section class="ab-card ab-actions"><h2>Quick Actions</h2><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7Z"/></svg>Send Reminder to Selected</button><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View Customer Details</button><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Check Connection Status</button><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Mark as Resolved</button><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Add Support Note</button><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg>Export Blocked List</button></section>
+          <section class="ab-card ab-help"><div class="help-icon">i</div><div><h2>Need Help?</h2><p>Many activation issues can be resolved with a quick nudge. Send a reminder or contact the customer directly.</p><button>View Onboarding Guide</button></div></section>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+<script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

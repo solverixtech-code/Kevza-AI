@@ -132,6 +132,7 @@
       ['subscription-dashboard.html', '&#9673;', 'Subscription Dashboard'],
       ['plans-and-pricing.html', '&#9671;', 'Plans &amp; Pricing'],
       ['customer-onboarding-activation.html', '&#9673;', 'Customer Onboarding'],
+      ['activation-blocked.html', '&#9888;', 'Activation Blocked'],
       ['customer-activation-queue.html', '&#9673;', 'Customer Activation Queue'],
       ['billing-wallet.html', '&#9635;', 'Billing &amp; Wallet'],
       ['javascript:void(0)', '&#9673;', 'Channels', true],
@@ -284,6 +285,7 @@
     }
   }, true);
 }());
+
 
 
 
