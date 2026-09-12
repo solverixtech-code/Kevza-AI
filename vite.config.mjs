@@ -36,6 +36,7 @@ export default defineConfig({
         onboardingInProcess: resolve(import.meta.dirname, 'onboarding-in-process.html'),
         awaitingWhatsappConnection: resolve(import.meta.dirname, 'awaiting-whatsapp-connection.html'),
         awaitingTemplateApproval: resolve(import.meta.dirname, 'awaiting-template-approval.html'),
+        missingKnowledge: resolve(import.meta.dirname, 'missing-knowledge.html'),
         activationBlocked: resolve(import.meta.dirname, 'activation-blocked.html'),
         customerActivationQueue: resolve(import.meta.dirname, 'customer-activation-queue.html'),
         plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
@@ -54,6 +55,7 @@ export default defineConfig({
     },
   },
 });
+
 
 
 
