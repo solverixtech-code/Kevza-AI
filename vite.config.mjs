@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+﻿import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -30,6 +30,7 @@ export default defineConfig({
         templates: resolve(import.meta.dirname, 'templates.html'),
         subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
+        customerOnboardingActivation: resolve(import.meta.dirname, 'customer-onboarding-activation.html'),
         customerActivationQueue: resolve(import.meta.dirname, 'customer-activation-queue.html'),
         plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
         professionalPlan: resolve(import.meta.dirname, 'professional-plan.html'),
@@ -47,6 +48,7 @@ export default defineConfig({
     },
   },
 });
+
 
 
 

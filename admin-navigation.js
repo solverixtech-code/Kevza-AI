@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   var sidebarScrollKey = 'kevza-admin-sidebar-scroll';
 
   if ('scrollRestoration' in history) {
@@ -131,6 +131,7 @@
       ['javascript:void(0)', '&#9671;', 'Plans &amp; Subscriptions', true],
       ['subscription-dashboard.html', '&#9673;', 'Subscription Dashboard'],
       ['plans-and-pricing.html', '&#9671;', 'Plans &amp; Pricing'],
+      ['customer-onboarding-activation.html', '&#9673;', 'Customer Onboarding'],
       ['customer-activation-queue.html', '&#9673;', 'Customer Activation Queue'],
       ['billing-wallet.html', '&#9635;', 'Billing &amp; Wallet'],
       ['javascript:void(0)', '&#9673;', 'Channels', true],
@@ -212,6 +213,17 @@
       if (growth && allCustomers) nav.insertBefore(allCustomers, growth.nextElementSibling);
     });
   }
+  function ensureOnboardingLink() {
+    document.querySelectorAll('.admin-nav').forEach(function (nav) {
+      if (nav.querySelector('a[href="customer-onboarding-activation.html"]')) return;
+      var link = document.createElement('a');
+      link.href = 'customer-onboarding-activation.html';
+      link.innerHTML = '<span>&#9673;</span>Customer Onboarding';
+      var queue = nav.querySelector('a[href="customer-activation-queue.html"]');
+      if (queue) nav.insertBefore(link, queue);
+      else nav.appendChild(link);
+    });
+  }
   function ensureActivationQueueLink() {
     document.querySelectorAll('.admin-nav').forEach(function (nav) {
       if (nav.querySelector('a[href="customer-activation-queue.html"]')) return;
@@ -226,6 +238,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     renderPrimaryNavigation();
     ensureEnterpriseCustomersLink();
+    ensureOnboardingLink();
     ensureActivationQueueLink();
     ensureCustomerGrowthLink();
     ensureAllCustomersLink();
@@ -271,6 +284,7 @@
     }
   }, true);
 }());
+
 
 
 
