@@ -37,6 +37,7 @@ export default defineConfig({
         awaitingWhatsappConnection: resolve(import.meta.dirname, 'awaiting-whatsapp-connection.html'),
         awaitingTemplateApproval: resolve(import.meta.dirname, 'awaiting-template-approval.html'),
         missingKnowledge: resolve(import.meta.dirname, 'missing-knowledge.html'),
+        walletBlocked: resolve(import.meta.dirname, 'wallet-blocked.html'),
         activationBlocked: resolve(import.meta.dirname, 'activation-blocked.html'),
         customerActivationQueue: resolve(import.meta.dirname, 'customer-activation-queue.html'),
         plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
@@ -55,6 +56,7 @@ export default defineConfig({
     },
   },
 });
+
 
 
 

@@ -137,6 +137,7 @@
       ['awaiting-whatsapp-connection.html', '&#9742;', 'Awaiting WhatsApp Connection'],
       ['awaiting-template-approval.html', '&#9636;', 'Awaiting Template Approval'],
       ['missing-knowledge.html', '&#128214;', 'Missing Knowledge'],
+      ['wallet-blocked.html', '&#9635;', 'Wallet Blocked'],
       ['activation-blocked.html', '&#9888;', 'Activation Blocked'],
       ['customer-activation-queue.html', '&#9673;', 'Customer Activation Queue'],
       ['billing-wallet.html', '&#9635;', 'Billing &amp; Wallet'],
@@ -290,6 +291,7 @@
     }
   }, true);
 }());
+
 
 
 
