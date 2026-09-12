@@ -1,4 +1,4 @@
-﻿import { resolve } from 'path';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -31,6 +31,7 @@ export default defineConfig({
         subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
         customerOnboardingActivation: resolve(import.meta.dirname, 'customer-onboarding-activation.html'),
+        activatedCustomers: resolve(import.meta.dirname, 'activated-customers.html'),
         newSignups: resolve(import.meta.dirname, 'new-signups.html'),
         onboardingInProgress: resolve(import.meta.dirname, 'onboarding-in-progress.html'),
         onboardingInProcess: resolve(import.meta.dirname, 'onboarding-in-process.html'),
@@ -56,6 +57,8 @@ export default defineConfig({
     },
   },
 });
+
+
 
 
 

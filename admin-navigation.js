@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   var sidebarScrollKey = 'kevza-admin-sidebar-scroll';
 
   if ('scrollRestoration' in history) {
@@ -132,6 +132,7 @@
       ['subscription-dashboard.html', '&#9673;', 'Subscription Dashboard'],
       ['plans-and-pricing.html', '&#9671;', 'Plans &amp; Pricing'],
       ['customer-onboarding-activation.html', '&#9673;', 'Customer Onboarding'],
+      ['activated-customers.html', '&#10003;', 'Activated Customers'],
       ['new-signups.html', '&#8853;', 'New Signups'],
       ['onboarding-in-process.html', '&#8987;', 'Onboarding In Progress'],
       ['awaiting-whatsapp-connection.html', '&#9742;', 'Awaiting WhatsApp Connection'],
@@ -291,6 +292,8 @@
     }
   }, true);
 }());
+
+
 
 
 

@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --admin-bg: #f4f7fb;
   --admin-panel: #ffffff;
   --admin-panel-soft: #f8fbff;
@@ -1249,6 +1249,7 @@ body.is-resizing-sidebar {
 .ata-shell,
 .mk-shell,
 .wb-shell,
+.ac-shell,
 .caq-shell,
 .activation-shell,
 .admin-app {
@@ -1265,6 +1266,8 @@ body.is-resizing-sidebar {
 .activation-queue-page .caq-shell {
   --admin-sidebar-width: 268px;
 }
+
+
 
 
 
