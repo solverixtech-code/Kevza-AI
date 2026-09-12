@@ -31,6 +31,7 @@ export default defineConfig({
         subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
         customerOnboardingActivation: resolve(import.meta.dirname, 'customer-onboarding-activation.html'),
+        awaitingWhatsappConnection: resolve(import.meta.dirname, 'awaiting-whatsapp-connection.html'),
         activationBlocked: resolve(import.meta.dirname, 'activation-blocked.html'),
         customerActivationQueue: resolve(import.meta.dirname, 'customer-activation-queue.html'),
         plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
@@ -49,6 +50,7 @@ export default defineConfig({
     },
   },
 });
+
 
 
 
