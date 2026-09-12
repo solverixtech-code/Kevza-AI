@@ -132,6 +132,7 @@
       ['subscription-dashboard.html', '&#9673;', 'Subscription Dashboard'],
       ['plans-and-pricing.html', '&#9671;', 'Plans &amp; Pricing'],
       ['customer-onboarding-activation.html', '&#9673;', 'Customer Onboarding'],
+      ['new-signups.html', '&#8853;', 'New Signups'],
       ['awaiting-whatsapp-connection.html', '&#9742;', 'Awaiting WhatsApp Connection'],
       ['activation-blocked.html', '&#9888;', 'Activation Blocked'],
       ['customer-activation-queue.html', '&#9673;', 'Customer Activation Queue'],
@@ -286,6 +287,7 @@
     }
   }, true);
 }());
+
 
 
 
