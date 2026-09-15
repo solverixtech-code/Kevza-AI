@@ -23,7 +23,20 @@
     'support-dashboard.html',
     'live-operations-center.html',
     'infrastructure-health.html',
-    'compliance-dashboard.html'
+    'compliance-dashboard.html',
+    'workspace-usage.html',
+    'customer-onboarding-activation.html',
+    'activated-customers.html',
+    'ready-to-go-live.html',
+    'onboarding-funnel.html',
+    'new-signups.html',
+    'onboarding-in-progress.html',
+    'onboarding-in-process.html',
+    'awaiting-whatsapp-connection.html',
+    'awaiting-template-approval.html',
+    'missing-knowledge.html',
+    'wallet-blocked.html',
+    'activation-blocked.html'
   ];
   var customerOnlyPages = [
     'customer-dashboard.html',
@@ -243,6 +256,18 @@
       ['admin-profile.html', '&#8962;', 'Dashboard'],
       ['enterprise-customers.html', '&#9635;', 'Enterprise Customers'],
       ['customer-growth-dashboard.html', '&#9673;', 'Customer Growth'],
+      ['workspace-usage.html', '&#9637;', 'Workspace Usage'],
+      ['customer-onboarding-activation.html', '&#9673;', 'Customer Onboarding'],
+      ['activated-customers.html', '&#10003;', 'Activated Customers'],
+      ['ready-to-go-live.html', '&#128640;', 'Ready to Go Live'],
+      ['onboarding-funnel.html', '&#8649;', 'Onboarding Funnel'],
+      ['new-signups.html', '&#8853;', 'New Signups'],
+      ['onboarding-in-process.html', '&#8987;', 'Onboarding In Progress'],
+      ['awaiting-whatsapp-connection.html', '&#9742;', 'Awaiting WhatsApp Connection'],
+      ['awaiting-template-approval.html', '&#9636;', 'Awaiting Template Approval'],
+      ['missing-knowledge.html', '&#128214;', 'Missing Knowledge'],
+      ['wallet-blocked.html', '&#9635;', 'Wallet Blocked'],
+      ['activation-blocked.html', '&#9888;', 'Activation Blocked'],
       ['customer-activation-queue.html', '&#9673;', 'Customer Activation Queue'],
       ['plans-and-pricing.html', '&#9671;', 'Plans &amp; Pricing'],
       ['billing-wallet.html', '&#9635;', 'Billing &amp; Wallet'],
@@ -330,6 +355,17 @@
       if (growth && allCustomers) nav.insertBefore(allCustomers, growth.nextElementSibling);
     });
   }
+  function ensureOnboardingLink() {
+    document.querySelectorAll('.admin-nav').forEach(function (nav) {
+      if (nav.querySelector('a[href="customer-onboarding-activation.html"]')) return;
+      var link = document.createElement('a');
+      link.href = 'customer-onboarding-activation.html';
+      link.innerHTML = '<span>&#9673;</span>Customer Onboarding';
+      var queue = nav.querySelector('a[href="customer-activation-queue.html"]');
+      if (queue) nav.insertBefore(link, queue);
+      else nav.appendChild(link);
+    });
+  }
   function ensureActivationQueueLink() {
     document.querySelectorAll('.admin-nav').forEach(function (nav) {
       if (nav.querySelector('a[href="customer-activation-queue.html"]')) return;
@@ -348,9 +384,9 @@
     } else {
       renderPrimaryNavigation();
       ensureEnterpriseCustomersLink();
+      ensureOnboardingLink();
       ensureActivationQueueLink();
       ensureCustomerGrowthLink();
-      ensureAllCustomersLink();
       normalizePrimaryNavOrder();
     }
     hydrateCurrentUser();

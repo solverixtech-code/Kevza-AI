@@ -1241,6 +1241,17 @@ body.is-resizing-sidebar {
 .enterprise-shell,
 .subscription-shell,
 .growth-shell,
+.coa-shell,
+.ab-shell,
+.awc-shell,
+.ns-shell,
+.oip-shell,
+.ata-shell,
+.mk-shell,
+.wb-shell,
+.ac-shell,
+.rgl-shell,
+.of-shell,
 .caq-shell,
 .activation-shell,
 .admin-app {
@@ -1257,3 +1268,16 @@ body.is-resizing-sidebar {
 .activation-queue-page .caq-shell {
   --admin-sidebar-width: 268px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
