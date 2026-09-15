@@ -10,6 +10,7 @@ import { InboxModule } from './modules/inbox/inbox.module';
 import { KnowledgeModule } from './modules/knowledge/knowledge.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { TenantsModule } from './modules/tenants/tenants.module';
+import { TemplatesModule } from './modules/templates/templates.module';
 import { WhatsappModule } from './modules/whatsapp/whatsapp.module';
 
 @Module({
@@ -23,6 +24,7 @@ import { WhatsappModule } from './modules/whatsapp/whatsapp.module';
     ContactsModule,
     WhatsappModule,
     CampaignsModule,
+    TemplatesModule,
     InboxModule,
     AiModule,
     KnowledgeModule,
