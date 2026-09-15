@@ -127,6 +127,7 @@
       ['enterprise-customers.html', '&#9635;', 'Enterprise Customers'],
       ['customer-growth-dashboard.html', '&#9673;', 'Customer Growth'],
       ['all-customers.html', '&#9783;', 'Customer Directory'],
+      ['workspace-usage.html', '&#9637;', 'Workspace Usage'],
       ['javascript:void(0)', '&#9783;', 'Customers', true],
       ['javascript:void(0)', '&#9671;', 'Plans &amp; Subscriptions', true],
       ['subscription-dashboard.html', '&#9673;', 'Subscription Dashboard'],
@@ -294,6 +295,7 @@
     }
   }, true);
 }());
+
 
 
 

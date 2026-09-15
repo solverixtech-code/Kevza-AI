@@ -27,6 +27,7 @@ export default defineConfig({
         campaignOperationsDashboard: resolve(import.meta.dirname, 'campaign-operations-dashboard.html'),
         automationOperationsDashboard: resolve(import.meta.dirname, 'automation-operations-dashboard.html'),
         messagingDashboard: resolve(import.meta.dirname, 'messaging-dashboard.html'),
+        workspaceUsage: resolve(import.meta.dirname, 'workspace-usage.html'),
         templates: resolve(import.meta.dirname, 'templates.html'),
         subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
