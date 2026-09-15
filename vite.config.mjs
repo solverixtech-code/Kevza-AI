@@ -27,9 +27,22 @@ export default defineConfig({
         campaignOperationsDashboard: resolve(import.meta.dirname, 'campaign-operations-dashboard.html'),
         automationOperationsDashboard: resolve(import.meta.dirname, 'automation-operations-dashboard.html'),
         messagingDashboard: resolve(import.meta.dirname, 'messaging-dashboard.html'),
+        workspaceUsage: resolve(import.meta.dirname, 'workspace-usage.html'),
         templates: resolve(import.meta.dirname, 'templates.html'),
         subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
+        customerOnboardingActivation: resolve(import.meta.dirname, 'customer-onboarding-activation.html'),
+        activatedCustomers: resolve(import.meta.dirname, 'activated-customers.html'),
+        readyToGoLive: resolve(import.meta.dirname, 'ready-to-go-live.html'),
+        onboardingFunnel: resolve(import.meta.dirname, 'onboarding-funnel.html'),
+        newSignups: resolve(import.meta.dirname, 'new-signups.html'),
+        onboardingInProgress: resolve(import.meta.dirname, 'onboarding-in-progress.html'),
+        onboardingInProcess: resolve(import.meta.dirname, 'onboarding-in-process.html'),
+        awaitingWhatsappConnection: resolve(import.meta.dirname, 'awaiting-whatsapp-connection.html'),
+        awaitingTemplateApproval: resolve(import.meta.dirname, 'awaiting-template-approval.html'),
+        missingKnowledge: resolve(import.meta.dirname, 'missing-knowledge.html'),
+        walletBlocked: resolve(import.meta.dirname, 'wallet-blocked.html'),
+        activationBlocked: resolve(import.meta.dirname, 'activation-blocked.html'),
         customerActivationQueue: resolve(import.meta.dirname, 'customer-activation-queue.html'),
         plansAndPricing: resolve(import.meta.dirname, 'plans-and-pricing.html'),
         professionalPlan: resolve(import.meta.dirname, 'professional-plan.html'),
@@ -47,6 +60,19 @@ export default defineConfig({
     },
   },
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

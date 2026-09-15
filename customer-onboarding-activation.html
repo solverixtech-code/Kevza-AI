@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI - Customer Onboarding &amp; Activation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="customer-onboarding-activation.css" />
+</head>
+<body>
+<main class="admin-app coa-shell">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+  </aside>
+
+  <section class="coa-main">
+    <header class="coa-topbar">
+      <nav class="coa-breadcrumb" aria-label="Breadcrumb"><span>Admin</span><span class="sep">/</span><span>Customer Onboarding &amp; Activation</span><span class="sep">/</span><strong>Onboarding Overview</strong></nav>
+      <label class="coa-search" aria-label="Search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <div class="coa-topbar-right">
+        <button class="coa-icon-btn has-badge" aria-label="Notifications"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><i>8</i></button>
+        <button class="coa-icon-btn has-badge" aria-label="Messages"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><i>3</i></button>
+        <button class="coa-icon-btn" aria-label="Help"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
+        <div class="coa-topbar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </div>
+    </header>
+
+    <div class="coa-page">
+      <div class="coa-title-row"><div><h1>Customer Onboarding &amp; Activation</h1><p>Track and manage the complete onboarding journey from workspace creation to go-live.</p></div><button class="coa-primary-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Add New Customer</button></div>
+
+      <div class="coa-kpis" aria-label="Onboarding metrics">
+        <article class="coa-kpi kpi-blue"><span class="kpi-symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><span>Total Signups</span><strong>248</strong><small class="up">+12% this month</small></div></article>
+        <article class="coa-kpi kpi-indigo"><span class="kpi-symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2 3 14h8l-1 8 11-13h-8l1-7Z"/></svg></span><div><span>In Onboarding</span><strong>86</strong><small class="up">+18% this month</small></div></article>
+        <article class="coa-kpi kpi-green"><span class="kpi-symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg></span><div><span>Activated</span><strong>142</strong><small class="up">+20% this month</small></div></article>
+        <article class="coa-kpi kpi-clock"><span class="kpi-symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><span>Avg. Time to Activate</span><strong>1.8 days</strong><small class="up">+32%</small></div></article>
+        <article class="coa-kpi kpi-red"><span class="kpi-symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg></span><div><span>Drop-offs</span><strong>20</strong><small class="down">-5% this month</small></div></article>
+      </div>
+
+      <div class="coa-dashboard-grid">
+        <section class="coa-card coa-flow-card">
+          <div class="coa-card-head"><div><h2>Onboarding Flow (9 Steps)</h2><p>Complete setup process for customers to activate their WhatsApp automation.</p></div><button class="coa-ghost-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>View Onboarding Guide</button></div>
+          <ol class="coa-flow"><li class="done"><b>1</b><span>Workspace<br>Creation</span></li><li class="current"><b>2</b><span>Business<br>Knowledge</span></li><li><b>3</b><span>WhatsApp<br>Connection</span></li><li><b>4</b><span>Define<br>Objective</span></li><li><b>5</b><span>Chatbot<br>Setup</span></li><li><b>6</b><span>Message<br>Templates</span></li><li><b>7</b><span>Import<br>Contacts</span></li><li><b>8</b><span>Set Targets<br>&amp; Rules</span></li><li><b>9</b><span>Preview<br>&amp; Launch</span></li></ol>
+        </section>
+
+        <aside class="coa-card coa-completion-card"><h2>Onboarding Completion</h2><div class="coa-completion-body"><div class="completion-donut"><span><strong>57%</strong><small>Completed</small></span></div><ul><li><i class="leg-green"></i>Activated <b>142</b></li><li><i class="leg-blue"></i>In Onboarding <b>86</b></li><li><i class="leg-gray"></i>Not Started <b>20</b></li></ul></div><p>Out of 248 total signups</p></aside>
+
+        <section class="coa-card coa-table-card">
+          <div class="coa-tabs-toolbar"><div class="coa-tabs" role="tablist" aria-label="Customer onboarding status"><button class="active">All Customers</button><button>In Onboarding</button><button>Activated</button><button>Dropped Off</button></div><label class="coa-customer-search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search by customer name, email or workspace..." /></label><button class="coa-filter-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>Filters</button><button class="coa-export-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg>Export</button></div>
+          <div class="coa-table-scroll"><table class="coa-table"><thead><tr><th><input type="checkbox" aria-label="Select all customers" /></th><th>#</th><th>Customer</th><th>Workspace</th><th>Plan</th><th>Onboarding Progress</th><th>Current Step</th><th>Status</th><th>Signup Date</th><th>Actions</th></tr></thead><tbody>
+            <tr><td><input type="checkbox" /></td><td>1</td><td><div class="customer-cell"><span class="avatar av-building">SR</span><div><strong>Skyline Real Estate</strong><small>info@skyline.com</small></div></div></td><td><div class="workspace-cell"><span>SK</span>Skyline</div></td><td>Professional</td><td><div class="progress-cell"><span><i style="width:89%"></i></span><b>89%</b></div></td><td>Templates</td><td><span class="status status-progress">In Progress</span></td><td>02 Sep 2026<br><small>10:24 AM</small></td><td><button class="row-more" aria-label="More actions">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>2</td><td><div class="customer-cell"><span class="avatar av-clinic">CP</span><div><strong>CarePlus Clinic</strong><small>hello@careplus.com</small></div></div></td><td><div class="workspace-cell green"><span>+</span>CarePlus</div></td><td>Starter</td><td><div class="progress-cell"><span><i style="width:56%"></i></span><b>56%</b></div></td><td>WhatsApp Connection</td><td><span class="status status-progress">In Progress</span></td><td>02 Sep 2026<br><small>09:15 AM</small></td><td><button class="row-more" aria-label="More actions">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>3</td><td><div class="customer-cell"><span class="avatar av-school">BM</span><div><strong>Bright Minds School</strong><small>admin@brightminds.com</small></div></div></td><td><div class="workspace-cell teal"><span>BM</span>Bright Minds</div></td><td>Professional</td><td><div class="progress-cell"><span><i style="width:100%"></i></span><b>100%</b></div></td><td>Completed</td><td><span class="status status-active">Activated</span></td><td>01 Sep 2026<br><small>05:40 PM</small></td><td><button class="row-more" aria-label="More actions">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>4</td><td><div class="customer-cell"><span class="avatar av-cart">UC</span><div><strong>Urban Kart</strong><small>contact@urbankart.com</small></div></div></td><td><div class="workspace-cell navy"><span>UK</span>Urban Kart</div></td><td>Growth</td><td><div class="progress-cell"><span><i style="width:34%"></i></span><b>34%</b></div></td><td>Business Knowledge</td><td><span class="status status-progress">In Progress</span></td><td>01 Sep 2026<br><small>02:18 PM</small></td><td><button class="row-more" aria-label="More actions">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>5</td><td><div class="customer-cell"><span class="avatar av-fin">FF</span><div><strong>FinLife Gym</strong><small>hello@finlife.com</small></div></div></td><td><div class="workspace-cell purple"><span>FL</span>FinLife</div></td><td>Starter</td><td><div class="progress-cell"><span><i style="width:0%"></i></span><b>0%</b></div></td><td>Workspace Creation</td><td><span class="status status-started">Not Started</span></td><td>31 Aug 2026<br><small>11:06 AM</small></td><td><button class="row-more" aria-label="More actions">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>6</td><td><div class="customer-cell"><span class="avatar av-travel">GT</span><div><strong>Global Travels</strong><small>info@globaltravels.com</small></div></div></td><td><div class="workspace-cell sky"><span>GT</span>Global Travels</div></td><td>Growth</td><td><div class="progress-cell"><span><i style="width:72%"></i></span><b>72%</b></div></td><td>Chatbot Setup</td><td><span class="status status-progress">In Progress</span></td><td>31 Aug 2026<br><small>10:12 AM</small></td><td><button class="row-more" aria-label="More actions">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>7</td><td><div class="customer-cell"><span class="avatar av-food">TH</span><div><strong>Taste House</strong><small>hello@tastehouse.com</small></div></div></td><td><div class="workspace-cell rose"><span>TH</span>Taste House</div></td><td>Professional</td><td><div class="progress-cell"><span><i style="width:100%"></i></span><b>100%</b></div></td><td>Completed</td><td><span class="status status-active">Activated</span></td><td>30 Aug 2026<br><small>04:30 PM</small></td><td><button class="row-more" aria-label="More actions">...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>8</td><td><div class="customer-cell"><span class="avatar av-auto">EA</span><div><strong>Elite Automotives</strong><small>sales@eliteauto.com</small></div></div></td><td><div class="workspace-cell red"><span>EA</span>Elite Auto</div></td><td>Starter</td><td><div class="progress-cell"><span><i style="width:48%"></i></span><b>48%</b></div></td><td>Message Templates</td><td><span class="status status-progress">In Progress</span></td><td>30 Aug 2026<br><small>01:22 PM</small></td><td><button class="row-more" aria-label="More actions">...</button></td></tr>
+          </tbody></table></div>
+          <div class="coa-table-foot"><span>Showing 1 to 8 of 248 customers</span><div class="coa-pagination"><button aria-label="Previous page">&#8249;</button><button class="active">1</button><button>2</button><button>3</button><button>4</button><button>5</button><span>...</span><button>31</button><button aria-label="Next page">&#8250;</button><select aria-label="Rows per page"><option>10 / page</option><option>25 / page</option></select></div></div>
+        </section>
+
+        <aside class="coa-side-stack">
+          <section class="coa-card coa-actions-card"><h2>Quick Actions</h2><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Add New Customer</button><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7Z"/></svg>Send Onboarding Invite</button><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>View Onboarding Guide</button><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg>Manage Templates</button><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Check Connection Status</button><button><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>Onboarding Settings</button></section>
+          <section class="coa-card coa-activity-card"><div class="coa-card-head compact"><h2>Recent Onboarding Activity</h2><a href="#">View All</a></div><ul class="activity-list"><li><span class="ok">&#10003;</span><div><strong>Bright Minds School activated</strong><small>2 hours ago</small></div></li><li><span>2</span><div><strong>CarePlus Clinic connected WhatsApp</strong><small>4 hours ago</small></div></li><li><span>3</span><div><strong>Urban Kart completed chatbot setup</strong><small>5 hours ago</small></div></li><li><span>4</span><div><strong>FinLife Gym signed up</strong><small>7 hours ago</small></div></li><li><span class="ok">&#10003;</span><div><strong>Skyline Real Estate completed templates</strong><small>1 day ago</small></div></li></ul></section>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+<script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

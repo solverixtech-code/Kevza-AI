@@ -38,8 +38,8 @@
             <p>Create, manage and monitor reusable WhatsApp, email, SMS and chatbot templates for campaigns and automations.</p>
           </div>
           <div class="template-actions">
-            <button class="secondary-action" type="button">Import Templates</button>
-            <button class="primary-action" type="button">+ Create Template</button>
+            <button class="secondary-action js-import-templates" type="button">Import Templates</button>
+            <button class="primary-action js-create-template" type="button">+ Create Template</button>
           </div>
         </section>
 
@@ -105,7 +105,7 @@
 
             <section class="template-card quick-template-actions">
               <h2>Quick Actions</h2>
-              <a href="#"><span>+</span>Create WhatsApp Template</a>
+              <a href="#" class="js-create-template"><span>+</span>Create WhatsApp Template</a>
               <a href="#"><span>&#9993;</span>Create Email Template</a>
               <a href="#"><span>&#9636;</span>Duplicate Top Template</a>
               <a href="#"><span>&#8599;</span>Submit for Approval</a>
@@ -115,6 +115,172 @@
       </div>
     </section>
   </main>
+
+  <div class="ct-modal" id="createTemplateModal" aria-hidden="true">
+    <div class="ct-backdrop" data-close-template></div>
+    <section class="ct-dialog" role="dialog" aria-modal="true" aria-labelledby="createTemplateTitle">
+      <header class="ct-head">
+        <div><h2 id="createTemplateTitle">Create Template</h2><p>Create and configure a reusable template for your communications</p></div>
+        <button class="ct-close" type="button" aria-label="Close create template" data-close-template>&times;</button>
+      </header>
+      <div class="ct-body">
+        <form class="ct-form">
+          <label class="ct-field full"><span>Template Name <b>*</b></span><input type="text" value="Festival Offer Promo" /></label>
+          <fieldset class="ct-channels"><legend>Channel <b>*</b></legend><label class="is-selected"><input type="radio" name="template_channel" checked /><span class="ct-channel-icon whatsapp">W</span><strong>WhatsApp</strong></label><label><input type="radio" name="template_channel" /><span class="ct-channel-icon email">E</span><strong>Email</strong></label><label><input type="radio" name="template_channel" /><span class="ct-channel-icon sms">S</span><strong>SMS</strong></label><label><input type="radio" name="template_channel" /><span class="ct-channel-icon bot">B</span><strong>Chatbot</strong></label></fieldset>
+          <div class="ct-note"><i>!</i>WhatsApp templates require approval before use.</div>
+          <div class="ct-two"><label class="ct-field"><span>Category <b>*</b></span><select><option>Marketing</option><option>Support</option><option>Transactional</option></select></label><label class="ct-field"><span>Language <b>*</b></span><select><option>English</option><option>Hindi</option><option>Spanish</option></select></label></div>
+          <label class="ct-field full"><span>Template Body / Content <b>*</b><button type="button">Insert Variable</button></span><textarea>Hi {{name}}, enjoy our latest {{offer}}! Click {{link}} to explore the deal before {{date}}.</textarea><em>82/1024</em></label>
+          <section class="ct-vars"><div class="ct-mini-title">Variables <i>i</i><button type="button">+ Add Variable</button></div><div><span>{{name}}</span><span>{{offer}}</span><span>{{link}}</span><span>{{invoice_id}}</span><span>{{date}}</span></div></section>
+          <section class="ct-cta-box"><div class="ct-mini-title">CTA / Action Button Settings (Optional) <i>i</i></div><div class="ct-two"><label class="ct-field"><span>Button Text</span><input type="text" value="Claim Offer" /></label><label class="ct-field"><span>Button URL</span><input type="text" value="https://kevzaai.com/offer" /></label></div><label class="ct-check"><input type="checkbox" checked />Add a call-to-action button to your template</label></section>
+          <section class="ct-status-pick"><div class="ct-mini-title">Status <b>*</b></div><label><input type="radio" name="template_status" /><span>Save as Draft</span><small>Save template and edit later</small></label><label class="is-selected"><input type="radio" name="template_status" checked /><span>Submit for Approval</span><small>Send for review and approval</small></label></section>
+          <div class="ct-info"><i>i</i><div><strong>After submit, status will become <span>Pending</span></strong><p>WhatsApp templates will be reviewed by our team before they can be used in campaigns.</p></div></div>
+        </form>
+        <aside class="ct-preview-panel">
+          <div class="ct-preview-head"><div><h3>Live Preview</h3><p>See how your template will look to recipients</p></div><span>WhatsApp Preview</span></div>
+          <div class="ct-phone"><div class="ct-chat-top"><button type="button">&#8249;</button><div class="ct-wa">W</div><div><strong>Your Business</strong><small>Business Account</small></div><b>&#8942;</b></div><div class="ct-message"><strong>Festival Offer Promo</strong><p>Hi Ahmed, enjoy our latest <b>20% OFF</b> offer! Click here to explore the deal before 30 Sep.</p><time>11:30 AM</time><button type="button">Claim Offer</button></div></div>
+          <section class="ct-details"><h3>Template Details</h3><dl><div><dt>Channel</dt><dd>WhatsApp</dd></div><div><dt>Category</dt><dd>Marketing</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Status</dt><dd><span>Pending</span></dd></div></dl></section>
+          <div class="ct-good"><i>&#10003;</i><div><strong>Looks good!</strong><p>Your template is ready to be submitted for approval. Make sure all content follows WhatsApp's template guidelines.</p></div></div>
+        </aside>
+      </div>
+      <footer class="ct-footer"><button type="button" class="ct-ghost" data-close-template>Cancel</button><button type="button" class="ct-secondary">Save Draft</button><button type="button" class="ct-primary">Submit for Approval</button></footer>
+    </section>
+  </div>
+  <script>
+    (function () {
+      var modal = document.getElementById('createTemplateModal');
+      var openers = document.querySelectorAll('.js-create-template');
+      var closers = document.querySelectorAll('[data-close-template]');
+      if (!modal) return;
+      function openModal(event) { if (event) event.preventDefault(); modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.classList.add('ct-modal-open'); var firstInput = modal.querySelector('input, textarea, select, button'); if (firstInput) firstInput.focus(); }
+      function closeModal() { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('ct-modal-open'); }
+      openers.forEach(function (button) { button.addEventListener('click', openModal); });
+      closers.forEach(function (button) { button.addEventListener('click', closeModal); });
+      document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+    }());
+  </script>
+
+  <div class="it-modal" id="importTemplatesModal" aria-hidden="true">
+    <div class="it-backdrop" data-close-import></div>
+    <section class="it-dialog" role="dialog" aria-modal="true" aria-labelledby="importTemplatesTitle">
+      <header class="it-head">
+        <div><h2 id="importTemplatesTitle">Import Templates</h2><p>Import existing template files into KevzaAI</p></div>
+        <button class="it-close" type="button" aria-label="Close import templates" data-close-import>&times;</button>
+      </header>
+
+      <div class="it-body">
+        <ol class="it-steps" aria-label="Import steps">
+          <li class="is-active"><span>1</span><strong>Upload File</strong></li>
+          <li><span>2</span><strong>Map Fields</strong></li>
+          <li><span>3</span><strong>Preview &amp; Validate</strong></li>
+          <li><span>4</span><strong>Import</strong></li>
+        </ol>
+
+        <section class="it-section">
+          <h3>1. Upload Template File</h3>
+          <p>Supported formats: CSV, XLSX, JSON (Max file size: 10 MB)</p>
+          <div class="it-upload-grid">
+            <label class="it-dropzone"><input type="file" accept=".csv,.xlsx,.xls,.json" /><span>&#8682;</span><strong>Drag and drop your file here</strong><em>or</em><b>Browse File</b><small>Supported formats: .csv, .xlsx, .json</small></label>
+            <aside class="it-instructions"><h4><i>i</i> Import Instructions</h4><ul><li>Your file should contain template details with columns like name, channel, category, language, content etc.</li><li>Make sure the file follows the supported format.</li><li>You will be able to map columns in the next step.</li></ul><a href="#">Download Sample File</a></aside>
+          </div>
+        </section>
+
+        <section class="it-section">
+          <h3>2. Select Import Type</h3>
+          <p>Choose the type of templates you want to import</p>
+          <div class="it-type-grid"><label class="is-selected"><input type="radio" name="import_type" checked /><span class="whatsapp">W</span>WhatsApp templates</label><label><input type="radio" name="import_type" /><span>E</span>Email templates</label><label><input type="radio" name="import_type" /><span>S</span>SMS templates</label><label><input type="radio" name="import_type" /><span>B</span>Chatbot flows</label></div>
+        </section>
+
+        <section class="it-section">
+          <h3>3. Map Fields</h3>
+          <p>Map your file columns to KevzaAI template fields</p>
+          <div class="it-map-grid"><label>Template Name<select><option>Select column</option></select></label><label>Channel<select><option>Select column</option></select></label><label>Category<select><option>Select column</option></select></label><label>Language<select><option>Select column</option></select></label><label>Body / Content<select><option>Select column</option></select></label><label>Variables<select><option>Select column</option></select></label><label>Status<select><option>Select column</option></select></label></div>
+        </section>
+
+        <section class="it-section it-preview-section">
+          <div class="it-section-head"><div><h3>4. Preview &amp; Validate</h3><p>Review your data and fix any issues before importing</p></div><div class="it-counts"><span class="ok">Valid (5)</span><span class="bad">Errors (2)</span><span class="warn">Warnings (1)</span></div></div>
+          <div class="it-table-wrap"><table class="it-table"><thead><tr><th>#</th><th>Template Name</th><th>Channel</th><th>Category</th><th>Language</th><th>Body / Content</th><th>Variables</th><th>Status</th><th>Validation</th></tr></thead><tbody><tr><td>1</td><td>Welcome Message</td><td>WhatsApp</td><td>Utility</td><td>en</td><td>Hello {{name}}, we...</td><td>{{name}}</td><td>Active</td><td><span class="it-valid">âœ“</span></td></tr><tr><td>2</td><td>Order Confirmation</td><td>Email</td><td>Transactional</td><td>en</td><td>Your order {{order_id}}...</td><td>{{order_id}}</td><td>Active</td><td><span class="it-valid">âœ“</span></td></tr><tr><td>3</td><td class="warn-text">Promo Offer</td><td>SMS</td><td>Marketing</td><td>en</td><td>Limited time offer!</td><td>-</td><td>Active</td><td><span class="it-warning">!</span></td></tr><tr><td>4</td><td class="error-text">No Template Name</td><td>WhatsApp</td><td>Utility</td><td>en</td><td>This is a test</td><td>{{name}}</td><td>Active</td><td><span class="it-error">Ã—</span></td></tr><tr><td>5</td><td class="error-text">Duplicate Template</td><td>Email</td><td>Promotional</td><td>en</td><td>Check our new deals</td><td>{{name}}</td><td>Active</td><td><span class="it-error">Ã—</span></td></tr></tbody></table></div>
+        </section>
+
+        <section class="it-validation"><h3><i>!</i> Validation Results</h3><ul><li>Row 4: Missing template name</li><li>Row 5: Duplicate template already exists in library</li><li>Row 3: Invalid variables format</li><li>Row 6: Unsupported channel "Push"</li></ul></section>
+      </div>
+
+      <footer class="it-footer"><button type="button" class="it-ghost" data-close-import>Cancel</button><button type="button" class="it-secondary" id="openValidateImport">Validate Import</button><button type="button" class="it-primary" id="confirmImportTemplates">Import Templates</button></footer>
+    </section>
+  </div>
+  <div class="it-toast" id="importTemplatesToast" role="status" aria-live="polite"><span>&#10003;</span><strong>Templates imported successfully</strong><button type="button" aria-label="Dismiss import success">&times;</button></div>
+  <script>
+    (function () {
+      var modal = document.getElementById('importTemplatesModal');
+      var toast = document.getElementById('importTemplatesToast');
+      var openers = document.querySelectorAll('.js-import-templates');
+      var closers = document.querySelectorAll('[data-close-import]');
+      var confirm = document.getElementById('confirmImportTemplates');
+      if (!modal) return;
+      function openModal(event) { if (event) event.preventDefault(); modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.classList.add('it-modal-open'); var firstButton = modal.querySelector('button, input, select'); if (firstButton) firstButton.focus(); }
+      function closeModal() { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('it-modal-open'); }
+      function showToast() { if (!toast) return; toast.classList.add('is-visible'); window.clearTimeout(showToast.timer); showToast.timer = window.setTimeout(function () { toast.classList.remove('is-visible'); }, 3500); }
+      openers.forEach(function (button) { button.addEventListener('click', openModal); });
+      closers.forEach(function (button) { button.addEventListener('click', closeModal); });
+      if (confirm) confirm.addEventListener('click', function () { closeModal(); showToast(); });
+      if (toast) toast.querySelector('button').addEventListener('click', function () { toast.classList.remove('is-visible'); });
+      document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+    }());
+  </script>
+
+  <div class="vi-modal" id="validateImportModal" aria-hidden="true">
+    <div class="vi-backdrop" data-close-validate></div>
+    <section class="vi-dialog" role="dialog" aria-modal="true" aria-labelledby="validateImportTitle">
+      <header class="vi-head">
+        <div><h2 id="validateImportTitle">Import Validation Results</h2><p>Review detected issues before importing your template file</p></div>
+        <button class="vi-close" type="button" aria-label="Close validation results" data-close-validate>&times;</button>
+      </header>
+
+      <div class="vi-body">
+        <section class="vi-summary" aria-label="Validation summary">
+          <article><span class="total">10</span><strong>Total Rows</strong><small>Scanned from uploaded file</small></article>
+          <article class="ok"><span>5</span><strong>Valid</strong><small>Ready to import</small></article>
+          <article class="bad"><span>3</span><strong>Errors</strong><small>Must be fixed</small></article>
+          <article class="warn"><span>2</span><strong>Warnings</strong><small>Recommended review</small></article>
+        </section>
+
+        <section class="vi-status-card">
+          <div class="vi-score"><strong>50%</strong><span>Import Ready</span></div>
+          <div><h3>Validation Summary</h3><p>5 templates can be imported immediately. Fix the blocking errors below or import only valid rows.</p></div>
+          <b class="vi-pill danger">Errors Found</b>
+        </section>
+
+        <section class="vi-issues">
+          <div class="vi-section-head"><h3>Issues Found</h3><div><span class="bad">Errors</span><span class="warn">Warnings</span></div></div>
+          <div class="vi-table-wrap"><table class="vi-table"><thead><tr><th>Row</th><th>Template</th><th>Field</th><th>Issue</th><th>Severity</th><th>Fix</th></tr></thead><tbody><tr><td>4</td><td>No Template Name</td><td>Template Name</td><td>Template name is required.</td><td><span class="vi-badge bad">Error</span></td><td>Add a unique template name.</td></tr><tr><td>5</td><td>Duplicate Template</td><td>Template Name</td><td>Template already exists in library.</td><td><span class="vi-badge bad">Error</span></td><td>Rename or skip duplicate row.</td></tr><tr><td>6</td><td>Push Campaign</td><td>Channel</td><td>Unsupported channel "Push".</td><td><span class="vi-badge bad">Error</span></td><td>Select WhatsApp, Email, SMS or Chatbot.</td></tr><tr><td>3</td><td>Promo Offer</td><td>Variables</td><td>No variables detected in marketing message.</td><td><span class="vi-badge warn">Warning</span></td><td>Review personalization fields.</td></tr><tr><td>8</td><td>Feedback Request</td><td>Language</td><td>Language fallback will use English.</td><td><span class="vi-badge warn">Warning</span></td><td>Confirm language mapping.</td></tr></tbody></table></div>
+        </section>
+
+        <section class="vi-fix-panel">
+          <h3><i>!</i> Recommended Next Steps</h3>
+          <ul><li>Fix 3 blocking errors in your source file and upload again.</li><li>You can import 5 valid templates now and skip rows with errors.</li><li>Warnings will not block import but may affect personalization quality.</li></ul>
+        </section>
+      </div>
+
+      <footer class="vi-footer"><button type="button" class="vi-ghost" data-close-validate>Back to Mapping</button><button type="button" class="vi-secondary">Download Error Report</button><button type="button" class="vi-primary" id="importValidRows">Import Valid Templates</button></footer>
+    </section>
+  </div>
+  <script>
+    (function () {
+      var modal = document.getElementById('validateImportModal');
+      var opener = document.getElementById('openValidateImport');
+      var closers = document.querySelectorAll('[data-close-validate]');
+      var importValid = document.getElementById('importValidRows');
+      var importModal = document.getElementById('importTemplatesModal');
+      var toast = document.getElementById('importTemplatesToast');
+      if (!modal || !opener) return;
+      function openModal(event) { if (event) event.preventDefault(); modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.classList.add('vi-modal-open'); var first = modal.querySelector('button'); if (first) first.focus(); }
+      function closeModal() { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('vi-modal-open'); }
+      function showToast() { if (!toast) return; toast.classList.add('is-visible'); window.clearTimeout(showToast.timer); showToast.timer = window.setTimeout(function () { toast.classList.remove('is-visible'); }, 3500); }
+      opener.addEventListener('click', openModal);
+      closers.forEach(function (button) { button.addEventListener('click', closeModal); });
+      if (importValid) importValid.addEventListener('click', function () { closeModal(); if (importModal) { importModal.classList.remove('is-open'); importModal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('it-modal-open'); } showToast(); });
+      document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+    }());
+  </script>
   <script type="module" src="admin-navigation.js"></script>
 </body>
 </html>
