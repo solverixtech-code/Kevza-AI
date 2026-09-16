@@ -5,6 +5,7 @@ const state = {
   templates: [],
   selectedTemplateId: null,
   pendingDeleteId: null,
+  createExamples: {},
 };
 
 const tableBody = document.querySelector("[data-templates-body]");
@@ -18,6 +19,7 @@ const toast = document.getElementById("templateToast");
 const starterWrap = createModal?.querySelector("[data-template-starters]");
 const variableChipsWrap = createModal?.querySelector("[data-variable-chips]");
 const variablePicker = createModal?.querySelector("[data-variable-picker]");
+const sampleValuesWrap = createModal?.querySelector("[data-sample-values]");
 
 const templateStarters = [
   {
@@ -164,6 +166,16 @@ function formatLanguage(language) {
     en_US: "English (US)",
     en: "English",
     hi: "Hindi",
+    mr: "Marathi",
+    gu: "Gujarati",
+    ta: "Tamil",
+    te: "Telugu",
+    kn: "Kannada",
+    bn: "Bengali",
+    pa: "Punjabi",
+    ar: "Arabic",
+    es: "Spanish",
+    fr: "French",
   };
   return map[language] || language || "English";
 }
@@ -173,6 +185,16 @@ function compactLanguage(language) {
     en_US: "English",
     en: "English",
     hi: "Hindi",
+    mr: "Marathi",
+    gu: "Gujarati",
+    ta: "Tamil",
+    te: "Telugu",
+    kn: "Kannada",
+    bn: "Bengali",
+    pa: "Punjabi",
+    ar: "Arabic",
+    es: "Spanish",
+    fr: "French",
   };
   return map[language] || formatLanguage(language);
 }
@@ -357,8 +379,15 @@ function humanizeVariable(variable) {
 
 function fillVariableExamples(bodyText) {
   return String(bodyText || "").replace(/\{\{\s*([a-zA-Z0-9_]+)\s*\}\}/g, (_, variable) =>
-    exampleForVariable(variable.trim()),
+    getExampleValue(variable.trim()),
   );
+}
+
+function getExampleValue(variable) {
+  if (state.createExamples[variable]) return state.createExamples[variable];
+  const input = sampleValuesWrap?.querySelector(`[data-sample-input="${CSS.escape(variable)}"]`);
+  const value = input?.value?.trim();
+  return value || exampleForVariable(variable);
 }
 
 function getCreateElements() {
@@ -438,11 +467,44 @@ function insertVariable(variable = nextVariableName()) {
 function updateCreateVariables() {
   const variables = extractVariables(getCreateElements().textarea?.value);
 
+  sampleValuesWrap?.querySelectorAll("[data-sample-input]").forEach((input) => {
+    if (input.value.trim()) state.createExamples[input.dataset.sampleInput] = input.value.trim();
+  });
+
   if (variableChipsWrap) {
     variableChipsWrap.innerHTML = variables.length
-      ? variables.map((variable) => `<span>{{${escapeHtml(variable)}}}</span>`).join("")
+      ? variables
+          .map(
+            (variable) =>
+              `<span>{{${escapeHtml(variable)}}}<button type="button" data-remove-variable="${escapeHtml(variable)}" aria-label="Remove ${escapeHtml(variable)} variable">x</button></span>`,
+          )
+          .join("")
       : '<span class="is-empty">No variables yet</span>';
   }
+
+  if (sampleValuesWrap) {
+    sampleValuesWrap.innerHTML = variables.length
+      ? `<div class="ct-sample-title">Sample values for preview and Meta examples</div>${variables
+          .map(
+            (variable) => `
+              <label>
+                <span>${escapeHtml(humanizeVariable(variable))}</span>
+                <input type="text" value="${escapeHtml(getExampleValue(variable))}" data-sample-input="${escapeHtml(variable)}" />
+              </label>
+            `,
+          )
+          .join("")}`
+      : "";
+  }
+}
+
+function removeVariable(variable) {
+  const textarea = getCreateElements().textarea;
+  if (!textarea) return;
+
+  const tokenPattern = new RegExp(`\\s*\\{\\{\\s*${variable.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*\\}\\}\\s*`, "g");
+  textarea.value = textarea.value.replace(tokenPattern, " ").replace(/\s{2,}/g, " ").trim();
+  textarea.dispatchEvent(new Event("input", { bubbles: true }));
 }
 
 function renderVariablePicker() {
@@ -480,6 +542,7 @@ function applyTemplateStarter(starterId) {
   if (elements.buttonTextInput) elements.buttonTextInput.value = starter.buttonText;
   if (elements.buttonUrlInput) elements.buttonUrlInput.value = starter.buttonUrl;
   if (elements.hasButtonInput) elements.hasButtonInput.checked = Boolean(starter.buttonText && starter.buttonUrl);
+  state.createExamples = {};
 
   starterWrap?.querySelectorAll("button").forEach((button) => {
     button.classList.toggle("is-selected", button.dataset.starter === starterId);
@@ -488,7 +551,8 @@ function applyTemplateStarter(starterId) {
   updateCreatePreview();
 }
 
-function updateCreatePreview() {
+function updateCreatePreview(options = {}) {
+  const { syncVariables = true } = options;
   const elements = getCreateElements();
   const title = elements.nameInput?.value.trim() || "Untitled Template";
   const bodyText = elements.textarea?.value.trim() || "Your message preview will appear here.";
@@ -527,7 +591,7 @@ function updateCreatePreview() {
         : "Meta reviews WhatsApp templates before they can be used in campaigns.";
   }
 
-  updateCreateVariables();
+  if (syncVariables) updateCreateVariables();
 }
 
 function buildComponents(bodyText, buttons) {
@@ -565,6 +629,7 @@ function getCreatePayload(status) {
   const buttonUrl = String(formData.get("template_button_url") || "").trim();
   const variables = extractVariables(bodyText);
   const buttons = hasButton && buttonText && buttonUrl ? [{ type: "URL", text: buttonText, url: buttonUrl }] : [];
+  const examples = variables.reduce((acc, variable) => ({ ...acc, [variable]: getExampleValue(variable) }), {});
 
   return {
     displayName,
@@ -572,7 +637,7 @@ function getCreatePayload(status) {
     language,
     bodyText,
     variables,
-    examples: variables.reduce((acc, variable) => ({ ...acc, [variable]: exampleForVariable(variable) }), {}),
+    examples,
     buttons,
     components: buildComponents(bodyText, buttons),
     source: "MANUAL",
@@ -598,6 +663,16 @@ async function saveTemplate(status, button) {
 
   if (!payload.displayName || !payload.bodyText) {
     showToast("Template name and body are required.", "error");
+    return;
+  }
+
+  if (status === "PENDING" && /^\s*\{\{/.test(payload.bodyText)) {
+    showToast("Meta does not allow a variable at the start. Add normal text before the first variable.", "error");
+    return;
+  }
+
+  if (status === "PENDING" && /\}\}\s*$/.test(payload.bodyText)) {
+    showToast("Meta does not allow a variable at the end. Add normal text after the last variable.", "error");
     return;
   }
 
@@ -750,7 +825,10 @@ function setupCreateActions() {
     saveTemplate("PENDING", submit);
   });
 
-  createForm?.addEventListener("input", updateCreatePreview);
+  createForm?.addEventListener("input", (event) => {
+    if (event.target.closest("[data-sample-values]")) return;
+    updateCreatePreview();
+  });
   createForm?.addEventListener("change", () => {
     updateStatusCards();
     updateCreatePreview();
@@ -760,6 +838,15 @@ function setupCreateActions() {
   variablePicker?.addEventListener("click", (event) => {
     const button = event.target.closest("[data-variable]");
     if (button) insertVariable(button.dataset.variable);
+  });
+  variableChipsWrap?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-remove-variable]");
+    if (button) removeVariable(button.dataset.removeVariable);
+  });
+  sampleValuesWrap?.addEventListener("input", (event) => {
+    const input = event.target.closest("[data-sample-input]");
+    if (input) state.createExamples[input.dataset.sampleInput] = input.value;
+    updateCreatePreview({ syncVariables: false });
   });
   starterWrap?.addEventListener("click", (event) => {
     const button = event.target.closest("[data-starter]");

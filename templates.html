@@ -6,7 +6,7 @@
   <title>KevzaAI - Templates</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="admin.css" />
   <link rel="stylesheet" href="admin-components.css" />
   <link rel="stylesheet" href="templates.css" />
@@ -126,22 +126,22 @@
       <div class="ct-body">
         <form class="ct-form">
           <label class="ct-field full"><span>Template Name <b>*</b></span><input type="text" name="template_name" value="Order Update" /></label>
-          <fieldset class="ct-channels"><legend>Channel <b>*</b></legend><label class="is-selected"><input type="radio" name="template_channel" checked value="WHATSAPP" /><span class="ct-channel-icon whatsapp">W</span><strong>WhatsApp</strong></label></fieldset>
+          <fieldset class="ct-channels"><legend>Channel <b>*</b></legend><label class="is-selected"><input type="radio" name="template_channel" checked value="WHATSAPP" /><span class="ct-channel-icon whatsapp"><img src="whatsapp.png" alt="" /></span><strong>WhatsApp</strong></label></fieldset>
           <div class="ct-note"><i>!</i>WhatsApp templates require approval before use.</div>
           <section class="ct-template-library" aria-label="Template starters">
             <div class="ct-mini-title">Template Library <small>Start from a Meta-friendly WhatsApp pattern.</small></div>
             <div class="ct-template-starters" data-template-starters></div>
           </section>
-          <div class="ct-two"><label class="ct-field"><span>Category <b>*</b></span><select name="template_category"><option value="UTILITY" selected>Utility</option><option value="MARKETING">Marketing</option><option value="AUTHENTICATION">Authentication</option></select></label><label class="ct-field"><span>Language <b>*</b></span><select name="template_language"><option value="en_US">English (US)</option><option value="en">English</option><option value="hi">Hindi</option></select></label></div>
+          <div class="ct-two"><label class="ct-field"><span>Category <b>*</b></span><select name="template_category"><option value="UTILITY" selected>Utility</option><option value="MARKETING">Marketing</option><option value="AUTHENTICATION">Authentication</option></select></label><label class="ct-field"><span>Language <b>*</b></span><select name="template_language"><option value="en_US">English (US)</option><option value="en">English</option><option value="hi">Hindi</option><option value="mr">Marathi</option><option value="gu">Gujarati</option><option value="ta">Tamil</option><option value="te">Telugu</option><option value="kn">Kannada</option><option value="bn">Bengali</option><option value="pa">Punjabi</option><option value="ar">Arabic</option><option value="es">Spanish</option><option value="fr">French</option></select></label></div>
           <label class="ct-field full"><span>Template Body / Content <b>*</b><button type="button" data-insert-variable>Insert Variable</button></span><textarea name="template_body">Hi {{name}}, your order update is ready. Tap below to view details.</textarea><em>70/1024</em></label>
-          <section class="ct-vars"><div class="ct-mini-title">Variables <i>i</i><button type="button" data-add-variable>+ Add Variable</button></div><div data-variable-chips><span>{{name}}</span></div><div class="ct-variable-picker" data-variable-picker></div></section>
+          <section class="ct-vars"><div class="ct-mini-title">Variables <i>i</i><button type="button" data-add-variable>+ Add Variable</button></div><div data-variable-chips><span>{{name}}</span></div><div class="ct-variable-picker" data-variable-picker></div><div class="ct-sample-values" data-sample-values></div></section>
           <section class="ct-cta-box"><div class="ct-mini-title">CTA / Action Button Settings (Optional) <i>i</i></div><div class="ct-two"><label class="ct-field"><span>Button Text</span><input type="text" name="template_button_text" value="View Details" /></label><label class="ct-field"><span>Button URL</span><input type="text" name="template_button_url" value="https://kevzaai.com/order" /></label></div><label class="ct-check"><input type="checkbox" name="template_has_button" checked />Add a call-to-action button to your template</label></section>
           <section class="ct-status-pick"><div class="ct-mini-title">Status <b>*</b></div><label><input type="radio" name="template_status" value="DRAFT" /><span>Save as Draft</span><small>Save template and edit later</small></label><label class="is-selected"><input type="radio" name="template_status" value="PENDING" checked /><span>Submit for Approval</span><small>Send for review and approval</small></label></section>
           <div class="ct-info"><i>i</i><div><strong>After submit, status will become <span>Pending</span></strong><p>Meta reviews WhatsApp templates before they can be used in campaigns.</p></div></div>
         </form>
         <aside class="ct-preview-panel">
           <div class="ct-preview-head"><div><h3>Live Preview</h3><p>See how your template will look to recipients</p></div><span>WhatsApp Preview</span></div>
-          <div class="ct-phone"><div class="ct-chat-top"><button type="button">&#8249;</button><div class="ct-wa">W</div><div><strong>Your Business</strong><small>Business Account</small></div><b>&#8942;</b></div><div class="ct-message"><strong>Order Update</strong><p>Hi Ahmed, your order update is ready. Tap below to view details.</p><time>11:30 AM</time><button type="button">View Details</button></div></div>
+          <div class="ct-phone"><div class="ct-device"><div class="ct-statusbar"><span>9:41</span><b>|||</b></div><div class="ct-chat-top"><button type="button">&#8249;</button><div class="ct-wa"><img src="whatsapp.png" alt="" /></div><div><strong>Your Business</strong><small>Business Account</small></div><b>&#8942;</b></div><div class="ct-message"><strong>Order Update</strong><p>Hi Ahmed, your order update is ready. Tap below to view details.</p><time>11:30 AM</time><button type="button">View Details</button></div></div></div>
           <section class="ct-details"><h3>Template Details</h3><dl><div><dt>Channel</dt><dd>WhatsApp</dd></div><div><dt>Category</dt><dd>Utility</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Status</dt><dd><span>Pending</span></dd></div></dl></section>
           <div class="ct-good"><i>&#10003;</i><div><strong>Looks good!</strong><p>Your template is ready to be submitted for approval. Make sure all content follows WhatsApp's template guidelines.</p></div></div>
         </aside>
