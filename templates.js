@@ -11,10 +11,10 @@ const state = {
 const tableBody = document.querySelector("[data-templates-body]");
 const createModal = document.getElementById("createTemplateModal");
 const createForm = createModal?.querySelector(".ct-form");
-const searchInput = document.querySelector(".template-toolbar input[type='search']");
-const categoryFilter = document.querySelector(".template-toolbar select[aria-label='Filter by category']");
-const statusFilter = document.querySelector(".template-toolbar select[aria-label='Filter by status']");
-const metricCards = Array.from(document.querySelectorAll(".template-metrics .metric-card"));
+const searchInput = document.querySelector(".lib-toolbar input[type='search'], .template-toolbar input[type='search']");
+const categoryFilter = document.querySelector(".lib-toolbar select[aria-label='Filter by category'], .template-toolbar select[aria-label='Filter by category']");
+const statusFilter = document.querySelector(".lib-toolbar select[aria-label='Filter by status'], .template-toolbar select[aria-label='Filter by status']");
+const metricCards = Array.from(document.querySelectorAll(".template-metrics .tpl-metric-card, .template-metrics .metric-card"));
 const toast = document.getElementById("templateToast");
 const starterWrap = createModal?.querySelector("[data-template-starters]");
 const variableChipsWrap = createModal?.querySelector("[data-variable-chips]");
@@ -239,18 +239,20 @@ function updateMetrics(templates) {
     if (small) small.textContent = subtitles[index];
   });
 
-  const approvalCard = document.querySelector(".approval-card");
+  const approvalCard = document.querySelector(".approval-health-card, .approval-card");
   const approvedPercent = total ? Math.round((approved / total) * 100) : 0;
 
   if (approvalCard) {
-    const ring = approvalCard.querySelector(".approval-ring");
-    const ringValue = ring?.querySelector("strong");
+    const ring = approvalCard.querySelector(".approval-ring, .approval-donut");
+    const ringValue = approvalCard.querySelector(".approval-ring strong, .approval-donut-pct");
+    const donutCircle = approvalCard.querySelector(".approval-donut svg circle:nth-of-type(2)");
     const listItems = approvalCard.querySelectorAll("li");
 
     if (ring) {
       ring.style.background = `radial-gradient(circle closest-side,#fff 62%,transparent 63%),conic-gradient(#10ad80 0 ${approvedPercent}%,#e8eef8 ${approvedPercent}% 100%)`;
     }
     if (ringValue) ringValue.textContent = `${approvedPercent}%`;
+    if (donutCircle) donutCircle.setAttribute("stroke-dasharray", `${approvedPercent} ${100 - approvedPercent}`);
 
     const rows = [
       `${approved} Approved`,
@@ -268,23 +270,23 @@ function updateMetrics(templates) {
 
 function renderPreview(template) {
   const selected = template || state.templates[0];
-  const preview = document.querySelector(".preview-card");
+  const preview = document.querySelector(".live-preview-card, .preview-card");
   if (!preview || !selected) return;
 
   const title = getTemplateTitle(selected);
   const status = normalizeStatus(selected.status);
-  const statusEl = preview.querySelector(".section-head .status");
-  const subtitle = preview.querySelector(".section-head p");
-  const bubbleTitle = preview.querySelector(".chat-bubble strong");
-  const bubbleText = preview.querySelector(".chat-bubble p");
-  const bubbleButton = preview.querySelector(".chat-bubble button");
-  const meta = preview.querySelector(".chat-meta");
+  const statusEl = preview.querySelector(".badge-approved, .section-head .status");
+  const subtitle = preview.querySelector(".live-preview-sub, .section-head p");
+  const bubbleTitle = preview.querySelector(".wa-bubble-title, .chat-bubble strong");
+  const bubbleText = preview.querySelector(".wa-bubble-text, .chat-bubble p");
+  const bubbleButton = preview.querySelector(".wa-bubble-btn, .chat-bubble button");
+  const meta = preview.querySelector(".wa-template-vars, .chat-meta");
   const variables = Array.isArray(selected.variables) ? selected.variables : extractVariables(selected.bodyText);
   const buttons = Array.isArray(selected.buttons) ? selected.buttons : [];
   const firstButton = buttons[0];
 
   if (statusEl) {
-    statusEl.className = `status ${status}`;
+    statusEl.className = statusEl.classList.contains("badge-approved") ? `badge-approved ${status}` : `status ${status}`;
     statusEl.textContent = toTitle(status);
   }
   if (subtitle) subtitle.textContent = `WhatsApp ${toTitle(selected.category || "MARKETING")} template`;
@@ -321,17 +323,17 @@ function renderTable(templates) {
           : `<button class="row-action sync-template" type="button" aria-label="Sync ${escapeHtml(getTemplateTitle(template))} status from Meta" title="Sync Meta status">Sync</button>`;
       return `
         <tr data-template-id="${escapeHtml(template.id)}">
-          <td><strong>${escapeHtml(getTemplateTitle(template))}</strong><span>${escapeHtml(summarize(template.bodyText))}</span></td>
-          <td><em class="channel whatsapp">WhatsApp</em></td>
+          <td class="tpl-name"><strong>${escapeHtml(getTemplateTitle(template))}</strong><span>${escapeHtml(summarize(template.bodyText))}</span></td>
+          <td><span class="badge-channel whatsapp">WhatsApp</span></td>
           <td>${escapeHtml(toTitle(template.category || "MARKETING"))}</td>
-          <td><b class="status ${escapeHtml(status)}">${escapeHtml(toTitle(status))}</b></td>
+          <td><span class="badge-status ${escapeHtml(status)}">${escapeHtml(toTitle(status))}</span></td>
           <td>${escapeHtml(formatLanguage(template.language))}</td>
           <td>0</td>
           <td>${escapeHtml(formatRelativeTime(template.updatedAt))}</td>
           <td>
-            <div class="row-actions">
+            <div class="tpl-actions row-actions">
               ${primaryAction}
-              <button class="row-action delete-template" type="button" aria-label="Delete ${escapeHtml(getTemplateTitle(template))}" title="Delete template">Delete</button>
+              <button class="btn-tpl-delete row-action delete-template" type="button" aria-label="Delete ${escapeHtml(getTemplateTitle(template))}" title="Delete template">Delete</button>
             </div>
           </td>
         </tr>
