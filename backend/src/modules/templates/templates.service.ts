@@ -46,6 +46,8 @@ type MetaTemplateResponse = {
   rejected_reason?: string;
   error?: {
     message?: string;
+    error_user_title?: string;
+    error_user_msg?: string;
     type?: string;
     code?: number;
     error_subcode?: number;
@@ -254,7 +256,7 @@ export class TemplatesService {
 
     if (!response.ok || metaPayload.error) {
       throw new HttpException(
-        metaPayload.error?.message || 'Meta rejected the template submission request',
+        this.formatMetaError(metaPayload, 'Meta rejected the template submission request'),
         response.status || 502,
       );
     }
@@ -301,7 +303,7 @@ export class TemplatesService {
 
     if (!response.ok || metaPayload.error) {
       throw new HttpException(
-        metaPayload.error?.message || 'Could not fetch template status from Meta',
+        this.formatMetaError(metaPayload, 'Could not fetch template status from Meta'),
         response.status || 502,
       );
     }
@@ -449,6 +451,19 @@ export class TemplatesService {
     }
 
     return value;
+  }
+
+  private formatMetaError(payload: MetaTemplateResponse, fallback: string) {
+    const error = payload.error;
+    if (!error) return fallback;
+
+    const messageParts = [
+      error.error_user_title,
+      error.error_user_msg,
+      error.message && error.message !== error.error_user_title ? error.message : null,
+    ].filter(Boolean);
+
+    return messageParts.length ? messageParts.join(': ') : fallback;
   }
 
   private buildMetaTemplatePayload(template: Awaited<ReturnType<TemplatesService['findTemplate']>>) {

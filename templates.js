@@ -4,6 +4,7 @@ const AUTH_STORAGE_KEY = "kevza.auth";
 const state = {
   templates: [],
   selectedTemplateId: null,
+  pendingDeleteId: null,
 };
 
 const tableBody = document.querySelector("[data-templates-body]");
@@ -13,6 +14,7 @@ const searchInput = document.querySelector(".template-toolbar input[type='search
 const categoryFilter = document.querySelector(".template-toolbar select[aria-label='Filter by category']");
 const statusFilter = document.querySelector(".template-toolbar select[aria-label='Filter by status']");
 const metricCards = Array.from(document.querySelectorAll(".template-metrics .metric-card"));
+const toast = document.getElementById("templateToast");
 
 function getAuthSession() {
   try {
@@ -57,6 +59,21 @@ async function apiRequest(path, options = {}) {
   }
 
   return payload;
+}
+
+function showToast(message, type = "success") {
+  if (!toast) return;
+
+  const icon = toast.querySelector("span");
+  const text = toast.querySelector("strong");
+  if (icon) icon.textContent = type === "error" ? "!" : "✓";
+  if (text) text.textContent = message;
+
+  toast.className = `template-toast is-visible ${type}`;
+  window.clearTimeout(showToast.timer);
+  showToast.timer = window.setTimeout(() => {
+    toast.classList.remove("is-visible");
+  }, 3600);
 }
 
 function escapeHtml(value) {
@@ -211,6 +228,10 @@ function renderTable(templates) {
   tableBody.innerHTML = templates
     .map((template) => {
       const status = normalizeStatus(template.status);
+      const primaryAction =
+        status === "draft"
+          ? `<button class="row-action submit-template" type="button" aria-label="Submit ${escapeHtml(getTemplateTitle(template))} to Meta" title="Submit to Meta">Submit</button>`
+          : `<button class="row-action sync-template" type="button" aria-label="Sync ${escapeHtml(getTemplateTitle(template))} status from Meta" title="Sync Meta status">Sync</button>`;
       return `
         <tr data-template-id="${escapeHtml(template.id)}">
           <td><strong>${escapeHtml(getTemplateTitle(template))}</strong><span>${escapeHtml(summarize(template.bodyText))}</span></td>
@@ -220,7 +241,12 @@ function renderTable(templates) {
           <td>${escapeHtml(formatLanguage(template.language))}</td>
           <td>0</td>
           <td>${escapeHtml(formatRelativeTime(template.updatedAt))}</td>
-          <td><button class="row-menu" type="button" aria-label="Sync ${escapeHtml(getTemplateTitle(template))} status from Meta" title="Sync Meta status">...</button></td>
+          <td>
+            <div class="row-actions">
+              ${primaryAction}
+              <button class="row-action delete-template" type="button" aria-label="Delete ${escapeHtml(getTemplateTitle(template))}" title="Delete template">Delete</button>
+            </div>
+          </td>
         </tr>
       `;
     })
@@ -326,16 +352,17 @@ async function saveTemplate(status, button) {
   if (!payload) return;
 
   if (!payload.displayName || !payload.bodyText) {
-    alert("Template name and body are required.");
+    showToast("Template name and body are required.", "error");
     return;
   }
 
   const originalText = button.textContent;
+  let createdTemplate = null;
   button.disabled = true;
   button.textContent = status === "PENDING" ? "Submitting..." : "Saving Draft...";
 
   try {
-    const createdTemplate = await apiRequest("/templates", {
+    createdTemplate = await apiRequest("/templates", {
       method: "POST",
       body: JSON.stringify({
         ...payload,
@@ -351,9 +378,37 @@ async function saveTemplate(status, button) {
 
     closeCreateModal();
     await loadTemplates();
+    showToast(status === "PENDING" ? "Template submitted to Meta for approval." : "Template draft saved.");
   } catch (error) {
-    alert(error.message);
+    if (status === "PENDING" && createdTemplate?.id) {
+      await apiRequest(`/templates/${createdTemplate.id}`, { method: "DELETE" }).catch(() => {});
+    }
+    showToast(error.message, "error");
   } finally {
+    button.disabled = false;
+    button.textContent = originalText;
+  }
+}
+
+async function submitExistingTemplate(templateId, button) {
+  const originalText = button.textContent;
+  button.disabled = true;
+  button.textContent = "Submitting...";
+
+  try {
+    const updatedTemplate = await apiRequest(`/templates/${templateId}/submit-to-meta`, {
+      method: "POST",
+    });
+    state.templates = state.templates.map((template) =>
+      template.id === updatedTemplate.id ? updatedTemplate : template,
+    );
+    state.selectedTemplateId = updatedTemplate.id;
+    renderTable(state.templates);
+    updateMetrics(state.templates);
+    renderPreview(updatedTemplate);
+    showToast("Template submitted to Meta for approval.");
+  } catch (error) {
+    showToast(error.message, "error");
     button.disabled = false;
     button.textContent = originalText;
   }
@@ -375,10 +430,50 @@ async function syncTemplateStatus(templateId, button) {
     renderTable(state.templates);
     updateMetrics(state.templates);
     renderPreview(updatedTemplate);
+    showToast(`Meta status updated to ${toTitle(updatedTemplate.status)}.`);
   } catch (error) {
-    alert(error.message);
+    showToast(error.message, "error");
     button.disabled = false;
     button.textContent = originalText;
+  }
+}
+
+async function deleteTemplate(templateId, button) {
+  if (state.pendingDeleteId !== templateId) {
+    state.pendingDeleteId = templateId;
+    const originalText = button.textContent;
+    button.textContent = "Sure?";
+    button.classList.add("is-confirming");
+    window.setTimeout(() => {
+      if (state.pendingDeleteId === templateId) {
+        state.pendingDeleteId = null;
+        button.textContent = originalText;
+        button.classList.remove("is-confirming");
+      }
+    }, 2600);
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = "Deleting...";
+
+  try {
+    await apiRequest(`/templates/${templateId}`, {
+      method: "DELETE",
+    });
+    state.pendingDeleteId = null;
+    state.templates = state.templates.filter((template) => template.id !== templateId);
+    const selected = state.templates[0] || null;
+    state.selectedTemplateId = selected?.id || null;
+    renderTable(state.templates);
+    updateMetrics(state.templates);
+    renderPreview(selected);
+    showToast("Template deleted.");
+  } catch (error) {
+    showToast(error.message, "error");
+    button.disabled = false;
+    button.textContent = "Delete";
+    button.classList.remove("is-confirming");
   }
 }
 
@@ -413,20 +508,36 @@ function setupFilters() {
   statusFilter?.addEventListener("change", loadTemplates);
 
   tableBody?.addEventListener("click", (event) => {
-    const syncButton = event.target.closest(".row-menu");
+    const submitButton = event.target.closest(".submit-template");
+    const syncButton = event.target.closest(".sync-template");
+    const deleteButton = event.target.closest(".delete-template");
     const row = event.target.closest("tr[data-template-id]");
     if (!row) return;
 
     const template = state.templates.find((item) => item.id === row.dataset.templateId);
     if (!template) return;
 
+    if (submitButton) {
+      submitExistingTemplate(template.id, submitButton);
+      return;
+    }
+
     if (syncButton) {
       syncTemplateStatus(template.id, syncButton);
       return;
     }
 
+    if (deleteButton) {
+      deleteTemplate(template.id, deleteButton);
+      return;
+    }
+
     state.selectedTemplateId = template.id;
     renderPreview(template);
+  });
+
+  toast?.querySelector("button")?.addEventListener("click", () => {
+    toast.classList.remove("is-visible");
   });
 }
 
