@@ -66,6 +66,16 @@ export class TemplatesController {
     });
   }
 
+  @Post(':id/submit-to-meta')
+  submitTemplateToMeta(@Param('id') id: string, @Req() request: AuthenticatedRequest) {
+    return this.templatesService.submitTemplateToMeta(id, request.user?.tenantId);
+  }
+
+  @Post(':id/sync-meta-status')
+  syncTemplateMetaStatus(@Param('id') id: string, @Req() request: AuthenticatedRequest) {
+    return this.templatesService.syncTemplateMetaStatus(id, request.user?.tenantId);
+  }
+
   @Get(':id')
   getTemplate(@Param('id') id: string, @Req() request: AuthenticatedRequest) {
     return this.templatesService.getTemplate(id, request.user?.tenantId);

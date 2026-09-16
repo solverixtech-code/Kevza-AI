@@ -35,7 +35,7 @@
           <div>
             <span class="eyebrow">Customer Messaging</span>
             <h1>Templates</h1>
-            <p>Create, manage and monitor reusable WhatsApp, email, SMS and chatbot templates for campaigns and automations.</p>
+            <p>Create, manage and monitor reusable WhatsApp templates for campaigns and automations.</p>
           </div>
           <div class="template-actions">
             <button class="secondary-action js-import-templates" type="button">Import Templates</button>
@@ -44,7 +44,7 @@
         </section>
 
         <section class="template-metrics" aria-label="Template summary">
-          <article class="template-card metric-card"><span class="metric-icon blue">&#9636;</span><div><p>Total Templates</p><strong>128</strong><small>Across all channels</small></div></article>
+          <article class="template-card metric-card"><span class="metric-icon blue">&#9636;</span><div><p>Total Templates</p><strong>0</strong><small>WhatsApp only</small></div></article>
           <article class="template-card metric-card"><span class="metric-icon green">&#10003;</span><div><p>Approved</p><strong>94</strong><small>Ready to use</small></div></article>
           <article class="template-card metric-card"><span class="metric-icon orange">&#8987;</span><div><p>Pending Review</p><strong>18</strong><small>Awaiting approval</small></div></article>
           <article class="template-card metric-card"><span class="metric-icon purple">&#8599;</span><div><p>Monthly Sends</p><strong>42.8K</strong><small>+14.2% this month</small></div></article>
@@ -53,20 +53,20 @@
         <section class="templates-grid">
           <article class="template-card template-library">
             <div class="section-head">
-              <div><h2>Template Library</h2><p>Browse reusable templates by channel, purpose and approval status.</p></div>
-              <div class="template-filters" aria-label="Template filters"><button class="active" type="button">All</button><button type="button">WhatsApp</button><button type="button">Email</button><button type="button">SMS</button><button type="button">Chatbot</button></div>
+              <div><h2>Template Library</h2><p>Browse reusable WhatsApp templates by purpose and approval status.</p></div>
+              <div class="template-filters" aria-label="Template filters"><button class="active" type="button">WhatsApp</button></div>
             </div>
 
             <div class="template-toolbar">
               <label><span>&#9906;</span><input type="search" placeholder="Search by template name, tag or content" /></label>
-              <select aria-label="Filter by category"><option>All Categories</option><option>Marketing</option><option>Support</option><option>Transactional</option><option>Automation</option></select>
-              <select aria-label="Filter by status"><option>All Status</option><option>Approved</option><option>Pending</option><option>Draft</option><option>Rejected</option></select>
+              <select aria-label="Filter by category"><option value="">All Categories</option><option value="MARKETING">Marketing</option><option value="UTILITY">Utility</option><option value="AUTHENTICATION">Authentication</option></select>
+              <select aria-label="Filter by status"><option value="">All Status</option><option value="APPROVED">Approved</option><option value="PENDING">Pending</option><option value="DRAFT">Draft</option><option value="REJECTED">Rejected</option></select>
             </div>
 
             <div class="template-table-wrap">
               <table class="template-table">
                 <thead><tr><th>Template</th><th>Channel</th><th>Category</th><th>Status</th><th>Language</th><th>Usage</th><th>Updated</th><th>Actions</th></tr></thead>
-                <tbody>
+                <tbody data-templates-body>
                   <tr><td><strong>Welcome Offer</strong><span>Hi {{name}}, welcome to KevzaAI. Here is your starter offer...</span></td><td><em class="channel whatsapp">WhatsApp</em></td><td>Marketing</td><td><b class="status approved">Approved</b></td><td>English</td><td>12,480</td><td>Today</td><td><button class="row-menu">...</button></td></tr>
                   <tr><td><strong>Payment Reminder</strong><span>Your invoice {{invoice_id}} is due on {{date}}. Pay securely...</span></td><td><em class="channel sms">SMS</em></td><td>Transactional</td><td><b class="status approved">Approved</b></td><td>English</td><td>8,940</td><td>Yesterday</td><td><button class="row-menu">...</button></td></tr>
                   <tr><td><strong>Demo Follow-up</strong><span>Thanks for joining the demo. Would you like us to activate your trial?</span></td><td><em class="channel email">Email</em></td><td>Sales</td><td><b class="status pending">Pending</b></td><td>English</td><td>3,120</td><td>2 days ago</td><td><button class="row-menu">...</button></td></tr>
@@ -125,13 +125,13 @@
       </header>
       <div class="ct-body">
         <form class="ct-form">
-          <label class="ct-field full"><span>Template Name <b>*</b></span><input type="text" value="Festival Offer Promo" /></label>
-          <fieldset class="ct-channels"><legend>Channel <b>*</b></legend><label class="is-selected"><input type="radio" name="template_channel" checked /><span class="ct-channel-icon whatsapp">W</span><strong>WhatsApp</strong></label><label><input type="radio" name="template_channel" /><span class="ct-channel-icon email">E</span><strong>Email</strong></label><label><input type="radio" name="template_channel" /><span class="ct-channel-icon sms">S</span><strong>SMS</strong></label><label><input type="radio" name="template_channel" /><span class="ct-channel-icon bot">B</span><strong>Chatbot</strong></label></fieldset>
+          <label class="ct-field full"><span>Template Name <b>*</b></span><input type="text" name="template_name" value="Festival Offer Promo" /></label>
+          <fieldset class="ct-channels"><legend>Channel <b>*</b></legend><label class="is-selected"><input type="radio" name="template_channel" checked value="WHATSAPP" /><span class="ct-channel-icon whatsapp">W</span><strong>WhatsApp</strong></label></fieldset>
           <div class="ct-note"><i>!</i>WhatsApp templates require approval before use.</div>
-          <div class="ct-two"><label class="ct-field"><span>Category <b>*</b></span><select><option>Marketing</option><option>Support</option><option>Transactional</option></select></label><label class="ct-field"><span>Language <b>*</b></span><select><option>English</option><option>Hindi</option><option>Spanish</option></select></label></div>
-          <label class="ct-field full"><span>Template Body / Content <b>*</b><button type="button">Insert Variable</button></span><textarea>Hi {{name}}, enjoy our latest {{offer}}! Click {{link}} to explore the deal before {{date}}.</textarea><em>82/1024</em></label>
+          <div class="ct-two"><label class="ct-field"><span>Category <b>*</b></span><select name="template_category"><option value="MARKETING">Marketing</option><option value="UTILITY">Utility</option><option value="AUTHENTICATION">Authentication</option></select></label><label class="ct-field"><span>Language <b>*</b></span><select name="template_language"><option value="en_US">English (US)</option><option value="en">English</option><option value="hi">Hindi</option></select></label></div>
+          <label class="ct-field full"><span>Template Body / Content <b>*</b><button type="button">Insert Variable</button></span><textarea name="template_body">Hi {{name}}, enjoy our latest {{offer}}! Click {{link}} to explore the deal before {{date}}.</textarea><em>82/1024</em></label>
           <section class="ct-vars"><div class="ct-mini-title">Variables <i>i</i><button type="button">+ Add Variable</button></div><div><span>{{name}}</span><span>{{offer}}</span><span>{{link}}</span><span>{{invoice_id}}</span><span>{{date}}</span></div></section>
-          <section class="ct-cta-box"><div class="ct-mini-title">CTA / Action Button Settings (Optional) <i>i</i></div><div class="ct-two"><label class="ct-field"><span>Button Text</span><input type="text" value="Claim Offer" /></label><label class="ct-field"><span>Button URL</span><input type="text" value="https://kevzaai.com/offer" /></label></div><label class="ct-check"><input type="checkbox" checked />Add a call-to-action button to your template</label></section>
+          <section class="ct-cta-box"><div class="ct-mini-title">CTA / Action Button Settings (Optional) <i>i</i></div><div class="ct-two"><label class="ct-field"><span>Button Text</span><input type="text" name="template_button_text" value="Claim Offer" /></label><label class="ct-field"><span>Button URL</span><input type="text" name="template_button_url" value="https://kevzaai.com/offer" /></label></div><label class="ct-check"><input type="checkbox" name="template_has_button" checked />Add a call-to-action button to your template</label></section>
           <section class="ct-status-pick"><div class="ct-mini-title">Status <b>*</b></div><label><input type="radio" name="template_status" /><span>Save as Draft</span><small>Save template and edit later</small></label><label class="is-selected"><input type="radio" name="template_status" checked /><span>Submit for Approval</span><small>Send for review and approval</small></label></section>
           <div class="ct-info"><i>i</i><div><strong>After submit, status will become <span>Pending</span></strong><p>WhatsApp templates will be reviewed by our team before they can be used in campaigns.</p></div></div>
         </form>
@@ -281,6 +281,7 @@
       document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
     }());
   </script>
+  <script type="module" src="templates.js"></script>
   <script type="module" src="admin-navigation.js"></script>
 </body>
 </html>
