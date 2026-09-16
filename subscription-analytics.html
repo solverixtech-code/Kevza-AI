@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI - Subscription Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="subscription-analytics.css" />
+</head>
+<body>
+<main class="admin-app sa-shell">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+  </aside>
+
+  <section class="sa-main">
+    <header class="sa-topbar">
+      <nav class="sa-breadcrumb" aria-label="Breadcrumb"><span>Admin</span><span>/</span><span>Subscriptions</span><span>/</span><strong>Analytics</strong></nav>
+      <label class="sa-search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <div class="sa-top-actions"><button class="sa-icon-btn has-badge" aria-label="Notifications"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><i>12</i></button><button class="sa-icon-btn has-badge" aria-label="Messages"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><i>4</i></button><button class="sa-icon-btn" aria-label="Help"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button><div class="sa-top-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div></div>
+    </header>
+
+    <div class="sa-page">
+      <div class="sa-title-row"><div><h1>Subscription Analytics</h1><p>Insights, trends and key metrics for subscription growth, revenue and customer lifecycle.</p></div><div class="sa-title-actions"><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div></div>
+
+      <section class="sa-metrics" aria-label="Subscription analytics metrics">
+        <article class="sa-metric blue"><span class="sa-metric-icon">U</span><div><p>Total Subscribers</p><strong>1,248</strong><small>vs last month</small></div><b>+12%</b></article>
+        <article class="sa-metric green"><span class="sa-metric-icon">&#8377;</span><div><p>Monthly Recurring Revenue</p><strong>&#8377;4,23,760</strong><small>vs last month</small></div><b>+18%</b></article>
+        <article class="sa-metric purple"><span class="sa-metric-icon">|||</span><div><p>New Subscriptions</p><strong>186</strong><small>vs last month</small></div><b>+22%</b></article>
+        <article class="sa-metric red"><span class="sa-metric-icon">x</span><div><p>Churn Rate</p><strong>3.2%</strong><small>vs last month</small></div><b class="bad">+0.8%</b></article>
+        <article class="sa-metric orange"><span class="sa-metric-icon">$</span><div><p>Average Revenue Per User</p><strong>&#8377;890</strong><small>vs last month</small></div><b>+6%</b></article>
+      </section>
+
+      <nav class="sa-tabs" aria-label="Analytics sections"><a class="is-active" href="#">Overview</a><a href="#">Revenue</a><a href="#">Customers</a><a href="#">Plans</a><a href="#">Churn &amp; Retention</a><a href="#">Trials</a><a href="#">Payments</a></nav>
+
+      <div class="sa-grid">
+        <section class="sa-card sa-wide"><div class="sa-card-head"><div><h2>Monthly Recurring Revenue (MRR)</h2><strong>&#8377;4,23,760 <span>+18%</span></strong></div><select><option>Last 8 Months</option></select></div><div class="sa-line-chart"><svg viewBox="0 0 600 210" preserveAspectRatio="none"><path d="M0 25H600M0 70H600M0 115H600M0 160H600M0 205H600" stroke="#e8eef7"/><path d="M0 150 L86 120 L172 112 L258 92 L344 82 L430 70 L516 56 L600 44 L600 210 L0 210 Z" fill="url(#blueArea)"/><defs><linearGradient id="blueArea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1b6dff" stop-opacity=".2"/><stop offset="1" stop-color="#1b6dff" stop-opacity=".02"/></linearGradient></defs><polyline points="0,150 86,120 172,112 258,92 344,82 430,70 516,56 600,44" fill="none" stroke="#1262ff" stroke-width="3" stroke-linecap="round"/><g fill="#fff" stroke="#1262ff" stroke-width="2"><circle cx="0" cy="150" r="4"/><circle cx="86" cy="120" r="4"/><circle cx="172" cy="112" r="4"/><circle cx="258" cy="92" r="4"/><circle cx="344" cy="82" r="4"/><circle cx="430" cy="70" r="4"/><circle cx="516" cy="56" r="4"/><circle cx="600" cy="44" r="4"/></g></svg><div><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span></div></div></section>
+
+        <section class="sa-card"><div class="sa-card-head"><h2>New vs Cancelled Subscriptions</h2><select><option>Last 8 Months</option></select></div><div class="sa-bars dual"><div><i style="height:46%"></i><b style="height:22%"></b><span>Jan</span></div><div><i style="height:48%"></i><b style="height:18%"></b><span>Feb</span></div><div><i style="height:50%"></i><b style="height:24%"></b><span>Mar</span></div><div><i style="height:58%"></i><b style="height:20%"></b><span>Apr</span></div><div><i style="height:68%"></i><b style="height:25%"></b><span>May</span></div><div><i style="height:78%"></i><b style="height:26%"></b><span>Jun</span></div><div><i style="height:76%"></i><b style="height:25%"></b><span>Jul</span></div><div><i style="height:86%"></i><b style="height:24%"></b><span>Aug</span></div></div><div class="sa-legend"><span class="blue">New Subscriptions</span><span class="red">Cancelled Subscriptions</span></div></section>
+
+        <section class="sa-card"><h2>Subscription Status</h2><div class="sa-donut-row"><div class="sa-donut"><div><strong>1,248</strong><span>Total</span></div></div><ul class="sa-status-list"><li><span class="green">Active</span><b>892 (71.5%)</b></li><li><span class="blue">Trial</span><b>86 (6.9%)</b></li><li><span class="orange">Past Due</span><b>54 (4.3%)</b></li><li><span class="red">Cancelled</span><b>142 (11.4%)</b></li><li><span class="purple">Grace Period</span><b>32 (2.6%)</b></li><li><span class="slate">Others</span><b>42 (3.4%)</b></li></ul></div></section>
+
+        <section class="sa-card"><div class="sa-card-head"><h2>Revenue by Plan</h2><select><option>This Month</option></select></div><div class="sa-bars plan"><div><i class="blue" style="height:92%"></i><strong>&#8377;1,74,300</strong><span>Starter</span></div><div><i class="purple" style="height:70%"></i><strong>&#8377;1,29,600</strong><span>Professional</span></div><div><i class="green" style="height:48%"></i><strong>&#8377;84,200</strong><span>Business</span></div><div><i class="orange" style="height:26%"></i><strong>&#8377;35,400</strong><span>Enterprise</span></div></div></section>
+
+        <section class="sa-card"><div class="sa-card-head"><h2>Customer Growth</h2><select><option>Last 8 Months</option></select></div><div class="sa-line-chart small"><svg viewBox="0 0 420 170" preserveAspectRatio="none"><path d="M0 25H420M0 72H420M0 119H420M0 166H420" stroke="#e8eef7"/><path d="M0 135 L60 128 L120 110 L180 98 L240 86 L300 78 L360 68 L420 50 L420 170 L0 170 Z" fill="#e8f2ff"/><polyline points="0,135 60,128 120,110 180,98 240,86 300,78 360,68 420,50" fill="none" stroke="#1262ff" stroke-width="3" stroke-linecap="round"/></svg><div><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span></div></div></section>
+
+        <section class="sa-card"><div class="sa-card-head"><h2>Churn Rate Trend</h2><select><option>Last 8 Months</option></select></div><div class="sa-line-chart small red"><svg viewBox="0 0 420 170" preserveAspectRatio="none"><path d="M0 25H420M0 72H420M0 119H420M0 166H420" stroke="#e8eef7"/><path d="M0 42 L60 62 L120 78 L180 92 L240 104 L300 112 L360 114 L420 96 L420 170 L0 170 Z" fill="#ffe8eb"/><polyline points="0,42 60,62 120,78 180,92 240,104 300,112 360,114 420,96" fill="none" stroke="#ff304d" stroke-width="3" stroke-linecap="round"/></svg><div><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span></div></div></section>
+
+        <section class="sa-card sa-table-card"><h2>Top Performing Plans</h2><table class="sa-table"><thead><tr><th>#</th><th>Plan</th><th>Subscribers</th><th>MRR</th><th>Growth</th></tr></thead><tbody><tr><td>1</td><td><span class="avatar blue">S</span>Starter</td><td>542</td><td>&#8377;1,74,300</td><td><em>+14%</em></td></tr><tr><td>2</td><td><span class="avatar purple">P</span>Professional</td><td>356</td><td>&#8377;1,29,600</td><td><em>+22%</em></td></tr><tr><td>3</td><td><span class="avatar green">B</span>Business</td><td>198</td><td>&#8377;84,200</td><td><em>+18%</em></td></tr><tr><td>4</td><td><span class="avatar orange">E</span>Enterprise</td><td>62</td><td>&#8377;35,400</td><td><em>+28%</em></td></tr></tbody></table></section>
+
+        <section class="sa-card sa-table-card"><div class="sa-card-head"><h2>Recent Subscription Activity</h2><a href="#">View All</a></div><table class="sa-table"><thead><tr><th>#</th><th>Customer</th><th>Plan</th><th>Event</th><th>Date</th></tr></thead><tbody><tr><td>1</td><td>Rajesh Kumar</td><td>Professional</td><td><span class="pill green">Subscribed</span></td><td>31 Aug 2026</td></tr><tr><td>2</td><td>Sneha Sharma</td><td>Business</td><td><span class="pill blue">Upgraded</span></td><td>31 Aug 2026</td></tr><tr><td>3</td><td>The Green Mart</td><td>Starter</td><td><span class="pill purple">Trial Started</span></td><td>30 Aug 2026</td></tr><tr><td>4</td><td>City Appliances</td><td>Professional</td><td><span class="pill red">Cancelled</span></td><td>30 Aug 2026</td></tr><tr><td>5</td><td>HealthCare Plus</td><td>Business</td><td><span class="pill green">Renewed</span></td><td>29 Aug 2026</td></tr></tbody></table></section>
+
+        <section class="sa-card sa-insights"><h2>Key Insights</h2><ul><li><i class="green">↗</i>Revenue is up 18% compared to last month.</li><li><i class="blue">U</i>New subscriptions increased by 22%.</li><li><i class="red">!</i>Churn rate increased by 0.8%.</li><li><i class="purple">T</i>86 customers are in trial and need follow-up.</li><li><i class="orange">★</i>Enterprise plan grew by 28% this month.</li><li><i class="slate">Q</i>Consider reactivation campaigns for 142 cancelled users.</li></ul></section>
+      </div>
+    </div>
+  </section>
+</main>
+<script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
