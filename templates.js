@@ -15,6 +15,62 @@ const categoryFilter = document.querySelector(".template-toolbar select[aria-lab
 const statusFilter = document.querySelector(".template-toolbar select[aria-label='Filter by status']");
 const metricCards = Array.from(document.querySelectorAll(".template-metrics .metric-card"));
 const toast = document.getElementById("templateToast");
+const starterWrap = createModal?.querySelector("[data-template-starters]");
+const variableChipsWrap = createModal?.querySelector("[data-variable-chips]");
+const variablePicker = createModal?.querySelector("[data-variable-picker]");
+
+const templateStarters = [
+  {
+    id: "order-update",
+    title: "Order Update",
+    category: "UTILITY",
+    bodyText: "Hi {{name}}, your order update is ready. Tap below to view details.",
+    buttonText: "View Details",
+    buttonUrl: "https://kevzaai.com/order",
+  },
+  {
+    id: "appointment-reminder",
+    title: "Appointment Reminder",
+    category: "UTILITY",
+    bodyText: "Hi {{name}}, this is a reminder for your appointment on {{date}}. Please confirm your visit.",
+    buttonText: "Confirm Visit",
+    buttonUrl: "https://kevzaai.com/appointment",
+  },
+  {
+    id: "payment-reminder",
+    title: "Payment Reminder",
+    category: "UTILITY",
+    bodyText: "Hi {{name}}, invoice {{invoice_id}} is ready. Tap below to review and complete payment.",
+    buttonText: "Pay Now",
+    buttonUrl: "https://kevzaai.com/pay",
+  },
+  {
+    id: "welcome-offer",
+    title: "Welcome Offer",
+    category: "MARKETING",
+    bodyText: "Hi {{name}}, welcome to our store. Your {{offer}} is ready and can be claimed today.",
+    buttonText: "Claim Offer",
+    buttonUrl: "https://kevzaai.com/offer",
+  },
+  {
+    id: "lead-follow-up",
+    title: "Lead Follow-up",
+    category: "MARKETING",
+    bodyText: "Hi {{name}}, thanks for your interest. Our team can help you choose the right option today.",
+    buttonText: "Talk to Us",
+    buttonUrl: "https://kevzaai.com/contact",
+  },
+  {
+    id: "otp-code",
+    title: "OTP Code",
+    category: "AUTHENTICATION",
+    bodyText: "Your verification code is {{otp}}. For your security, do not share this code with anyone.",
+    buttonText: "",
+    buttonUrl: "",
+  },
+];
+
+const variableSuggestions = ["name", "offer", "date", "invoice_id", "otp", "link"];
 
 function getAuthSession() {
   try {
@@ -110,6 +166,15 @@ function formatLanguage(language) {
     hi: "Hindi",
   };
   return map[language] || language || "English";
+}
+
+function compactLanguage(language) {
+  const map = {
+    en_US: "English",
+    en: "English",
+    hi: "Hindi",
+  };
+  return map[language] || formatLanguage(language);
 }
 
 function formatRelativeTime(value) {
@@ -286,6 +351,185 @@ function extractVariables(bodyText) {
   );
 }
 
+function humanizeVariable(variable) {
+  return toTitle(String(variable || "").replace(/_/g, " "));
+}
+
+function fillVariableExamples(bodyText) {
+  return String(bodyText || "").replace(/\{\{\s*([a-zA-Z0-9_]+)\s*\}\}/g, (_, variable) =>
+    exampleForVariable(variable.trim()),
+  );
+}
+
+function getCreateElements() {
+  if (!createForm || !createModal) return {};
+
+  const textarea = createForm.querySelector("textarea[name='template_body']");
+  const detailRows = Array.from(createModal.querySelectorAll(".ct-details dl div"));
+
+  return {
+    nameInput: createForm.querySelector("input[name='template_name']"),
+    categorySelect: createForm.querySelector("select[name='template_category']"),
+    languageSelect: createForm.querySelector("select[name='template_language']"),
+    textarea,
+    buttonTextInput: createForm.querySelector("input[name='template_button_text']"),
+    buttonUrlInput: createForm.querySelector("input[name='template_button_url']"),
+    hasButtonInput: createForm.querySelector("input[name='template_has_button']"),
+    count: textarea?.closest(".ct-field")?.querySelector("em"),
+    messageTitle: createModal.querySelector(".ct-message strong"),
+    messageBody: createModal.querySelector(".ct-message p"),
+    messageButton: createModal.querySelector(".ct-message button"),
+    categoryDetail: detailRows[1]?.querySelector("dd"),
+    languageDetail: detailRows[2]?.querySelector("dd"),
+    statusDetail: detailRows[3]?.querySelector("dd span"),
+    goodTitle: createModal.querySelector(".ct-good strong"),
+    goodText: createModal.querySelector(".ct-good p"),
+    infoTitle: createModal.querySelector(".ct-info strong"),
+    infoText: createModal.querySelector(".ct-info p"),
+  };
+}
+
+function getSelectedCreateStatus() {
+  return createForm?.querySelector("input[name='template_status']:checked")?.value || "PENDING";
+}
+
+function selectCreateStatus(status) {
+  if (!createForm) return;
+  createForm.querySelectorAll(".ct-status-pick label").forEach((label) => {
+    const input = label.querySelector("input");
+    const isSelected = input?.value === status;
+    if (input) input.checked = isSelected;
+    label.classList.toggle("is-selected", isSelected);
+  });
+}
+
+function updateStatusCards() {
+  if (!createForm) return;
+  createForm.querySelectorAll(".ct-status-pick label").forEach((label) => {
+    const input = label.querySelector("input");
+    label.classList.toggle("is-selected", Boolean(input?.checked));
+  });
+}
+
+function insertAtCursor(textarea, text) {
+  if (!textarea) return;
+  const start = textarea.selectionStart ?? textarea.value.length;
+  const end = textarea.selectionEnd ?? textarea.value.length;
+  const prefix = textarea.value.slice(0, start);
+  const suffix = textarea.value.slice(end);
+  const needsSpaceBefore = prefix && !/\s$/.test(prefix) ? " " : "";
+  const needsSpaceAfter = suffix && !/^\s/.test(suffix) ? " " : "";
+  textarea.value = `${prefix}${needsSpaceBefore}${text}${needsSpaceAfter}${suffix}`;
+  const nextPosition = start + needsSpaceBefore.length + text.length;
+  textarea.focus();
+  textarea.setSelectionRange(nextPosition, nextPosition);
+  textarea.dispatchEvent(new Event("input", { bubbles: true }));
+}
+
+function nextVariableName() {
+  const current = extractVariables(getCreateElements().textarea?.value);
+  return variableSuggestions.find((variable) => !current.includes(variable)) || "name";
+}
+
+function insertVariable(variable = nextVariableName()) {
+  insertAtCursor(getCreateElements().textarea, `{{${variable}}}`);
+}
+
+function updateCreateVariables() {
+  const variables = extractVariables(getCreateElements().textarea?.value);
+
+  if (variableChipsWrap) {
+    variableChipsWrap.innerHTML = variables.length
+      ? variables.map((variable) => `<span>{{${escapeHtml(variable)}}}</span>`).join("")
+      : '<span class="is-empty">No variables yet</span>';
+  }
+}
+
+function renderVariablePicker() {
+  if (!variablePicker) return;
+  variablePicker.innerHTML = variableSuggestions
+    .map(
+      (variable) =>
+        `<button type="button" data-variable="${escapeHtml(variable)}">${escapeHtml(humanizeVariable(variable))}</button>`,
+    )
+    .join("");
+}
+
+function renderTemplateStarters() {
+  if (!starterWrap) return;
+  starterWrap.innerHTML = templateStarters
+    .map(
+      (starter, index) => `
+        <button class="${index === 0 ? "is-selected" : ""}" type="button" data-starter="${escapeHtml(starter.id)}">
+          <strong>${escapeHtml(starter.title)}</strong>
+          <span>${escapeHtml(toTitle(starter.category))}</span>
+        </button>
+      `,
+    )
+    .join("");
+}
+
+function applyTemplateStarter(starterId) {
+  const starter = templateStarters.find((item) => item.id === starterId);
+  if (!starter) return;
+
+  const elements = getCreateElements();
+  if (elements.nameInput) elements.nameInput.value = starter.title;
+  if (elements.categorySelect) elements.categorySelect.value = starter.category;
+  if (elements.textarea) elements.textarea.value = starter.bodyText;
+  if (elements.buttonTextInput) elements.buttonTextInput.value = starter.buttonText;
+  if (elements.buttonUrlInput) elements.buttonUrlInput.value = starter.buttonUrl;
+  if (elements.hasButtonInput) elements.hasButtonInput.checked = Boolean(starter.buttonText && starter.buttonUrl);
+
+  starterWrap?.querySelectorAll("button").forEach((button) => {
+    button.classList.toggle("is-selected", button.dataset.starter === starterId);
+  });
+
+  updateCreatePreview();
+}
+
+function updateCreatePreview() {
+  const elements = getCreateElements();
+  const title = elements.nameInput?.value.trim() || "Untitled Template";
+  const bodyText = elements.textarea?.value.trim() || "Your message preview will appear here.";
+  const buttonText = elements.buttonTextInput?.value.trim();
+  const hasButton = elements.hasButtonInput?.checked && buttonText;
+  const status = getSelectedCreateStatus();
+
+  if (elements.count && elements.textarea) elements.count.textContent = `${elements.textarea.value.length}/1024`;
+  if (elements.messageTitle) elements.messageTitle.textContent = title;
+  if (elements.messageBody) elements.messageBody.textContent = fillVariableExamples(bodyText);
+  if (elements.messageButton) {
+    elements.messageButton.textContent = buttonText || "Open";
+    elements.messageButton.style.display = hasButton ? "" : "none";
+  }
+  if (elements.categoryDetail) elements.categoryDetail.textContent = toTitle(elements.categorySelect?.value || "UTILITY");
+  if (elements.languageDetail) elements.languageDetail.textContent = compactLanguage(elements.languageSelect?.value || "en_US");
+  if (elements.statusDetail) elements.statusDetail.textContent = status === "DRAFT" ? "Draft" : "Pending";
+
+  if (elements.goodTitle) elements.goodTitle.textContent = status === "DRAFT" ? "Draft ready" : "Ready for Meta review";
+  if (elements.goodText) {
+    elements.goodText.textContent =
+      status === "DRAFT"
+        ? "Save this draft now and submit it to Meta once the content is final."
+        : "This template can be submitted for Meta approval. Approved templates can be used in campaigns later.";
+  }
+  if (elements.infoTitle) {
+    elements.infoTitle.innerHTML =
+      status === "DRAFT"
+        ? 'Drafts stay editable until you submit them.'
+        : 'After submit, status will become <span>Pending</span>';
+  }
+  if (elements.infoText) {
+    elements.infoText.textContent =
+      status === "DRAFT"
+        ? "Draft templates are saved only inside KevzaAI."
+        : "Meta reviews WhatsApp templates before they can be used in campaigns.";
+  }
+
+  updateCreateVariables();
+}
+
 function buildComponents(bodyText, buttons) {
   const components = [
     {
@@ -343,6 +587,7 @@ function exampleForVariable(variable) {
     link: "https://kevzaai.com/offer",
     date: "30 Sep",
     invoice_id: "INV-1001",
+    otp: "123456",
   };
   return examples[variable] || "Sample value";
 }
@@ -487,14 +732,38 @@ function closeCreateModal() {
 function setupCreateActions() {
   const saveDraft = document.querySelector(".ct-footer .ct-secondary");
   const submit = document.querySelector(".ct-footer .ct-primary");
-  const textarea = createForm?.querySelector("textarea[name='template_body']");
-  const count = textarea?.closest(".ct-field")?.querySelector("em");
+  const insertButton = createForm?.querySelector("[data-insert-variable]");
+  const addVariableButton = createForm?.querySelector("[data-add-variable]");
 
-  saveDraft?.addEventListener("click", () => saveTemplate("DRAFT", saveDraft));
-  submit?.addEventListener("click", () => saveTemplate("PENDING", submit));
+  renderTemplateStarters();
+  renderVariablePicker();
+  updateCreatePreview();
 
-  textarea?.addEventListener("input", () => {
-    if (count) count.textContent = `${textarea.value.length}/1024`;
+  saveDraft?.addEventListener("click", () => {
+    selectCreateStatus("DRAFT");
+    updateCreatePreview();
+    saveTemplate("DRAFT", saveDraft);
+  });
+  submit?.addEventListener("click", () => {
+    selectCreateStatus("PENDING");
+    updateCreatePreview();
+    saveTemplate("PENDING", submit);
+  });
+
+  createForm?.addEventListener("input", updateCreatePreview);
+  createForm?.addEventListener("change", () => {
+    updateStatusCards();
+    updateCreatePreview();
+  });
+  insertButton?.addEventListener("click", () => insertVariable());
+  addVariableButton?.addEventListener("click", () => insertVariable());
+  variablePicker?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-variable]");
+    if (button) insertVariable(button.dataset.variable);
+  });
+  starterWrap?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-starter]");
+    if (button) applyTemplateStarter(button.dataset.starter);
   });
 }
 
