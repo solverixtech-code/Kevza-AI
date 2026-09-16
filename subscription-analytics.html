@@ -21,13 +21,13 @@
 
   <section class="sa-main">
     <header class="sa-topbar">
-      <nav class="sa-breadcrumb" aria-label="Breadcrumb"><span>Admin</span><span>/</span><span>Subscriptions</span><span>/</span><strong>Analytics</strong><span>/</span><button class="sa-breadcrumb-link js-open-udh" type="button">History</button></nav>
+      <nav class="sa-breadcrumb" aria-label="Breadcrumb"><span>Admin</span><span>/</span><span>Subscriptions</span><span>/</span><strong>Analytics</strong><span>/</span><button class="sa-breadcrumb-link js-open-udh" type="button">History</button><span>/</span><button class="sa-breadcrumb-link js-open-spc" type="button">Scheduled Plan Changes</button></nav>
       <label class="sa-search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
       <div class="sa-top-actions"><button class="sa-icon-btn has-badge" aria-label="Notifications"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><i>12</i></button><button class="sa-icon-btn has-badge" aria-label="Messages"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><i>4</i></button><button class="sa-icon-btn" aria-label="Help"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button><div class="sa-top-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div></div>
     </header>
 
     <div class="sa-page">
-      <div class="sa-title-row"><div><h1>Subscription Analytics</h1><p>Insights, trends and key metrics for subscription growth, revenue and customer lifecycle.</p></div><div class="sa-title-actions"><button class="sa-history-link js-open-udh" type="button">Upgrade / Downgrade History</button><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div></div>
+      <div class="sa-title-row"><div><h1>Subscription Analytics</h1><p>Insights, trends and key metrics for subscription growth, revenue and customer lifecycle.</p></div><div class="sa-title-actions"><button class="sa-history-link js-open-udh" type="button">Upgrade / Downgrade History</button><button class="sa-history-link js-open-spc" type="button">Scheduled Plan Changes</button><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div></div>
 
       <section class="sa-metrics" aria-label="Subscription analytics metrics">
         <article class="sa-metric blue"><span class="sa-metric-icon">U</span><div><p>Total Subscribers</p><strong>1,248</strong><small>vs last month</small></div><b>+12%</b></article>
@@ -56,12 +56,43 @@
 
         <section class="sa-card sa-table-card"><div class="sa-card-head"><h2>Recent Subscription Activity</h2><a href="#">View All</a></div><table class="sa-table"><thead><tr><th>#</th><th>Customer</th><th>Plan</th><th>Event</th><th>Date</th></tr></thead><tbody><tr><td>1</td><td>Rajesh Kumar</td><td>Professional</td><td><span class="pill green">Subscribed</span></td><td>31 Aug 2026</td></tr><tr><td>2</td><td>Sneha Sharma</td><td>Business</td><td><span class="pill blue">Upgraded</span></td><td>31 Aug 2026</td></tr><tr><td>3</td><td>The Green Mart</td><td>Starter</td><td><span class="pill purple">Trial Started</span></td><td>30 Aug 2026</td></tr><tr><td>4</td><td>City Appliances</td><td>Professional</td><td><span class="pill red">Cancelled</span></td><td>30 Aug 2026</td></tr><tr><td>5</td><td>HealthCare Plus</td><td>Business</td><td><span class="pill green">Renewed</span></td><td>29 Aug 2026</td></tr></tbody></table></section>
 
-        <section class="sa-card sa-insights"><h2>Key Insights</h2><ul><li><i class="green">Ã¢â€ â€”</i>Revenue is up 18% compared to last month.</li><li><i class="blue">U</i>New subscriptions increased by 22%.</li><li><i class="red">!</i>Churn rate increased by 0.8%.</li><li><i class="purple">T</i>86 customers are in trial and need follow-up.</li><li><i class="orange">Ã¢Ëœâ€¦</i>Enterprise plan grew by 28% this month.</li><li><i class="slate">Q</i>Consider reactivation campaigns for 142 cancelled users.</li></ul></section>
+        <section class="sa-card sa-insights"><h2>Key Insights</h2><ul><li><i class="green">UP</i>Revenue is up 18% compared to last month.</li><li><i class="blue">U</i>New subscriptions increased by 22%.</li><li><i class="red">!</i>Churn rate increased by 0.8%.</li><li><i class="purple">T</i>86 customers are in trial and need follow-up.</li><li><i class="orange">ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã…â€œÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦</i>Enterprise plan grew by 28% this month.</li><li><i class="slate">Q</i>Consider reactivation campaigns for 142 cancelled users.</li></ul></section>
       </div>
     </div>
   </section>
 </main>
 
+
+<div class="sa-spc-modal" id="scheduledPlanChangesModal" aria-hidden="true">
+  <div class="sa-spc-backdrop" data-close-spc></div>
+  <section class="sa-spc-dialog" role="dialog" aria-modal="true" aria-labelledby="scheduledPlanChangesTitle">
+    <header class="sa-spc-head">
+      <div><h2 id="scheduledPlanChangesTitle">Scheduled Plan Changes</h2><p>View upcoming subscription plan changes, add-ons, downgrades and effective billing updates.</p></div>
+      <button class="sa-spc-close" type="button" aria-label="Close scheduled plan changes" data-close-spc>&times;</button>
+    </header>
+    <div class="sa-spc-body">
+      <section class="sa-spc-summary" aria-label="Scheduled plan change summary"><article><div><h3>SUB-202607-001</h3><p>Current subscription</p></div><span>Active</span></article><article><i>Now</i><div><strong>Professional</strong><p>&#8377;3,999/month</p><small>Current plan</small></div></article><article><i>Next</i><div><strong>Business</strong><p>&#8377;6,999/month</p><small>Scheduled from 01 Aug 2026</small></div></article><article><i>3</i><div><strong>Scheduled Changes</strong><p>2 upgrades, 1 add-on</p><small>Next 30 days</small></div></article></section>
+      <nav class="sa-spc-tabs" aria-label="Subscription sections"><a href="#">Overview</a><a href="#">Billing &amp; Payments</a><a href="#">Usage</a><a href="#">Invoices</a><a href="#">Activity Log</a><a href="#">Notes (3)</a><a href="#">Upgrade / Downgrade History</a><a class="is-active" href="#">Scheduled Plan Changes</a></nav>
+      <div class="sa-spc-layout">
+        <section class="sa-spc-card sa-spc-table-card"><div class="sa-spc-card-head"><h3>Upcoming Plan Changes</h3><button type="button">+ Schedule Change</button></div><div class="sa-spc-table-wrap"><table class="sa-spc-table"><thead><tr><th>#</th><th>Scheduled Date</th><th>Change Type</th><th>Current Plan</th><th>New Plan / Add-on</th><th>Amount Impact</th><th>Status</th><th>Requested By</th><th>Actions</th></tr></thead><tbody><tr><td><span class="step">1</span></td><td><strong>01 Aug 2026</strong><small>12:00 AM</small></td><td><em class="upgrade">Upgrade</em></td><td>Professional<br><small>&#8377;3,999/mo</small></td><td><strong>Business</strong><small>&#8377;6,999/mo</small></td><td class="green">+ &#8377;3,000</td><td><span class="status scheduled">Scheduled</span></td><td><strong>Customer</strong><small>Self-Serve</small></td><td><button type="button">Edit</button><button type="button">Cancel</button></td></tr><tr><td><span class="step">2</span></td><td><strong>05 Aug 2026</strong><small>09:00 AM</small></td><td><em class="addon">Add-on</em></td><td>Business</td><td><strong>Extra Users</strong><small>+ 10 seats</small></td><td class="green">+ &#8377;1,200</td><td><span class="status pending">Pending</span></td><td><strong>Admin</strong><small>Aman Ansari</small></td><td><button type="button">Edit</button><button type="button">Cancel</button></td></tr><tr><td><span class="step">3</span></td><td><strong>15 Aug 2026</strong><small>Billing cycle</small></td><td><em class="addon">Add-on</em></td><td>Business</td><td><strong>AI Agent Pack</strong><small>3 agents</small></td><td class="green">+ &#8377;800</td><td><span class="status scheduled">Scheduled</span></td><td><strong>Customer</strong><small>Self-Serve</small></td><td><button type="button">Edit</button><button type="button">Cancel</button></td></tr><tr><td><span class="step muted">4</span></td><td><strong>01 Sep 2026</strong><small>12:00 AM</small></td><td><em class="downgrade">Downgrade</em></td><td>Business</td><td><strong>Professional</strong><small>Requested if usage drops</small></td><td class="red">- &#8377;3,000</td><td><span class="status review">Review</span></td><td><strong>System</strong><small>Usage rule</small></td><td><button type="button">Review</button><button type="button">Cancel</button></td></tr></tbody></table></div></section>
+        <aside class="sa-spc-side"><section class="sa-spc-card sa-spc-next"><div class="sa-spc-card-head"><h3>Next Scheduled Change</h3><span>14 days</span></div><div class="plan-compare"><div><small>From</small><strong>Professional</strong><p>&#8377;3,999/month</p></div><b>â†’</b><div><small>To</small><strong>Business</strong><p>&#8377;6,999/month</p></div></div><ul><li>Upgrade activates on 01 Aug 2026.</li><li>Prorated charge applies from next billing cycle.</li><li>Customer will receive email and WhatsApp notice.</li></ul></section><section class="sa-spc-card sa-spc-impact"><h3>Impact Summary</h3><dl><div><dt>Total Scheduled Changes</dt><dd>4</dd></div><div><dt>Upgrades</dt><dd class="green">1</dd></div><div><dt>Downgrades</dt><dd class="red">1</dd></div><div><dt>Add-ons</dt><dd class="blue">2</dd></div><div class="total"><dt>Projected MRR Impact</dt><dd>+ &#8377;2,000</dd></div></dl></section><section class="sa-spc-card sa-spc-actions"><h3>Quick Actions</h3><div><a href="#">Schedule Upgrade</a><a href="#">Schedule Downgrade</a><a href="#">Add Add-on</a><a href="#">Notify Customer</a><a href="#">Export Schedule</a><a href="#">Audit Rules</a></div></section></aside>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById('scheduledPlanChangesModal');
+    var openers = document.querySelectorAll('.js-open-spc');
+    var closers = document.querySelectorAll('[data-close-spc]');
+    if (!modal) return;
+    function openModal(event) { if (event) event.preventDefault(); modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.classList.add('sa-spc-open'); var close = modal.querySelector('.sa-spc-close'); if (close) close.focus(); }
+    function closeModal() { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('sa-spc-open'); }
+    openers.forEach(function (button) { button.addEventListener('click', openModal); });
+    closers.forEach(function (button) { button.addEventListener('click', closeModal); });
+    document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+  }());
+</script>
 <div class="sa-udh-modal" id="upgradeHistoryModal" aria-hidden="true">
   <div class="sa-udh-backdrop" data-close-udh></div>
   <section class="sa-udh-dialog" role="dialog" aria-modal="true" aria-labelledby="upgradeHistoryTitle">
