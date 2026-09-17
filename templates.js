@@ -291,7 +291,7 @@ function renderPreview(template) {
   }
   if (subtitle) subtitle.textContent = `WhatsApp ${toTitle(selected.category || "MARKETING")} template`;
   if (bubbleTitle) bubbleTitle.textContent = title;
-  if (bubbleText) bubbleText.textContent = selected.bodyText || "";
+  if (bubbleText) bubbleText.textContent = fillVariableExamples(selected.bodyText || "", selected.examples);
 
   if (bubbleButton) {
     bubbleButton.textContent = firstButton?.text || "Open";
@@ -379,10 +379,25 @@ function humanizeVariable(variable) {
   return toTitle(String(variable || "").replace(/_/g, " "));
 }
 
-function fillVariableExamples(bodyText) {
-  return String(bodyText || "").replace(/\{\{\s*([a-zA-Z0-9_]+)\s*\}\}/g, (_, variable) =>
-    getExampleValue(variable.trim()),
-  );
+function normalizeExamples(examples) {
+  if (!examples) return {};
+  if (typeof examples === "string") {
+    try {
+      return JSON.parse(examples) || {};
+    } catch {
+      return {};
+    }
+  }
+  return typeof examples === "object" ? examples : {};
+}
+
+function fillVariableExamples(bodyText, examples = null) {
+  const savedExamples = normalizeExamples(examples);
+
+  return String(bodyText || "").replace(/\{\{\s*([a-zA-Z0-9_]+)\s*\}\}/g, (_, variable) => {
+    const key = variable.trim();
+    return savedExamples[key] || getExampleValue(key);
+  });
 }
 
 function getExampleValue(variable) {
