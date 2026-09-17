@@ -24,6 +24,8 @@ const deleteModal = document.getElementById("deleteTemplateModal");
 const deleteModalName = deleteModal?.querySelector("[data-delete-template-name]");
 const deleteCancelButton = deleteModal?.querySelector("[data-cancel-delete]");
 const deleteConfirmButton = deleteModal?.querySelector("[data-confirm-delete]");
+const previewModal = document.getElementById("templatePreviewModal");
+const previewModalCard = previewModal?.querySelector("[data-template-preview-card]");
 
 const templateStarters = [
   {
@@ -272,9 +274,8 @@ function updateMetrics(templates) {
   }
 }
 
-function renderPreview(template) {
+function renderPreviewInto(preview, template) {
   const selected = template || state.templates[0];
-  const preview = document.querySelector(".live-preview-card, .preview-card");
   if (!preview || !selected) return;
 
   const title = getTemplateTitle(selected);
@@ -307,6 +308,33 @@ function renderPreview(template) {
       ? `Template variables: ${variables.map((variable) => `{{${variable}}}`).join(", ")}`
       : "Template variables: none";
   }
+}
+
+function renderPreview(template) {
+  renderPreviewInto(document.querySelector(".template-side .live-preview-card, .preview-card"), template);
+}
+
+function openPreviewModal(template) {
+  state.selectedTemplateId = template.id;
+  renderTable(state.templates);
+  renderPreview(template);
+  renderPreviewInto(previewModalCard, template);
+  const status = normalizeStatus(template.status);
+  const modalStatus = previewModal?.querySelector(".badge-approved");
+  if (modalStatus) {
+    modalStatus.className = `badge-approved ${status}`;
+    modalStatus.textContent = toTitle(status);
+  }
+  previewModal?.classList.add("is-open");
+  previewModal?.setAttribute("aria-hidden", "false");
+  document.body.classList.add("tp-modal-open");
+  previewModal?.querySelector("[data-close-preview]")?.focus();
+}
+
+function closePreviewModal() {
+  previewModal?.classList.remove("is-open");
+  previewModal?.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("tp-modal-open");
 }
 
 function renderRowActions(template, status) {
@@ -930,11 +958,7 @@ function setupFilters() {
     }
 
     if (viewButton) {
-      state.selectedTemplateId = template.id;
-      renderTable(state.templates);
-      renderPreview(template);
-      document.querySelector(".live-preview-card, .preview-card")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      showToast(`${getTemplateTitle(template)} preview loaded.`, "info");
+      openPreviewModal(template);
       return;
     }
 
@@ -960,6 +984,10 @@ function setupFilters() {
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && deleteModal?.classList.contains("is-open")) closeDeleteConfirm();
+    if (event.key === "Escape" && previewModal?.classList.contains("is-open")) closePreviewModal();
+  });
+  previewModal?.querySelectorAll("[data-close-preview]").forEach((button) => {
+    button.addEventListener("click", closePreviewModal);
   });
 }
 

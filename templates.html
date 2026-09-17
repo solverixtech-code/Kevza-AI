@@ -708,6 +708,45 @@
   <button type="button" aria-label="Dismiss template message">&times;</button>
 </div>
 
+<div class="tp-modal" id="templatePreviewModal" aria-hidden="true">
+  <div class="tp-backdrop" data-close-preview></div>
+  <section class="tp-dialog" role="dialog" aria-modal="true" aria-labelledby="templatePreviewTitle">
+    <header class="tp-head">
+      <div>
+        <h2 id="templatePreviewTitle">Live Preview</h2>
+        <p>See how this WhatsApp template will look to recipients.</p>
+      </div>
+      <span class="badge-approved">Approved</span>
+      <button class="tp-close" type="button" aria-label="Close preview" data-close-preview>&times;</button>
+    </header>
+    <div class="tp-body">
+      <section class="tp-preview-card" data-template-preview-card>
+        <p class="live-preview-sub">WhatsApp Marketing template</p>
+        <div class="tp-phone-shell">
+          <div class="tp-phone">
+            <div class="tp-statusbar"><span>9:41</span><b>|||</b></div>
+            <div class="tp-chat-top">
+              <button type="button" aria-label="Back">&#8249;</button>
+              <div class="tp-wa"><img src="whatsapp.png" alt="" /></div>
+              <div><strong>Your Business</strong><small>Business Account</small></div>
+              <b>&#8942;</b>
+            </div>
+            <div class="tp-chat-body">
+              <div class="wa-bubble">
+                <div class="wa-bubble-title">Template</div>
+                <div class="wa-bubble-text">Template preview will appear here.</div>
+                <div class="wa-bubble-time">11:30 AM</div>
+                <button class="wa-bubble-btn" type="button">Open</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="wa-template-vars">Template variables: none</p>
+      </section>
+    </div>
+  </section>
+</div>
+
 <!-- ══════════════════════════════════════════
      VALIDATE IMPORT MODAL
 ══════════════════════════════════════════ -->
