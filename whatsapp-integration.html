@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KevzaAI - WhatsApp Integration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="admin-components.css">
+  <link rel="stylesheet" href="whatsapp-integration.css">
+  <script type="module" src="whatsapp-integration.js"></script>
+</head>
+<body>
+  <main class="admin-app customer-shell shared-nav-shell wa-shell">
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+      <nav class="admin-nav" aria-label="Customer navigation"></nav>
+      <div class="sidebar-user"><div class="mini-avatar">SA</div><div><strong>Sahil Avinash Salve</strong><span>Owner</span></div><b>&#8964;</b></div>
+    </aside>
+
+    <section class="wa-main">
+      <header class="wa-topbar">
+        <div class="breadcrumbs"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>WhatsApp Integration</strong></div>
+        <label class="wa-search" aria-label="Search"><span>&#8981;</span><input type="search" placeholder="Search setup, templates or contacts..." /></label>
+        <div class="wa-user"><button aria-label="Notifications">&#128276;</button><button aria-label="Help">?</button><div class="customer-user"><div class="mini-avatar photo">SA</div><div><strong>Sahil Avinash Salve</strong><span>Owner</span></div><b>&#8964;</b></div></div>
+      </header>
+
+      <div class="wa-page">
+        <section class="wa-hero">
+          <div>
+            <span class="eyebrow">Meta Cloud API setup</span>
+            <h1>WhatsApp Integration</h1>
+            <p>Connect each customer's own WhatsApp Business number before templates, campaigns, inbox, and automation can go live.</p>
+            <div class="wa-hero-points"><span>Dedicated business number</span><span>Manual foundation now</span><span>Embedded Signup later</span></div>
+          </div>
+          <img src="whatsapp.png" alt="" />
+        </section>
+
+        <section class="wa-status-grid">
+          <article class="wa-card wa-connection-card" data-connection-card>
+            <span class="wa-card-icon"><img src="whatsapp.png" alt="" /></span>
+            <div><small>Connection Status</small><strong data-status-title>Checking...</strong><p data-status-copy>Loading Meta WhatsApp account details.</p></div>
+            <b data-status-pill>Checking</b>
+          </article>
+          <article class="wa-card wa-mini"><small>WABA ID</small><strong data-waba-id>-</strong><span>Business account</span></article>
+          <article class="wa-card wa-mini"><small>Phone Number ID</small><strong data-phone-id>-</strong><span>Cloud API sender</span></article>
+          <article class="wa-card wa-mini"><small>Quality</small><strong data-quality>-</strong><span>Meta health signal</span></article>
+        </section>
+
+        <section class="wa-layout">
+          <article class="wa-card wa-form-card">
+            <div class="section-head">
+              <div><h2>Connect Meta WhatsApp Account</h2><p>Use the customer's WABA and phone number credentials. Do not use KevzaAI's internal number for their campaigns.</p></div>
+              <button class="secondary-btn" type="button" data-test-connection>Test Connection</button>
+            </div>
+
+            <form class="wa-form" data-connection-form>
+              <label><span>WABA ID</span><input name="wabaId" autocomplete="off" placeholder="1659841228682009" required></label>
+              <label><span>Phone Number ID</span><input name="phoneNumberId" autocomplete="off" placeholder="1620115232817686" required></label>
+              <label><span>Display Phone (optional)</span><input name="displayPhone" autocomplete="tel" placeholder="+91 98765 43210"></label>
+              <label><span>System User Access Token</span><input name="accessToken" autocomplete="off" placeholder="Paste the long-lived Meta system user token"><small>Token is never shown back in full after saving.</small></label>
+              <div class="wa-form-actions"><button class="primary-btn" type="submit">Save Connection</button><button class="ghost-btn" type="button" data-fetch-templates>Fetch Meta Templates</button></div>
+            </form>
+          </article>
+
+          <aside class="wa-card wa-guide">
+            <div class="section-head compact"><h2>Production Onboarding Flow</h2><span>WATI-style</span></div>
+            <ol>
+              <li><strong>Use a dedicated WhatsApp Business number.</strong><p>Best for Cloud API. Daily personal WhatsApp numbers should not be used for SaaS campaigns.</p></li>
+              <li><strong>Connect WABA and phone number.</strong><p>Today this page stores manual credentials. Production should use Meta Embedded Signup.</p></li>
+              <li><strong>Test connection.</strong><p>KevzaAI checks the WABA, sender phone ID, display phone, and quality rating from Meta.</p></li>
+              <li><strong>Create approved templates.</strong><p>After connection, templates must submit through that customer's connected account.</p></li>
+            </ol>
+            <div class="wa-note"><strong>Coexistence later</strong><p>For customers already using WhatsApp Business App, add Meta Coexistence onboarding as a separate path.</p></div>
+          </aside>
+        </section>
+
+        <section class="wa-card wa-template-panel">
+          <div class="section-head">
+            <div><h2>Meta Templates</h2><p>Fetched directly from the connected customer's WABA.</p></div>
+            <button class="secondary-btn" type="button" data-refresh-templates>Refresh</button>
+          </div>
+          <div class="meta-template-table">
+            <table>
+              <thead><tr><th>Name</th><th>Category</th><th>Status</th><th>Language</th><th>Meta ID</th></tr></thead>
+              <tbody data-meta-templates><tr><td colspan="5">Connect and test an account, then fetch templates.</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <div class="wa-toast" data-toast><span>i</span><strong>Ready</strong></div>
+  <script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

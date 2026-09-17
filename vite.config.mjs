@@ -32,6 +32,7 @@ export default defineConfig({
         templates: resolve(import.meta.dirname, 'templates.html'),
         subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
         subscriptionAnalytics: resolve(import.meta.dirname, 'subscription-analytics.html'),
+        whatsappIntegration: resolve(import.meta.dirname, 'whatsapp-integration.html'),
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
         customerOnboardingActivation: resolve(import.meta.dirname, 'customer-onboarding-activation.html'),
         activatedCustomers: resolve(import.meta.dirname, 'activated-customers.html'),

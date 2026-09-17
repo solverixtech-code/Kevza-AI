@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="admin.css" />
   <link rel="stylesheet" href="customer-dashboard.css" />
+  <link rel="stylesheet" href="customer-whatsapp-status.css" />
 </head>
 <body>
   <main class="admin-app customer-shell shared-nav-shell">
@@ -66,11 +67,22 @@
 
           <article class="customer-card campaigns-card"><div class="customer-card-head"><h2>Recent Campaigns</h2><a href="campaign-operations-dashboard.html">View all &#8594;</a></div><div class="campaign-table"><table><thead><tr><th>Campaign</th><th>Status</th><th>Sent</th><th>Delivered</th><th>Opened</th><th>CTR</th></tr></thead><tbody><tr><td>Summer Promo</td><td><span class="status active">Active</span></td><td>8,240</td><td>7,821</td><td>6,921</td><td>18%</td></tr><tr><td>Welcome Flow</td><td><span class="status active">Active</span></td><td>2,120</td><td>1,982</td><td>1,654</td><td>24%</td></tr><tr><td>Product Launch</td><td><span class="status scheduled">Scheduled</span></td><td>5,600</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Customer Follow-up</td><td><span class="status completed">Completed</span></td><td>3,420</td><td>3,210</td><td>2,856</td><td>16%</td></tr></tbody></table></div></article>
 
-          <aside class="right-stack"><section class="customer-card quick-actions-card"><h2>Quick Actions</h2><div><a href="all-customers.html" class="action-blue">&#43; Add Customer</a><a href="campaign-operations-dashboard.html" class="action-purple">&#9873; Create Campaign</a><a href="ai-operations-dashboard.html" class="action-green">&#9881; Create Chatbot</a><a href="automation-operations-dashboard.html" class="action-orange">&#8984; Create Automation</a></div></section><section class="customer-card plan-card"><h2>Current Plan</h2><div class="plan-row"><span>&#11088;</span><div><strong>Professional Plan</strong><p>Billed monthly - Next Billing: Oct 10, 2025</p></div><em>68%</em></div><i class="plan-progress"><b style="width:68%"></b></i><a href="subscription-dashboard.html">Manage Plan &#8594;</a></section></aside>
+          <aside class="right-stack">
+            <section class="customer-card whatsapp-status-card" data-whatsapp-status-card>
+              <div class="customer-card-head"><h2>WhatsApp Integration</h2><span data-whatsapp-status-pill>Checking</span></div>
+              <div class="whatsapp-status-body">
+                <img src="whatsapp.png" alt="" />
+                <div><strong data-whatsapp-status-title>Checking Meta connection</strong><p data-whatsapp-status-copy>Your WhatsApp Business account status will appear here.</p></div>
+              </div>
+              <a href="whatsapp-integration.html" data-whatsapp-status-action>Open setup &#8594;</a>
+            </section>
+            <section class="customer-card quick-actions-card"><h2>Quick Actions</h2><div><a href="all-customers.html" class="action-blue">&#43; Add Customer</a><a href="campaign-operations-dashboard.html" class="action-purple">&#9873; Create Campaign</a><a href="ai-operations-dashboard.html" class="action-green">&#9881; Create Chatbot</a><a href="automation-operations-dashboard.html" class="action-orange">&#8984; Create Automation</a></div></section><section class="customer-card plan-card"><h2>Current Plan</h2><div class="plan-row"><span>&#11088;</span><div><strong>Professional Plan</strong><p>Billed monthly - Next Billing: Oct 10, 2025</p></div><em>68%</em></div><i class="plan-progress"><b style="width:68%"></b></i><a href="subscription-dashboard.html">Manage Plan &#8594;</a></section>
+          </aside>
         </section>
       </div>
     </section>
   </main>
+  <script type="module" src="customer-dashboard.js"></script>
   <script type="module" src="customer-navigation.js"></script>
 </body>
 </html>

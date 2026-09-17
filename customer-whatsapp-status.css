@@ -1,0 +1,83 @@
+.whatsapp-status-card {
+  padding: 18px;
+}
+
+.whatsapp-status-card .customer-card-head span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: #7b5b00;
+  background: #fff4d6;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.whatsapp-status-card .customer-card-head span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.whatsapp-status-card.is-connected .customer-card-head span {
+  color: #0d9b6d;
+  background: #dcf8ec;
+}
+
+.whatsapp-status-card.is-error .customer-card-head span {
+  color: #dc3655;
+  background: #ffe8ed;
+}
+
+.whatsapp-status-body {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.whatsapp-status-body img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.whatsapp-status-body strong {
+  display: block;
+  color: #1d3150;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.whatsapp-status-body p {
+  margin: 5px 0 0;
+  color: #71829b;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.whatsapp-status-card > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  margin-top: 14px;
+  border: 1px solid #bbead9;
+  border-radius: 6px;
+  color: #0e9f6e;
+  background: #effdf7;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.whatsapp-status-card.is-error > a {
+  border-color: #cbd8ec;
+  color: #236dff;
+  background: #f7fbff;
+}
