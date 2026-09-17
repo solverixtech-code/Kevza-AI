@@ -659,6 +659,69 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
+}
+
+.row-action,
+.row-synced {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 13px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.row-action {
+  border: 1.5px solid #d7e3f4;
+  background: #fff;
+  color: #18345e;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.row-action:hover {
+  transform: translateY(-1px);
+}
+
+.row-action.view-template {
+  border-color: #b9cdf5;
+  color: #155de8;
+  background: #f7faff;
+}
+
+.row-action.view-template:hover {
+  border-color: #2466ff;
+  background: #eef5ff;
+}
+
+.row-action.submit-template,
+.row-action.sync-template {
+  border-color: #aee7d0;
+  color: #07885d;
+  background: #effbf6;
+}
+
+.row-action.submit-template:hover,
+.row-action.sync-template:hover {
+  border-color: #15b97b;
+  background: #e4f9ef;
+}
+
+.row-synced {
+  border: 1px solid #bcebd4;
+  color: #07885d;
+  background: #eafbf3;
+}
+
+.row-synced::before {
+  content: '✓';
+  margin-right: 6px;
+  font-weight: 900;
 }
 
 .btn-tpl-edit {

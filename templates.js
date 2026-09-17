@@ -305,6 +305,23 @@ function renderPreview(template) {
   }
 }
 
+function renderRowActions(template, status) {
+  const title = escapeHtml(getTemplateTitle(template));
+  const viewAction = `<button class="row-action view-template" type="button" aria-label="View ${title} preview" title="View live preview">View</button>`;
+  const deleteAction = `<button class="btn-tpl-delete row-action delete-template" type="button" aria-label="Delete ${title}" title="Delete template">Delete</button>`;
+
+  if (status === "approved") {
+    return `<span class="row-synced" title="Meta status is synced">Synced</span>${viewAction}${deleteAction}`;
+  }
+
+  const primaryAction =
+    status === "draft"
+      ? `<button class="row-action submit-template" type="button" aria-label="Submit ${title} to Meta" title="Submit to Meta">Submit</button>`
+      : `<button class="row-action sync-template" type="button" aria-label="Sync ${title} status from Meta" title="Sync Meta status">Sync</button>`;
+
+  return `${primaryAction}${viewAction}${deleteAction}`;
+}
+
 function renderTable(templates) {
   if (!tableBody) return;
 
@@ -317,10 +334,6 @@ function renderTable(templates) {
   tableBody.innerHTML = templates
     .map((template) => {
       const status = normalizeStatus(template.status);
-      const primaryAction =
-        status === "draft"
-          ? `<button class="row-action submit-template" type="button" aria-label="Submit ${escapeHtml(getTemplateTitle(template))} to Meta" title="Submit to Meta">Submit</button>`
-          : `<button class="row-action sync-template" type="button" aria-label="Sync ${escapeHtml(getTemplateTitle(template))} status from Meta" title="Sync Meta status">Sync</button>`;
       return `
         <tr data-template-id="${escapeHtml(template.id)}">
           <td class="tpl-name"><strong>${escapeHtml(getTemplateTitle(template))}</strong><span>${escapeHtml(summarize(template.bodyText))}</span></td>
@@ -332,8 +345,7 @@ function renderTable(templates) {
           <td>${escapeHtml(formatRelativeTime(template.updatedAt))}</td>
           <td>
             <div class="tpl-actions row-actions">
-              ${primaryAction}
-              <button class="btn-tpl-delete row-action delete-template" type="button" aria-label="Delete ${escapeHtml(getTemplateTitle(template))}" title="Delete template">Delete</button>
+              ${renderRowActions(template, status)}
             </div>
           </td>
         </tr>
@@ -888,6 +900,7 @@ function setupFilters() {
   tableBody?.addEventListener("click", (event) => {
     const submitButton = event.target.closest(".submit-template");
     const syncButton = event.target.closest(".sync-template");
+    const viewButton = event.target.closest(".view-template");
     const deleteButton = event.target.closest(".delete-template");
     const row = event.target.closest("tr[data-template-id]");
     if (!row) return;
@@ -902,6 +915,13 @@ function setupFilters() {
 
     if (syncButton) {
       syncTemplateStatus(template.id, syncButton);
+      return;
+    }
+
+    if (viewButton) {
+      state.selectedTemplateId = template.id;
+      renderPreview(template);
+      document.querySelector(".live-preview-card, .preview-card")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
       return;
     }
 
