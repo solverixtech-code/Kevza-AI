@@ -20,6 +20,10 @@ const starterWrap = createModal?.querySelector("[data-template-starters]");
 const variableChipsWrap = createModal?.querySelector("[data-variable-chips]");
 const variablePicker = createModal?.querySelector("[data-variable-picker]");
 const sampleValuesWrap = createModal?.querySelector("[data-sample-values]");
+const deleteModal = document.getElementById("deleteTemplateModal");
+const deleteModalName = deleteModal?.querySelector("[data-delete-template-name]");
+const deleteCancelButton = deleteModal?.querySelector("[data-cancel-delete]");
+const deleteConfirmButton = deleteModal?.querySelector("[data-confirm-delete]");
 
 const templateStarters = [
   {
@@ -335,7 +339,7 @@ function renderTable(templates) {
     .map((template) => {
       const status = normalizeStatus(template.status);
       return `
-        <tr data-template-id="${escapeHtml(template.id)}">
+        <tr class="${state.selectedTemplateId === template.id ? "is-selected" : ""}" data-template-id="${escapeHtml(template.id)}">
           <td class="tpl-name"><strong>${escapeHtml(getTemplateTitle(template))}</strong><span>${escapeHtml(summarize(template.bodyText))}</span></td>
           <td><span class="badge-channel whatsapp">WhatsApp</span></td>
           <td>${escapeHtml(toTitle(template.category || "MARKETING"))}</td>
@@ -792,30 +796,38 @@ async function syncTemplateStatus(templateId, button) {
   }
 }
 
-async function deleteTemplate(templateId, button) {
-  if (state.pendingDeleteId !== templateId) {
-    state.pendingDeleteId = templateId;
-    const originalText = button.textContent;
-    button.textContent = "Sure?";
-    button.classList.add("is-confirming");
-    window.setTimeout(() => {
-      if (state.pendingDeleteId === templateId) {
-        state.pendingDeleteId = null;
-        button.textContent = originalText;
-        button.classList.remove("is-confirming");
-      }
-    }, 2600);
-    return;
-  }
+function openDeleteConfirm(template) {
+  state.pendingDeleteId = template.id;
+  if (deleteModalName) deleteModalName.textContent = getTemplateTitle(template);
+  deleteModal?.classList.add("is-open");
+  deleteModal?.setAttribute("aria-hidden", "false");
+  document.body.classList.add("dt-modal-open");
+  deleteCancelButton?.focus();
+}
 
-  button.disabled = true;
-  button.textContent = "Deleting...";
+function closeDeleteConfirm() {
+  state.pendingDeleteId = null;
+  deleteModal?.classList.remove("is-open");
+  deleteModal?.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("dt-modal-open");
+  if (deleteConfirmButton) {
+    deleteConfirmButton.disabled = false;
+    deleteConfirmButton.textContent = "Yes, delete";
+  }
+}
+
+async function deleteTemplate(templateId) {
+  if (!deleteConfirmButton) return;
+
+  deleteConfirmButton.disabled = true;
+  deleteConfirmButton.textContent = "Deleting...";
 
   try {
     await apiRequest(`/templates/${templateId}`, {
       method: "DELETE",
     });
     state.pendingDeleteId = null;
+    closeDeleteConfirm();
     state.templates = state.templates.filter((template) => template.id !== templateId);
     const selected = state.templates[0] || null;
     state.selectedTemplateId = selected?.id || null;
@@ -825,9 +837,8 @@ async function deleteTemplate(templateId, button) {
     showToast("Template deleted.");
   } catch (error) {
     showToast(error.message, "error");
-    button.disabled = false;
-    button.textContent = "Delete";
-    button.classList.remove("is-confirming");
+    deleteConfirmButton.disabled = false;
+    deleteConfirmButton.textContent = "Yes, delete";
   }
 }
 
@@ -920,13 +931,15 @@ function setupFilters() {
 
     if (viewButton) {
       state.selectedTemplateId = template.id;
+      renderTable(state.templates);
       renderPreview(template);
       document.querySelector(".live-preview-card, .preview-card")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      showToast(`${getTemplateTitle(template)} preview loaded.`, "info");
       return;
     }
 
     if (deleteButton) {
-      deleteTemplate(template.id, deleteButton);
+      openDeleteConfirm(template);
       return;
     }
 
@@ -936,6 +949,17 @@ function setupFilters() {
 
   toast?.querySelector("button")?.addEventListener("click", () => {
     toast.classList.remove("is-visible");
+  });
+
+  deleteCancelButton?.addEventListener("click", closeDeleteConfirm);
+  deleteModal?.querySelectorAll("[data-close-delete]").forEach((button) => {
+    button.addEventListener("click", closeDeleteConfirm);
+  });
+  deleteConfirmButton?.addEventListener("click", () => {
+    if (state.pendingDeleteId) deleteTemplate(state.pendingDeleteId);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && deleteModal?.classList.contains("is-open")) closeDeleteConfirm();
   });
 }
 

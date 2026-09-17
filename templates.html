@@ -578,6 +578,27 @@
   </section>
 </div>
 
+<div class="dt-modal" id="deleteTemplateModal" aria-hidden="true">
+  <div class="dt-backdrop" data-close-delete></div>
+  <section class="dt-dialog" role="dialog" aria-modal="true" aria-labelledby="deleteTemplateTitle">
+    <header class="dt-head">
+      <div>
+        <h2 id="deleteTemplateTitle">Delete template?</h2>
+        <p>This template will be removed from KevzaAI. Approved templates already in Meta are not deleted from Meta here.</p>
+      </div>
+      <button class="dt-close" type="button" aria-label="Close delete confirmation" data-close-delete>&times;</button>
+    </header>
+    <div class="dt-body">
+      <span>Template</span>
+      <strong data-delete-template-name>Selected template</strong>
+    </div>
+    <footer class="dt-footer">
+      <button type="button" class="dt-secondary" data-cancel-delete>No, keep it</button>
+      <button type="button" class="dt-danger" data-confirm-delete>Yes, delete</button>
+    </footer>
+  </section>
+</div>
+
 <!-- ══════════════════════════════════════════
      IMPORT TEMPLATES MODAL
 ══════════════════════════════════════════ -->
