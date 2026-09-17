@@ -71,6 +71,7 @@ type MetaTemplateComponent = {
 const ALLOWED_CATEGORIES = Object.values(WhatsappTemplateCategory) as WhatsappTemplateCategory[];
 const ALLOWED_STATUSES = Object.values(TemplateStatus) as TemplateStatus[];
 const ALLOWED_SOURCES = Object.values(TemplateSource) as TemplateSource[];
+const META_PROVIDER = 'meta_cloud';
 
 @Injectable()
 export class TemplatesService {
@@ -137,13 +138,15 @@ export class TemplatesService {
     const name = this.normalizeTemplateName(input.name || input.displayName || bodyText);
 
     await this.ensureWhatsappAccountBelongsToTenant(input.whatsappAccountId, tenantId);
+    const whatsappAccountId =
+      input.whatsappAccountId || (await this.getDefaultWhatsappAccountId(tenantId));
 
     try {
       return await this.prisma.messageTemplate.create({
         data: {
           tenantId,
           createdById: input.createdById || null,
-          whatsappAccountId: input.whatsappAccountId || null,
+          whatsappAccountId: whatsappAccountId || null,
           name,
           displayName: input.displayName?.trim() || this.titleFromName(name),
           category,
@@ -240,11 +243,11 @@ export class TemplatesService {
       throw new BadRequestException('Template has already been submitted to Meta');
     }
 
-    const wabaId = this.getMetaConfig('META_WABA_ID');
-    const accessToken = this.getMetaConfig('META_ACCESS_TOKEN');
+    const whatsappAccount = await this.requireWhatsappAccountForTemplate(template, resolvedTenantId);
+    const accessToken = this.requireAccessToken(whatsappAccount.tokenCiphertext);
     const graphVersion = this.config.get<string>('META_GRAPH_VERSION') || 'v23.0';
     const payload = this.buildMetaTemplatePayload(template);
-    const response = await fetch(`https://graph.facebook.com/${graphVersion}/${wabaId}/message_templates`, {
+    const response = await fetch(`https://graph.facebook.com/${graphVersion}/${whatsappAccount.wabaId}/message_templates`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -267,6 +270,7 @@ export class TemplatesService {
     return this.prisma.messageTemplate.update({
       where: { id: template.id },
       data: {
+        whatsappAccountId: whatsappAccount.id,
         metaTemplateId: metaPayload.id || null,
         metaStatus,
         status,
@@ -285,7 +289,8 @@ export class TemplatesService {
       throw new BadRequestException('Template has not been submitted to Meta yet');
     }
 
-    const accessToken = this.getMetaConfig('META_ACCESS_TOKEN');
+    const whatsappAccount = await this.requireWhatsappAccountForTemplate(template, resolvedTenantId);
+    const accessToken = this.requireAccessToken(whatsappAccount.tokenCiphertext);
     const graphVersion = this.config.get<string>('META_GRAPH_VERSION') || 'v23.0';
     const params = new URLSearchParams({
       fields: 'id,name,status,category,rejected_reason',
@@ -314,6 +319,7 @@ export class TemplatesService {
     return this.prisma.messageTemplate.update({
       where: { id: template.id },
       data: {
+        whatsappAccountId: whatsappAccount.id,
         metaStatus,
         status,
         category: metaPayload.category
@@ -436,21 +442,68 @@ export class TemplatesService {
     }
   }
 
+  private async getDefaultWhatsappAccountId(tenantId: string) {
+    const account = await this.prisma.whatsappAccount.findFirst({
+      where: {
+        tenantId,
+        provider: META_PROVIDER,
+      },
+      orderBy: { updatedAt: 'desc' },
+      select: { id: true },
+    });
+
+    return account?.id;
+  }
+
+  private async requireWhatsappAccountForTemplate(
+    template: Awaited<ReturnType<TemplatesService['findTemplate']>>,
+    tenantId: string,
+  ) {
+    const account = await this.prisma.whatsappAccount.findFirst({
+      where: template.whatsappAccountId
+        ? {
+            id: template.whatsappAccountId,
+            tenantId,
+          }
+        : {
+            tenantId,
+            provider: META_PROVIDER,
+          },
+      orderBy: { updatedAt: 'desc' },
+    });
+
+    if (!account) {
+      throw new BadRequestException('Connect this business WhatsApp account before submitting templates to Meta');
+    }
+
+    if (!account.wabaId) {
+      throw new BadRequestException('Connected WhatsApp account is missing WABA ID');
+    }
+
+    if (!account.phoneNumberId) {
+      throw new BadRequestException('Connected WhatsApp account is missing phone number ID');
+    }
+
+    if (!account.tokenCiphertext) {
+      throw new BadRequestException('Connected WhatsApp account is missing access token');
+    }
+
+    return account;
+  }
+
+  private requireAccessToken(token?: string | null) {
+    if (!token) {
+      throw new BadRequestException('Connected WhatsApp account is missing access token');
+    }
+
+    return token;
+  }
+
   private isUniqueConstraint(error: unknown) {
     return (
       error instanceof Prisma.PrismaClientKnownRequestError &&
       (error as Prisma.PrismaClientKnownRequestError).code === 'P2002'
     );
-  }
-
-  private getMetaConfig(name: string) {
-    const value = this.config.get<string>(name)?.trim();
-
-    if (!value) {
-      throw new BadRequestException(`${name} is required before submitting templates to Meta`);
-    }
-
-    return value;
   }
 
   private formatMetaError(payload: MetaTemplateResponse, fallback: string) {

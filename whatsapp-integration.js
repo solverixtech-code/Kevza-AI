@@ -134,8 +134,8 @@ function renderMetaTemplates(templates) {
 async function fetchTemplates() {
   if (templatesBody) templatesBody.innerHTML = '<tr><td colspan="5">Fetching templates from Meta...</td></tr>';
   try {
-    const templates = await apiRequest("/whatsapp/templates/meta");
-    renderMetaTemplates(Array.isArray(templates) ? templates : templates.data || []);
+    const payload = await apiRequest("/whatsapp/templates/meta");
+    renderMetaTemplates(Array.isArray(payload) ? payload : payload.templates || payload.data || []);
     showToast("Meta templates loaded.");
   } catch (error) {
     if (templatesBody) templatesBody.innerHTML = `<tr><td colspan="5">${escapeHtml(error.message)}</td></tr>`;
