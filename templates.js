@@ -124,7 +124,7 @@ function showToast(message, type = "success") {
 
   const icon = toast.querySelector("span");
   const text = toast.querySelector("strong");
-  if (icon) icon.textContent = type === "error" ? "!" : "✓";
+  if (icon) icon.textContent = type === "error" ? "!" : type === "info" ? "i" : "✓";
   if (text) text.textContent = message;
 
   toast.className = `template-toast is-visible ${type}`;
@@ -700,7 +700,12 @@ async function saveTemplate(status, button) {
 
     closeCreateModal();
     await loadTemplates();
-    showToast(status === "PENDING" ? "Template submitted to Meta for approval." : "Template draft saved.");
+    showToast(
+      status === "PENDING"
+        ? "Template submitted to Meta. Wait about 2 minutes, then click Sync to refresh approval status."
+        : "Template draft saved.",
+      status === "PENDING" ? "info" : "success",
+    );
   } catch (error) {
     if (status === "PENDING" && createdTemplate?.id) {
       await apiRequest(`/templates/${createdTemplate.id}`, { method: "DELETE" }).catch(() => {});
@@ -728,7 +733,7 @@ async function submitExistingTemplate(templateId, button) {
     renderTable(state.templates);
     updateMetrics(state.templates);
     renderPreview(updatedTemplate);
-    showToast("Template submitted to Meta for approval.");
+    showToast("Template submitted to Meta. Wait about 2 minutes, then click Sync to refresh approval status.", "info");
   } catch (error) {
     showToast(error.message, "error");
     button.disabled = false;
