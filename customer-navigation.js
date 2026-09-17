@@ -95,6 +95,7 @@
       ['campaign-operations-dashboard.html', '&#9873;', 'Campaigns'],
       ['ai-operations-dashboard.html', '&#9881;', 'Chatbots &amp; AI'],
       ['automation-operations-dashboard.html', '&#8984;', 'Automation'],
+      ['whatsapp-integration.html', '&#9742;', 'WhatsApp Integration'],
       ['channel-operations-dashboard.html', '&#8644;', 'Channels'],
       ['subscription-dashboard.html', '&#9635;', 'Billing / Plan'],
       ['security.html', '&#9881;', 'Settings / Profile']
