@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -14,9 +14,9 @@
 <body>
 <main class="admin-app templates-shell">
 
-  <!-- ══════════════════════════════════════════
+  <!-- ------------------------------------------
        SIDEBAR
-  ══════════════════════════════════════════ -->
+  ------------------------------------------ -->
   <aside class="admin-sidebar">
     <a class="admin-brand" href="index.html" aria-label="KevzaAI home">
       <span class="brand-mark">K</span>
@@ -33,15 +33,20 @@
     </div>
   </aside>
 
-  <!-- ══════════════════════════════════════════
+  <!-- ------------------------------------------
        MAIN CONTENT
-  ══════════════════════════════════════════ -->
+  ------------------------------------------ -->
   <section class="templates-main">
 
     <!-- Top bar -->
     <header class="templates-topbar">
-      <div class="breadcrumbs">
-        <span>Admin</span>
+      <button class="menu-toggle" aria-label="Open navigation" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="breadcrumbs"><span>Admin</span>
         <b>/</b>
         <span>Dashboard</span>
         <b>/</b>
@@ -479,9 +484,9 @@
   </section><!-- /.templates-main -->
 </main>
 
-<!-- ══════════════════════════════════════════
+<!-- ------------------------------------------
      CREATE TEMPLATE MODAL
-══════════════════════════════════════════ -->
+------------------------------------------ -->
 <div class="ct-modal" id="createTemplateModal" aria-hidden="true">
   <div class="ct-backdrop" data-close-template></div>
   <section class="ct-dialog" role="dialog" aria-modal="true" aria-labelledby="createTemplateTitle">
@@ -573,9 +578,9 @@
   </section>
 </div>
 
-<!-- ══════════════════════════════════════════
+<!-- ------------------------------------------
      IMPORT TEMPLATES MODAL
-══════════════════════════════════════════ -->
+------------------------------------------ -->
 <div class="it-modal" id="importTemplatesModal" aria-hidden="true">
   <div class="it-backdrop" data-close-import></div>
   <section class="it-dialog" role="dialog" aria-modal="true" aria-labelledby="importTemplatesTitle">
@@ -677,9 +682,9 @@
   <button type="button" aria-label="Dismiss">&times;</button>
 </div>
 
-<!-- ══════════════════════════════════════════
+<!-- ------------------------------------------
      VALIDATE IMPORT MODAL
-══════════════════════════════════════════ -->
+------------------------------------------ -->
 <div class="vi-modal" id="validateImportModal" aria-hidden="true">
   <div class="vi-backdrop" data-close-validate></div>
   <section class="vi-dialog" role="dialog" aria-modal="true" aria-labelledby="validateImportTitle">
@@ -731,9 +736,9 @@
   </section>
 </div>
 
-<!-- ══════════════════════════════════════════
+<!-- ------------------------------------------
      SCRIPTS
-══════════════════════════════════════════ -->
+------------------------------------------ -->
 <script>
 /* Create Template modal */
 (function () {

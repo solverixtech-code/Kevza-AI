@@ -4,12 +4,37 @@
 
 /* ── Shell & layout ── */
 .templates-shell {
+  display: grid;
   grid-template-columns: var(--admin-sidebar-width, 268px) minmax(0, 1fr);
+  min-height: 100vh;
   background: #f4f7fb;
+}
+
+/* Override admin.css's mobile collapse — keep sidebar visible until our breakpoint */
+@media (min-width: 901px) {
+  .templates-shell {
+    grid-template-columns: var(--admin-sidebar-width, 268px) minmax(0, 1fr) !important;
+  }
+  .templates-shell .admin-sidebar {
+    display: flex !important;
+  }
+}
+
+/* Ensure the sidebar is always visible and sticky on the templates page */
+.templates-shell .admin-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  flex-shrink: 0;
 }
 
 .templates-main {
   min-width: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background: #f4f7fb;
@@ -20,8 +45,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  display: grid;
-  grid-template-columns: auto minmax(200px, 1fr) auto auto auto auto;
+  display: flex;
   align-items: center;
   gap: 12px;
   height: 56px;
@@ -31,7 +55,29 @@
   backdrop-filter: blur(12px);
 }
 
-.templates-topbar .menu-toggle { display: none; }
+.templates-topbar .menu-toggle {
+  display: none;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e7edf5;
+  border-radius: 9px;
+  background: #fff;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0;
+}
+
+.templates-topbar .menu-toggle span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: #496182;
+  border-radius: 2px;
+}
 
 .templates-topbar .breadcrumbs {
   font-size: 12px;
@@ -40,24 +86,24 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .templates-topbar .breadcrumbs strong { color: #15284b; }
 .templates-topbar .breadcrumbs b { color: #b0bcd0; font-weight: 500; }
 
 .templates-topbar .admin-search {
+  flex: 1;
+  max-width: 480px;
   height: 38px;
   border-radius: 10px;
   border: 1px solid #e7edf5;
   background: #fff;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
   gap: 8px;
   padding: 0 12px;
-  width: 100%;
-  max-width: 480px;
-  justify-self: start;
 }
 
 .templates-topbar .admin-search input {
@@ -114,6 +160,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .templates-topbar .top-user strong {
@@ -1094,15 +1142,27 @@ body.vi-modal-open{overflow:hidden}.vi-modal{position:fixed;inset:0;z-index:1003
   .template-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (max-width: 760px) {
+/* Show hamburger and hide sidebar on mobile */
+@media (max-width: 900px) {
+  .templates-shell {
+    grid-template-columns: 1fr;
+  }
+  .templates-shell .admin-sidebar {
+    display: none;
+  }
+  .templates-topbar .menu-toggle {
+    display: flex;
+  }
   .templates-page { padding: 14px 14px 20px; }
   .template-metrics { grid-template-columns: 1fr 1fr; }
   .lib-toolbar { grid-template-columns: 1fr; }
   .template-insights { grid-template-columns: 1fr; }
   .quick-actions-grid { grid-template-columns: repeat(2, 1fr); }
-  .templates-topbar { grid-template-columns: 1fr auto auto; }
-  .templates-topbar .breadcrumbs { display: none; }
   .template-side { flex-direction: column; }
+}
+
+@media (max-width: 760px) {
+  .template-metrics { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 520px) {
@@ -1110,4 +1170,249 @@ body.vi-modal-open{overflow:hidden}.vi-modal{position:fixed;inset:0;z-index:1003
   .template-whatsapp-hero h1 { font-size: 26px; }
   .template-actions-row { flex-direction: column; width: 100%; }
   .btn-import-templates, .btn-create-template { width: 100%; justify-content: center; }
+}
+
+/* ============================================================
+   Reference alignment overrides for updated template page
+   ============================================================ */
+.templates-shell {
+  grid-template-columns: minmax(0, 1fr);
+  background: #f4f7fb;
+}
+
+.templates-shell .admin-sidebar {
+  display: none;
+}
+
+.templates-topbar {
+  grid-template-columns: 34px minmax(260px, 520px) minmax(16px, 1fr) auto auto auto;
+  height: 46px;
+  padding: 0 20px;
+  gap: 12px;
+}
+
+.templates-topbar .menu-toggle {
+  display: inline-grid;
+  place-items: center;
+  gap: 3px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #dfe8f5;
+  border-radius: 7px;
+  background: #fff;
+  color: #28466e;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(20, 50, 100, 0.08);
+}
+
+.templates-topbar .menu-toggle span {
+  display: block;
+  width: 12px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.templates-topbar .breadcrumbs {
+  position: absolute;
+  left: 24px;
+  top: 52px;
+  font-size: 12px;
+  gap: 8px;
+}
+
+.templates-topbar .admin-search {
+  height: 34px;
+  max-width: 520px;
+  border-radius: 10px;
+}
+
+.templates-topbar .top-icon,
+.templates-topbar .top-user-avatar {
+  width: 34px;
+  height: 34px;
+}
+
+.templates-topbar .top-user strong { font-size: 12px; }
+.templates-topbar .top-user span { font-size: 10px; }
+
+.templates-page {
+  padding: 28px 20px 24px;
+}
+
+.template-whatsapp-hero {
+  grid-template-columns: minmax(440px, 1fr) 320px auto;
+  gap: 18px;
+  min-height: 210px;
+  padding: 20px 28px;
+  margin-bottom: 12px;
+  border-radius: 16px;
+}
+
+.template-whatsapp-hero::before { right: 380px; }
+
+.eyebrow {
+  height: 24px;
+  padding: 0 11px;
+  margin-bottom: 8px;
+  font-size: 10px;
+}
+
+.template-whatsapp-hero h1 {
+  margin-bottom: 7px;
+  font-size: 32px;
+}
+
+.template-whatsapp-hero p {
+  max-width: 570px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.template-hero-points {
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.template-hero-points span { font-size: 11px; }
+
+.template-hero-banner-col { width: 320px; }
+.template-hero-banner { width: 300px; max-width: 300px; }
+
+.template-actions-col {
+  gap: 8px;
+  padding-left: 0;
+}
+
+.btn-import-templates,
+.btn-create-template {
+  height: 42px;
+  font-size: 12px;
+}
+
+.btn-import-templates { padding: 0 16px; }
+.btn-create-template { padding: 0 18px; }
+
+.template-actions-col small { font-size: 10px; }
+
+.template-metrics {
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tpl-metric-card {
+  gap: 14px;
+  min-height: 104px;
+  padding: 16px 18px;
+  border-radius: 13px;
+}
+
+.tpl-metric-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.tpl-metric-body p { font-size: 11px; }
+.tpl-metric-body strong { font-size: 26px; }
+.tpl-metric-body small { font-size: 10px; }
+
+.templates-grid {
+  grid-template-columns: minmax(0, 1fr) 370px;
+  gap: 12px;
+}
+
+.template-library-card,
+.live-preview-card,
+.approval-health-card,
+.quick-actions-card {
+  border-radius: 14px;
+}
+
+.template-library-card { padding: 18px 18px 16px; }
+.lib-header { margin-bottom: 14px; }
+.lib-header-left h2 { font-size: 16px; }
+.lib-header-left p { font-size: 11px; }
+.btn-wa-filter { height: 38px; }
+
+.lib-toolbar {
+  grid-template-columns: minmax(0, 1fr) 190px 160px;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.lib-search,
+.lib-select { height: 40px; }
+
+.template-table th {
+  padding: 9px 12px;
+  font-size: 10px;
+}
+
+.template-table td {
+  padding: 11px 12px;
+  font-size: 11px;
+}
+
+.tpl-name strong { font-size: 12px; }
+.tpl-name span { font-size: 10px; max-width: 250px; }
+.badge-channel,
+.badge-status { height: 24px; font-size: 10px; }
+.btn-tpl-edit,
+.btn-tpl-delete { height: 28px; padding: 0 12px; font-size: 10px; }
+
+.template-insights {
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.insight-card {
+  gap: 12px;
+  padding: 14px;
+}
+
+.insight-card strong { font-size: 12px; }
+.insight-card p { font-size: 10.5px; line-height: 1.35; }
+
+.template-side {
+  gap: 12px;
+  top: 58px;
+}
+
+.live-preview-card,
+.approval-health-card,
+.quick-actions-card { padding: 16px; }
+.live-preview-header h3,
+.approval-health-card h3,
+.quick-actions-card h3 { font-size: 15px; }
+.live-preview-sub { margin-bottom: 12px; font-size: 11px; }
+.wa-preview-body { min-height: 126px; }
+.approval-health-card h3 { margin-bottom: 14px; }
+.approval-donut { width: 98px; height: 98px; }
+.approval-health-body { gap: 18px; }
+.quick-actions-card h3 { margin-bottom: 12px; }
+.quick-actions-grid { gap: 8px; }
+
+@media (max-width: 1280px) {
+  .template-whatsapp-hero {
+    grid-template-columns: minmax(0, 1fr) 300px;
+  }
+
+  .template-actions-col {
+    grid-column: 1 / -1;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1100px) {
+  .templates-grid { grid-template-columns: 1fr; }
+  .template-side { position: static; }
+  .template-whatsapp-hero { grid-template-columns: 1fr; }
+  .template-hero-banner-col { width: 100%; justify-content: flex-start; }
+}
+
+@media (max-width: 760px) {
+  .templates-topbar .top-user strong,
+  .templates-topbar .top-user span { font-size: 11px; }
+  .templates-page { padding: 14px 14px 20px; }
+  .template-whatsapp-hero { padding: 18px; }
 }
