@@ -29,6 +29,8 @@ export default defineConfig({
         messagingDashboard: resolve(import.meta.dirname, 'messaging-dashboard.html'),
         workspaceUsage: resolve(import.meta.dirname, 'workspace-usage.html'),
         templates: resolve(import.meta.dirname, 'templates.html'),
+        whatsappIntegration: resolve(import.meta.dirname, 'whatsapp-integration.html'),
+        billingPayments: resolve(import.meta.dirname, 'billing-payments.html'),
         subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
         subscriptionAnalytics: resolve(import.meta.dirname, 'subscription-analytics.html'),
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),

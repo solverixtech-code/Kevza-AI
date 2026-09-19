@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI - WhatsApp Integration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="whatsapp-integration.css" />
+</head>
+<body>
+<main class="admin-app wi-app">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user"><div class="mini-avatar">SA</div><div><strong>Sahil Avinash Salve</strong><span>Owner</span></div><b>&#8964;</b></div>
+  </aside>
+
+  <section class="wi-main">
+    <header class="wi-topbar">
+      <nav class="wi-breadcrumb" aria-label="Breadcrumb"><span>Admin</span><b>/</b><span>Dashboard</span><b>/</b><strong>WhatsApp Integration</strong></nav>
+      <label class="wi-search" aria-label="Search setup templates or contacts"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search setup, templates or contacts..." /></label>
+      <button class="wi-icon-btn" aria-label="Notifications" type="button">&#128276;</button>
+      <button class="wi-icon-btn" aria-label="Help" type="button">?</button>
+      <div class="wi-top-user"><span>SA</span><div><strong>Sahil Avinash Salve</strong><small>Owner</small></div><b>&#8964;</b></div>
+    </header>
+
+    <div class="wi-page">
+      <section class="wi-hero" aria-label="WhatsApp Integration overview">
+        <div>
+          <span class="wi-eyebrow">Meta Cloud API Setup</span>
+          <h1>WhatsApp Integration</h1>
+          <p>Connect each customer's own WhatsApp Business number before templates, campaigns, inbox, and automation can go live.</p>
+          <div class="wi-hero-points"><span>Dedicated business number</span><span>Manual foundation now</span><span>Embedded Signup later</span></div>
+        </div>
+        <div class="wi-whatsapp-art"><img src="screen reference images/WhatsApp-Logo.wine.png" alt="WhatsApp logo" /></div>
+      </section>
+
+      <section class="wi-stats" aria-label="Connection summary">
+        <article class="wi-status-card">
+          <div class="wi-stat-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.3-4.6A8.5 8.5 0 1 1 20.5 11.8Z"/><path d="M9 8.8c.2-.4.4-.5.7-.5h.5c.2 0 .4.1.5.4l.6 1.5c.1.3 0 .5-.2.7l-.3.3c.5.9 1.2 1.7 2.1 2.1l.5-.5c.2-.2.4-.2.7-.1l1.4.7c.3.1.4.3.4.6 0 .6-.5 1.3-1.1 1.5-.9.2-2.6-.2-4.2-1.7-1.5-1.5-2.1-3.2-1.8-4.2Z"/></svg></div>
+          <div><small>Connection Status</small><strong>Meta WhatsApp connected</strong><p>+91 99207 82006 is ready for templates and campaign setup.</p></div>
+          <em>Connected</em>
+        </article>
+        <article><small>WABA ID</small><strong>1367501728641172</strong><p>Business account</p></article>
+        <article><small>Phone Number ID</small><strong>1052330747972475</strong><p>Cloud API sender</p></article>
+        <article><small>Quality</small><strong>GREEN</strong><p>Meta health signal</p></article>
+      </section>
+
+      <div class="wi-setup-grid">
+        <section class="wi-card wi-connect-card">
+          <div class="wi-card-head"><div><h2>Connect Meta WhatsApp Account</h2><p>Use the customer's WABA and phone number credentials. Do not use KevzaAI's internal number for their campaigns.</p></div><button type="button">Test Connection</button></div>
+          <form class="wi-form">
+            <label><span>WABA ID</span><input type="text" value="1367501728641172" /></label>
+            <label><span>Phone Number ID</span><input type="text" value="1052330747972475" /></label>
+            <label><span>Display Phone (optional)</span><input type="text" value="+91 99207 82006" /></label>
+            <label><span>System User Access Token</span><input type="text" value="Saved token EAAQum...ZDZD" /><small>Token is never shown back in full after saving.</small></label>
+            <div class="wi-form-actions"><button class="wi-primary" type="button">Save Connection</button><button class="wi-secondary" type="button">Fetch Meta Templates</button></div>
+          </form>
+        </section>
+
+        <aside class="wi-card wi-flow-card">
+          <div class="wi-card-head"><h2>Production Onboarding Flow</h2><span>WATI-style</span></div>
+          <ol class="wi-flow-list">
+            <li><i>1</i><div><strong>Use a dedicated WhatsApp Business number.</strong><p>Best for Cloud API. Daily personal WhatsApp numbers should not be used for SaaS campaigns.</p></div></li>
+            <li><i>2</i><div><strong>Connect WABA and phone number.</strong><p>Today this page stores manual credentials. Production should use Meta Embedded Signup.</p></div></li>
+            <li><i>3</i><div><strong>Test connection.</strong><p>KevzaAI checks the WABA, sender phone ID, display phone, and quality rating from Meta.</p></div></li>
+            <li><i>4</i><div><strong>Create approved templates.</strong><p>After connection, templates must submit through that customer's connected account.</p></div></li>
+          </ol>
+          <div class="wi-note"><strong>Coexistence later</strong><p>For customers already using WhatsApp Business App, add Meta Coexistence onboarding as a separate path.</p></div>
+        </aside>
+      </div>
+
+      <section class="wi-card wi-template-card">
+        <div class="wi-card-head"><div><h2>Meta Templates</h2><p>Fetched directly from the connected customer's WABA.</p></div><button type="button">Refresh</button></div>
+        <div class="wi-table-wrap">
+          <table class="wi-table">
+            <thead><tr><th>Name</th><th>Category</th><th>Status</th><th>Language</th><th>Meta ID</th></tr></thead>
+            <tbody>
+              <tr><td>payment_reminder</td><td>UTILITY</td><td><span>APPROVED</span></td><td>en_US</td><td>1393640358971158</td></tr>
+              <tr><td>lead_follow_up</td><td>MARKETING</td><td><span>APPROVED</span></td><td>en_US</td><td>1419710873461835</td></tr>
+              <tr><td>welcome_offer</td><td>MARKETING</td><td><span>APPROVED</span></td><td>en_US</td><td>4322535284676355</td></tr>
+              <tr><td>order_update</td><td>UTILITY</td><td><span>APPROVED</span></td><td>en_US</td><td>1620115232817686</td></tr>
+              <tr><td>lead_first_outreach</td><td>MARKETING</td><td><span>APPROVED</span></td><td>en</td><td>1712193766450231</td></tr>
+              <tr><td>hello_world</td><td>UTILITY</td><td><span>APPROVED</span></td><td>en_US</td><td>2464614860644613</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+<script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

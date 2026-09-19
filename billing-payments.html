@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI - Billing & Payments Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="billing-payments.css" />
+</head>
+<body>
+<main class="admin-app bp-app">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="admin-profile.html"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+  </aside><section class="bp-main">
+    <header class="bp-topbar">
+      <nav class="bp-crumb" aria-label="Breadcrumb"><span>Admin</span><b>/</b><span>Billing & Payments</span><b>/</b><strong>Dashboard</strong></nav>
+      <label class="bp-search" aria-label="Search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <button class="bp-icon-btn has-badge" aria-label="Notifications"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><i>12</i></button>
+      <button class="bp-icon-btn" aria-label="Messages"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></button>
+      <button class="bp-icon-btn" aria-label="Help"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></button>
+      <div class="bp-user"><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b></b></div>
+    </header>
+
+    <div class="bp-page">
+      <section class="bp-title-row">
+        <div><h1>Billing & Payments Dashboard</h1><p>Track revenue, payments, invoices and refunds across all subscriptions.</p></div>
+        <div class="bp-title-tools"><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div>
+      </section>
+
+      <section class="bp-kpis" aria-label="Billing metrics">
+        <article><span class="kpi-icon green rupee">&#8377;</span><div><p>Total Revenue</p><strong>&#8377;4,23,760</strong><small>vs last month</small></div><em class="good">+ 18%</em></article>
+        <article><span class="kpi-icon blue card"></span><div><p>Successful Payments</p><strong>428</strong><small>vs last month</small></div><em class="good">+ 12%</em></article>
+        <article><span class="kpi-icon red xmark"></span><div><p>Failed Payments</p><strong>28</strong><small>vs last month</small></div><em class="bad">+ 33%</em></article>
+        <article><span class="kpi-icon indigo refund"></span><div><p>Refunds Issued</p><strong>12</strong><small>vs last month</small></div><em class="good">+ 25%</em></article>
+      </section>
+
+      <section class="bp-analytics-grid">
+        <article class="bp-card bp-revenue-card">
+          <div class="bp-card-head"><h2>Revenue Trend</h2><select><option>Last 8 Months</option></select></div>
+          <div class="line-chart"><div class="y-axis"><span>&#8377;6L</span><span>&#8377;4L</span><span>&#8377;2L</span><span>&#8377;0</span></div><div class="line-plot"><svg viewBox="0 0 420 180" preserveAspectRatio="none"><path d="M0 0H420M0 60H420M0 120H420M0 180H420" stroke="#eef3fa"/><path d="M0 132 L60 116 L120 108 L180 96 L240 84 L300 74 L360 62 L420 48 L420 180 L0 180Z" fill="url(#revFill)"/><defs><linearGradient id="revFill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2f76ff" stop-opacity=".22"/><stop offset="1" stop-color="#2f76ff" stop-opacity=".03"/></linearGradient></defs><polyline points="0,132 60,116 120,108 180,96 240,84 300,74 360,62 420,48" fill="none" stroke="#1364ff" stroke-width="3" stroke-linecap="round"/><g fill="#fff" stroke="#1364ff" stroke-width="2"><circle cx="0" cy="132" r="4"/><circle cx="60" cy="116" r="4"/><circle cx="120" cy="108" r="4"/><circle cx="180" cy="96" r="4"/><circle cx="240" cy="84" r="4"/><circle cx="300" cy="74" r="4"/><circle cx="360" cy="62" r="4"/><circle cx="420" cy="48" r="4"/></g></svg><div class="x-axis"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span></div></div></div>
+        </article>
+
+        <article class="bp-card bp-overview-card">
+          <div class="bp-card-head"><h2>Payments Overview</h2><select><option>Last 8 Months</option></select></div>
+          <div class="chart-legend"><span class="blue">Successful</span><span class="pink">Failed</span><span class="green">Refunds</span></div>
+          <div class="bar-chart">
+            <div><i style="height:48%"></i><b style="height:18%"></b><em style="height:8%"></em><span>Jan</span></div><div><i style="height:56%"></i><b style="height:15%"></b><em style="height:7%"></em><span>Feb</span></div><div><i style="height:58%"></i><b style="height:22%"></b><em style="height:9%"></em><span>Mar</span></div><div><i style="height:66%"></i><b style="height:20%"></b><em style="height:10%"></em><span>Apr</span></div><div><i style="height:72%"></i><b style="height:24%"></b><em style="height:12%"></em><span>May</span></div><div><i style="height:74%"></i><b style="height:22%"></b><em style="height:10%"></em><span>Jun</span></div><div><i style="height:72%"></i><b style="height:25%"></b><em style="height:11%"></em><span>Jul</span></div><div><i style="height:82%"></i><b style="height:24%"></b><em style="height:12%"></em><span>Aug</span></div>
+          </div>
+        </article>
+
+        <article class="bp-card bp-method-card">
+          <h2>Payments by Method</h2>
+          <div class="method-body"><div class="donut"><div><strong>428</strong><span>Payments</span></div></div><ul><li><i style="background:#3b7cff"></i>Credit/Debit Card <b>56.1%</b></li><li><i style="background:#914dff"></i>UPI <b>22.4%</b></li><li><i style="background:#12bd8c"></i>Net Banking <b>12.1%</b></li><li><i style="background:#f9b32f"></i>Wallet <b>5.6%</b></li><li><i style="background:#94a3b8"></i>Other <b>3.8%</b></li></ul></div>
+        </article>
+      </section>
+
+      <section class="bp-bottom-grid">
+        <article class="bp-card bp-table-card">
+          <div class="bp-card-head"><h2>Recent Payments</h2><a href="#">View All</a></div>
+          <table class="payments-table">
+            <thead><tr><th>#</th><th>Date & Time</th><th>Customer</th><th>Invoice</th><th>Amount</th><th>Payment Method</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>31 Aug 2026<br><small>10:24 AM</small></td><td><span class="avatar blue">RK</span><strong>Rajesh Kumar</strong><small>RK Enterprises</small></td><td>INV-2026-0842</td><td>&#8377;3,999</td><td>UPI</td><td><em class="success">Success</em></td><td><button>View</button><button>...</button></td></tr>
+              <tr><td>2</td><td>31 Aug 2026<br><small>09:18 AM</small></td><td><span class="avatar purple">SS</span><strong>Sneha Sharma</strong><small>Sharma Marketing</small></td><td>INV-2026-0841</td><td>&#8377;1,999</td><td>Card</td><td><em class="success">Success</em></td><td><button>View</button><button>...</button></td></tr>
+              <tr><td>3</td><td>30 Aug 2026<br><small>07:45 PM</small></td><td><span class="avatar green">TG</span><strong>The Green Mart</strong><small>Retail Pvt. Ltd.</small></td><td>INV-2026-0840</td><td>&#8377;7,999</td><td>Net Banking</td><td><em class="failed">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
+              <tr><td>4</td><td>30 Aug 2026<br><small>06:12 PM</small></td><td><span class="avatar pink">CA</span><strong>City Appliances</strong><small>Electronics Store</small></td><td>INV-2026-0839</td><td>&#8377;3,999</td><td>Card</td><td><em class="success">Success</em></td><td><button>View</button><button>...</button></td></tr>
+              <tr><td>5</td><td>29 Aug 2026<br><small>04:33 PM</small></td><td><span class="avatar mint">HB</span><strong>HealthCare Plus</strong><small>Wellness Clinic</small></td><td>INV-2026-0838</td><td>&#8377;7,999</td><td>UPI</td><td><em class="success">Success</em></td><td><button>View</button><button>...</button></td></tr>
+            </tbody>
+          </table>
+          <footer class="table-foot"><span>Showing 1 to 5 of 428 payments</span><nav><button>‹</button><button class="active">1</button><button>2</button><button>3</button><button>...</button><button>86</button><button>›</button></nav></footer>
+        </article>
+
+        <aside class="bp-side-stack">
+          <section class="bp-card side-card"><div class="side-head"><h2>Outstanding Payments</h2><a href="#">View All</a></div><ul class="outstanding"><li><span class="warn"></span><p>Past Due Invoices</p><b>18</b><strong>&#8377;42,350</strong></li><li><span class="error"></span><p>Payment Failed</p><b>28</b><strong>&#8377;1,24,600</strong></li><li><span class="clock"></span><p>In Grace Period</p><b>12</b><strong>&#8377;38,900</strong></li></ul></section>
+          <section class="bp-card side-card"><div class="side-head"><h2>Upcoming Renewals</h2><a href="#">View All</a></div><ul class="renewals"><li><span>1 Sep 2026</span><i class="avatar blue">RK</i><p>RK Enterprises</p><b>&#8377;3,999</b></li><li><span>2 Sep 2026</span><i class="avatar purple">SS</i><p>Sharma Marketing</p><b>&#8377;1,999</b></li><li><span>2 Sep 2026</span><i class="avatar green">TG</i><p>The Green Mart</p><b>&#8377;7,999</b></li><li><span>3 Sep 2026</span><i class="avatar pink">CA</i><p>City Appliances</p><b>&#8377;3,999</b></li><li><span>5 Sep 2026</span><i class="avatar mint">HB</i><p>HealthCare Plus</p><b>&#8377;7,999</b></li></ul></section>
+          <section class="bp-card side-card revenue-summary"><div class="side-head"><h2>Revenue Summary</h2><select><option>This Month</option></select></div><div><article><span>Total Collected</span><strong>&#8377;4,23,760</strong><em class="good">+ 18%</em></article><article><span>Pending Collection</span><strong>&#8377;81,250</strong><em class="bad">+ 12%</em></article><article><span>Refunded</span><strong>&#8377;38,900</strong><em class="good">+ 25%</em></article></div></section>
+        </aside>
+      </section>
+
+      <section class="bp-card quick-actions"><h2>Quick Actions</h2><div><button><i class="qa invoice"></i>Create Invoice</button><button><i class="qa record"></i>Record Payment</button><button><i class="qa refund"></i>Issue Refund</button><button><i class="qa failed"></i>View Failed Payments</button><button><i class="qa download"></i>Download Reports</button></div></section>
+    </div>
+  </section>
+</main>
+<script type="module" src="admin-navigation.js"></script>
+</body>
+</html>
