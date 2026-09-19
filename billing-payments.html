@@ -29,7 +29,7 @@
     <div class="bp-page">
       <section class="bp-title-row">
         <div><h1>Billing & Payments Dashboard</h1><p>Track revenue, payments, invoices and refunds across all subscriptions.</p></div>
-        <div class="bp-title-tools"><button type="button" class="bp-open-invoices" data-open-invoices>All Invoices</button><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div>
+        <div class="bp-title-tools"><button type="button" class="bp-open-invoices" data-open-invoices>All Invoices</button><button type="button" class="bp-open-details" data-open-invoice-details>Invoice Details</button><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div>
       </section>
 
       <section class="bp-kpis" aria-label="Billing metrics">
@@ -65,11 +65,11 @@
           <table class="payments-table">
             <thead><tr><th>#</th><th>Date & Time</th><th>Customer</th><th>Invoice</th><th>Amount</th><th>Payment Method</th><th>Status</th><th>Actions</th></tr></thead>
             <tbody>
-              <tr><td>1</td><td>31 Aug 2026<br><small>10:24 AM</small></td><td><span class="avatar blue">RK</span><strong>Rajesh Kumar</strong><small>RK Enterprises</small></td><td>INV-2026-0842</td><td>&#8377;3,999</td><td>UPI</td><td><em class="success">Success</em></td><td><button>View</button><button>...</button></td></tr>
-              <tr><td>2</td><td>31 Aug 2026<br><small>09:18 AM</small></td><td><span class="avatar purple">SS</span><strong>Sneha Sharma</strong><small>Sharma Marketing</small></td><td>INV-2026-0841</td><td>&#8377;1,999</td><td>Card</td><td><em class="success">Success</em></td><td><button>View</button><button>...</button></td></tr>
+              <tr><td>1</td><td>31 Aug 2026<br><small>10:24 AM</small></td><td><span class="avatar blue">RK</span><strong>Rajesh Kumar</strong><small>RK Enterprises</small></td><td>INV-2026-0842</td><td>&#8377;3,999</td><td>UPI</td><td><em class="success">Success</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+              <tr><td>2</td><td>31 Aug 2026<br><small>09:18 AM</small></td><td><span class="avatar purple">SS</span><strong>Sneha Sharma</strong><small>Sharma Marketing</small></td><td>INV-2026-0841</td><td>&#8377;1,999</td><td>Card</td><td><em class="success">Success</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
               <tr><td>3</td><td>30 Aug 2026<br><small>07:45 PM</small></td><td><span class="avatar green">TG</span><strong>The Green Mart</strong><small>Retail Pvt. Ltd.</small></td><td>INV-2026-0840</td><td>&#8377;7,999</td><td>Net Banking</td><td><em class="failed">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
-              <tr><td>4</td><td>30 Aug 2026<br><small>06:12 PM</small></td><td><span class="avatar pink">CA</span><strong>City Appliances</strong><small>Electronics Store</small></td><td>INV-2026-0839</td><td>&#8377;3,999</td><td>Card</td><td><em class="success">Success</em></td><td><button>View</button><button>...</button></td></tr>
-              <tr><td>5</td><td>29 Aug 2026<br><small>04:33 PM</small></td><td><span class="avatar mint">HB</span><strong>HealthCare Plus</strong><small>Wellness Clinic</small></td><td>INV-2026-0838</td><td>&#8377;7,999</td><td>UPI</td><td><em class="success">Success</em></td><td><button>View</button><button>...</button></td></tr>
+              <tr><td>4</td><td>30 Aug 2026<br><small>06:12 PM</small></td><td><span class="avatar pink">CA</span><strong>City Appliances</strong><small>Electronics Store</small></td><td>INV-2026-0839</td><td>&#8377;3,999</td><td>Card</td><td><em class="success">Success</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+              <tr><td>5</td><td>29 Aug 2026<br><small>04:33 PM</small></td><td><span class="avatar mint">HB</span><strong>HealthCare Plus</strong><small>Wellness Clinic</small></td><td>INV-2026-0838</td><td>&#8377;7,999</td><td>UPI</td><td><em class="success">Success</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
             </tbody>
           </table>
           <footer class="table-foot"><span>Showing 1 to 5 of 428 payments</span><nav><button>&lsaquo;</button><button class="active">1</button><button>2</button><button>3</button><button>...</button><button>86</button><button>&rsaquo;</button></nav></footer>
@@ -105,16 +105,16 @@
           </section>
           <section class="invoice-filters" aria-label="Invoice filters"><label><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search by invoice number, customer, email..." /></label><select><option>All Statuses</option><option>Paid</option><option>Pending</option><option>Overdue</option></select><select><option>All Plans</option><option>Professional</option><option>Business</option><option>Starter</option></select><button type="button">01 Aug 2026 - 31 Aug 2026</button><button type="button">More Filters</button><button type="button" class="muted">Reset</button></section>
           <div class="invoice-table-wrap"><table class="invoice-table"><thead><tr><th><input type="checkbox" /></th><th>#</th><th>Invoice No.</th><th>Customer</th><th>Plan</th><th>Amount</th><th>Issue Date</th><th>Due Date</th><th>Status</th><th>Actions</th></tr></thead><tbody>
-            <tr><td><input type="checkbox" /></td><td>1</td><td><a>INV-2026-0842</a></td><td><span class="avatar blue">RK</span><strong>Rajesh Kumar</strong><small>RK Enterprises</small></td><td>Professional</td><td>&#8377;3,999</td><td>31 Aug 2026</td><td>07 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
-            <tr><td><input type="checkbox" /></td><td>2</td><td><a>INV-2026-0841</a></td><td><span class="avatar purple">SS</span><strong>Sneha Sharma</strong><small>Sharma Marketing</small></td><td>Starter</td><td>&#8377;1,999</td><td>31 Aug 2026</td><td>07 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
-            <tr><td><input type="checkbox" /></td><td>3</td><td><a>INV-2026-0840</a></td><td><span class="avatar green">TG</span><strong>The Green Mart</strong><small>Retail Pvt. Ltd.</small></td><td>Business</td><td>&#8377;7,999</td><td>30 Aug 2026</td><td>06 Sep 2026</td><td><em class="pending-status">Pending</em></td><td><button>View</button><button>...</button></td></tr>
-            <tr><td><input type="checkbox" /></td><td>4</td><td><a>INV-2026-0839</a></td><td><span class="avatar pink">CA</span><strong>City Appliances</strong><small>Electronics Store</small></td><td>Professional</td><td>&#8377;3,999</td><td>30 Aug 2026</td><td>06 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
-            <tr><td><input type="checkbox" /></td><td>5</td><td><a>INV-2026-0838</a></td><td><span class="avatar mint">HB</span><strong>HealthCare Plus</strong><small>Wellness Clinic</small></td><td>Business</td><td>&#8377;7,999</td><td>29 Aug 2026</td><td>05 Sep 2026</td><td><em class="overdue">Overdue</em></td><td><button>View</button><button>...</button></td></tr>
-            <tr><td><input type="checkbox" /></td><td>6</td><td><a>INV-2026-0837</a></td><td><span class="avatar blue">DI</span><strong>Digital Lane</strong><small>IT Solutions</small></td><td>Starter</td><td>&#8377;1,499</td><td>29 Aug 2026</td><td>05 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
-            <tr><td><input type="checkbox" /></td><td>7</td><td><a>INV-2026-0836</a></td><td><span class="avatar green">FF</span><strong>Fresh Foods</strong><small>Food &amp; Beverages</small></td><td>Business</td><td>&#8377;9,999</td><td>28 Aug 2026</td><td>04 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
-            <tr><td><input type="checkbox" /></td><td>8</td><td><a>INV-2026-0835</a></td><td><span class="avatar purple">MT</span><strong>Mahotra Travels</strong><small>Travel &amp; Tours</small></td><td>Professional</td><td>&#8377;3,999</td><td>28 Aug 2026</td><td>04 Sep 2026</td><td><em class="pending-status">Pending</em></td><td><button>View</button><button>...</button></td></tr>
-            <tr><td><input type="checkbox" /></td><td>9</td><td><a>INV-2026-0834</a></td><td><span class="avatar mint">AG</span><strong>Agro Solutions</strong><small>Agriculture</small></td><td>Business</td><td>&#8377;7,999</td><td>27 Aug 2026</td><td>03 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
-            <tr><td><input type="checkbox" /></td><td>10</td><td><a>INV-2026-0833</a></td><td><span class="avatar pink">SE</span><strong>Style Basket</strong><small>Ecommerce Store</small></td><td>Starter</td><td>&#8377;1,999</td><td>27 Aug 2026</td><td>03 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>1</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0842</button></td><td><span class="avatar blue">RK</span><strong>Rajesh Kumar</strong><small>RK Enterprises</small></td><td>Professional</td><td>&#8377;3,999</td><td>31 Aug 2026</td><td>07 Sep 2026</td><td><em class="paid">Paid</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>2</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0841</button></td><td><span class="avatar purple">SS</span><strong>Sneha Sharma</strong><small>Sharma Marketing</small></td><td>Starter</td><td>&#8377;1,999</td><td>31 Aug 2026</td><td>07 Sep 2026</td><td><em class="paid">Paid</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>3</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0840</button></td><td><span class="avatar green">TG</span><strong>The Green Mart</strong><small>Retail Pvt. Ltd.</small></td><td>Business</td><td>&#8377;7,999</td><td>30 Aug 2026</td><td>06 Sep 2026</td><td><em class="pending-status">Pending</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>4</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0839</button></td><td><span class="avatar pink">CA</span><strong>City Appliances</strong><small>Electronics Store</small></td><td>Professional</td><td>&#8377;3,999</td><td>30 Aug 2026</td><td>06 Sep 2026</td><td><em class="paid">Paid</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>5</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0838</button></td><td><span class="avatar mint">HB</span><strong>HealthCare Plus</strong><small>Wellness Clinic</small></td><td>Business</td><td>&#8377;7,999</td><td>29 Aug 2026</td><td>05 Sep 2026</td><td><em class="overdue">Overdue</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>6</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0837</button></td><td><span class="avatar blue">DI</span><strong>Digital Lane</strong><small>IT Solutions</small></td><td>Starter</td><td>&#8377;1,499</td><td>29 Aug 2026</td><td>05 Sep 2026</td><td><em class="paid">Paid</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>7</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0836</button></td><td><span class="avatar green">FF</span><strong>Fresh Foods</strong><small>Food &amp; Beverages</small></td><td>Business</td><td>&#8377;9,999</td><td>28 Aug 2026</td><td>04 Sep 2026</td><td><em class="paid">Paid</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>8</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0835</button></td><td><span class="avatar purple">MT</span><strong>Mahotra Travels</strong><small>Travel &amp; Tours</small></td><td>Professional</td><td>&#8377;3,999</td><td>28 Aug 2026</td><td>04 Sep 2026</td><td><em class="pending-status">Pending</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>9</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0834</button></td><td><span class="avatar mint">AG</span><strong>Agro Solutions</strong><small>Agriculture</small></td><td>Business</td><td>&#8377;7,999</td><td>27 Aug 2026</td><td>03 Sep 2026</td><td><em class="paid">Paid</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>10</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0833</button></td><td><span class="avatar pink">SE</span><strong>Style Basket</strong><small>Ecommerce Store</small></td><td>Starter</td><td>&#8377;1,999</td><td>27 Aug 2026</td><td>03 Sep 2026</td><td><em class="paid">Paid</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
           </tbody></table></div>
           <footer class="invoice-foot"><select><option>Bulk Actions</option></select><button>Apply</button><span>Showing 1 to 10 of 1,248 invoices</span><nav><button>&lsaquo;</button><button class="active">1</button><button>2</button><button>3</button><button>...</button><button>125</button><button>&rsaquo;</button></nav></footer>
         </div>
@@ -123,22 +123,93 @@
     </section>
   </div>
 </dialog>
+<dialog class="invoice-details-modal" id="invoiceDetailsModal" aria-labelledby="invoiceDetailsTitle">
+  <div class="invoice-details-shell">
+    <header class="invoice-modal-topbar">
+      <nav class="invoice-crumb" aria-label="Invoice details breadcrumb"><span>Admin</span><b>/</b><span>Billing &amp; Payments</span><b>/</b><span>Billing and Payment Dashboard</span><b>/</b><span>Invoices</span><b>/</b><strong>INV-2026-0842</strong></nav>
+      <label class="invoice-search" aria-label="Search invoice details"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <button class="invoice-close" type="button" data-close-invoice-details aria-label="Close invoice details">&times;</button>
+    </header>
+    <section class="invoice-details-body">
+      <div class="invoice-details-heading"><div><h2 id="invoiceDetailsTitle">Invoice Details</h2><p>View invoice information, payment status and customer details.</p></div></div>
+      <button type="button" class="back-invoices" data-back-invoices>&lsaquo; Back to Invoices</button>
+      <section class="details-grid">
+        <aside class="detail-left-stack">
+          <section class="detail-card invoice-summary-card"><div class="detail-card-head"><h3>Invoice # INV-2026-0842</h3><em>Paid</em></div><p>Issued on 31 Aug 2026</p><dl><div><dt>Customer</dt><dd><span class="avatar blue">RK</span><strong>Rajesh Kumar</strong><small>RK Enterprises</small></dd></div><div><dt>Plan</dt><dd>Professional <span class="mini-pill">Monthly</span></dd></div><div><dt>Invoice Date</dt><dd>31 Aug 2026</dd></div><div><dt>Due Date</dt><dd>07 Sep 2026</dd></div><div><dt>Payment Date</dt><dd>02 Sep 2026, 11:24 AM</dd></div><div><dt>Payment Method</dt><dd>UPI (razorpay@upi)</dd></div><div><dt>Transaction ID</dt><dd>pay_1hBK9L2M3N4O5P</dd></div><div><dt>Status</dt><dd><span class="status-dot"></span>Paid</dd></div><div><dt>Amount</dt><dd>&#8377;3,999</dd></div><div><dt>GST (18%)</dt><dd>&#8377;719.82</dd></div></dl><strong class="total-due">Total Amount <b>&#8377;4,718.82</b></strong></section>
+          <section class="detail-card customer-detail-card"><h3>Customer Details</h3><div class="detail-customer"><span class="avatar blue">RK</span><div><strong>Rajesh Kumar</strong><small>RK Enterprises</small><p>rajesh@rkenterprises.com<br>+91 98765 43210<br>401, Business Park, Andheri East, Mumbai, Maharashtra 400072, India</p></div></div><button>View Customer Profile</button></section>
+          <section class="detail-card subscription-detail-card"><h3>Subscription Details</h3><dl><div><dt>Subscription ID</dt><dd>SUB-2026-1001</dd></div><div><dt>Plan</dt><dd>Professional</dd></div><div><dt>Billing Cycle</dt><dd>Monthly</dd></div><div><dt>Next Billing Date</dt><dd>02 Oct 2026</dd></div></dl><button>View Subscription</button></section>
+        </aside>
+        <section class="detail-preview-card">
+          <div class="detail-card-head"><h3>Invoice Preview</h3><div><button>Download PDF</button><button>Send Invoice</button></div></div>
+          <article class="invoice-paper">
+            <header><div class="paper-brand"><span>K</span><div><strong>Kevza<span>AI</span></strong><small>AI Sales Automation For Every Business</small></div></div><address>Solvekr Technologies Pvt. Ltd.<br>Office 402, 4th Floor, Lakeview HSR Corporate Park,<br>Sakinaka, Andheri East, Mumbai - 400072, India<br>GSTIN: 27AAKCS1932K1Z5<br>info@kevzaai.com | www.kevzaai.com</address></header>
+            <h3>INVOICE</h3>
+            <div class="paper-meta"><div><b>Bill To:</b><strong>Rajesh Kumar</strong><span>RK Enterprises</span><p>401, Business Park, Andheri East, Mumbai, Maharashtra 400072, India<br>rajesh@rkenterprises.com<br>+91 98765 43210</p></div><dl><div><dt>Invoice No:</dt><dd>INV-2026-0842</dd></div><div><dt>Invoice Date:</dt><dd>31 Aug 2026</dd></div><div><dt>Due Date:</dt><dd>07 Sep 2026</dd></div><div><dt>Payment Date:</dt><dd>02 Sep 2026</dd></div><div><dt>Payment Method:</dt><dd>UPI</dd></div><div><dt>Transaction ID:</dt><dd>pay_1hBK9L2M3N4O5P</dd></div></dl></div>
+            <table><thead><tr><th>#</th><th>Description</th><th>Qty</th><th>Unit Price</th><th>Amount</th></tr></thead><tbody><tr><td>1</td><td><strong>KevzaAI Professional Plan</strong><small>Monthly subscription (01 Sep 2026 - 30 Sep 2026)</small></td><td>1</td><td>&#8377;3,999.00</td><td>&#8377;3,999.00</td></tr></tbody></table>
+            <div class="paper-totals"><div><span>Subtotal</span><b>&#8377;3,999.00</b></div><div><span>GST (18%)</span><b>&#8377;719.82</b></div><div class="grand"><span>Total Amount</span><b>&#8377;4,718.82</b></div></div>
+            <div class="payment-received"><span>&#10003;</span><div><strong>Payment Received</strong><p>This invoice has been paid successfully. Thank you for your business!</p></div></div>
+            <footer><div><strong>Terms &amp; Conditions</strong><ol><li>This is a computer-generated invoice and does not require a signature.</li><li>Payment is non-refundable except as per our refund policy.</li><li>For any billing related queries, please contact support@kevzaai.com.</li></ol></div><div class="thanks">Thank You!<small>Team KevzaAI</small></div></footer>
+          </article>
+        </section>
+        <aside class="detail-right-stack">
+          <section class="detail-card payment-status-card"><h3>Payment Status</h3><div class="paid-status"><span>&#10003;</span><div><strong>Paid</strong><small>Payment received on 02 Sep 2026</small></div></div><p>The invoice amount has been paid in full. Thank you for your business!</p></section>
+          <section class="detail-card detail-actions"><h3>Quick Actions</h3><button>Download PDF</button><button>Send Invoice</button><button>Share Invoice Link</button><button>Resend Payment Receipt</button><button>Create Credit Note</button><button>Duplicate Invoice</button></section>
+          <section class="detail-card related-info"><h3>Related Information</h3><a>View Subscription <b>&rsaquo;</b></a><a>View Customer <b>&rsaquo;</b></a><a>Payment History <b>&rsaquo;</b></a><a>Invoice History <b>&rsaquo;</b></a><a>Audit Logs <b>&rsaquo;</b></a></section>
+          <section class="invoice-help detail-help"><strong>Need Help?</strong><p>For any billing or invoice related queries, please contact our support team.</p><button>Contact Support</button></section>
+        </aside>
+      </section>
+    </section>
+  </div>
+</dialog>
 <script type="module" src="admin-navigation.js"></script>
 <script>
   (function () {
-    var modal = document.getElementById('allInvoicesModal');
-    if (!modal) return;
+    var invoicesModal = document.getElementById('allInvoicesModal');
+    var detailsModal = document.getElementById('invoiceDetailsModal');
+
+    function openDialog(dialog) {
+      if (!dialog) return;
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.setAttribute('open', '');
+    }
+
+    function closeDialog(dialog) {
+      if (!dialog) return;
+      if (typeof dialog.close === 'function') dialog.close();
+      else dialog.removeAttribute('open');
+    }
+
     document.querySelectorAll('[data-open-invoices]').forEach(function (button) {
+      button.addEventListener('click', function () { openDialog(invoicesModal); });
+    });
+
+    document.querySelectorAll('[data-close-invoices]').forEach(function (button) {
+      button.addEventListener('click', function () { closeDialog(invoicesModal); });
+    });
+
+    document.querySelectorAll('[data-open-invoice-details]').forEach(function (button) {
       button.addEventListener('click', function () {
-        if (typeof modal.showModal === 'function') modal.showModal();
-        else modal.setAttribute('open', '');
+        closeDialog(invoicesModal);
+        openDialog(detailsModal);
       });
     });
-    modal.querySelectorAll('[data-close-invoices]').forEach(function (button) {
-      button.addEventListener('click', function () { modal.close(); });
+
+    document.querySelectorAll('[data-close-invoice-details]').forEach(function (button) {
+      button.addEventListener('click', function () { closeDialog(detailsModal); });
     });
-    modal.addEventListener('click', function (event) {
-      if (event.target === modal) modal.close();
+
+    document.querySelectorAll('[data-back-invoices]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        closeDialog(detailsModal);
+        openDialog(invoicesModal);
+      });
+    });
+
+    [invoicesModal, detailsModal].forEach(function (dialog) {
+      if (!dialog) return;
+      dialog.addEventListener('click', function (event) {
+        if (event.target === dialog) closeDialog(dialog);
+      });
     });
   }());
 </script></body>
