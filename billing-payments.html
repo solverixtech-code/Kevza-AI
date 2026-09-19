@@ -18,7 +18,7 @@
     <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
   </aside><section class="bp-main">
     <header class="bp-topbar">
-      <nav class="bp-crumb" aria-label="Breadcrumb"><span>Admin</span><b>/</b><span>Billing & Payments</span><b>/</b><strong>Dashboard</strong></nav>
+      <nav class="bp-crumb" aria-label="Breadcrumb"><span>Admin</span><b>/</b><span>Billing &amp; Payments</span><b>/</b><strong>Billing and Payment Dashboard</strong></nav>
       <label class="bp-search" aria-label="Search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
       <button class="bp-icon-btn has-badge" aria-label="Notifications"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><i>12</i></button>
       <button class="bp-icon-btn" aria-label="Messages"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></button>
@@ -29,7 +29,7 @@
     <div class="bp-page">
       <section class="bp-title-row">
         <div><h1>Billing & Payments Dashboard</h1><p>Track revenue, payments, invoices and refunds across all subscriptions.</p></div>
-        <div class="bp-title-tools"><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div>
+        <div class="bp-title-tools"><button type="button" class="bp-open-invoices" data-open-invoices>All Invoices</button><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div>
       </section>
 
       <section class="bp-kpis" aria-label="Billing metrics">
@@ -72,7 +72,7 @@
               <tr><td>5</td><td>29 Aug 2026<br><small>04:33 PM</small></td><td><span class="avatar mint">HB</span><strong>HealthCare Plus</strong><small>Wellness Clinic</small></td><td>INV-2026-0838</td><td>&#8377;7,999</td><td>UPI</td><td><em class="success">Success</em></td><td><button>View</button><button>...</button></td></tr>
             </tbody>
           </table>
-          <footer class="table-foot"><span>Showing 1 to 5 of 428 payments</span><nav><button>‹</button><button class="active">1</button><button>2</button><button>3</button><button>...</button><button>86</button><button>›</button></nav></footer>
+          <footer class="table-foot"><span>Showing 1 to 5 of 428 payments</span><nav><button>&lsaquo;</button><button class="active">1</button><button>2</button><button>3</button><button>...</button><button>86</button><button>&rsaquo;</button></nav></footer>
         </article>
 
         <aside class="bp-side-stack">
@@ -86,6 +86,60 @@
     </div>
   </section>
 </main>
+<dialog class="invoice-modal" id="allInvoicesModal" aria-labelledby="allInvoicesTitle">
+  <div class="invoice-modal-shell">
+    <header class="invoice-modal-topbar">
+      <nav class="invoice-crumb" aria-label="Invoice breadcrumb"><span>Admin</span><b>/</b><span>Billing &amp; Payments</span><b>/</b><span>Billing and Payment Dashboard</span><b>/</b><strong>Invoices</strong></nav>
+      <label class="invoice-search" aria-label="Search invoices"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <button class="invoice-close" type="button" data-close-invoices aria-label="Close all invoices">&times;</button>
+    </header>
+    <section class="invoice-modal-body">
+      <div class="invoice-title-row"><div><h2 id="allInvoicesTitle">All Invoices</h2><p>View and manage all invoices generated for subscriptions, add-ons and other services.</p></div><button type="button" class="invoice-primary">+ Create Manual Invoice</button></div>
+      <section class="invoice-layout">
+        <div class="invoice-main-panel">
+          <section class="invoice-kpis" aria-label="Invoice metrics">
+            <article><span class="invoice-kpi-icon document"></span><div><p>Total Invoices</p><strong>1,248</strong><small>vs last month</small></div><em class="good">+ 18%</em></article>
+            <article><span class="invoice-kpi-icon rupee">&#8377;</span><div><p>Total Billed Amount</p><strong>&#8377;24,86,350</strong><small>vs last month</small></div><em class="good">+ 22%</em></article>
+            <article><span class="invoice-kpi-icon pending"></span><div><p>Pending Amount</p><strong>&#8377;1,92,450</strong><small>across 86 invoices</small></div><em class="bad">+ 12%</em></article>
+            <article><span class="invoice-kpi-icon paid"></span><div><p>Paid Invoices</p><strong>1,096</strong><small>87.8% of total</small></div><em class="good">+ 2</em></article>
+          </section>
+          <section class="invoice-filters" aria-label="Invoice filters"><label><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search by invoice number, customer, email..." /></label><select><option>All Statuses</option><option>Paid</option><option>Pending</option><option>Overdue</option></select><select><option>All Plans</option><option>Professional</option><option>Business</option><option>Starter</option></select><button type="button">01 Aug 2026 - 31 Aug 2026</button><button type="button">More Filters</button><button type="button" class="muted">Reset</button></section>
+          <div class="invoice-table-wrap"><table class="invoice-table"><thead><tr><th><input type="checkbox" /></th><th>#</th><th>Invoice No.</th><th>Customer</th><th>Plan</th><th>Amount</th><th>Issue Date</th><th>Due Date</th><th>Status</th><th>Actions</th></tr></thead><tbody>
+            <tr><td><input type="checkbox" /></td><td>1</td><td><a>INV-2026-0842</a></td><td><span class="avatar blue">RK</span><strong>Rajesh Kumar</strong><small>RK Enterprises</small></td><td>Professional</td><td>&#8377;3,999</td><td>31 Aug 2026</td><td>07 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>2</td><td><a>INV-2026-0841</a></td><td><span class="avatar purple">SS</span><strong>Sneha Sharma</strong><small>Sharma Marketing</small></td><td>Starter</td><td>&#8377;1,999</td><td>31 Aug 2026</td><td>07 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>3</td><td><a>INV-2026-0840</a></td><td><span class="avatar green">TG</span><strong>The Green Mart</strong><small>Retail Pvt. Ltd.</small></td><td>Business</td><td>&#8377;7,999</td><td>30 Aug 2026</td><td>06 Sep 2026</td><td><em class="pending-status">Pending</em></td><td><button>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>4</td><td><a>INV-2026-0839</a></td><td><span class="avatar pink">CA</span><strong>City Appliances</strong><small>Electronics Store</small></td><td>Professional</td><td>&#8377;3,999</td><td>30 Aug 2026</td><td>06 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>5</td><td><a>INV-2026-0838</a></td><td><span class="avatar mint">HB</span><strong>HealthCare Plus</strong><small>Wellness Clinic</small></td><td>Business</td><td>&#8377;7,999</td><td>29 Aug 2026</td><td>05 Sep 2026</td><td><em class="overdue">Overdue</em></td><td><button>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>6</td><td><a>INV-2026-0837</a></td><td><span class="avatar blue">DI</span><strong>Digital Lane</strong><small>IT Solutions</small></td><td>Starter</td><td>&#8377;1,499</td><td>29 Aug 2026</td><td>05 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>7</td><td><a>INV-2026-0836</a></td><td><span class="avatar green">FF</span><strong>Fresh Foods</strong><small>Food &amp; Beverages</small></td><td>Business</td><td>&#8377;9,999</td><td>28 Aug 2026</td><td>04 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>8</td><td><a>INV-2026-0835</a></td><td><span class="avatar purple">MT</span><strong>Mahotra Travels</strong><small>Travel &amp; Tours</small></td><td>Professional</td><td>&#8377;3,999</td><td>28 Aug 2026</td><td>04 Sep 2026</td><td><em class="pending-status">Pending</em></td><td><button>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>9</td><td><a>INV-2026-0834</a></td><td><span class="avatar mint">AG</span><strong>Agro Solutions</strong><small>Agriculture</small></td><td>Business</td><td>&#8377;7,999</td><td>27 Aug 2026</td><td>03 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>10</td><td><a>INV-2026-0833</a></td><td><span class="avatar pink">SE</span><strong>Style Basket</strong><small>Ecommerce Store</small></td><td>Starter</td><td>&#8377;1,999</td><td>27 Aug 2026</td><td>03 Sep 2026</td><td><em class="paid">Paid</em></td><td><button>View</button><button>...</button></td></tr>
+          </tbody></table></div>
+          <footer class="invoice-foot"><select><option>Bulk Actions</option></select><button>Apply</button><span>Showing 1 to 10 of 1,248 invoices</span><nav><button>&lsaquo;</button><button class="active">1</button><button>2</button><button>3</button><button>...</button><button>125</button><button>&rsaquo;</button></nav></footer>
+        </div>
+        <aside class="invoice-side"><section class="invoice-side-card"><h3>Invoice Status</h3><div class="invoice-donut"><strong>1,248</strong><span>Invoices</span></div><ul><li><i class="green"></i>Paid <b>1096 (87.8%)</b></li><li><i class="orange"></i>Pending <b>86 (6.9%)</b></li><li><i class="red"></i>Overdue <b>48 (3.8%)</b></li><li><i class="gray"></i>Cancelled <b>18 (1.4%)</b></li></ul></section><section class="invoice-side-card"><h3>Total Amount by Status</h3><ul><li><i class="green"></i>Paid <b>&#8377;21,80,900</b></li><li><i class="orange"></i>Pending <b>&#8377;1,92,450</b></li><li><i class="red"></i>Overdue <b>&#8377;1,02,300</b></li><li><i class="gray"></i>Cancelled <b>&#8377;10,700</b></li></ul></section><section class="invoice-side-card"><h3>Quick Actions</h3><div class="invoice-actions"><button>Create Manual Invoice</button><button>Send Payment Reminders</button><button>Export Invoices</button><button>Download Reports</button><button>View Payment History</button></div></section><section class="invoice-help"><strong>Need Help?</strong><p>Invoices are generated automatically based on subscription cycles. You can also create manual invoices for custom services or one-time payments.</p></section></aside>
+      </section>
+    </section>
+  </div>
+</dialog>
 <script type="module" src="admin-navigation.js"></script>
-</body>
+<script>
+  (function () {
+    var modal = document.getElementById('allInvoicesModal');
+    if (!modal) return;
+    document.querySelectorAll('[data-open-invoices]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        if (typeof modal.showModal === 'function') modal.showModal();
+        else modal.setAttribute('open', '');
+      });
+    });
+    modal.querySelectorAll('[data-close-invoices]').forEach(function (button) {
+      button.addEventListener('click', function () { modal.close(); });
+    });
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) modal.close();
+    });
+  }());
+</script></body>
 </html>
