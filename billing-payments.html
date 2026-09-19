@@ -29,7 +29,7 @@
     <div class="bp-page">
       <section class="bp-title-row">
         <div><h1>Billing & Payments Dashboard</h1><p>Track revenue, payments, invoices and refunds across all subscriptions.</p></div>
-        <div class="bp-title-tools"><button type="button" class="bp-open-invoices" data-open-invoices>All Invoices</button><button type="button" class="bp-open-details" data-open-invoice-details>Invoice Details</button><button type="button" class="bp-open-paid" data-open-paid-invoices>Paid Invoices</button><button type="button" class="bp-open-outstanding" data-open-outstanding-invoices>Outstanding Invoices</button><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div>
+        <div class="bp-title-tools"><button type="button" class="bp-open-invoices" data-open-invoices>All Invoices</button><button type="button" class="bp-open-details" data-open-invoice-details>Invoice Details</button><button type="button" class="bp-open-paid" data-open-paid-invoices>Paid Invoices</button><button type="button" class="bp-open-outstanding" data-open-outstanding-invoices>Outstanding Invoices</button><button type="button" class="bp-open-failed" data-open-failed-payments>Failed Payments</button><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div>
       </section>
 
       <section class="bp-kpis" aria-label="Billing metrics">
@@ -119,6 +119,51 @@
           <footer class="invoice-foot"><select><option>Bulk Actions</option></select><button>Apply</button><span>Showing 1 to 10 of 1,248 invoices</span><nav><button>&lsaquo;</button><button class="active">1</button><button>2</button><button>3</button><button>...</button><button>125</button><button>&rsaquo;</button></nav></footer>
         </div>
         <aside class="invoice-side"><section class="invoice-side-card"><h3>Invoice Status</h3><div class="invoice-donut"><strong>1,248</strong><span>Invoices</span></div><ul><li><i class="green"></i>Paid <b>1096 (87.8%)</b></li><li><i class="orange"></i>Pending <b>86 (6.9%)</b></li><li><i class="red"></i>Overdue <b>48 (3.8%)</b></li><li><i class="gray"></i>Cancelled <b>18 (1.4%)</b></li></ul></section><section class="invoice-side-card"><h3>Total Amount by Status</h3><ul><li><i class="green"></i>Paid <b>&#8377;21,80,900</b></li><li><i class="orange"></i>Pending <b>&#8377;1,92,450</b></li><li><i class="red"></i>Overdue <b>&#8377;1,02,300</b></li><li><i class="gray"></i>Cancelled <b>&#8377;10,700</b></li></ul></section><section class="invoice-side-card"><h3>Quick Actions</h3><div class="invoice-actions"><button>Create Manual Invoice</button><button>Send Payment Reminders</button><button>Export Invoices</button><button>Download Reports</button><button>View Payment History</button></div></section><section class="invoice-help"><strong>Need Help?</strong><p>Invoices are generated automatically based on subscription cycles. You can also create manual invoices for custom services or one-time payments.</p></section></aside>
+      </section>
+    </section>
+  </div>
+</dialog>
+<dialog class="failed-payments-modal" id="failedPaymentsModal" aria-labelledby="failedPaymentsTitle">
+  <div class="invoice-modal-shell failed-modal-shell">
+    <header class="invoice-modal-topbar">
+      <nav class="invoice-crumb" aria-label="Failed payments breadcrumb"><span>Admin</span><b>/</b><span>Billing &amp; Payments</span><b>/</b><strong>Failed Payments</strong></nav>
+      <label class="invoice-search" aria-label="Search failed payments"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <button class="invoice-close" type="button" data-close-failed-payments aria-label="Close failed payments">&times;</button>
+    </header>
+    <section class="invoice-modal-body failed-modal-body">
+      <div class="invoice-title-row failed-title-row">
+        <div><h2 id="failedPaymentsTitle">Failed Payments</h2><p>View and manage all failed payment transactions. Retry payments or contact customers to resolve issues.</p></div>
+        <div class="paid-title-tools"><button type="button">01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 6 Months</option></select></div>
+      </div>
+      <section class="failed-layout">
+        <div class="failed-main-panel">
+          <section class="failed-kpis" aria-label="Failed payment metrics">
+            <article><span class="fail-kpi-icon fail-x"></span><div><p>Failed Payments</p><strong>28</strong><small>vs last month</small></div><em class="bad">+ 33%</em></article>
+            <article><span class="fail-kpi-icon rupee">&#8377;</span><div><p>Failed Amount</p><strong>&#8377;1,24,600</strong><small>vs last month</small></div><em class="bad">+ 41%</em></article>
+            <article><span class="paid-users-icon danger"></span><div><p>Affected Customers</p><strong>24</strong><small>vs last month</small></div><em class="bad">+ 26%</em></article>
+            <article><span class="fail-kpi-icon card"></span><div><p>Retry Success Rate</p><strong>32%</strong><small>vs last month</small></div><em class="good">+ 12%</em></article>
+          </section>
+          <section class="failed-filters" aria-label="Failed payment filters"><label><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search by customer name, email, invoice no..." /></label><select><option>All Methods</option><option>UPI</option><option>Card</option><option>Net Banking</option></select><select><option>All Reasons</option><option>Insufficient Balance</option><option>Card Declined</option><option>Bank Error</option></select><button type="button">01 Aug 2026 - 31 Aug 2026</button><button type="button">More Filters</button><button type="button" class="muted">Reset</button></section>
+          <div class="invoice-table-wrap failed-table-wrap"><table class="invoice-table failed-table"><thead><tr><th><input type="checkbox" /></th><th>#</th><th>Date &amp; Time</th><th>Customer</th><th>Invoice No.</th><th>Amount</th><th>Payment Method</th><th>Failure Reason</th><th>Status</th><th>Actions</th></tr></thead><tbody>
+            <tr><td><input type="checkbox" /></td><td>1</td><td>31 Aug 2026<br><small>10:24 AM</small></td><td><span class="avatar blue">RK</span><strong>Rajesh Kumar</strong><small>RK Enterprises</small></td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0842</button></td><td>&#8377;3,999</td><td><span class="method upi"></span>UPI</td><td>Insufficient Balance</td><td><em class="failed-status">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>2</td><td>31 Aug 2026<br><small>09:18 AM</small></td><td><span class="avatar purple">SS</span><strong>Sneha Sharma</strong><small>Sharma Marketing</small></td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0841</button></td><td>&#8377;1,999</td><td><span class="method cardm"></span>Card</td><td>Card Declined</td><td><em class="failed-status">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>3</td><td>30 Aug 2026<br><small>07:45 PM</small></td><td><span class="avatar green">TG</span><strong>The Green Mart</strong><small>Retail Pvt. Ltd.</small></td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0840</button></td><td>&#8377;7,999</td><td><span class="method bank"></span>Net Banking</td><td>Bank Timeout</td><td><em class="failed-status">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>4</td><td>30 Aug 2026<br><small>06:12 PM</small></td><td><span class="avatar pink">CA</span><strong>City Appliances</strong><small>Electronics Store</small></td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0839</button></td><td>&#8377;3,999</td><td><span class="method cardm"></span>Card</td><td>Expired Card</td><td><em class="failed-status">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>5</td><td>29 Aug 2026<br><small>04:33 PM</small></td><td><span class="avatar mint">HB</span><strong>HealthCare Plus</strong><small>Wellness Clinic</small></td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0838</button></td><td>&#8377;7,999</td><td><span class="method upi"></span>UPI</td><td>Payment Cancelled</td><td><em class="failed-status">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>6</td><td>29 Aug 2026<br><small>11:20 AM</small></td><td><span class="avatar blue">DL</span><strong>Digital Lane</strong><small>IT Solutions</small></td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0837</button></td><td>&#8377;1,499</td><td><span class="method cardm"></span>Card</td><td>Invalid Card Details</td><td><em class="failed-status">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>7</td><td>28 Aug 2026<br><small>05:14 PM</small></td><td><span class="avatar green">FF</span><strong>Fresh Foods</strong><small>Food &amp; Beverages</small></td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0836</button></td><td>&#8377;9,999</td><td><span class="method bank"></span>Net Banking</td><td>Bank Error</td><td><em class="failed-status">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>8</td><td>28 Aug 2026<br><small>02:10 PM</small></td><td><span class="avatar purple">MT</span><strong>Mahotra Travels</strong><small>Travel &amp; Tours</small></td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0835</button></td><td>&#8377;3,999</td><td><span class="method upi"></span>UPI</td><td>UPI Payment Failed</td><td><em class="failed-status">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>9</td><td>27 Aug 2026<br><small>09:40 AM</small></td><td><span class="avatar mint">AG</span><strong>Agro Solutions</strong><small>Agriculture</small></td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0834</button></td><td>&#8377;7,999</td><td><span class="method cardm"></span>Card</td><td>Do Not Honor</td><td><em class="failed-status">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>10</td><td>27 Aug 2026<br><small>08:22 AM</small></td><td><span class="avatar pink">SB</span><strong>Style Basket</strong><small>Ecommerce Store</small></td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0833</button></td><td>&#8377;1,999</td><td><span class="method wallet"></span>Wallet</td><td>Wallet Transaction Failed</td><td><em class="failed-status">Failed</em></td><td><button>Retry</button><button>...</button></td></tr>
+          </tbody></table></div>
+          <footer class="invoice-foot"><select><option>Bulk Actions</option></select><button>Apply</button><span>Showing 1 to 10 of 28 failed payments</span><nav><button>&lsaquo;</button><button class="active">1</button><button>2</button><button>3</button><button>...</button><button>&rsaquo;</button></nav></footer>
+        </div>
+        <aside class="failed-side">
+          <section class="invoice-side-card"><h3>Failure Reasons</h3><div class="failed-donut"><strong>28</strong><span>Failed Payments</span></div><ul><li><i class="red"></i>Insufficient Balance <b>32.1%</b></li><li><i class="orange"></i>Card Declined <b>25.0%</b></li><li><i class="green"></i>Bank Error <b>14.3%</b></li><li><i class="blue-dot"></i>Expired Card <b>10.7%</b></li><li><i class="yellow"></i>Invalid Details <b>7.1%</b></li><li><i class="gray"></i>Others <b>10.7%</b></li></ul></section>
+          <section class="invoice-side-card failed-trend"><div class="side-head"><h3>Failed Amount Trend</h3><select><option>Last 6 Months</option></select></div><svg viewBox="0 0 210 110" preserveAspectRatio="none"><path d="M0 92H210M0 62H210M0 32H210" stroke="#edf3fb"/><polyline points="0,88 35,76 70,64 105,52 140,42 175,31 210,16" fill="none" stroke="#ff4b5f" stroke-width="3"/><g fill="#fff" stroke="#ff4b5f" stroke-width="2"><circle cx="0" cy="88" r="4"/><circle cx="35" cy="76" r="4"/><circle cx="70" cy="64" r="4"/><circle cx="105" cy="52" r="4"/><circle cx="140" cy="42" r="4"/><circle cx="175" cy="31" r="4"/><circle cx="210" cy="16" r="4"/></g></svg><div class="paid-months"><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span></div></section>
+          <section class="invoice-side-card failed-customers"><div class="side-head"><h3>Top Customers by Failed Amount</h3><a>View All</a></div><ul><li><span class="avatar blue">RK</span>RK Enterprises <b>&#8377;24,600</b></li><li><span class="avatar green">TG</span>The Green Mart <b>&#8377;18,000</b></li><li><span class="avatar mint">HB</span>HealthCare Plus <b>&#8377;15,999</b></li><li><span class="avatar green">FF</span>Fresh Foods <b>&#8377;9,999</b></li><li><span class="avatar purple">MT</span>Mahotra Travels <b>&#8377;7,998</b></li></ul></section>
+          <section class="invoice-side-card failed-quick"><h3>Quick Actions</h3><div class="invoice-actions"><button>Retry All Failed</button><button>Export Report</button></div></section>
+        </aside>
       </section>
     </section>
   </div>
@@ -255,6 +300,7 @@
 <script>
   (function () {
     var invoicesModal = document.getElementById('allInvoicesModal');
+    var failedModal = document.getElementById('failedPaymentsModal');
     var outstandingModal = document.getElementById('outstandingInvoicesModal');
     var paidModal = document.getElementById('paidInvoicesModal');
     var detailsModal = document.getElementById('invoiceDetailsModal');
@@ -275,6 +321,10 @@
       button.addEventListener('click', function () { openDialog(invoicesModal); });
     });
 
+    document.querySelectorAll('[data-open-failed-payments]').forEach(function (button) {
+      button.addEventListener('click', function () { openDialog(failedModal); });
+    });
+
     document.querySelectorAll('[data-open-outstanding-invoices]').forEach(function (button) {
       button.addEventListener('click', function () { openDialog(outstandingModal); });
     });
@@ -285,6 +335,10 @@
 
     document.querySelectorAll('[data-close-invoices]').forEach(function (button) {
       button.addEventListener('click', function () { closeDialog(invoicesModal); });
+    });
+
+    document.querySelectorAll('[data-close-failed-payments]').forEach(function (button) {
+      button.addEventListener('click', function () { closeDialog(failedModal); });
     });
 
     document.querySelectorAll('[data-close-outstanding-invoices]').forEach(function (button) {
@@ -298,6 +352,7 @@
     document.querySelectorAll('[data-open-invoice-details]').forEach(function (button) {
       button.addEventListener('click', function () {
         closeDialog(invoicesModal);
+        closeDialog(failedModal);
         closeDialog(outstandingModal);
         closeDialog(paidModal);
         openDialog(detailsModal);
@@ -315,7 +370,7 @@
       });
     });
 
-    [invoicesModal, outstandingModal, paidModal, detailsModal].forEach(function (dialog) {
+    [invoicesModal, failedModal, outstandingModal, paidModal, detailsModal].forEach(function (dialog) {
       if (!dialog) return;
       dialog.addEventListener('click', function (event) {
         if (event.target === dialog) closeDialog(dialog);
