@@ -29,7 +29,7 @@
     <div class="bp-page">
       <section class="bp-title-row">
         <div><h1>Billing & Payments Dashboard</h1><p>Track revenue, payments, invoices and refunds across all subscriptions.</p></div>
-        <div class="bp-title-tools"><button type="button" class="bp-open-invoices" data-open-invoices>All Invoices</button><button type="button" class="bp-open-details" data-open-invoice-details>Invoice Details</button><button type="button" class="bp-open-paid" data-open-paid-invoices>Paid Invoices</button><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div>
+        <div class="bp-title-tools"><button type="button" class="bp-open-invoices" data-open-invoices>All Invoices</button><button type="button" class="bp-open-details" data-open-invoice-details>Invoice Details</button><button type="button" class="bp-open-paid" data-open-paid-invoices>Paid Invoices</button><button type="button" class="bp-open-outstanding" data-open-outstanding-invoices>Outstanding Invoices</button><button><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 8 Months</option></select></div>
       </section>
 
       <section class="bp-kpis" aria-label="Billing metrics">
@@ -123,6 +123,51 @@
     </section>
   </div>
 </dialog>
+<dialog class="outstanding-invoices-modal" id="outstandingInvoicesModal" aria-labelledby="outstandingInvoicesTitle">
+  <div class="invoice-modal-shell outstanding-modal-shell">
+    <header class="invoice-modal-topbar">
+      <nav class="invoice-crumb" aria-label="Outstanding invoices breadcrumb"><span>Admin</span><b>/</b><span>Billing &amp; Payments</span><b>/</b><span>Invoices</span><b>/</b><strong>Outstanding Invoices</strong></nav>
+      <label class="invoice-search" aria-label="Search outstanding invoices"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <button class="invoice-close" type="button" data-close-outstanding-invoices aria-label="Close outstanding invoices">&times;</button>
+    </header>
+    <section class="invoice-modal-body outstanding-modal-body">
+      <div class="invoice-title-row outstanding-title-row">
+        <div><h2 id="outstandingInvoicesTitle">Outstanding Invoices</h2><p>View and manage all pending invoices that are not yet paid.</p></div>
+        <div class="paid-title-tools"><button type="button">01 Aug 2026 - 31 Aug 2026</button><select><option>Last 30 Days</option><option>Last 6 Months</option></select></div>
+      </div>
+      <section class="outstanding-layout">
+        <div class="outstanding-main-panel">
+          <section class="outstanding-kpis" aria-label="Outstanding invoice metrics">
+            <article><span class="out-kpi-icon document"></span><div><p>Outstanding Invoices</p><strong>86</strong><small>vs last month</small></div><em class="bad">+ 12%</em></article>
+            <article><span class="out-kpi-icon rupee">&#8377;</span><div><p>Total Outstanding Amount</p><strong>&#8377;1,92,450</strong><small>vs last month</small></div><em class="bad">+ 18%</em></article>
+            <article><span class="out-kpi-icon clock"></span><div><p>Overdue Invoices</p><strong>48</strong><small>vs last month</small></div><em class="bad">+ 33%</em></article>
+            <article><span class="out-kpi-icon calendar"></span><div><p>Avg. Days Overdue</p><strong>14 days</strong><small>vs last month</small></div><em class="bad">+ 5%</em></article>
+          </section>
+          <section class="outstanding-filters" aria-label="Outstanding invoice filters"><label><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search by invoice number, customer, email..." /></label><select><option>All Plans</option><option>Professional</option><option>Business</option><option>Starter</option></select><select><option>All Methods</option><option>UPI</option><option>Card</option><option>Net Banking</option></select><select><option>All Outstanding</option><option>Overdue</option><option>Pending</option></select><button type="button">01 Aug 2026 - 31 Aug 2026</button><button type="button">More Filters</button><button type="button" class="muted">Reset</button></section>
+          <div class="invoice-table-wrap outstanding-table-wrap"><table class="invoice-table outstanding-table"><thead><tr><th><input type="checkbox" /></th><th>#</th><th>Invoice No.</th><th>Customer</th><th>Plan</th><th>Amount</th><th>Issue Date</th><th>Due Date</th><th>Days Overdue</th><th>Status</th><th>Actions</th></tr></thead><tbody>
+            <tr><td><input type="checkbox" /></td><td>1</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0819</button></td><td><span class="avatar green">TG</span><strong>The Green Mart</strong><small>Retail Pvt. Ltd.</small></td><td>Business</td><td>&#8377;7,999</td><td>19 Aug 2026</td><td>26 Aug 2026</td><td><b class="days-red">20 days</b></td><td><em class="overdue">Overdue</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>2</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0817</button></td><td><span class="avatar pink">SP</span><strong>Spark Education</strong><small>Education</small></td><td>Starter</td><td>&#8377;1,999</td><td>17 Aug 2026</td><td>24 Aug 2026</td><td><b class="days-red">18 days</b></td><td><em class="overdue">Overdue</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>3</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0820</button></td><td><span class="avatar purple">CA</span><strong>City Appliances</strong><small>Electronics Store</small></td><td>Professional</td><td>&#8377;3,999</td><td>20 Aug 2026</td><td>27 Aug 2026</td><td><b class="days-red">15 days</b></td><td><em class="overdue">Overdue</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>4</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0821</button></td><td><span class="avatar blue">VS</span><strong>Vora &amp; Sons</strong><small>Real Estate</small></td><td>Business</td><td>&#8377;7,999</td><td>21 Aug 2026</td><td>28 Aug 2026</td><td><b class="days-red">12 days</b></td><td><em class="overdue">Overdue</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>5</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0824</button></td><td><span class="avatar mint">HB</span><strong>HealthCare Plus</strong><small>Wellness Clinic</small></td><td>Business</td><td>&#8377;7,999</td><td>23 Aug 2026</td><td>30 Aug 2026</td><td><b class="days-red">10 days</b></td><td><em class="overdue">Overdue</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>6</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0824</button></td><td><span class="avatar blue">RK</span><strong>Rajesh Kumar</strong><small>RK Enterprises</small></td><td>Professional</td><td>&#8377;3,999</td><td>24 Aug 2026</td><td>31 Aug 2026</td><td><b class="days-red">8 days</b></td><td><em class="pending-status">Pending</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>7</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0825</button></td><td><span class="avatar purple">SS</span><strong>Sneha Sharma</strong><small>Sharma Marketing</small></td><td>Starter</td><td>&#8377;1,999</td><td>25 Aug 2026</td><td>01 Sep 2026</td><td><b class="days-red">6 days</b></td><td><em class="pending-status">Pending</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>8</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0827</button></td><td><span class="avatar blue">DL</span><strong>Digital Lane</strong><small>IT Solutions</small></td><td>Starter</td><td>&#8377;1,499</td><td>27 Aug 2026</td><td>03 Sep 2026</td><td><b class="days-red">4 days</b></td><td><em class="pending-status">Pending</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>9</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0828</button></td><td><span class="avatar green">MT</span><strong>Mahotra Travels</strong><small>Travel &amp; Tours</small></td><td>Professional</td><td>&#8377;3,999</td><td>28 Aug 2026</td><td>04 Sep 2026</td><td><b class="days-red">3 days</b></td><td><em class="pending-status">Pending</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+            <tr><td><input type="checkbox" /></td><td>10</td><td><button type="button" class="invoice-link" data-open-invoice-details>INV-2026-0830</button></td><td><span class="avatar mint">AG</span><strong>Agro Solutions</strong><small>Agriculture</small></td><td>Business</td><td>&#8377;7,999</td><td>30 Aug 2026</td><td>06 Sep 2026</td><td><b class="days-red">1 day</b></td><td><em class="pending-status">Pending</em></td><td><button type="button" data-open-invoice-details>View</button><button>...</button></td></tr>
+          </tbody></table></div>
+          <footer class="invoice-foot"><select><option>Bulk Actions</option></select><button>Apply</button><span>Showing 1 to 10 of 86 outstanding invoices</span><nav><button>&lsaquo;</button><button class="active">1</button><button>2</button><button>3</button><button>...</button><button>9</button><button>&rsaquo;</button></nav></footer>
+        </div>
+        <aside class="outstanding-side">
+          <section class="invoice-side-card"><h3>Outstanding Amount by Status</h3><div class="outstanding-donut"><strong>&#8377;1,92,450</strong><span>Outstanding</span></div><ul><li><i class="red"></i>Overdue <b>&#8377;1,02,300 (53.2%)</b></li><li><i class="orange"></i>Pending <b>&#8377;68,150 (35.4%)</b></li><li><i class="yellow"></i>Partially Paid <b>&#8377;22,000 (11.4%)</b></li></ul></section>
+          <section class="invoice-side-card aging-summary"><h3>Aging Summary</h3><div><span>1 - 7 days <b>22 (25.6%)</b></span><em><i style="width:26%"></i></em></div><div><span>8 - 15 days <b>28 (32.6%)</b></span><em><i style="width:33%"></i></em></div><div><span>16 - 30 days <b>24 (27.9%)</b></span><em><i style="width:28%"></i></em></div><div><span>&gt; 30 days <b>12 (14.0%)</b></span><em><i style="width:14%"></i></em></div></section>
+          <section class="invoice-side-card outstanding-customers"><div class="side-head"><h3>Top Customers by Outstanding</h3><a>View All</a></div><ul><li><span class="avatar green">TG</span>The Green Mart <b>&#8377;24,000</b></li><li><span class="avatar mint">HB</span>HealthCare Plus <b>&#8377;22,000</b></li><li><span class="avatar blue">AG</span>Agro Solutions <b>&#8377;15,998</b></li><li><span class="avatar purple">CA</span>City Appliances <b>&#8377;11,997</b></li><li><span class="avatar pink">MT</span>Mahotra Travels <b>&#8377;11,997</b></li></ul></section>
+          <section class="invoice-side-card outstanding-quick"><h3>Quick Actions</h3><div class="invoice-actions"><button>Send Payment Reminders</button><button>Download Report</button><button>Mark as Paid</button><button>View Aging Report</button></div></section>
+        </aside>
+      </section>
+    </section>
+  </div>
+</dialog>
 <dialog class="paid-invoices-modal" id="paidInvoicesModal" aria-labelledby="paidInvoicesTitle">
   <div class="invoice-modal-shell paid-modal-shell">
     <header class="invoice-modal-topbar">
@@ -210,6 +255,7 @@
 <script>
   (function () {
     var invoicesModal = document.getElementById('allInvoicesModal');
+    var outstandingModal = document.getElementById('outstandingInvoicesModal');
     var paidModal = document.getElementById('paidInvoicesModal');
     var detailsModal = document.getElementById('invoiceDetailsModal');
 
@@ -229,12 +275,20 @@
       button.addEventListener('click', function () { openDialog(invoicesModal); });
     });
 
+    document.querySelectorAll('[data-open-outstanding-invoices]').forEach(function (button) {
+      button.addEventListener('click', function () { openDialog(outstandingModal); });
+    });
+
     document.querySelectorAll('[data-open-paid-invoices]').forEach(function (button) {
       button.addEventListener('click', function () { openDialog(paidModal); });
     });
 
     document.querySelectorAll('[data-close-invoices]').forEach(function (button) {
       button.addEventListener('click', function () { closeDialog(invoicesModal); });
+    });
+
+    document.querySelectorAll('[data-close-outstanding-invoices]').forEach(function (button) {
+      button.addEventListener('click', function () { closeDialog(outstandingModal); });
     });
 
     document.querySelectorAll('[data-close-paid-invoices]').forEach(function (button) {
@@ -244,6 +298,7 @@
     document.querySelectorAll('[data-open-invoice-details]').forEach(function (button) {
       button.addEventListener('click', function () {
         closeDialog(invoicesModal);
+        closeDialog(outstandingModal);
         closeDialog(paidModal);
         openDialog(detailsModal);
       });
@@ -260,7 +315,7 @@
       });
     });
 
-    [invoicesModal, paidModal, detailsModal].forEach(function (dialog) {
+    [invoicesModal, outstandingModal, paidModal, detailsModal].forEach(function (dialog) {
       if (!dialog) return;
       dialog.addEventListener('click', function (event) {
         if (event.target === dialog) closeDialog(dialog);
