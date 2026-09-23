@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "kevzaai-saas"
+  },
+  "targets": {
+    "kevzaai-saas": {
+      "hosting": {
+        "web": [
+          "kevzaai-saas"
+        ],
+        "crm": [
+          "kevzaai-crm"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
