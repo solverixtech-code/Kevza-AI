@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KevzaAI - Expiring Trials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-components.css" />
+  <link rel="stylesheet" href="expiring-trials.css" />
+</head>
+<body>
+<main class="admin-app et-shell">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="index.html" aria-label="KevzaAI home"><span class="brand-mark">K</span><span>Kevza<span>AI</span></span></a>
+    <nav class="admin-nav" aria-label="Admin navigation"></nav>
+    <div class="sidebar-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+  </aside>
+
+  <section class="et-main">
+    <header class="et-topbar">
+      <nav class="et-breadcrumb" aria-label="Breadcrumb"><span>Admin</span><span>/</span><span>Subscriptions</span><span>/</span><span>Trials</span><span>/</span><strong>Expiring Trials</strong></nav>
+      <label class="et-search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search anything..." /><kbd>&#8984; K</kbd></label>
+      <div class="et-top-actions">
+        <button class="et-icon-btn has-badge" aria-label="Notifications"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><i>12</i></button>
+        <button class="et-icon-btn has-badge" aria-label="Messages"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><i>4</i></button>
+        <button class="et-icon-btn" aria-label="Help"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
+        <div class="et-top-user"><div class="mini-avatar">AA</div><div><strong>Aman Ansari</strong><span>Super Admin</span></div><b>&#8964;</b></div>
+      </div>
+    </header>
+
+    <div class="et-page">
+      <div class="et-title-row"><div><h1>Expiring Trials</h1><p>View customers whose trial subscriptions are expiring soon. Take action to convert them to paid plans.</p></div></div>
+
+      <section class="et-metrics" aria-label="Expiring trial summary">
+        <article class="et-metric blue"><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01"/></svg></span><div><p>Trials Expiring Soon</p><strong>12</strong><small>Within next 7 days</small></div></article>
+        <article class="et-metric red"><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></span><div><p>Expiring in 1 Day</p><strong>3</strong></div></article>
+        <article class="et-metric orange"><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></span><div><p>Expiring in 2-3 Days</p><strong>4</strong></div></article>
+        <article class="et-metric indigo"><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></span><div><p>Expiring in 4-7 Days</p><strong>5</strong></div></article>
+      </section>
+
+      <div class="et-layout">
+        <section class="et-workspace">
+          <div class="et-filters">
+            <label class="et-filter-search"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" placeholder="Search by customer name, email or company..." /></label>
+            <label><span>Plan</span><select><option>All Plans</option><option>Starter</option><option>Professional</option><option>Business</option></select></label>
+            <label><span>Days Left</span><select><option>All</option><option>1 day</option><option>2-3 days</option><option>4-7 days</option></select></label>
+            <label><span>Trial Status</span><select><option>Active</option><option>Nudged</option><option>Extended</option></select></label>
+            <label><span>Expiry Date</span><select><option>Next 7 Days</option><option>Next 14 Days</option><option>This Month</option></select></label>
+            <button class="et-more" type="button"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16M7 12h10M10 18h4"/></svg>More Filters</button>
+          </div>
+
+          <div class="et-table-wrap">
+            <table class="et-table">
+              <thead><tr><th><input type="checkbox" /></th><th>#</th><th>Customer</th><th>Plan</th><th>Trial Started</th><th>Trial Ends</th><th>Days Left</th><th>Status</th><th>Actions</th></tr></thead>
+              <tbody>
+                <tr><td><input type="checkbox" /></td><td>1</td><td><span class="avatar blue">RK</span><strong>Rajesh Kumar</strong><small>RK Enterprises</small></td><td>Professional</td><td>01 Jul 2026</td><td>08 Jul 2026</td><td><em class="danger">1 day</em></td><td><span class="trial">Trial</span></td><td><button class="primary">Nudge</button><button>...</button></td></tr>
+                <tr><td><input type="checkbox" /></td><td>2</td><td><span class="avatar purple">SS</span><strong>Sneha Sharma</strong><small>Sharma Marketing</small></td><td>Starter</td><td>03 Jul 2026</td><td>10 Jul 2026</td><td><em class="danger">2 days</em></td><td><span class="trial">Trial</span></td><td><button class="primary">Nudge</button><button>...</button></td></tr>
+                <tr><td><input type="checkbox" /></td><td>3</td><td><span class="avatar green">TG</span><strong>The Green Mart</strong><small>Retail Pvt. Ltd.</small></td><td>Business</td><td>04 Jul 2026</td><td>11 Jul 2026</td><td><em class="warn">3 days</em></td><td><span class="trial">Trial</span></td><td><button class="primary">Nudge</button><button>...</button></td></tr>
+                <tr><td><input type="checkbox" /></td><td>4</td><td><span class="avatar pink">CA</span><strong>City Appliances</strong><small>Electronics Store</small></td><td>Professional</td><td>06 Jul 2026</td><td>13 Jul 2026</td><td><em class="warn">4 days</em></td><td><span class="trial">Trial</span></td><td><button class="primary">Nudge</button><button>...</button></td></tr>
+                <tr><td><input type="checkbox" /></td><td>5</td><td><span class="avatar mint">HB</span><strong>HealthCare Plus</strong><small>Wellness Clinic</small></td><td>Starter</td><td>06 Jul 2026</td><td>13 Jul 2026</td><td><em class="warn">4 days</em></td><td><span class="trial">Trial</span></td><td><button class="primary">Nudge</button><button>...</button></td></tr>
+                <tr><td><input type="checkbox" /></td><td>6</td><td><span class="avatar blue">DL</span><strong>Digital Lane</strong><small>IT Solutions</small></td><td>Business</td><td>07 Jul 2026</td><td>14 Jul 2026</td><td><em>5 days</em></td><td><span class="trial">Trial</span></td><td><button class="primary">Nudge</button><button>...</button></td></tr>
+                <tr><td><input type="checkbox" /></td><td>7</td><td><span class="avatar green">FR</span><strong>Fresh Foods</strong><small>Food &amp; Beverages</small></td><td>Professional</td><td>07 Jul 2026</td><td>14 Jul 2026</td><td><em>5 days</em></td><td><span class="trial">Trial</span></td><td><button class="primary">Nudge</button><button>...</button></td></tr>
+                <tr><td><input type="checkbox" /></td><td>8</td><td><span class="avatar slate">MT</span><strong>Malhotra Travels</strong><small>Travel &amp; Tours</small></td><td>Starter</td><td>08 Jul 2026</td><td>15 Jul 2026</td><td><em class="good">6 days</em></td><td><span class="trial">Trial</span></td><td><button class="primary">Nudge</button><button>...</button></td></tr>
+                <tr><td><input type="checkbox" /></td><td>9</td><td><span class="avatar mint">AG</span><strong>Agro Solutions</strong><small>Agriculture</small></td><td>Business</td><td>08 Jul 2026</td><td>15 Jul 2026</td><td><em class="good">6 days</em></td><td><span class="trial">Trial</span></td><td><button class="primary">Nudge</button><button>...</button></td></tr>
+                <tr><td><input type="checkbox" /></td><td>10</td><td><span class="avatar purple">SB</span><strong>Style Basket</strong><small>Ecommerce Store</small></td><td>Professional</td><td>09 Jul 2026</td><td>16 Jul 2026</td><td><em class="good">7 days</em></td><td><span class="trial">Trial</span></td><td><button class="primary">Nudge</button><button>...</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="et-footer"><select><option>Bulk Actions</option><option>Send Reminder</option><option>Extend Trial</option><option>Upgrade to Paid</option></select><button type="button">Apply</button><span>Showing 1 to 10 of 12 expiring trials</span><nav aria-label="Pagination"><button type="button">&#8249;</button><button class="active" type="button">1</button><button type="button">2</button><button type="button">&#8250;</button></nav></div>
+        </section>
+
+        <aside class="et-side">
+          <section class="et-side-card"><h2>Expiry Timeline</h2><div class="et-donut"><div><strong>12</strong><span>Expiring</span></div></div><ul class="et-legend"><li><span class="red">1 day</span><b>3 (25.0%)</b></li><li><span class="orange">2-3 days</span><b>4 (33.3%)</b></li><li><span class="indigo">4-7 days</span><b>5 (41.7%)</b></li></ul></section>
+          <section class="et-side-card actions"><h2>Quick Actions</h2><a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Send Reminder to All</a><a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>Upgrade to Paid</a><a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6 6 18M6 6l12 12"/></svg>Extend Trial</a><a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg>Export List</a><a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>View All Trials</a></section>
+          <section class="et-side-card tip"><h2><span>i</span>Conversion Tip</h2><p>Reach out to customers before their trial expires. Highlight key benefits and offer a limited-time discount to improve conversions from trials to paid plans.</p></section>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+<script type="module" src="admin-navigation.js"></script>
+</body>
+</html>

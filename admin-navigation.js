@@ -132,6 +132,7 @@
       ['javascript:void(0)', '&#9671;', 'Plans &amp; Subscriptions', true],
       ['subscription-dashboard.html', '&#9673;', 'Subscription Dashboard'],
       ['subscription-analytics.html', '&#9637;', 'Subscription Analytics'],
+      ['expiring-trials.html', '&#8987;', 'Expiring Trials'],
       ['plans-and-pricing.html', '&#9671;', 'Plans &amp; Pricing'],
       ['customer-onboarding-activation.html', '&#9673;', 'Customer Onboarding'],
       ['activated-customers.html', '&#10003;', 'Activated Customers'],

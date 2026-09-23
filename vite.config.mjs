@@ -33,6 +33,7 @@ export default defineConfig({
         billingPayments: resolve(import.meta.dirname, 'billing-payments.html'),
         subscriptionDashboard: resolve(import.meta.dirname, 'subscription-dashboard.html'),
         subscriptionAnalytics: resolve(import.meta.dirname, 'subscription-analytics.html'),
+        expiringTrials: resolve(import.meta.dirname, 'expiring-trials.html'),
         channelOperationsDashboard: resolve(import.meta.dirname, 'channel-operations-dashboard.html'),
         customerOnboardingActivation: resolve(import.meta.dirname, 'customer-onboarding-activation.html'),
         activatedCustomers: resolve(import.meta.dirname, 'activated-customers.html'),
