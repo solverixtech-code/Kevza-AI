@@ -13,6 +13,7 @@ export default defineConfig({
         forgotPassword: resolve(import.meta.dirname, 'forgot-password.html'),
         resetPassword: resolve(import.meta.dirname, 'reset-password.html'),
         verifyLogin: resolve(import.meta.dirname, 'verify-login.html'),
+        authCallback: resolve(import.meta.dirname, 'auth-callback.html'),
         verifySession: resolve(import.meta.dirname, 'verify-session.html'),
         loginHistory: resolve(import.meta.dirname, 'login-history.html'),
         activeSessions: resolve(import.meta.dirname, 'active-sessions.html'),
