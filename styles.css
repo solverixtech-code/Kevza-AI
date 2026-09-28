@@ -62,7 +62,7 @@ ul {
 
 .logo {
   display: flex;
-  flex: 0 0 300px;
+  flex: 1;
   align-items: center;
 }
 
@@ -93,6 +93,8 @@ ul {
 }
 
 .nav-actions {
+  flex: 1;
+  justify-content: flex-end;
   gap: 16px;
 }
 
@@ -164,6 +166,12 @@ ul {
   letter-spacing: 0.06em;
 }
 
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .hero-title {
   max-width: 600px;
   margin-bottom: 14px;
@@ -195,6 +203,7 @@ ul {
 }
 
 .hero-cta {
+  margin-top: 16px;
   margin-bottom: 24px;
 }
 
@@ -641,6 +650,12 @@ ul {
   align-items: center;
   gap: 14px;
   color: var(--text);
+}
+
+.trust-item > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .trust-item strong,
