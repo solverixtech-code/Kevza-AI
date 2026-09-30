@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" aria-hidden="true"></div>
 
     <!-- ===== NAVBAR ===== -->
     <header class="navbar">
@@ -39,93 +41,176 @@
     </header>
 
     <!-- ===== HERO ===== -->
-    <section class="hero" id="product">
+    <section class="hero hero-light" id="product">
       <div class="hero-glow"></div>
-      <!-- Animated background particles -->
-      <div class="hero-particles" aria-hidden="true">
-        <span class="hp hp1"></span><span class="hp hp2"></span><span class="hp hp3"></span>
-        <span class="hp hp4"></span><span class="hp hp5"></span><span class="hp hp6"></span>
+      <!-- Light animated mesh blobs -->
+      <div class="hero-blobs" aria-hidden="true">
+        <span class="hblob hblob1"></span>
+        <span class="hblob hblob2"></span>
+        <span class="hblob hblob3"></span>
       </div>
       <div class="container hero-container">
 
         <!-- LEFT -->
         <div class="hero-left">
-          <div class="hero-badge hero-badge-anim">
+          <div class="hero-badge hero-badge-anim hero-badge-light">
             <span class="badge-dot" aria-hidden="true"></span>
             AI-POWERED WHATSAPP AUTOMATION
           </div>
-          <h1 class="hero-title hero-title-anim">
+          <h1 class="hero-title hero-title-anim hero-title-light">
             Turn WhatsApp Into<br>
             Your <span class="hero-green hero-cycle-wrap"><span class="hero-cycle" id="heroCycle">Revenue Engine</span></span>
           </h1>
-          <p class="hero-desc hero-desc-anim">
+          <p class="hero-desc hero-desc-anim hero-desc-light">
             The smarter way to grow on WhatsApp — AI agents, smart campaigns &amp; CRM, all in one platform.
           </p>
           <div class="hero-cta hero-cta-anim">
             <a class="btn-green hero-btn-pulse" href="signup.html">Start Free Trial</a>
-            <a class="hero-demo-link" href="login.html">Book a Demo <span class="demo-arrow">→</span></a>
+            <a class="hero-demo-link hero-demo-link-light" href="login.html">Book a Demo <span class="demo-arrow">→</span></a>
           </div>
           <div class="hero-meta hero-meta-anim">
-            <span class="meta-item">
+            <span class="meta-item meta-item-light">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6.5" stroke="#22c55e" stroke-width="1.5"/><path d="M4.5 7.5l2 2 4-4" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               No credit card required
             </span>
-            <span class="meta-item">
+            <span class="meta-item meta-item-light">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6.5" stroke="#22c55e" stroke-width="1.5"/><path d="M4.5 7.5l2 2 4-4" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               14-day free trial
             </span>
-            <span class="meta-item">
+            <span class="meta-item meta-item-light">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6.5" stroke="#22c55e" stroke-width="1.5"/><path d="M4.5 7.5l2 2 4-4" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Cancel anytime
             </span>
           </div>
         </div>
 
-        <!-- RIGHT - Dashboard Image with floating overlay cards -->
-        <div class="hero-right hero-right-anim">
-          <div class="hero-img-wrap">
-            <img src="kevza inbox img.png" alt="KevzaAI inbox dashboard" class="hero-dashboard-img hero-float" />
+        <!-- RIGHT — Animated phone with WhatsApp messages -->
+        <div class="hero-right hero-right-anim hero-phone-side">
 
-            <!-- Floating card 1: Lead qualified — slides in from left -->
-            <div class="hero-float-card hfc-left" aria-hidden="true">
-              <span class="hfc-icon hfc-green">
-                <svg width="13" height="13" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6.5" stroke="#22c55e" stroke-width="1.5"/><path d="M4.5 7.5l2 2 4-4" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-              <div class="hfc-text">
-                <strong>Lead Qualified</strong>
-                <span>Rahul Verma · just now</span>
-              </div>
-            </div>
-
-            <!-- Floating card 2: Revenue stat — fades in from right -->
-            <div class="hero-float-card hfc-right" aria-hidden="true">
-              <span class="hfc-icon hfc-blue">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-              <div class="hfc-text">
-                <strong>Revenue +24.3%</strong>
-                <span>This month</span>
-              </div>
-            </div>
-
-            <!-- Floating card 3: AI typing indicator -->
-            <div class="hero-float-card hfc-bottom" aria-hidden="true">
-              <span class="hfc-icon hfc-purple">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-              <div class="hfc-text">
-                <strong>AI Agent</strong>
-                <span class="hfc-typing"><span></span><span></span><span></span></span>
-              </div>
+          <!-- Floating card 1: Lead qualified -->
+          <div class="hero-float-card hfc-left" aria-hidden="true">
+            <span class="hfc-icon hfc-green">
+              <svg width="13" height="13" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6.5" stroke="#22c55e" stroke-width="1.5"/><path d="M4.5 7.5l2 2 4-4" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="hfc-text">
+              <strong>Lead Qualified</strong>
+              <span>Rahul Verma · just now</span>
             </div>
           </div>
+
+          <!-- Floating card 2: Revenue stat -->
+          <div class="hero-float-card hfc-right" aria-hidden="true">
+            <span class="hfc-icon hfc-blue">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="hfc-text">
+              <strong>Revenue +24.3%</strong>
+              <span>This month</span>
+            </div>
+          </div>
+
+          <!-- PHONE FRAME -->
+          <div class="phone-frame hero-float" aria-label="WhatsApp conversation demo">
+
+            <!-- Phone top bar -->
+            <div class="phone-topbar">
+              <div class="phone-speaker"></div>
+              <div class="phone-camera"></div>
+            </div>
+
+            <!-- WhatsApp header inside phone -->
+            <div class="wp-header">
+              <div class="wp-back">‹</div>
+              <div class="wp-av">
+                <span>KV</span>
+                <span class="wp-online-dot"></span>
+              </div>
+              <div class="wp-info">
+                <strong>KevzaAI Agent</strong>
+                <span class="wp-status">online · typing...</span>
+              </div>
+              <div class="wp-icons">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+
+            <!-- Chat messages scroll area -->
+            <div class="wp-chat" id="wpChat">
+              <div class="wp-chat-inner" id="wpChatInner">
+              <!-- Date divider -->
+              <div class="wp-date-pill">Today</div>
+
+              <!-- Message 1: user -->
+              <div class="wp-msg wp-user wm1">
+                <div class="wp-bubble wp-bubble-user">Hi! I'm interested in automating my WhatsApp sales. Can you help?</div>
+                <span class="wp-time">10:41 AM ✓✓</span>
+              </div>
+
+              <!-- Message 2: AI -->
+              <div class="wp-msg wp-ai wm2">
+                <div class="wp-bubble wp-bubble-ai">Absolutely! 👋 I'm KevzaAI's sales agent. I'll help you qualify and convert leads 24/7. What's your business type?</div>
+                <span class="wp-time">10:41 AM</span>
+              </div>
+
+              <!-- Message 3: user -->
+              <div class="wp-msg wp-user wm3">
+                <div class="wp-bubble wp-bubble-user">Real estate. We have about 200 leads per month but only convert 5%.</div>
+                <span class="wp-time">10:42 AM ✓✓</span>
+              </div>
+
+              <!-- Message 4: AI -->
+              <div class="wp-msg wp-ai wm4">
+                <div class="wp-bubble wp-bubble-ai">Great! With KevzaAI, businesses like yours typically see <strong>3X more closings</strong> 🏠. Want me to show you how?</div>
+                <span class="wp-time">10:42 AM</span>
+              </div>
+
+              <!-- Message 5: user -->
+              <div class="wp-msg wp-user wm5">
+                <div class="wp-bubble wp-bubble-user">Yes! How does it work?</div>
+                <span class="wp-time">10:43 AM ✓✓</span>
+              </div>
+
+              <!-- Message 6: AI with quick replies -->
+              <div class="wp-msg wp-ai wm6">
+                <div class="wp-bubble wp-bubble-ai">Our AI qualifies every lead instantly, sends follow-ups automatically, and books meetings — while you sleep 🚀</div>
+                <span class="wp-time">10:43 AM</span>
+              </div>
+
+              <!-- Quick reply chips -->
+              <div class="wp-quick-replies wm7">
+                <button class="wp-chip">📅 Book a Demo</button>
+                <button class="wp-chip">💰 View Pricing</button>
+                <button class="wp-chip">🎯 Start Free Trial</button>
+              </div>
+
+              <!-- Typing indicator -->
+              <div class="wp-msg wp-ai wm8">
+                <div class="wp-bubble wp-bubble-ai wp-typing-bubble">
+                  <span class="wp-typing-dots"><span></span><span></span><span></span></span>
+                </div>
+              </div>
+              </div><!-- /wp-chat-inner -->
+            </div>
+
+            <!-- Phone bottom bar -->
+            <div class="wp-input-bar">
+              <div class="wp-input-field">Type a message...</div>
+              <button class="wp-send-btn" aria-label="Send">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><line x1="22" y1="2" x2="11" y2="13" stroke="white" stroke-width="2" stroke-linecap="round"/><polygon points="22 2 15 22 11 13 2 9 22 2" stroke="white" stroke-width="2" fill="white" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <!-- Phone bottom home indicator -->
+            <div class="phone-home-bar"></div>
+          </div><!-- /phone-frame -->
+
         </div><!-- /hero-right -->
 
       </div><!-- /hero-container -->
     </section>
 
     <!-- ===== TRUST STRIP ===== -->
-    <section class="trust-strip">
+    <section class="trust-strip sec-reveal">
       <div class="container trust-row">
         <div class="trust-item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#1a9a5c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -697,7 +782,7 @@
     </section>
 
     <!-- ===== PRICING ===== -->
-    <section class="price-sec" id="pricing">
+    <section class="price-sec sec-reveal" id="pricing">
       <div class="container price-container">
         <div class="price-left">
           <h2 class="price-h2">Simple Pricing.<br>Powerful Results.</h2>
@@ -761,6 +846,9 @@
     <!-- ===== FINAL CTA ===== -->
     <section class="cta-sec" id="demo">
       <div class="container cta-inner">
+        <div class="cta-orb cta-orb-1" aria-hidden="true"></div>
+        <div class="cta-orb cta-orb-2" aria-hidden="true"></div>
+        <div class="cta-orb cta-orb-3" aria-hidden="true"></div>
         <div class="cta-left">
           <img src="kevza_ai_logo.png" alt="KevzaAI" class="cta-logo-img" />
           <div>
@@ -845,6 +933,211 @@
         </div>
       </div>
     </footer>
+
+    <!-- WhatsApp phone chat: continuous loop JS -->
+    <script>
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        /* Show all messages immediately */
+        document.querySelectorAll('.wp-msg, .wp-quick-replies').forEach(function (el) {
+          el.classList.add('msg-in');
+        });
+        return;
+      }
+
+      var inner   = document.getElementById('wpChatInner');
+      var chatWrap = document.getElementById('wpChat');
+      if (!inner || !chatWrap) return;
+
+      var messages = Array.prototype.slice.call(inner.querySelectorAll('.wp-msg, .wp-quick-replies'));
+      var delays   = [400, 1200, 2100, 3000, 3900, 4800, 5700, 5900]; /* ms per message */
+      var scrollAfter = 3; /* start scrolling after 4th message */
+      var scrollStep  = 34; /* px per scroll step */
+      var currentScroll = 0;
+      var timers = [];
+
+      function clearAll() {
+        timers.forEach(function (t) { clearTimeout(t); });
+        timers = [];
+      }
+
+      function resetMessages() {
+        messages.forEach(function (el) {
+          el.classList.remove('msg-in');
+        });
+        inner.style.transform = 'translateY(0)';
+        currentScroll = 0;
+      }
+
+      function runSequence() {
+        resetMessages();
+
+        messages.forEach(function (el, i) {
+          var d = delays[i] !== undefined ? delays[i] : delays[delays.length - 1] + (i - delays.length + 1) * 900;
+          var t = setTimeout(function () {
+            el.classList.add('msg-in');
+            /* Scroll inner container upward after threshold messages */
+            if (i >= scrollAfter) {
+              currentScroll += scrollStep;
+              inner.style.transform = 'translateY(-' + currentScroll + 'px)';
+            }
+          }, d);
+          timers.push(t);
+        });
+
+        /* After last message + pause, restart */
+        var loopDelay = (delays[delays.length - 1] || 6000) + 2800;
+        var loopTimer = setTimeout(function () {
+          runSequence();
+        }, loopDelay);
+        timers.push(loopTimer);
+      }
+
+      runSequence();
+    })();
+    </script>
+
+    <!-- Global complex animation JS -->
+    <script>
+    (function () {
+      var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ── 1. SCROLL PROGRESS BAR ── */
+      var bar = document.getElementById('scroll-progress');
+      if (bar && !rm) {
+        window.addEventListener('scroll', function () {
+          var scrolled = document.documentElement.scrollTop;
+          var total    = document.documentElement.scrollHeight - window.innerHeight;
+          bar.style.width = (scrolled / total * 100) + '%';
+        }, { passive: true });
+      }
+
+      /* ── 2. NAVBAR glassmorphism on scroll ── */
+      var nav = document.querySelector('.navbar');
+      if (nav) {
+        window.addEventListener('scroll', function () {
+          nav.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+      }
+
+      /* ── 3. TRUST STRIP: duplicate items for infinite marquee ── */
+      var trustRow = document.querySelector('.trust-row');
+      if (trustRow && !rm) {
+        /* Wrap existing children in a marquee structure */
+        var items = Array.prototype.slice.call(trustRow.children);
+        /* Build inner div */
+        var inner1 = document.createElement('div');
+        inner1.className = 'trust-marquee-inner';
+        items.forEach(function (item) { inner1.appendChild(item); });
+        /* Clone for seamless loop */
+        var inner2 = inner1.cloneNode(true);
+        var marquee = document.createElement('div');
+        marquee.className = 'trust-marquee';
+        marquee.appendChild(inner1);
+        marquee.appendChild(inner2);
+        trustRow.appendChild(marquee);
+        trustRow.style.setProperty('min-height', '76px');
+        trustRow.style.setProperty('align-items', 'center');
+      }
+
+      /* ── 4. SECTION REVEAL observer ── */
+      if (typeof IntersectionObserver !== 'undefined') {
+        var secObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('sec-in'); secObs.unobserve(e.target); }
+          });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.sec-reveal').forEach(function (el) { secObs.observe(el); });
+
+        /* ── 5. PRICING plan reveal ── */
+        var planObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              var idx = Array.prototype.indexOf.call(e.target.parentNode.children, e.target);
+              setTimeout(function () { e.target.classList.add('plan-in'); }, idx * 130);
+              planObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.plan').forEach(function (el) { planObs.observe(el); });
+
+        /* ── 6. FOOTER columns reveal ── */
+        var footObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              var idx = Array.prototype.indexOf.call(e.target.parentNode.children, e.target);
+              setTimeout(function () { e.target.classList.add('footer-in'); }, idx * 80);
+              footObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.fcol').forEach(function (el) { footObs.observe(el); });
+
+        /* ── 7. FEATURES heading: split words ── */
+        var fh = document.querySelector('.features-heading');
+        if (fh) {
+          var html = fh.innerHTML;
+          /* Only wrap plain text nodes, leave span.green-txt intact */
+          fh.childNodes.forEach(function (node) {
+            if (node.nodeType === 3) { /* text node */
+              var words = node.textContent.split(' ').filter(function (w) { return w.trim(); });
+              var frag = document.createDocumentFragment();
+              words.forEach(function (w, i) {
+                var span = document.createElement('span');
+                span.className = 'feat-word';
+                span.textContent = w;
+                span.style.transitionDelay = (i * 60) + 'ms';
+                frag.appendChild(span);
+                frag.appendChild(document.createTextNode(' '));
+              });
+              node.parentNode.replaceChild(frag, node);
+            }
+          });
+          var headObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) { e.target.classList.add('sec-in'); headObs.unobserve(e.target); }
+            });
+          }, { threshold: 0.3 });
+          headObs.observe(document.querySelector('.feat-header'));
+        }
+      }
+
+      /* ── 8. MOUSE PARALLAX on hero dashboard image ── */
+      var heroImg = document.querySelector('.hero-img-wrap');
+      if (heroImg && !rm) {
+        document.querySelector('.hero')?.addEventListener('mousemove', function (e) {
+          var rect = this.getBoundingClientRect();
+          var cx   = rect.left + rect.width / 2;
+          var cy   = rect.top  + rect.height / 2;
+          var dx   = (e.clientX - cx) / rect.width;
+          var dy   = (e.clientY - cy) / rect.height;
+          heroImg.style.transform = 'perspective(1000px) rotateY(' + (dx * 6) + 'deg) rotateX(' + (-dy * 4) + 'deg) translateZ(8px)';
+        });
+        document.querySelector('.hero')?.addEventListener('mouseleave', function () {
+          heroImg.style.transform = '';
+        });
+      }
+
+      /* ── 9. COUNTER RESTART: re-trigger stats when re-scrolled ── */
+      /* (stats already handled by the other script — no duplication needed) */
+
+      /* ── 10. FEAT CARDS: 3D tilt on hover ── */
+      if (!rm) {
+        document.querySelectorAll('.feat-card').forEach(function (card) {
+          card.addEventListener('mousemove', function (e) {
+            var r  = card.getBoundingClientRect();
+            var dx = (e.clientX - r.left - r.width / 2)  / (r.width / 2);
+            var dy = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
+            card.style.transform = 'perspective(700px) rotateX(' + (-dy * 5) + 'deg) rotateY(' + (dx * 5) + 'deg) translateY(-6px)';
+          });
+          card.addEventListener('mouseleave', function () {
+            card.style.transform = '';
+          });
+        });
+      }
+
+    })();
+    </script>
 
     <!-- Stats · How It Works · Industries · Testimonials — JS -->
     <script>

@@ -5426,3 +5426,825 @@ body {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* =============================================================
+   GLOBAL COMPLEX ANIMATION TRANSFORMATION LAYER
+   Every section gets new motion — nothing removed
+   ============================================================= */
+
+/* ── 1. SCROLL PROGRESS BAR (top of page) ── */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #10d995, #3b82f6, #8b5cf6);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(16,217,149,0.6);
+}
+
+/* ── 2. NAVBAR: slide down + glass blur on scroll ── */
+.navbar {
+  transition: background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease !important;
+}
+.navbar.scrolled {
+  background: rgba(4,16,31,0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: 0 4px 32px rgba(4,16,31,0.5) !important;
+}
+
+/* ── 3. TRUST STRIP: horizontal marquee ── */
+.trust-row {
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+.trust-marquee {
+  display: flex !important;
+  gap: 0 !important;
+  animation: marqueeScroll 28s linear infinite;
+  width: max-content;
+}
+.trust-marquee:hover { animation-play-state: paused; }
+.trust-marquee-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+/* Fade edges */
+.trust-row::before,
+.trust-row::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.trust-row::before { left: 0;  background: linear-gradient(90deg, #fff, transparent); }
+.trust-row::after  { right: 0; background: linear-gradient(-90deg, #fff, transparent); }
+
+/* ── 4. SECTION REVEAL: every section fades up when scrolled in ── */
+.sec-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+              transform 0.65s cubic-bezier(0.22,1,0.36,1);
+}
+.sec-reveal.sec-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── 5. FEATURES HEADING: word-by-word reveal ── */
+.feat-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.feat-header.sec-in .feat-word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── 6. STAT CARDS: 3D tilt on hover ── */
+.stat-card-v2 {
+  transition: transform 0.2s ease, background 0.2s ease !important;
+  transform-style: preserve-3d;
+}
+.stat-card-v2:hover {
+  transform: perspective(600px) rotateX(-4deg) scale(1.02) !important;
+}
+
+/* ── 7. HOW IT WORKS: animated SVG path draw on step icons ── */
+.hstep-icon-v2 svg path,
+.hstep-icon-v2 svg circle,
+.hstep-icon-v2 svg rect,
+.hstep-icon-v2 svg polyline {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.22,1,0.36,1);
+}
+.hstep-v2.how-visible .hstep-icon-v2 svg path,
+.hstep-v2.how-visible .hstep-icon-v2 svg circle,
+.hstep-v2.how-visible .hstep-icon-v2 svg rect,
+.hstep-v2.how-visible .hstep-icon-v2 svg polyline {
+  stroke-dashoffset: 0;
+}
+
+/* ── 8. INDUSTRY CARDS: shimmer sweep on hover ── */
+.ind-card-v2 {
+  overflow: hidden !important;
+}
+.ind-card-v2::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+.ind-card-v2:hover::after {
+  left: 150%;
+}
+
+/* ── 9. PRICING: stagger reveal + glow on popular plan ── */
+.plan {
+  opacity: 0;
+  transform: translateY(24px) scale(0.97);
+  transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1),
+              transform 0.5s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.25s ease !important;
+}
+.plan.plan-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.plan-popular.plan-in {
+  animation: planGlow 3s ease-in-out 0.8s infinite;
+}
+@keyframes planGlow {
+  0%, 100% { box-shadow: 0 10px 40px rgba(16,185,129,0.22); }
+  50%       { box-shadow: 0 10px 60px rgba(16,185,129,0.45); }
+}
+/* Stagger delays */
+.plan:nth-child(1) { transition-delay: 0s; }
+.plan:nth-child(2) { transition-delay: 0.12s; }
+.plan:nth-child(3) { transition-delay: 0.24s; }
+
+/* Plan feature list items animate in */
+.plan-feats li {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.35s ease, transform 0.35s ease !important;
+}
+.plan.plan-in .plan-feats li { opacity: 1; transform: translateX(0); }
+.plan.plan-in .plan-feats li:nth-child(1) { transition-delay: 0.3s; }
+.plan.plan-in .plan-feats li:nth-child(2) { transition-delay: 0.38s; }
+.plan.plan-in .plan-feats li:nth-child(3) { transition-delay: 0.46s; }
+.plan.plan-in .plan-feats li:nth-child(4) { transition-delay: 0.54s; }
+.plan.plan-in .plan-feats li:nth-child(5) { transition-delay: 0.62s; }
+.plan.plan-in .plan-feats li:nth-child(6) { transition-delay: 0.70s; }
+
+/* ── 10. CTA SECTION: animated gradient border + particle bursts ── */
+.cta-inner {
+  position: relative !important;
+  overflow: hidden !important;
+}
+.cta-inner::before {
+  animation: ctaGradShift 6s ease infinite !important;
+  background-size: 300% 300% !important;
+  background: linear-gradient(105deg, #04101f, #062468, #07348f, #10d995, #07348f, #062468) !important;
+}
+@keyframes ctaGradShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating orbs inside CTA */
+.cta-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbFloat 6s ease-in-out infinite;
+}
+.cta-orb-1 {
+  width: 140px; height: 140px;
+  top: -40px; right: 15%;
+  background: radial-gradient(circle, rgba(16,217,149,0.18), transparent 70%);
+  animation-delay: 0s;
+}
+.cta-orb-2 {
+  width: 100px; height: 100px;
+  bottom: -30px; left: 30%;
+  background: radial-gradient(circle, rgba(99,102,241,0.15), transparent 70%);
+  animation-delay: 2s;
+}
+.cta-orb-3 {
+  width: 80px; height: 80px;
+  top: 20%; left: 10%;
+  background: radial-gradient(circle, rgba(59,130,246,0.12), transparent 70%);
+  animation-delay: 4s;
+}
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-18px) scale(1.1); }
+}
+
+/* CTA button: ripple on click */
+.btn-green, .cta-btns .btn-outline-white {
+  position: relative;
+  overflow: hidden !important;
+}
+.btn-green::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.btn-green:active::after {
+  transform: scale(2.5);
+  opacity: 1;
+  transition: 0s;
+}
+
+/* ── 11. FOOTER: stagger link reveal ── */
+.fcol {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fcol.footer-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fcol:nth-child(1) { transition-delay: 0s; }
+.fcol:nth-child(2) { transition-delay: 0.08s; }
+.fcol:nth-child(3) { transition-delay: 0.16s; }
+.fcol:nth-child(4) { transition-delay: 0.24s; }
+.fcol:nth-child(5) { transition-delay: 0.32s; }
+
+.fcol a {
+  position: relative;
+  display: inline-block !important;
+}
+.fcol a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 0; height: 1px;
+  background: var(--green);
+  transition: width 0.25s ease;
+}
+.fcol a:hover::after { width: 100%; }
+
+/* ── 12. TESTI CARDS: 3D perspective tilt ── */
+.testi-card-v2 {
+  transform-style: preserve-3d;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.5s ease !important;
+}
+.testi-card-v2:hover {
+  transform: perspective(700px) rotateY(-4deg) translateY(-5px) !important;
+  box-shadow: 0 22px 52px rgba(15,23,42,0.14) !important;
+}
+
+/* ── 13. GLOBAL: smooth page entrance wipe ── */
+@keyframes pageWipe {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+body {
+  animation: pageWipe 0.4s ease both;
+}
+
+/* ── Reduced motion: kill everything added here ── */
+@media (prefers-reduced-motion: reduce) {
+  #scroll-progress { display: none; }
+  .trust-marquee   { animation: none !important; }
+  .sec-reveal      { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .feat-word       { opacity: 1 !important; transform: none !important; }
+  .plan            { opacity: 1 !important; transform: none !important; }
+  .plan-feats li   { opacity: 1 !important; transform: none !important; }
+  .fcol            { opacity: 1 !important; transform: none !important; }
+  .cta-orb         { animation: none !important; }
+  .ind-card-v2::after { display: none; }
+  .hstep-icon-v2 svg path,
+  .hstep-icon-v2 svg circle,
+  .hstep-icon-v2 svg rect,
+  .hstep-icon-v2 svg polyline { stroke-dashoffset: 0 !important; transition: none !important; }
+  body { animation: none; }
+}
+
+
+/* =============================================================
+   HERO LIGHT — WHITE BACKGROUND + PHONE WHATSAPP MOCKUP
+   ============================================================= */
+
+/* ── Override dark hero with white/light ── */
+.hero-light {
+  background:
+    radial-gradient(ellipse 60% 80% at 10% 50%, rgba(16,217,149,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 90% 20%, rgba(59,130,246,0.07) 0%, transparent 55%),
+    linear-gradient(160deg, #f0fdf8 0%, #f8faff 40%, #ffffff 100%) !important;
+  animation: none !important; /* remove dark bg shift */
+}
+
+/* Animated mesh blobs */
+.hero-blobs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.hblob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.45;
+  animation: blobDrift ease-in-out infinite;
+}
+.hblob1 {
+  width: 380px; height: 380px;
+  top: -80px; left: -80px;
+  background: radial-gradient(circle, rgba(16,217,149,0.22), transparent 70%);
+  animation-duration: 12s; animation-delay: 0s;
+}
+.hblob2 {
+  width: 300px; height: 300px;
+  top: 30%; right: -60px;
+  background: radial-gradient(circle, rgba(59,130,246,0.16), transparent 70%);
+  animation-duration: 15s; animation-delay: 3s;
+}
+.hblob3 {
+  width: 250px; height: 250px;
+  bottom: -60px; left: 35%;
+  background: radial-gradient(circle, rgba(124,58,237,0.12), transparent 70%);
+  animation-duration: 18s; animation-delay: 6s;
+}
+@keyframes blobDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(20px, -30px) scale(1.08); }
+  66%       { transform: translate(-15px, 20px) scale(0.94); }
+}
+
+/* ── Text colors for light background ── */
+.hero-title-light {
+  color: #0a1628 !important;
+  text-shadow: none !important;
+}
+.hero-desc-light {
+  color: #374151 !important;
+}
+.meta-item-light {
+  color: #374151 !important;
+}
+.hero-badge-light {
+  border-color: rgba(16,217,149,0.5) !important;
+  background: rgba(16,217,149,0.1) !important;
+  color: #059669 !important;
+}
+.hero-demo-link-light {
+  color: #374151 !important;
+  border-bottom-color: rgba(55,65,81,0.3) !important;
+}
+.hero-demo-link-light:hover {
+  color: #10b981 !important;
+  border-color: #10b981 !important;
+}
+
+/* ── Hero phone side layout ── */
+.hero-phone-side {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative;
+}
+
+/* ── PHONE FRAME ── */
+.phone-frame {
+  position: relative;
+  width: 280px;
+  height: 560px;
+  border-radius: 44px;
+  background: #1a1a2e;
+  box-shadow:
+    0 0 0 10px #2a2a3e,
+    0 0 0 12px #1a1a2e,
+    0 40px 100px rgba(10,22,40,0.35),
+    0 8px 32px rgba(10,22,40,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 2;
+  /* subtle 3D tilt */
+  transform: perspective(1200px) rotateY(-8deg) rotateX(2deg);
+  transition: transform 0.4s ease;
+}
+.phone-frame:hover {
+  transform: perspective(1200px) rotateY(-4deg) rotateX(1deg) translateY(-6px);
+}
+
+/* Phone top bar (notch area) */
+.phone-topbar {
+  flex-shrink: 0;
+  height: 28px;
+  background: #1a1a2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+}
+.phone-speaker {
+  width: 52px; height: 5px;
+  border-radius: 99px;
+  background: #3a3a50;
+}
+.phone-camera {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #3a3a50;
+  position: absolute;
+  right: 68px;
+}
+
+/* ── WhatsApp header ── */
+.wp-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 8px;
+  background: #075e54;
+}
+.wp-back {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 300;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.wp-av {
+  position: relative;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: #25d366;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+}
+.wp-online-dot {
+  position: absolute;
+  bottom: 1px; right: 1px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #25d366;
+  border: 1.5px solid #075e54;
+  animation: dotPing 1.8s ease-in-out infinite;
+}
+.wp-info {
+  flex: 1;
+  min-width: 0;
+}
+.wp-info strong {
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.wp-status {
+  display: block;
+  color: rgba(255,255,255,0.8);
+  font-size: 10px;
+  animation: blinkText 2s ease-in-out infinite;
+}
+.wp-icons {
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+  opacity: 0.85;
+}
+
+/* ── Chat area ── */
+.wp-chat {
+  flex: 1;
+  overflow: hidden;
+  padding: 10px 10px 6px;
+  background: #ece5dd url("data:image/svg+xml,%3Csvg width='60' height='60' opacity='0.04' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='20' fill='%23075e54'/%3E%3C/svg%3E");
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+/* Date pill */
+.wp-date-pill {
+  text-align: center;
+  font-size: 10px;
+  color: #666;
+  background: rgba(255,255,255,0.75);
+  border-radius: 99px;
+  padding: 3px 12px;
+  align-self: center;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+/* Messages */
+.wp-msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  opacity: 0;
+  transform: translateY(10px) scale(0.97);
+}
+.wp-user { align-self: flex-end; align-items: flex-end; }
+.wp-ai   { align-self: flex-start; align-items: flex-start; }
+
+.wp-bubble {
+  padding: 7px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  line-height: 1.45;
+  font-weight: 500;
+  position: relative;
+  word-break: break-word;
+}
+.wp-bubble-user {
+  background: #dcf8c6;
+  color: #1a1a1a;
+  border-bottom-right-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+.wp-bubble-ai {
+  background: #fff;
+  color: #1a1a1a;
+  border-bottom-left-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+
+.wp-time {
+  font-size: 9px;
+  color: #888;
+  margin-top: 2px;
+  padding: 0 4px;
+}
+
+/* Message entrance animations */
+.wm1 { animation: msgPop 0.4s cubic-bezier(0.34,1.56,0.64,1) 0.4s both; }
+.wm2 { animation: msgPop 0.4s cubic-bezier(0.34,1.56,0.64,1) 1.2s both; }
+.wm3 { animation: msgPop 0.4s cubic-bezier(0.34,1.56,0.64,1) 2.1s both; }
+.wm4 { animation: msgPop 0.4s cubic-bezier(0.34,1.56,0.64,1) 3.0s both; }
+.wm5 { animation: msgPop 0.4s cubic-bezier(0.34,1.56,0.64,1) 3.9s both; }
+.wm6 { animation: msgPop 0.4s cubic-bezier(0.34,1.56,0.64,1) 4.8s both; }
+.wm7 { animation: msgPop 0.4s cubic-bezier(0.34,1.56,0.64,1) 5.7s both; }
+.wm8 { animation: msgPop 0.4s cubic-bezier(0.34,1.56,0.64,1) 5.9s both; }
+
+@keyframes msgPop {
+  from { opacity: 0; transform: translateY(12px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Auto-scroll the chat as messages appear */
+@keyframes chatScroll {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(0); }
+  100% { transform: translateY(-140px); }
+}
+.wp-chat {
+  animation: chatScroll 8s cubic-bezier(0.4,0,0.2,1) 3s both;
+}
+
+/* Quick reply chips */
+.wp-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  opacity: 0;
+  padding-left: 2px;
+  animation: msgPop 0.4s ease 5.7s both;
+}
+.wp-chip {
+  padding: 5px 10px;
+  border-radius: 99px;
+  border: 1.5px solid #25d366;
+  background: #fff;
+  color: #075e54;
+  font-size: 9.5px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.wp-chip:hover {
+  background: #25d366;
+  color: #fff;
+}
+
+/* Typing indicator */
+.wp-typing-bubble {
+  padding: 8px 12px !important;
+}
+.wp-typing-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+.wp-typing-dots span {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #999;
+  animation: typingDot 1.2s ease-in-out infinite;
+}
+.wp-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.wp-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+/* ── WhatsApp input bar ── */
+.wp-input-bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: #f0f0f0;
+}
+.wp-input-field {
+  flex: 1;
+  height: 30px;
+  border-radius: 99px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 10px;
+  color: #aaa;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.wp-send-btn {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: #25d366;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(37,211,102,0.4);
+  animation: iconPulse 2.4s ease-in-out infinite;
+}
+
+/* Phone home indicator */
+.phone-home-bar {
+  flex-shrink: 0;
+  height: 20px;
+  background: #1a1a2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone-home-bar::before {
+  content: '';
+  width: 80px; height: 4px;
+  border-radius: 99px;
+  background: rgba(255,255,255,0.25);
+}
+
+/* ── Floating cards repositioned for phone layout ── */
+.hero-phone-side .hfc-left {
+  left: -28px;
+  top: 20%;
+}
+.hero-phone-side .hfc-right {
+  right: -24px;
+  top: 10%;
+}
+
+/* ── Navbar text override for light hero ── */
+/* Navbar stays dark — no change needed, it's sticky above */
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .wm1,.wm2,.wm3,.wm4,.wm5,.wm6,.wm7,.wm8 { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .wp-quick-replies { animation: none !important; opacity: 1 !important; }
+  .wp-chat { animation: none !important; }
+  .hblob { animation: none !important; }
+  .phone-frame { transform: none !important; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1280px) {
+  .phone-frame { width: 250px; height: 500px; }
+}
+@media (max-width: 900px) {
+  .hero-phone-side { justify-content: center; margin-top: 32px; }
+  .phone-frame { width: 240px; height: 480px; transform: none; }
+  .hero-phone-side .hfc-left,
+  .hero-phone-side .hfc-right { display: none; }
+}
+
+
+/* =============================================================
+   HERO PHONE — FIX BLANK CHAT + CONTINUOUS MESSAGES + WHITE NAV
+   ============================================================= */
+
+/* ── 1. WHITE NAVBAR ── */
+.navbar {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e8eef8 !important;
+  box-shadow: 0 2px 16px rgba(15,23,42,0.07) !important;
+}
+.navbar.scrolled {
+  background: rgba(255,255,255,0.95) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: 0 2px 20px rgba(15,23,42,0.1) !important;
+}
+/* Nav links dark text */
+.nav-links a,
+.nav-login {
+  color: #0d1f3c !important;
+}
+.nav-links a:hover,
+.nav-login:hover {
+  color: #10b981 !important;
+}
+/* Dashboard button */
+.nav-dashboard {
+  border-color: rgba(16,217,149,0.6) !important;
+  color: #059669 !important;
+  background: rgba(16,217,149,0.06) !important;
+}
+/* Book Demo button */
+.nav-book-demo {
+  border-color: #d1d5db !important;
+  color: #374151 !important;
+}
+.nav-book-demo:hover {
+  background: #f9fafb !important;
+  border-color: #9ca3af !important;
+}
+/* Get Started stays green */
+.nav-get-started {
+  background: linear-gradient(135deg, #10d995, #0ebc7f) !important;
+  color: #051326 !important;
+}
+/* Logo: remove invert filter — logo should show natural colors on white */
+.logo-img {
+  filter: none !important;
+}
+
+/* ── 2. FIX CHAT BLANK SPACE ── */
+/* Kill the CSS chatScroll animation — JS will handle continuous scrolling */
+.wp-chat {
+  animation: none !important;
+  overflow: hidden !important;
+  position: relative !important;
+  background: #ece5dd !important;
+}
+
+/* Inner scroll container driven by JS */
+.wp-chat-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 8px;
+  /* JS sets transform to scroll */
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* All messages visible by default — JS controls entrance */
+.wp-msg {
+  opacity: 0;
+  transform: translateY(10px) scale(0.97);
+  transition: opacity 0.35s ease, transform 0.35s ease !important;
+}
+.wp-msg.msg-in {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+.wp-quick-replies {
+  opacity: 0;
+  transition: opacity 0.35s ease !important;
+}
+.wp-quick-replies.msg-in {
+  opacity: 1 !important;
+}
+
+/* Remove old stagger keyframe animations that fight JS */
+.wm1,.wm2,.wm3,.wm4,.wm5,.wm6,.wm7,.wm8 {
+  animation: none !important;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .wp-msg, .wp-quick-replies {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .wp-chat-inner { transition: none !important; }
+}
