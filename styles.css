@@ -4442,3 +4442,987 @@ body {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* =============================================================
+   STATS · HOW IT WORKS · INDUSTRIES · TESTIMONIALS — v2 LAYER
+   Appended — no existing rules removed
+   ============================================================= */
+
+/* ════════════════════════════════════════════════════════════
+   STATS SECTION v2
+   ════════════════════════════════════════════════════════════ */
+
+.stats-sec-v2 {
+  position: relative;
+  overflow: hidden;
+  padding: 0 !important;
+  background: linear-gradient(105deg, #04101f 0%, #062468 42%, #07348f 68%, #0a3fa8 100%) !important;
+}
+
+.stats-bg-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 120% at 50% 50%, rgba(16,217,149,0.07), transparent),
+    radial-gradient(ellipse 30% 60% at 10% 50%, rgba(99,102,241,0.08), transparent);
+  pointer-events: none;
+}
+
+/* override old grid to use our new layout */
+.stats-sec-v2 .stats-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr !important;
+  align-items: center !important;
+  min-height: 130px !important;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+
+.stat-sep-v2 {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(255,255,255,0.14);
+  margin: 18px 0;
+}
+
+.stat-card-v2 {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  padding: 26px 28px !important;
+  grid-template-columns: unset !important;
+  border-right: none !important;
+  background: transparent !important;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1),
+              transform 0.55s cubic-bezier(0.22,1,0.36,1),
+              background 0.2s ease !important;
+}
+.stat-card-v2.stat-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.stat-card-v2:nth-child(1) { transition-delay: 0s; }
+.stat-card-v2:nth-child(3) { transition-delay: 0.1s; }
+.stat-card-v2:nth-child(5) { transition-delay: 0.2s; }
+.stat-card-v2:nth-child(7) { transition-delay: 0.3s; }
+
+.stat-card-v2:hover {
+  background: rgba(255,255,255,0.05) !important;
+  border-radius: 12px;
+}
+
+/* Icon with pulsing ring */
+.stat-ic-v2 {
+  position: relative;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(16,217,149,0.15);
+  border: 2px solid rgba(16,217,149,0.45);
+  color: #10d995;
+  box-shadow: 0 0 18px rgba(16,217,149,0.18);
+}
+.stat-ic-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(16,217,149,0.3);
+  animation: statRingPulse 2.4s ease-out infinite;
+}
+@keyframes statRingPulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+
+/* Number + content */
+.stat-content { flex: 1; }
+
+.stat-big-v2 {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+  font-size: 32px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  background: linear-gradient(90deg, #10d995, #34d399) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  margin-bottom: 4px;
+}
+.stat-prefix {
+  font-size: 22px;
+  font-weight: 700;
+}
+.stat-num { display: inline; }
+
+.stat-bar-track {
+  margin-top: 8px;
+  height: 4px;
+  border-radius: 99px;
+  background: rgba(255,255,255,0.12);
+  overflow: hidden;
+}
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  width: 0;
+  background: linear-gradient(90deg, #10d995, #34d399);
+  transition: width 1.4s cubic-bezier(0.22,1,0.36,1);
+}
+.stat-visible .stat-bar-fill {
+  width: var(--bw);
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   HOW IT WORKS v2
+   ════════════════════════════════════════════════════════════ */
+
+.how-sec-v2 {
+  padding: 48px 0 52px !important;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%) !important;
+}
+
+.how-sec-v2 .container {
+  display: grid !important;
+  grid-template-columns: 280px 1fr !important;
+  gap: 48px !important;
+  align-items: center !important;
+}
+
+/* Left panel */
+.how-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Live preview widget in left panel */
+.how-live-preview {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #062468, #07348f);
+  border: 1px solid rgba(16,217,149,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 8px 28px rgba(6,36,104,0.3);
+}
+.hlp-msg {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  color: #e2e8f0;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0;
+}
+.hlp-m1 { animation: hlpSlide 0.45s cubic-bezier(0.22,1,0.36,1) 0.4s both, hlpLoop 6s ease 0.4s infinite; }
+.hlp-m2 { animation: hlpSlide 0.45s cubic-bezier(0.22,1,0.36,1) 1.2s both, hlpLoop 6s ease 1.2s infinite; }
+.hlp-m3 { animation: hlpSlide 0.45s cubic-bezier(0.22,1,0.36,1) 2.0s both, hlpLoop 6s ease 2.0s infinite; }
+@keyframes hlpSlide {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes hlpLoop {
+  0%, 55%  { opacity: 1; transform: translateX(0); }
+  65%      { opacity: 0; transform: translateX(8px); }
+  85%      { opacity: 0; transform: translateX(-10px); }
+  100%     { opacity: 1; transform: translateX(0); }
+}
+.hlp-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  display: none; /* dots replaced by inline within messages via CSS */
+}
+
+/* Steps grid */
+.how-steps-v2 {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0 !important;
+  position: relative;
+  grid-column: 2 !important;
+  grid-row: 1 / span 3 !important;
+  margin: 0 !important;
+  align-items: start;
+}
+
+/* Connector between steps */
+.hstep-v2 {
+  position: relative;
+  padding: 28px 16px 22px !important;
+  border-radius: 16px !important;
+  border: 1.5px solid #e8eef8 !important;
+  box-shadow: 0 4px 20px rgba(15,23,42,0.07) !important;
+  background: #fff !important;
+  text-align: center !important;
+  transition: transform 0.28s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.28s ease,
+              border-color 0.28s ease !important;
+  opacity: 0;
+  transform: translateY(22px);
+}
+.hstep-v2.how-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hstep-v2:nth-child(1) { transition-delay: 0s; }
+.hstep-v2:nth-child(2) { transition-delay: 0.12s; }
+.hstep-v2:nth-child(3) { transition-delay: 0.24s; }
+.hstep-v2:nth-child(4) { transition-delay: 0.36s; }
+
+.hstep-v2:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 18px 42px rgba(15,23,42,0.13) !important;
+}
+
+/* Animated connector line between cards */
+.hstep-connector {
+  position: absolute;
+  top: 42px;
+  right: -20px;
+  width: 20px;
+  height: 2px;
+  z-index: 2;
+  overflow: hidden;
+}
+.hconn-line {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #10d995, #3b82f6);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: connDraw 0.5s ease both;
+}
+.how-visible .hconn-line       { animation: connDraw 0.5s ease 0.6s both; }
+.how-visible ~ .how-visible .hconn-line { animation: connDraw 0.5s ease 0.72s both; }
+@keyframes connDraw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Step number badge */
+.hstep-num-v2 {
+  position: absolute !important;
+  top: -16px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 32px !important; height: 32px !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  color: #fff !important;
+  background: linear-gradient(135deg, #062468, #10d995) !important;
+  box-shadow: 0 4px 12px rgba(6,36,104,0.4) !important;
+  border: 2px solid rgba(16,217,149,0.4) !important;
+  animation: numBadgePop 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.3s both;
+}
+@keyframes numBadgePop {
+  from { transform: translateX(-50%) scale(0.4); opacity: 0; }
+  to   { transform: translateX(-50%) scale(1);   opacity: 1; }
+}
+
+/* Step icon */
+.hstep-icon-v2 {
+  width: 52px !important; height: 52px !important;
+  margin: 8px auto 12px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 14px !important;
+}
+
+/* Color variants for step icons */
+.hs-green  .hstep-icon-v2 { background: #ecfdf5; color: #10b981; }
+.hs-navy   .hstep-icon-v2 { background: #eff6ff; color: #2563eb; }
+.hs-purple .hstep-icon-v2 { background: #f5f3ff; color: #7c3aed; }
+.hs-dark   .hstep-icon-v2 { background: #fff7ed; color: #d97706; }
+
+/* Continuous icon animations */
+.hsi-bounce { animation: iconBounce 2.8s ease-in-out infinite; }
+.hsi-spin   { animation: iconSpin 8s linear infinite; }
+.hsi-pulse  { animation: iconPulse 2.4s ease-in-out infinite; }
+
+/* Step badge */
+.hstep-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 10px;
+  margin-top: 10px;
+  border-radius: 99px;
+  background: rgba(16,217,149,0.12);
+  color: #059669;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.hs-navy   .hstep-badge { background: rgba(37,99,235,0.1);  color: #1d4ed8; }
+.hs-purple .hstep-badge { background: rgba(124,58,237,0.1); color: #6d28d9; }
+.hs-dark   .hstep-badge { background: rgba(217,119,6,0.1);  color: #b45309; }
+
+.hstep-v2 h3 { font-size: 13px !important; }
+.hstep-v2 p  { font-size: 11px !important; color: #64748b; margin-bottom: 0; }
+
+
+/* ════════════════════════════════════════════════════════════
+   INDUSTRIES v2
+   ════════════════════════════════════════════════════════════ */
+
+.ind-sec-v2 {
+  padding: 44px 0 52px !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%) !important;
+}
+
+/* Floating stat in left panel */
+.ind-float-stat {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #062468, #07348f);
+  border: 1px solid rgba(16,217,149,0.2);
+  width: fit-content;
+  animation: floatBob 4s ease-in-out infinite;
+  box-shadow: 0 8px 28px rgba(6,36,104,0.28);
+}
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.ind-fs-num {
+  font-size: 22px;
+  font-weight: 900;
+  color: #10d995;
+  line-height: 1;
+}
+.ind-fs-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  margin-top: 3px;
+}
+
+/* Industry cards grid */
+.ind-right-v2 {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 16px !important;
+}
+
+.ind-card-v2 {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 22px 14px 18px !important;
+  border-radius: 16px !important;
+  border: 1.5px solid #e8eef8 !important;
+  background: #fff !important;
+  box-shadow: 0 4px 16px rgba(15,23,42,0.07) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1),
+              transform 0.5s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.28s ease,
+              border-color 0.28s ease !important;
+}
+.ind-card-v2.ind-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.ind-card-v2[data-ii="0"] { transition-delay: 0s; }
+.ind-card-v2[data-ii="1"] { transition-delay: 0.08s; }
+.ind-card-v2[data-ii="2"] { transition-delay: 0.16s; }
+.ind-card-v2[data-ii="3"] { transition-delay: 0.24s; }
+.ind-card-v2[data-ii="4"] { transition-delay: 0.32s; }
+
+.ind-card-v2::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+.ind-card-v2:hover {
+  transform: translateY(-7px) scale(1) !important;
+  box-shadow: 0 20px 48px rgba(15,23,42,0.14) !important;
+}
+.ind-card-v2:hover::before { opacity: 1; }
+
+/* Color accents per card */
+.ind-card-v2:nth-child(1)::before { background: linear-gradient(90deg,#2563eb,#60a5fa); }
+.ind-card-v2:nth-child(2)::before { background: linear-gradient(90deg,#059669,#34d399); }
+.ind-card-v2:nth-child(3)::before { background: linear-gradient(90deg,#d97706,#fbbf24); }
+.ind-card-v2:nth-child(4)::before { background: linear-gradient(90deg,#7c3aed,#a78bfa); }
+.ind-card-v2:nth-child(5)::before { background: linear-gradient(90deg,#0891b2,#22d3ee); }
+
+.ind-ic-v2 {
+  width: 48px !important; height: 48px !important;
+  border-radius: 14px !important;
+  margin-bottom: 12px !important;
+  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1) !important;
+}
+.ind-card-v2:hover .ind-ic-v2 {
+  transform: scale(1.18) rotate(-4deg) !important;
+}
+
+.ind-card-v2 h4 {
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #0d1f3c !important;
+  margin-bottom: 4px !important;
+}
+.ind-card-v2 p {
+  font-size: 10.5px !important;
+  color: #64748b !important;
+  line-height: 1.35 !important;
+  margin: 0 !important;
+}
+
+/* Result badge — hidden until hover */
+.ind-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 9px;
+  margin-top: 10px;
+  border-radius: 99px;
+  background: rgba(16,217,149,0.12);
+  color: #059669;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.22s ease, transform 0.22s ease !important;
+}
+.ind-card-v2:hover .ind-stat-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   TESTIMONIALS v2 — Auto-sliding carousel
+   ════════════════════════════════════════════════════════════ */
+
+.testi-sec-v2 {
+  padding: 44px 0 52px !important;
+  background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%) !important;
+}
+
+.testi-carousel-wrap {
+  overflow: hidden;
+  border-radius: 18px;
+  margin-top: 28px;
+}
+
+.testi-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.22,1,0.36,1);
+  will-change: transform;
+}
+
+.testi-card-v2 {
+  min-width: calc(33.333% - 12px) !important;
+  margin-right: 18px !important;
+  flex-shrink: 0 !important;
+  padding: 26px 26px 22px !important;
+  border-radius: 18px !important;
+  border: 1.5px solid #e8eef8 !important;
+  background: #fff !important;
+  box-shadow: 0 6px 28px rgba(15,23,42,0.08) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: box-shadow 0.28s ease, transform 0.28s ease !important;
+}
+.testi-card-v2::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10d995, #3b82f6, #8b5cf6);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+.testi-card-v2.testi-active {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(15,23,42,0.14) !important;
+}
+.testi-card-v2.testi-active::before { opacity: 1; }
+
+/* Card top row: quote + stars */
+.testi-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.tquote-v2 {
+  font-size: 40px !important;
+  line-height: 0.8 !important;
+  font-weight: 900 !important;
+  background: linear-gradient(135deg, #10d995, #3b82f6) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  animation: quoteBreathe 3s ease-in-out infinite;
+}
+@keyframes quoteBreathe {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.08); }
+}
+
+.testi-stars {
+  color: #f59e0b;
+  font-size: 13px;
+  letter-spacing: 1px;
+  animation: starShimmer 3s ease-in-out infinite;
+}
+@keyframes starShimmer {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50%       { opacity: 0.8; filter: brightness(1.3); }
+}
+
+.testi-card-v2 p {
+  font-size: 14px !important;
+  color: #334155 !important;
+  line-height: 1.55 !important;
+  margin-bottom: 12px !important;
+}
+
+/* Result badge */
+.testi-result-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 99px;
+  background: rgba(16,217,149,0.12);
+  color: #059669;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+.testi-badge-blue   { background: rgba(37,99,235,0.1);  color: #1d4ed8; }
+.testi-badge-orange { background: rgba(234,88,12,0.1);  color: #c2410c; }
+
+/* Author */
+.testi-card-v2 .tauthor { margin-top: 0 !important; }
+.testi-card-v2 .tav {
+  width: 36px !important; height: 36px !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+}
+.tav-green  { background: linear-gradient(135deg,#059669,#10b981) !important; color:#fff !important; }
+.tav-blue   { background: linear-gradient(135deg,#2563eb,#3b82f6) !important; color:#fff !important; }
+.tav-orange { background: linear-gradient(135deg,#ea580c,#f97316) !important; color:#fff !important; }
+
+/* Dot indicators */
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.tdot {
+  width: 8px; height: 8px;
+  border-radius: 99px;
+  border: none;
+  background: #cbd5e1;
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.3s ease, background 0.3s ease !important;
+}
+.tdot-active, .tdot:hover {
+  background: #10d995 !important;
+  width: 22px !important;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .stat-card-v2, .hstep-v2, .ind-card-v2 {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  .stat-bar-fill { transition: none !important; width: var(--bw) !important; }
+  .stat-ic-ring, .quoteBreathe, .starShimmer, .floatBob,
+  .hlp-m1, .hlp-m2, .hlp-m3, .hsi-bounce, .hsi-spin, .hsi-pulse { animation: none !important; opacity: 1 !important; }
+  .testi-track { transition: none !important; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1280px) {
+  .stats-sec-v2 .stats-grid {
+    grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr !important;
+  }
+  .stat-card-v2 { padding: 20px 18px !important; }
+  .ind-right-v2 { grid-template-columns: repeat(3, 1fr) !important; }
+  .testi-card-v2 { min-width: calc(33.333% - 12px) !important; }
+}
+
+@media (max-width: 900px) {
+  .stats-sec-v2 .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .stat-sep-v2 { display: none; }
+  .how-sec-v2 .container {
+    grid-template-columns: 1fr !important;
+  }
+  .how-steps-v2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-column: 1 !important;
+    gap: 18px !important;
+  }
+  .hstep-connector { display: none; }
+  .ind-right-v2 { grid-template-columns: repeat(2, 1fr) !important; }
+  .testi-card-v2 { min-width: calc(100% - 0px) !important; margin-right: 0 !important; }
+}
+
+@media (max-width: 640px) {
+  .stats-sec-v2 .stats-grid { grid-template-columns: 1fr !important; }
+  .how-steps-v2 { grid-template-columns: 1fr !important; }
+  .ind-right-v2 { grid-template-columns: 1fr !important; }
+}
+
+
+/* =============================================================
+   EMPTY SPACE FIXES — targeted overrides only
+   ============================================================= */
+
+/* ── Hero: reduce height so it doesn't push content down ── */
+.hero {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 48px 0 52px !important;
+}
+
+/* ── Features: kill excess padding, tighten header ── */
+.features-sec {
+  padding: 40px 0 44px !important;
+}
+.feat-header {
+  margin-bottom: 24px !important;
+}
+
+/* ── How It Works: fix the left panel so it doesn't stretch tall ── */
+.how-sec-v2 {
+  padding: 36px 0 40px !important;
+}
+.how-sec-v2 .container {
+  align-items: start !important;
+}
+.how-left {
+  position: sticky;
+  top: 100px;
+}
+/* Live preview widget: cap its height so it doesn't bloat */
+.how-live-preview {
+  margin-top: 16px !important;
+}
+/* Steps: reduce internal padding */
+.hstep-v2 {
+  padding: 24px 14px 18px !important;
+}
+
+/* ── Industries: reduce section padding ── */
+.ind-sec-v2 {
+  padding: 36px 0 40px !important;
+}
+/* Floating stat widget: don't let it expand left panel */
+.ind-float-stat {
+  margin-top: 16px !important;
+}
+
+/* ── Testimonials: fix the carousel so all 3 cards fill the row ── */
+.testi-sec-v2 {
+  padding: 36px 0 44px !important;
+}
+.testi-carousel-wrap {
+  overflow: hidden !important;
+  border-radius: 16px !important;
+  margin-top: 20px !important;
+}
+.testi-track {
+  display: flex !important;
+  gap: 18px !important;
+  transition: transform 0.55s cubic-bezier(0.22,1,0.36,1) !important;
+}
+/* Each card = exactly 1/3 of track width minus gaps */
+.testi-card-v2 {
+  min-width: calc(33.333% - 12px) !important;
+  flex-shrink: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ── Stats: tighten slightly ── */
+.stats-sec-v2 {
+  padding: 0 !important;
+}
+
+/* ── General: remove double-stacked section borders causing gaps ── */
+.how-sec {
+  border-bottom: none !important;
+}
+.ind-sec {
+  border-bottom: none !important;
+}
+.testi-sec {
+  border-bottom: none !important;
+}
+.price-sec {
+  border-bottom: none !important;
+}
+
+/* ── Trust strip: fix overlap with hero ── */
+.trust-strip {
+  height: auto !important;
+  padding: 0 0 16px 0 !important;
+}
+.trust-row {
+  top: -28px !important;
+}
+
+/* ── Responsive fix for testimonials on small screens ── */
+@media (max-width: 900px) {
+  .testi-card-v2 {
+    min-width: 100% !important;
+  }
+  .how-left {
+    position: static !important;
+  }
+}
+
+
+/* =============================================================
+   DEFINITIVE SPACING + CAROUSEL FIX  — final override pass
+   ============================================================= */
+
+/* ── Kill ALL section excess padding with one pass ── */
+.hero          { padding: 52px 0 56px !important; height: auto !important; min-height: 0 !important; }
+.trust-strip   { height: auto !important; padding: 0 0 20px !important; }
+.trust-row     { top: -32px !important; min-height: 76px !important; }
+.features-sec  { padding: 36px 0 40px !important; }
+.feat-header   { margin-bottom: 22px !important; }
+.stats-sec-v2  { padding: 0 !important; }
+.how-sec-v2    { padding: 32px 0 36px !important; }
+.ind-sec-v2    { padding: 32px 0 36px !important; }
+.testi-sec-v2  { padding: 32px 0 40px !important; }
+.price-sec     { padding: 32px 0 36px !important; }
+.cta-sec       { padding: 20px 0 !important; }
+.site-footer   { padding: 32px 0 18px !important; }
+
+/* ── Industries: shrink card height so it doesn't leave a tall gap ── */
+.ind-card-v2 {
+  padding: 18px 12px 14px !important;
+  min-height: 0 !important;
+}
+.ind-right-v2 {
+  align-items: start !important;
+}
+
+/* ── How It Works: fix left column not matching step height ── */
+.how-sec-v2 .container {
+  align-items: start !important;
+  gap: 36px !important;
+}
+.how-left {
+  position: static !important; /* no sticky — causes layout shift */
+}
+.how-live-preview {
+  margin-top: 14px !important;
+  padding: 12px 14px !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   TESTIMONIALS CAROUSEL — complete rewrite
+   The track uses a JS-set --card-w so each card = exact 1/3
+   ════════════════════════════════════════════════════════════ */
+
+/* Section layout */
+.testi-sec-v2 .container {
+  display: block !important; /* remove any grid/flex that breaks testi-top */
+}
+
+.testi-top {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  margin-bottom: 20px !important;
+}
+
+.testi-arrows {
+  display: flex !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Wrapper clips the scrolling track */
+.testi-carousel-wrap {
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  margin-top: 0 !important;
+  width: 100% !important;
+}
+
+/* Track: cards lay out horizontally; width = 3 × card + 2 × gap */
+.testi-track {
+  display: flex !important;
+  gap: 18px !important;
+  transition: transform 0.55s cubic-bezier(0.22,1,0.36,1) !important;
+  will-change: transform !important;
+  /* width is set by JS: 3 cards + 2 gaps */
+}
+
+/* Each card width driven by --card-w set from JS */
+.testi-card-v2 {
+  width: var(--card-w, calc(33.333% - 12px)) !important;
+  min-width: var(--card-w, calc(33.333% - 12px)) !important;
+  max-width: var(--card-w, calc(33.333% - 12px)) !important;
+  flex-shrink: 0 !important;
+  margin-right: 0 !important;
+  padding: 22px 22px 18px !important;
+  min-height: 0 !important;
+}
+
+/* Dots row */
+.testi-dots {
+  margin-top: 16px !important;
+}
+
+@media (max-width: 900px) {
+  .testi-card-v2 {
+    width: var(--card-w-sm, 100%) !important;
+    min-width: var(--card-w-sm, 100%) !important;
+    max-width: var(--card-w-sm, 100%) !important;
+  }
+}
+
+
+/* =============================================================
+   TESTIMONIALS — replace broken carousel with stable 3-col grid
+   + final spacing cleanup pass
+   ============================================================= */
+
+/* ── Kill carousel remnants ── */
+.testi-carousel-wrap,
+.testi-track,
+.testi-dots,
+.testi-arrows { display: none !important; }
+
+/* ── New 3-column grid ── */
+.testi-grid-v2 {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  margin-top: 24px !important;
+}
+
+/* ── Cards: reset all width overrides from carousel era ── */
+.testi-card-v2 {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  flex-shrink: unset !important;
+  margin-right: 0 !important;
+  padding: 24px 24px 20px !important;
+  border-radius: 18px !important;
+  border: 1.5px solid #e8eef8 !important;
+  background: #fff !important;
+  box-shadow: 0 6px 28px rgba(15,23,42,0.08) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  /* scroll-triggered entrance */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1),
+              transform 0.5s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.25s ease !important;
+}
+.testi-card-v2[data-ti="0"] { transition-delay: 0s; }
+.testi-card-v2[data-ti="1"] { transition-delay: 0.1s; }
+.testi-card-v2[data-ti="2"] { transition-delay: 0.2s; }
+.testi-card-v2.testi-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.testi-card-v2:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 18px 48px rgba(15,23,42,0.13) !important;
+}
+
+/* Top color bar on hover */
+.testi-card-v2::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10d995, #3b82f6, #8b5cf6);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.testi-card-v2:hover::before { opacity: 1; }
+
+/* ── Testi-top: heading only (no arrows) ── */
+.testi-sec-v2 .testi-top {
+  display: block !important;
+  margin-bottom: 4px !important;
+}
+
+/* ── Fix testi-sec spacing ── */
+.testi-sec-v2 {
+  padding: 36px 0 44px !important;
+}
+
+/* ── Final section spacing: one definitive pass ── */
+.hero          { padding: 48px 0 52px !important; height: auto !important; min-height: 0 !important; }
+.features-sec  { padding: 36px 0 40px !important; }
+.feat-header   { margin-bottom: 20px !important; }
+.how-sec-v2    { padding: 34px 0 38px !important; }
+.ind-sec-v2    { padding: 32px 0 36px !important; }
+.price-sec     { padding: 32px 0 36px !important; }
+.cta-sec       { padding: 20px 0 !important; }
+.site-footer   { padding: 30px 0 16px !important; }
+
+/* ── Testimonials: remove old testi-sec/testi-grid styles ── */
+.testi-sec .testi-grid { display: none !important; }
+
+/* ── Scroll-triggered observer for testi cards ── */
+@media (prefers-reduced-motion: reduce) {
+  .testi-card-v2 {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .testi-grid-v2 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+@media (max-width: 640px) {
+  .testi-grid-v2 {
+    grid-template-columns: 1fr !important;
+  }
+}
