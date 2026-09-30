@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -41,28 +41,31 @@
     <!-- ===== HERO ===== -->
     <section class="hero" id="product">
       <div class="hero-glow"></div>
+      <!-- Animated background particles -->
+      <div class="hero-particles" aria-hidden="true">
+        <span class="hp hp1"></span><span class="hp hp2"></span><span class="hp hp3"></span>
+        <span class="hp hp4"></span><span class="hp hp5"></span><span class="hp hp6"></span>
+      </div>
       <div class="container hero-container">
 
         <!-- LEFT -->
         <div class="hero-left">
-          <div class="hero-badge">AI-POWERED WHATSAPP AUTOMATION</div>
-          <h1 class="hero-title">
-            Turn Conversations<br>
-            Into Revenue with<br>
-            AI-Powered WhatsApp<br>
-            <span class="hero-green">Automation</span>
-          </h1>
-          <p class="hero-desc">
-            Engage, qualify, and convert leads on WhatsApp with AI agents,
-            smart campaigns, unified inbox, and CRM automation—all in one
-            powerful platform.
-          </p>
-          <div class="hero-cta">
-            <a class="btn-green" href="signup.html">Start Free Trial</a>
-            <a class="btn-outline-white" href="customer-dashboard.html">View Dashboard</a>
-            <a class="btn-outline-white" href="login.html">Book a Demo</a>
+          <div class="hero-badge hero-badge-anim">
+            <span class="badge-dot" aria-hidden="true"></span>
+            AI-POWERED WHATSAPP AUTOMATION
           </div>
-          <div class="hero-meta">
+          <h1 class="hero-title hero-title-anim">
+            Turn WhatsApp Into<br>
+            Your <span class="hero-green hero-cycle-wrap"><span class="hero-cycle" id="heroCycle">Revenue Engine</span></span>
+          </h1>
+          <p class="hero-desc hero-desc-anim">
+            The smarter way to grow on WhatsApp — AI agents, smart campaigns &amp; CRM, all in one platform.
+          </p>
+          <div class="hero-cta hero-cta-anim">
+            <a class="btn-green hero-btn-pulse" href="signup.html">Start Free Trial</a>
+            <a class="hero-demo-link" href="login.html">Book a Demo <span class="demo-arrow">→</span></a>
+          </div>
+          <div class="hero-meta hero-meta-anim">
             <span class="meta-item">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6.5" stroke="#22c55e" stroke-width="1.5"/><path d="M4.5 7.5l2 2 4-4" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               No credit card required
@@ -78,9 +81,44 @@
           </div>
         </div>
 
-        <!-- RIGHT - Dashboard Image -->
-        <div class="hero-right">
-          <img src="kevza inbox img.png" alt="KevzaAI inbox dashboard" class="hero-dashboard-img" />
+        <!-- RIGHT - Dashboard Image with floating overlay cards -->
+        <div class="hero-right hero-right-anim">
+          <div class="hero-img-wrap">
+            <img src="kevza inbox img.png" alt="KevzaAI inbox dashboard" class="hero-dashboard-img hero-float" />
+
+            <!-- Floating card 1: Lead qualified — slides in from left -->
+            <div class="hero-float-card hfc-left" aria-hidden="true">
+              <span class="hfc-icon hfc-green">
+                <svg width="13" height="13" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6.5" stroke="#22c55e" stroke-width="1.5"/><path d="M4.5 7.5l2 2 4-4" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <div class="hfc-text">
+                <strong>Lead Qualified</strong>
+                <span>Rahul Verma · just now</span>
+              </div>
+            </div>
+
+            <!-- Floating card 2: Revenue stat — fades in from right -->
+            <div class="hero-float-card hfc-right" aria-hidden="true">
+              <span class="hfc-icon hfc-blue">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <div class="hfc-text">
+                <strong>Revenue +24.3%</strong>
+                <span>This month</span>
+              </div>
+            </div>
+
+            <!-- Floating card 3: AI typing indicator -->
+            <div class="hero-float-card hfc-bottom" aria-hidden="true">
+              <span class="hfc-icon hfc-purple">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <div class="hfc-text">
+                <strong>AI Agent</strong>
+                <span class="hfc-typing"><span></span><span></span><span></span></span>
+              </div>
+            </div>
+          </div>
         </div><!-- /hero-right -->
 
       </div><!-- /hero-container -->
@@ -124,74 +162,263 @@
     <!-- ===== FEATURES ===== -->
     <section class="features-sec" id="solutions">
       <div class="container">
-        <h2 class="features-heading">Everything You Need to <span class="green-txt">Automate, Engage</span> &amp; Grow</h2>
-        <div class="features-grid">
 
-          <div class="feat-card">
-            <div class="feat-icon fi-green">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </div>
-            <h3>AI Sales Agents</h3>
-            <p>AI agents that understand, engage &amp; convert leads 24/7 on WhatsApp.</p>
-          </div>
-
-          <div class="feat-card">
-            <div class="feat-icon fi-blue">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </div>
-            <h3>Unified Inbox</h3>
-            <p>Manage all WhatsApp conversations in one place with team collaboration.</p>
-          </div>
-
-          <div class="feat-card">
-            <div class="feat-icon fi-purple">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12h4l3-9 4 18 3-9h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h3>Smart Campaigns</h3>
-            <p>Create, automate &amp; optimize WhatsApp campaigns for better outcomes.</p>
-          </div>
-
-          <div class="feat-card">
-            <div class="feat-icon fi-orange">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/></svg>
-            </div>
-            <h3>Lead Qualification</h3>
-            <p>AI-powered lead scoring and qualification to focus on high-intent prospects.</p>
-          </div>
-
-          <div class="feat-card">
-            <div class="feat-icon fi-teal">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="currentColor" stroke-width="1.8"/></svg>
-            </div>
-            <h3>CRM &amp; Pipeline</h3>
-            <p>Track leads, deals &amp; activities in a powerful CRM built for speed.</p>
-          </div>
-
-          <div class="feat-card">
-            <div class="feat-icon fi-green2">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h3>WhatsApp Automation</h3>
-            <p>Automate drip sequences, reminders &amp; follow-ups.</p>
-          </div>
-
-          <div class="feat-card">
-            <div class="feat-icon fi-red">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 8h4M7 11h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </div>
-            <h3>Analytics &amp; Reports</h3>
-            <p>Real-time analytics to track performance, ROI &amp; team productivity.</p>
-          </div>
-
-          <div class="feat-card">
-            <div class="feat-icon fi-indigo">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.8"/><path d="M6 15h2M10 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </div>
-            <h3>Payment Recovery</h3>
-            <p>Automate payment reminders and recover pending payments faster.</p>
-          </div>
-
+        <!-- Section header -->
+        <div class="feat-header">
+          <span class="feat-eyebrow">PLATFORM OVERVIEW</span>
+          <h2 class="features-heading">Everything You Need to <span class="green-txt">Automate, Engage</span> &amp; Grow</h2>
+          <p class="feat-subtitle">8 powerful tools. One WhatsApp platform.</p>
         </div>
+
+        <!-- Row 1: 3 equal tall cards -->
+        <div class="features-grid features-row-1">
+
+          <!-- AI Sales Agents — vertical: icon+text top, chat UI bottom -->
+          <div class="feat-card fc2-green feat-stagger" data-fi="0">
+            <div class="fc2-head">
+              <div class="feat-icon fi-green feat-icon-bounce">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <div class="feat-tag">PRIMARY</div>
+                <h3>AI Sales Agents</h3>
+                <p>Qualify &amp; convert leads 24/7</p>
+              </div>
+            </div>
+            <div class="fc2-live">
+              <div class="fc2-chat">
+                <div class="flc-bubble flc-in flc-b1">Hi! Interested in your AI solution 👋</div>
+                <div class="flc-bubble flc-out flc-b2">Let me qualify you right now...</div>
+                <div class="flc-bubble flc-in flc-b3"><span class="flc-typing"><span></span><span></span><span></span></span></div>
+              </div>
+              <div class="fc2-stat-row">
+                <div class="fc2-stat-chip fc2-chip-green">
+                  <span class="fc2-stat-big">3.5X</span>
+                  <span class="fc2-stat-sub">More leads</span>
+                </div>
+                <div class="fc2-stat-chip fc2-chip-dark">
+                  <span class="fc2-stat-big">24/7</span>
+                  <span class="fc2-stat-sub">Always on</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unified Inbox — vertical: icon+text top, notification rows bottom -->
+          <div class="feat-card fc2-blue feat-stagger" data-fi="1">
+            <div class="fc2-head">
+              <div class="feat-icon fi-blue feat-icon-pulse">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <h3>Unified Inbox</h3>
+                <p>All conversations, one place</p>
+              </div>
+            </div>
+            <div class="fc2-live">
+              <div class="fc2-notif-list">
+                <div class="fc2-notif fc2-n1">
+                  <span class="fc2-nav" style="background:#16a34a">RK</span>
+                  <div class="fc2-nmsg"><strong>Rahul K.</strong> New lead qualified ✓</div>
+                  <span class="fc2-ndot fc2-ndot-green"></span>
+                </div>
+                <div class="fc2-notif fc2-n2">
+                  <span class="fc2-nav" style="background:#2563eb">DS</span>
+                  <div class="fc2-nmsg"><strong>Dr. Sneha</strong> Appointment confirmed</div>
+                  <span class="fc2-ndot fc2-ndot-blue"></span>
+                </div>
+                <div class="fc2-notif fc2-n3">
+                  <span class="fc2-nav" style="background:#ea580c">AM</span>
+                  <div class="fc2-nmsg"><strong>Amit M.</strong> Payment received 💰</div>
+                  <span class="fc2-ndot fc2-ndot-orange"></span>
+                </div>
+              </div>
+              <div class="fc2-inbox-badge">
+                <span class="fc2-badge-dot"></span> 128 active conversations
+              </div>
+            </div>
+          </div>
+
+          <!-- Smart Campaigns — vertical: icon+text top, progress bars bottom -->
+          <div class="feat-card fc2-purple feat-stagger" data-fi="2">
+            <div class="fc2-head">
+              <div class="feat-icon fi-purple feat-icon-spin">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12h4l3-9 4 18 3-9h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>Smart Campaigns</h3>
+                <p>Create, automate &amp; optimize campaigns</p>
+              </div>
+            </div>
+            <div class="fc2-live">
+              <div class="fc2-bars">
+                <div class="fc2-bar-row">
+                  <span class="fc2-bar-lbl">Open Rate</span>
+                  <div class="fc2-bar-track"><div class="fc2-bar-fill fc2-bf1" style="--tw:86%"></div></div>
+                  <span class="fc2-bar-pct">86%</span>
+                </div>
+                <div class="fc2-bar-row">
+                  <span class="fc2-bar-lbl">Clicks</span>
+                  <div class="fc2-bar-track"><div class="fc2-bar-fill fc2-bf2" style="--tw:64%"></div></div>
+                  <span class="fc2-bar-pct">64%</span>
+                </div>
+                <div class="fc2-bar-row">
+                  <span class="fc2-bar-lbl">Converted</span>
+                  <div class="fc2-bar-track"><div class="fc2-bar-fill fc2-bf3" style="--tw:41%"></div></div>
+                  <span class="fc2-bar-pct">41%</span>
+                </div>
+              </div>
+              <div class="fc2-campaign-badge">
+                <span>250%</span> avg campaign ROI
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /row-1 -->
+
+        <!-- Row 2: 5 cards, each taller with bigger mini-UIs -->
+        <div class="features-grid features-row-2">
+
+          <!-- Lead Qualification — large score ring centered -->
+          <div class="feat-card fc2-orange feat-stagger" data-fi="3">
+            <div class="fc2-head fc2-head-sm">
+              <div class="feat-icon fi-orange feat-icon-bounce">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/></svg>
+              </div>
+              <div>
+                <h3>Lead Qualification</h3>
+                <p>AI scoring for high-intent leads</p>
+              </div>
+            </div>
+            <div class="fc2-live fc2-live-center">
+              <div class="fc2-ring-wrap">
+                <svg viewBox="0 0 80 80" width="90" height="90">
+                  <circle cx="40" cy="40" r="34" fill="none" stroke="#fed7aa" stroke-width="6"/>
+                  <circle class="fc2-arc" cx="40" cy="40" r="34" fill="none" stroke="url(#orangeGrad)" stroke-width="6"
+                    stroke-dasharray="0 214" stroke-linecap="round" stroke-dashoffset="53.5"/>
+                  <defs>
+                    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#f97316"/>
+                      <stop offset="100%" stop-color="#ea580c"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="fc2-ring-inner">
+                  <span class="fc2-ring-num">85</span>
+                  <span class="fc2-ring-sub">/ 100</span>
+                </div>
+              </div>
+              <span class="fc2-ring-lbl">AI Score · High Intent</span>
+            </div>
+          </div>
+
+          <!-- CRM & Pipeline — kanban stages with moving deal card -->
+          <div class="feat-card fc2-teal feat-stagger" data-fi="4">
+            <div class="fc2-head fc2-head-sm">
+              <div class="feat-icon fi-teal feat-icon-pulse">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="currentColor" stroke-width="1.8"/></svg>
+              </div>
+              <div>
+                <h3>CRM &amp; Pipeline</h3>
+                <p>Track leads, deals &amp; activities</p>
+              </div>
+            </div>
+            <div class="fc2-live">
+              <div class="fc2-kanban">
+                <div class="fc2-kstage fc2-ks-done">
+                  <span class="fc2-ks-lbl">New</span>
+                  <div class="fc2-kcard fc2-kc-sm">Rahul K.</div>
+                </div>
+                <div class="fc2-karrow">›</div>
+                <div class="fc2-kstage fc2-ks-active">
+                  <span class="fc2-ks-lbl">Qualify</span>
+                  <div class="fc2-kcard fc2-kc-active">Priya S. <span class="fc2-kpulse"></span></div>
+                </div>
+                <div class="fc2-karrow">›</div>
+                <div class="fc2-kstage">
+                  <span class="fc2-ks-lbl">Won</span>
+                  <div class="fc2-kcard fc2-kc-won">₹24.8L 🎉</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Automation — drip timeline bigger -->
+          <div class="feat-card fc2-green2 feat-stagger" data-fi="5">
+            <div class="fc2-head fc2-head-sm">
+              <div class="feat-icon fi-green2 feat-icon-bounce">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>WhatsApp Automation</h3>
+                <p>Drip sequences &amp; auto follow-ups</p>
+              </div>
+            </div>
+            <div class="fc2-live fc2-live-center">
+              <div class="fc2-drip">
+                <div class="fc2-dnode fc2-dn-sent">D1<span class="fc2-dcheck">✓</span></div>
+                <div class="fc2-dline fc2-dl-done"></div>
+                <div class="fc2-dnode fc2-dn-sent">D3<span class="fc2-dcheck">✓</span></div>
+                <div class="fc2-dline fc2-dl-done"></div>
+                <div class="fc2-dnode fc2-dn-active">D7<span class="fc2-dpulse"></span></div>
+                <div class="fc2-dline"></div>
+                <div class="fc2-dnode">D14</div>
+              </div>
+              <span class="fc2-drip-lbl">Sending D7 sequence...</span>
+            </div>
+          </div>
+
+          <!-- Analytics — tall bar chart -->
+          <div class="feat-card fc2-red feat-stagger" data-fi="6">
+            <div class="fc2-head fc2-head-sm">
+              <div class="feat-icon fi-red feat-icon-pulse">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 8h4M7 11h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <h3>Analytics &amp; Reports</h3>
+                <p>Real-time ROI &amp; team performance</p>
+              </div>
+            </div>
+            <div class="fc2-live">
+              <div class="fc2-chart">
+                <div class="fc2-bars-wrap">
+                  <div class="fc2-cbar" style="--bh:42%"><span class="fc2-cbar-tip">Mon</span></div>
+                  <div class="fc2-cbar" style="--bh:68%"><span class="fc2-cbar-tip">Tue</span></div>
+                  <div class="fc2-cbar" style="--bh:55%"><span class="fc2-cbar-tip">Wed</span></div>
+                  <div class="fc2-cbar fc2-cbar-hi" style="--bh:92%"><span class="fc2-cbar-tip">Thu</span></div>
+                  <div class="fc2-cbar" style="--bh:74%"><span class="fc2-cbar-tip">Fri</span></div>
+                </div>
+              </div>
+              <div class="fc2-chart-stat">↑ 250% ROI this week</div>
+            </div>
+          </div>
+
+          <!-- Payment Recovery — recovery list -->
+          <div class="feat-card fc2-indigo feat-stagger" data-fi="7">
+            <div class="fc2-head fc2-head-sm">
+              <div class="feat-icon fi-indigo feat-icon-spin">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.8"/><path d="M6 15h2M10 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <h3>Payment Recovery</h3>
+                <p>Recover pending payments faster</p>
+              </div>
+            </div>
+            <div class="fc2-live">
+              <div class="fc2-pay-list">
+                <div class="fc2-pay-row fc2-pr1"><span class="fc2-pay-dot fc2-pd-green"></span><span class="fc2-pay-name">Rahul K.</span><span class="fc2-pay-amt fc2-amt-green">+₹12,400</span></div>
+                <div class="fc2-pay-row fc2-pr2"><span class="fc2-pay-dot fc2-pd-green"></span><span class="fc2-pay-name">Priya S.</span><span class="fc2-pay-amt fc2-amt-green">+₹8,200</span></div>
+                <div class="fc2-pay-row fc2-pr3"><span class="fc2-pay-dot fc2-pd-yellow"></span><span class="fc2-pay-name">Amit M.</span><span class="fc2-pay-amt fc2-amt-yellow">₹5,600 due</span></div>
+              </div>
+              <div class="fc2-pay-total">
+                <span class="fc2-pay-total-lbl">Recovered</span>
+                <span class="fc2-pay-total-num">₹20,600</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /row-2 -->
+
       </div>
     </section>
 
@@ -539,6 +766,49 @@
         </div>
       </div>
     </footer>
+
+    <!-- Features: scroll-triggered stagger animation -->
+    <script>
+      (function () {
+        if (typeof IntersectionObserver === 'undefined') return;
+        var cards = document.querySelectorAll('.feat-stagger');
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              var idx = parseInt(el.getAttribute('data-fi') || '0', 10);
+              var delay = idx * 80; // 80ms stagger per card
+              el.style.transitionDelay = delay + 'ms';
+              el.classList.add('feat-visible');
+              observer.unobserve(el);
+            }
+          });
+        }, { threshold: 0.12 });
+        cards.forEach(function (card) { observer.observe(card); });
+      })();
+    </script>
+
+    <!-- Hero: cycling text + prefers-reduced-motion guard -->
+    <script>
+      (function () {
+        var words = ['Revenue Engine', 'Sales Machine', 'Growth Platform', 'AI Powerhouse'];
+        var el = document.getElementById('heroCycle');
+        if (!el) return;
+        var idx = 0;
+        // Respect reduced-motion preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        setInterval(function () {
+          el.classList.add('cycle-out');
+          setTimeout(function () {
+            idx = (idx + 1) % words.length;
+            el.textContent = words[idx];
+            el.classList.remove('cycle-out');
+            el.classList.add('cycle-in');
+            setTimeout(function () { el.classList.remove('cycle-in'); }, 400);
+          }, 300);
+        }, 2600);
+      })();
+    </script>
 
   </body>
 </html>
